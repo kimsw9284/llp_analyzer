@@ -12,7 +12,7 @@ ANALYZERSH = $(ANALYZERS:cc=h)
 ANALYZERSOBJ = $(ANALYZERS:cc=o)
 RUNNERS = $(addprefix $(BINDIR)/Run,$(notdir $(basename $(ANALYZERS))))
 RUNNERSCC = $(addsuffix .cc,$(addprefix $(ANADIR)/,$(notdir $(RUNNERS))))
-UTILS =$(SRCDIR)/RazorHelper.cc ${SRCDIR}/HSCPTree.cc
+UTILS =$(SRCDIR)/RazorHelper.cc ${SRCDIR}/HSCPTree.cc ${SRCDIR}/HSCPTree_METStudies.cc
 UTILSOBJ = $(UTILS:cc=o)
 EXECUTABLES = NormalizeNtuple SkimNtuple $(RUNNERS)
 #EXECUTABLES = $(RUNNERS) 
