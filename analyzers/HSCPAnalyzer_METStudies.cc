@@ -108,6 +108,7 @@ void HSCPAnalyzer_METStudies::Analyze(bool isData, int options, string outputfil
   //=============================================
 
   // pass preselection & no triggers
+  TH1F* h_HSCP_pt_passPres = new TH1F("h_HSCP_pt_passPres","pass preselection & no triggers;pT [GeV]",50,0,10000);
   TH1F* h_RecoCaloMET_passPres = new TH1F("h_RecoCaloMET_passPres","pass preselection & no triggers;RECO Calo MET [GeV]", 50,0,3000);
   TH1F* h_RecoPFMET_passPres = new TH1F("h_RecoPFMET_passPres","pass preselection & no triggers;RECO PF MET [GeV]",50,0,3000);
   TH1F* h_HLTCaloMET_passPres = new TH1F("h_HLTCaloMET_passPres","pass preselection & no triggers;HLT Calo MET [GeV]", 50,0,3000);
@@ -154,25 +155,45 @@ void HSCPAnalyzer_METStudies::Analyze(bool isData, int options, string outputfil
   // various other histograms desired
   //===================================
 
-  TH1F* h_oneCand_dPhi_HSCP_RecoPFMET = new TH1F("h_oneCand_dPhi_HSCP_RecoPFMET","1 HSCP Cand: dPhi HSCP & RecoPFMET",50,-3.5,3.5);
-  TH1F* h_oneCand_dPhi_HSCP_RecoCaloMET = new TH1F("h_oneCand_dPhi_HSCP_RecoCaloMET","1 HSCP Cand: dPhi HSCP & RecoCaloMET",50,-3.5,3.5);
-  TH1F* h_oneCand_dPhi_HSCP_HLTPFMET = new TH1F("h_oneCand_dPhi_HSCP_HLTPFMET","1 HSCP Cand: dPhi HSCP & HLTPFMET",50,-3.5,3.5);
-  TH1F* h_oneCand_dPhi_HSCP_HLTCaloMET = new TH1F("h_oneCand_dPhi_HSCP_HLTCaloMET","1 HSCP Cand: dPhi HSCP & HLTCaloMET",50,-3.5,3.5);
-  TH1F* h_oneCand_dPhi_RecoPFMET_RecoCaloMET = new TH1F("h_oneCand_dPhi_RecoPFMET_RecoCaloMET","1 HSCP Cand: dPhi RecoPFMET & RecoCaloMET",50,-3.5,3.5);
-  TH1F* h_oneCand_dPhi_HLTPFMET_HLTCaloMET = new TH1F("h_oneCand_dPhi_HLTPFMET_HLTCaloMET","1 HSCP Cand: dPhi HLTPFMET & HLTCaloMET",50,-3.5,3.5);
-  TH1F* h_oneCand_dPhi_RecoPFMET_HLTPFMET = new TH1F("h_oneCand_dPhi_RecoPFMET_HLTPFMET","1 HSCP Cand: dPhi RecoPFMET & HLTPFMET",50,-3.5,3.5);
-  TH1F* h_oneCand_dPhi_RecoCaloMET_HLTCaloMET = new TH1F("h_oneCand_dPhi_RecoCaloMET_HLTCaloMET","1 HSCP Cand: dPhi RecoCaloMET & HLTCaloMET",50,-3.5,3.5);
+  TH1F* h_oneCand_dPhi_HSCP_RecoPFMET = new TH1F("h_oneCand_dPhi_HSCP_RecoPFMET","1 HSCP Cand: dPhi HSCP & RecoPFMET;delta phi;",50,0,3.5);
+  TH1F* h_oneCand_dPhi_HSCP_RecoCaloMET = new TH1F("h_oneCand_dPhi_HSCP_RecoCaloMET","1 HSCP Cand: dPhi HSCP & RecoCaloMET;delta phi;",50,0,3.5);
+  TH1F* h_oneCand_dPhi_HSCP_HLTPFMET = new TH1F("h_oneCand_dPhi_HSCP_HLTPFMET","1 HSCP Cand: dPhi HSCP & HLTPFMET;delta phi;",50,0,3.5);
+  TH1F* h_oneCand_dPhi_HSCP_HLTCaloMET = new TH1F("h_oneCand_dPhi_HSCP_HLTCaloMET","1 HSCP Cand: dPhi HSCP & HLTCaloMET;delta phi;",50,0,3.5);
+  TH1F* h_oneCand_dPhi_RecoPFMET_RecoCaloMET = new TH1F("h_oneCand_dPhi_RecoPFMET_RecoCaloMET","1 HSCP Cand: dPhi RecoPFMET & RecoCaloMET;delta phi;",50,0,3.5);
+  TH1F* h_oneCand_dPhi_HLTPFMET_HLTCaloMET = new TH1F("h_oneCand_dPhi_HLTPFMET_HLTCaloMET","1 HSCP Cand: dPhi HLTPFMET & HLTCaloMET;delta phi;",50,0,3.5);
+  TH1F* h_oneCand_dPhi_RecoPFMET_HLTPFMET = new TH1F("h_oneCand_dPhi_RecoPFMET_HLTPFMET","1 HSCP Cand: dPhi RecoPFMET & HLTPFMET;delta phi;",50,0,3.5);
+  TH1F* h_oneCand_dPhi_RecoCaloMET_HLTCaloMET = new TH1F("h_oneCand_dPhi_RecoCaloMET_HLTCaloMET","1 HSCP Cand: dPhi RecoCaloMET & HLTCaloMET;delta phi;",50,0,3.5);
 
-  TH1F* h_twoCand_dPhi_HSCP1_HSCP2 = new TH1F("h_twoCand_dPhi_HSCP1_HSCP2","2 HSCP Cand: dPhi HSCP1 & HSCP2",50,-3.5,3.5);
-  TH1F* h_twoCand_dPhi_HSCP1_RecoPFMET = new TH1F("h_twoCand_dPhi_HSCP1_RecoPFMET","2 HSCP Cand: dPhi HSCP1 & RecoPFMET",50,-3.5,3.5);
-  TH1F* h_twoCand_dPhi_HSCP2_RecoPFMET = new TH1F("h_twoCand_dPhi_HSCP2_RecoPFMET","2 HSCP Cand: dPhi HSCP2 & RecoPFMET",50,-3.5,3.5);
-  TH1F* h_twoCand_dPhi_HSCP1_RecoCaloMET = new TH1F("h_twoCand_dPhi_HSCP1_RecoCaloMET","2 HSCP Cand: dPhi HSCP1 & RecoCaloMET",50,-3.5,3.5);
-  TH1F* h_twoCand_dPhi_HSCP1_HLTPFMET = new TH1F("h_twoCand_dPhi_HSCP1_HLTPFMET","2 HSCP Cand: dPhi HSCP1 & HLTPFMET",50,-3.5,3.5);
-  TH1F* h_twoCand_dPhi_HSCP1_HLTCaloMET = new TH1F("h_twoCand_dPhi_HSCP1_HLTCaloMET","2 HSCP Cand: dPhi HSCP1 & HLTCaloMET",50,-3.5,3.5);
-  TH1F* h_twoCand_dPhi_RecoPFMET_RecoCaloMET = new TH1F("h_twoCand_dPhi_RecoPFMET_RecoCaloMET","2 HSCP Cand: dPhi RecoPFMET & RecoCaloMET",50,-3.5,3.5);
-  TH1F* h_twoCand_dPhi_HLTPFMET_HLTCaloMET = new TH1F("h_twoCand_dPhi_HLTPFMET_HLTCaloMET","2 HSCP Cand: dPhi HLTPFMET & HLTCaloMET",50,-3.5,3.5);
-  TH1F* h_twoCand_dPhi_RecoPFMET_HLTPFMET = new TH1F("h_twoCand_dPhi_RecoPFMET_HLTPFMET","2 HSCP Cand: dPhi RecoPFMET & HLTPFMET",50,-3.5,3.5);
-  TH1F* h_twoCand_dPhi_RecoCaloMET_HLTCaloMET = new TH1F("h_twoCand_dPhi_RecoCaloMET_HLTCaloMET","2 HSCP Cand: dPhi RecoCaloMET & HLTCaloMET",50,-3.5,3.5);
+  TH1F* h_oneCand_dPhi_HSCP_RecoCaloMET_HSCPPFMETdPhiPi = new TH1F("h_oneCand_dPhi_HSCP_RecoCaloMET_HSCPPFMETdPhiPi","1 HSCP Cand: dPhi HSCP & RecoCaloMET for dPhi > 2.8 HSCP & PFMET;delta phi;",50,0,3.5);
+  TH1F* h_oneCand_dPhi_HSCP_RecoCaloMET_HSCPPFMETdPhiZero = new TH1F("h_oneCand_dPhi_HSCP_RecoCaloMET_HSCPPFMETdPhiZero","1 HSCP Cand: dPhi HSCP & RecoCaloMET for dPhi < 0.34 HSCP & PFMET;delta phi;",50,0,3.5);
+  TH1F* h_oneCand_dPhi_RecoPFMET_RecoCaloMET_HSCPPFMETdPhiPi = new TH1F("h_oneCand_dPhi_RecoPFMET_RecoCaloMET_HSCPPFMETdPhiPi","1 HSCP Cand: dPhi RecoPFMET & RecoCaloMET for dPhi > 2.8 HSCP & PFMET;delta phi;",50,0,3.5);
+  TH1F* h_oneCand_dPhi_RecoPFMET_RecoCaloMET_HSCPPFMETdPhiZero = new TH1F("h_oneCand_dPhi_RecoPFMET_RecoCaloMET_HSCPPFMETdPhiZero","1 HSCP Cand: dPhi RecoPFMET & RecoCaloMET for dPhi < 0.34 HSCP & PFMET;delta phi;",50,0,3.5);
+  TH2F* h_oneCand_dPhi_HSCP_RecoPFMET_vs_RecoPFMET = new TH2F("h_oneCand_dPhi_HSCP_RecoPFMET_vs_RecoPFMET","1 HSCP Cand: RecoPFMET vs dPhi(HSCP, RecoPFMET);delta phi;RecoPFMET [GeV]",50,0,3.5,50,0,2000);
+  TH2F* h_oneCand_dPhi_HSCP_RecoPFMET_vs_RecoCaloMET = new TH2F("h_oneCand_dPhi_HSCP_RecoPFMET_vs_RecoCaloMET","1 HSCP Cand: dPhi HSCP & RecoPFMET vs RecoCaloMET;delta phi;",50,0,3.5,50,0,2000);
+  TH2F* h_oneCand_dPhi_HSCP_RecoCaloMET_vs_RecoPFMET = new TH2F("h_oneCand_dPhi_HSCP_RecoCaloMET_vs_RecoPFMET","1 HSCP Cand: dPhi HSCP & RecoCaloMET vs RecoPFMET;delta phi;",50,0,3.5,50,0,2000);
+  TH2F* h_oneCand_dPhi_HSCP_RecoCaloMET_vs_RecoCaloMET = new TH2F("h_oneCand_dPhi_HSCP_RecoCaloMET_vs_RecoCaloMET","1 HSCP Cand: dPhi HSCP & RecoCaloMET vs RecoCaloMET;delta phi;",50,0,3.5,50,0,2000);
+
+  TH2F* h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET = new TH2F("h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET","1 HSCP Cand: dPhi(HSCP,RecoCaloMET) vs dPhi(HSCP,RecoPFMET);delta phi(HSCP,RecoPFMET);dPhi(HSCP,RecoCaloMET)",50,0,3.5,50,0,3.5);
+  TH2F* h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_pt0to500 = new TH2F("h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_pt0to500","1 HSCP Cand: dPhi(HSCP,RecoCaloMET) vs dPhi(HSCP,RecoPFMET) for HSCP pT < 500;delta phi(HSCP,RecoPFMET);dPhi(HSCP,RecoCaloMET)",50,0,3.5,50,0,3.5);
+  TH2F* h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_pt500to1000 = new TH2F("h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_pt500to1000","1 HSCP Cand: dPhi(HSCP,RecoCaloMET) vs dPhi(HSCP,RecoPFMET) for 500 < HSCP pT < 1000;delta phi(HSCP,RecoPFMET);dPhi(HSCP,RecoCaloMET)",50,0,3.5,50,0,3.5);
+  TH2F* h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_pt1000to = new TH2F("h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_pt1000to","1 HSCP Cand: dPhi(HSCP,RecoCaloMET) vs dPhi(HSCP,RecoPFMET) for HSCP pT > 1000;delta phi(HSCP,RecoPFMET);dPhi(HSCP,RecoCaloMET)",50,0,3.5,50,0,3.5);
+  TH2F* h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_calomet0to100 = new TH2F("h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_calomet0to100","1 HSCP Cand: dPhi(HSCP,RecoCaloMET) vs dPhi(HSCP,RecoPFMET) for RecoCaloMET < 100;delta phi(HSCP,RecoPFMET);dPhi(HSCP,RecoCaloMET)",50,0,3.5,50,0,3.5);
+  TH2F* h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_calomet100to500 = new TH2F("h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_calomet100to500","1 HSCP Cand: dPhi(HSCP,RecoCaloMET) vs dPhi(HSCP,RecoPFMET) for 100 < RecoCaloMET < 500;delta phi(HSCP,RecoPFMET);dPhi(HSCP,RecoCaloMET)",50,0,3.5,50,0,3.5);
+  TH2F* h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_calomet500to = new TH2F("h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_calomet500to","1 HSCP Cand: dPhi(HSCP,RecoCaloMET) vs dPhi(HSCP,RecoPFMET) for RecoCaloMET > 500;delta phi(HSCP,RecoPFMET);dPhi(HSCP,RecoCaloMET)",50,0,3.5,50,0,3.5);
+  TH2F* h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_pfmet0to100 = new TH2F("h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_pfmet0to100","1 HSCP Cand: dPhi(HSCP,RecoCaloMET) vs dPhi(HSCP,RecoPFMET) for RecoPFMET < 100;delta phi(HSCP,RecoPFMET);dPhi(HSCP,RecoCaloMET)",50,0,3.5,50,0,3.5);
+  TH2F* h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_pfmet100to500 = new TH2F("h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_pfmet100to500","1 HSCP Cand: dPhi(HSCP,RecoCaloMET) vs dPhi(HSCP,RecoPFMET) for 100 < RecoPFMET < 500;delta phi(HSCP,RecoPFMET);dPhi(HSCP,RecoCaloMET)",50,0,3.5,50,0,3.5);
+  TH2F* h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_pfmet500to = new TH2F("h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_pfmet500to","1 HSCP Cand: dPhi(HSCP,RecoCaloMET) vs dPhi(HSCP,RecoPFMET) for RecoPFMET > 500;delta phi(HSCP,RecoPFMET);dPhi(HSCP,RecoCaloMET)",50,0,3.5,50,0,3.5);
+
+  TH1F* h_twoCand_dPhi_HSCP1_HSCP2 = new TH1F("h_twoCand_dPhi_HSCP1_HSCP2","2 HSCP Cand: dPhi HSCP1 & HSCP2;delta phi;",50,0,3.5);
+  TH1F* h_twoCand_dPhi_HSCP1_RecoPFMET = new TH1F("h_twoCand_dPhi_HSCP1_RecoPFMET","2 HSCP Cand: dPhi HSCP1 & RecoPFMET;delta phi;",50,0,3.5);
+  TH1F* h_twoCand_dPhi_HSCP2_RecoPFMET = new TH1F("h_twoCand_dPhi_HSCP2_RecoPFMET","2 HSCP Cand: dPhi HSCP2 & RecoPFMET;delta phi;",50,0,3.5);
+  TH1F* h_twoCand_dPhi_HSCP1_RecoCaloMET = new TH1F("h_twoCand_dPhi_HSCP1_RecoCaloMET","2 HSCP Cand: dPhi HSCP1 & RecoCaloMET;delta phi;",50,0,3.5);
+  TH1F* h_twoCand_dPhi_HSCP1_HLTPFMET = new TH1F("h_twoCand_dPhi_HSCP1_HLTPFMET","2 HSCP Cand: dPhi HSCP1 & HLTPFMET;delta phi;",50,0,3.5);
+  TH1F* h_twoCand_dPhi_HSCP1_HLTCaloMET = new TH1F("h_twoCand_dPhi_HSCP1_HLTCaloMET","2 HSCP Cand: dPhi HSCP1 & HLTCaloMET;delta phi;",50,0,3.5);
+  TH1F* h_twoCand_dPhi_RecoPFMET_RecoCaloMET = new TH1F("h_twoCand_dPhi_RecoPFMET_RecoCaloMET","2 HSCP Cand: dPhi RecoPFMET & RecoCaloMET;delta phi;",50,0,3.5);
+  TH1F* h_twoCand_dPhi_HLTPFMET_HLTCaloMET = new TH1F("h_twoCand_dPhi_HLTPFMET_HLTCaloMET","2 HSCP Cand: dPhi HLTPFMET & HLTCaloMET;delta phi;",50,0,3.5);
+  TH1F* h_twoCand_dPhi_RecoPFMET_HLTPFMET = new TH1F("h_twoCand_dPhi_RecoPFMET_HLTPFMET","2 HSCP Cand: dPhi RecoPFMET & HLTPFMET;delta phi;",50,0,3.5);
+  TH1F* h_twoCand_dPhi_RecoCaloMET_HLTCaloMET = new TH1F("h_twoCand_dPhi_RecoCaloMET_HLTCaloMET","2 HSCP Cand: dPhi RecoCaloMET & HLTCaloMET;delta phi;",50,0,3.5);
 
 
 
@@ -318,6 +339,15 @@ void HSCPAnalyzer_METStudies::Analyze(bool isData, int options, string outputfil
 	tree->HSCP_nPixelHit[tree->nHSCP] = NOPH->at(i);
 	tree->HSCP_nHits[tree->nHSCP] = NOM->at(i);
 	tree->HSCP_isHighPurity[tree->nHSCP] = isHighPurity->at(i);
+	if(tree->HSCP_isHighPurity[tree->nHSCP] > 1) {
+	  std::cout << "=====" << std::endl;
+	  std::cout << "left side: " << tree->HSCP_isHighPurity[tree->nHSCP] << std::endl;
+	  std::cout << "right side: " << isHighPurity->at(i) << std::endl;
+	} if(isHighPurity->at(i) > 1) {
+	  std::cout << "=====" << std::endl;
+	  std::cout << "left side: " << tree->HSCP_isHighPurity[tree->nHSCP] << std::endl;
+	  std::cout << "right side: " << isHighPurity->at(i) << std::endl;
+	}
 	tree->HSCP_fracValidHits[tree->nHSCP] = FOVH->at(i);
 	tree->HSCP_EOverP[tree->nHSCP] = EoverP->at(i);
 	tree->HSCP_chi2[tree->nHSCP] = Chi2->at(i);
@@ -334,7 +364,7 @@ void HSCPAnalyzer_METStudies::Analyze(bool isData, int options, string outputfil
 	// explicitly defining preselections
 	if (
 	    Pt->at(i) > 55 &&
-	    eta->at(i) < 1 && eta->at(i) > -1 &&
+	    eta->at(i) < 2.1 && eta->at(i) > -2.1 &&
 	    isHighPurity->at(i) == true &&
 	    NOPH->at(i) >= 2 &&
 	    Chi2->at(i)/Ndof->at(i) < 5 &&
@@ -482,11 +512,70 @@ void HSCPAnalyzer_METStudies::Analyze(bool isData, int options, string outputfil
       // start filling other histograms
       if(total_NCandPassPres == 1) {
 
-	int phi_index = index_PassPres[0];
-	float dPhi_HSCP_RecoPFMET = phi->at(phi_index) - RecoPFMET_phi;
-	float dPhi_HSCP_RecoCaloMET = phi->at(phi_index) - RecoCaloMET_phi;
-	float dPhi_HSCP_HLTPFMET = phi->at(phi_index) - HLTPFMET_phi;
-	float dPhi_HSCP_HLTCaloMET = phi->at(phi_index) - HLTCaloMET_phi;
+	int HSCP_index = index_PassPres[0];
+
+	float HSCP_pt_value = Pt->at(HSCP_index);
+	h_HSCP_pt_passPres->Fill(HSCP_pt_value);
+
+	float dPhi_HSCP_RecoPFMET_value = abs(RazorAnalyzer::deltaPhi(phi->at(HSCP_index),RecoPFMET_phi));
+	float dPhi_HSCP_RecoCaloMET_value = abs(RazorAnalyzer::deltaPhi(phi->at(HSCP_index),RecoCaloMET_phi));
+	float dPhi_HSCP_HLTPFMET_value = abs(RazorAnalyzer::deltaPhi(phi->at(HSCP_index),HLTPFMET_phi));
+	float dPhi_HSCP_HLTCaloMET_value = abs(RazorAnalyzer::deltaPhi(phi->at(HSCP_index),HLTCaloMET_phi));
+	float dPhi_RecoPFMET_RecoCaloMET_value = abs(RazorAnalyzer::deltaPhi(RecoPFMET_phi, RecoCaloMET_phi));
+	float dPhi_HLTPFMET_HLTCaloMET_value = abs(RazorAnalyzer::deltaPhi(HLTPFMET_phi, HLTCaloMET_phi));
+	float dPhi_RecoPFMET_HLTPFMET_value = abs(RazorAnalyzer::deltaPhi(RecoPFMET_phi, HLTPFMET_phi));
+	float dPhi_RecoCaloMET_HLTCaloMET_value = abs(RazorAnalyzer::deltaPhi(RecoCaloMET_phi, HLTCaloMET_phi));
+
+	h_oneCand_dPhi_HSCP_RecoPFMET->Fill(dPhi_HSCP_RecoPFMET_value);
+	h_oneCand_dPhi_HSCP_RecoCaloMET->Fill(dPhi_HSCP_RecoCaloMET_value);
+	h_oneCand_dPhi_HSCP_HLTPFMET->Fill(dPhi_HSCP_HLTPFMET_value);
+	h_oneCand_dPhi_HSCP_HLTCaloMET->Fill(dPhi_HSCP_HLTCaloMET_value);
+	h_oneCand_dPhi_RecoPFMET_RecoCaloMET->Fill(dPhi_RecoPFMET_RecoCaloMET_value);
+	h_oneCand_dPhi_HLTPFMET_HLTCaloMET->Fill(dPhi_HLTPFMET_HLTCaloMET_value);
+	h_oneCand_dPhi_RecoPFMET_HLTPFMET->Fill(dPhi_RecoPFMET_HLTPFMET_value);
+	h_oneCand_dPhi_RecoCaloMET_HLTCaloMET->Fill(dPhi_RecoCaloMET_HLTCaloMET_value);
+
+	if(dPhi_HSCP_RecoPFMET_value > 2.8) {
+	  h_oneCand_dPhi_HSCP_RecoCaloMET_HSCPPFMETdPhiPi->Fill(dPhi_HSCP_RecoCaloMET_value);
+	  h_oneCand_dPhi_RecoPFMET_RecoCaloMET_HSCPPFMETdPhiPi->Fill(dPhi_RecoPFMET_RecoCaloMET_value);
+	} if(dPhi_HSCP_RecoPFMET_value < 0.34) {
+	  h_oneCand_dPhi_HSCP_RecoCaloMET_HSCPPFMETdPhiZero->Fill(dPhi_HSCP_RecoCaloMET_value);
+	  h_oneCand_dPhi_RecoPFMET_RecoCaloMET_HSCPPFMETdPhiZero->Fill(dPhi_RecoPFMET_RecoCaloMET_value);
+	}
+
+	h_oneCand_dPhi_HSCP_RecoPFMET_vs_RecoPFMET->Fill(dPhi_HSCP_RecoPFMET_value, RecoPFMET);
+	h_oneCand_dPhi_HSCP_RecoPFMET_vs_RecoCaloMET->Fill(dPhi_HSCP_RecoPFMET_value, RecoCaloMET);
+	h_oneCand_dPhi_HSCP_RecoCaloMET_vs_RecoPFMET->Fill(dPhi_HSCP_RecoCaloMET_value, RecoPFMET);
+	h_oneCand_dPhi_HSCP_RecoCaloMET_vs_RecoCaloMET->Fill(dPhi_HSCP_RecoCaloMET_value, RecoCaloMET);
+
+	h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET->Fill(dPhi_HSCP_RecoPFMET_value, dPhi_HSCP_RecoCaloMET_value);
+	if(HSCP_pt_value < 500) {
+	  h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_pt0to500->Fill(dPhi_HSCP_RecoPFMET_value, dPhi_HSCP_RecoCaloMET_value);
+	} if(HSCP_pt_value > 500 && HSCP_pt_value < 1000) {
+	  h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_pt500to1000->Fill(dPhi_HSCP_RecoPFMET_value, dPhi_HSCP_RecoCaloMET_value);
+	} if(HSCP_pt_value > 1000) {
+	  h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_pt1000to->Fill(dPhi_HSCP_RecoPFMET_value, dPhi_HSCP_RecoCaloMET_value);
+	} if(RecoCaloMET < 100) {
+	  h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_calomet0to100->Fill(dPhi_HSCP_RecoPFMET_value, dPhi_HSCP_RecoCaloMET_value);
+	} if(RecoCaloMET > 100 && RecoCaloMET < 500) {
+	  h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_calomet100to500->Fill(dPhi_HSCP_RecoPFMET_value, dPhi_HSCP_RecoCaloMET_value);
+	} if(RecoCaloMET > 500) {
+	  h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_calomet500to->Fill(dPhi_HSCP_RecoPFMET_value, dPhi_HSCP_RecoCaloMET_value);
+	} if(RecoPFMET < 100) {
+	  h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_pfmet0to100->Fill(dPhi_HSCP_RecoPFMET_value, dPhi_HSCP_RecoCaloMET_value);
+	} if(RecoPFMET > 100 && RecoPFMET < 500) {
+	  h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_pfmet100to500->Fill(dPhi_HSCP_RecoPFMET_value, dPhi_HSCP_RecoCaloMET_value);
+	} if(RecoPFMET > 500) {
+	  h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_pfmet500to->Fill(dPhi_HSCP_RecoPFMET_value, dPhi_HSCP_RecoCaloMET_value);
+	}
+
+
+	
+	/*
+	float dPhi_HSCP_RecoPFMET = phi->at(HSCP_index) - RecoPFMET_phi;
+	float dPhi_HSCP_RecoCaloMET = phi->at(HSCP_index) - RecoCaloMET_phi;
+	float dPhi_HSCP_HLTPFMET = phi->at(HSCP_index) - HLTPFMET_phi;
+	float dPhi_HSCP_HLTCaloMET = phi->at(HSCP_index) - HLTCaloMET_phi;
 	float dPhi_RecoPFMET_RecoCaloMET = RecoPFMET_phi - RecoCaloMET_phi;
 	float dPhi_HLTPFMET_HLTCaloMET = HLTPFMET_phi - HLTCaloMET_phi;
 	float dPhi_RecoPFMET_HLTPFMET = RecoPFMET_phi - HLTPFMET_phi;
@@ -555,20 +644,41 @@ void HSCPAnalyzer_METStudies::Analyze(bool isData, int options, string outputfil
 	} else {
 	  h_oneCand_dPhi_RecoCaloMET_HLTCaloMET->Fill(dPhi_RecoCaloMET_HLTCaloMET);
 	}
+	*/
 	
-	h_oneCand_dPhi_HSCP_RecoPFMET->Fill(RazorAnalyzer::deltaPhi(RecoPFMET_phi, RecoCaloMET_phi));
       }
 
       if(total_NCandPassPres == 2) {
 
-	int phi_index1 = index_PassPres[0];
-	int phi_index2 = index_PassPres[1];
-	float dPhi_HSCP1_HSCP2 = phi->at(phi_index1) - phi->at(phi_index2);
-	float dPhi_HSCP1_RecoPFMET = phi->at(phi_index1) - RecoPFMET_phi;
-	float dPhi_HSCP2_RecoPFMET = phi->at(phi_index2) - RecoPFMET_phi;
-	float dPhi_HSCP1_RecoCaloMET = phi->at(phi_index1) - RecoCaloMET_phi;
-	float dPhi_HSCP1_HLTPFMET = phi->at(phi_index1) - HLTPFMET_phi;
-	float dPhi_HSCP1_HLTCaloMET = phi->at(phi_index1) - HLTCaloMET_phi;
+	int HSCP_index1 = index_PassPres[0];
+	int HSCP_index2 = index_PassPres[1];
+
+	float HSCP_pt_value1 = Pt->at(HSCP_index1);
+	float HSCP_pt_value2 = Pt->at(HSCP_index2);
+	h_HSCP_pt_passPres->Fill(HSCP_pt_value1);
+	h_HSCP_pt_passPres->Fill(HSCP_pt_value2);
+
+	h_twoCand_dPhi_HSCP1_HSCP2->Fill(abs(RazorAnalyzer::deltaPhi(phi->at(HSCP_index1), phi->at(HSCP_index2))));
+	h_twoCand_dPhi_HSCP1_RecoPFMET->Fill(abs(RazorAnalyzer::deltaPhi(phi->at(HSCP_index1), RecoPFMET_phi)));
+	h_twoCand_dPhi_HSCP2_RecoPFMET->Fill(abs(RazorAnalyzer::deltaPhi(phi->at(HSCP_index2), RecoPFMET_phi)));
+	h_twoCand_dPhi_HSCP1_RecoCaloMET->Fill(abs(RazorAnalyzer::deltaPhi(phi->at(HSCP_index1), RecoCaloMET_phi)));
+	h_twoCand_dPhi_HSCP1_HLTPFMET->Fill(abs(RazorAnalyzer::deltaPhi(phi->at(HSCP_index1), HLTPFMET_phi)));
+	h_twoCand_dPhi_HSCP1_HLTCaloMET->Fill(abs(RazorAnalyzer::deltaPhi(phi->at(HSCP_index1), HLTCaloMET_phi)));
+	h_twoCand_dPhi_RecoPFMET_RecoCaloMET->Fill(abs(RazorAnalyzer::deltaPhi(RecoPFMET_phi, RecoCaloMET_phi)));
+	h_twoCand_dPhi_HLTPFMET_HLTCaloMET->Fill(abs(RazorAnalyzer::deltaPhi(HLTPFMET_phi, HLTCaloMET_phi)));
+	h_twoCand_dPhi_RecoPFMET_HLTPFMET->Fill(abs(RazorAnalyzer::deltaPhi(RecoPFMET_phi, HLTPFMET_phi)));
+	h_twoCand_dPhi_RecoCaloMET_HLTCaloMET->Fill(abs(RazorAnalyzer::deltaPhi(RecoCaloMET_phi, HLTCaloMET_phi)));
+
+
+
+
+	/*
+	float dPhi_HSCP1_HSCP2 = phi->at(HSCP_index1) - phi->at(HSCP_index2);
+	float dPhi_HSCP1_RecoPFMET = phi->at(HSCP_index1) - RecoPFMET_phi;
+	float dPhi_HSCP2_RecoPFMET = phi->at(HSCP_index2) - RecoPFMET_phi;
+	float dPhi_HSCP1_RecoCaloMET = phi->at(HSCP_index1) - RecoCaloMET_phi;
+	float dPhi_HSCP1_HLTPFMET = phi->at(HSCP_index1) - HLTPFMET_phi;
+	float dPhi_HSCP1_HLTCaloMET = phi->at(HSCP_index1) - HLTCaloMET_phi;
 	float dPhi_RecoPFMET_RecoCaloMET = RecoPFMET_phi - RecoCaloMET_phi;
 	float dPhi_HLTPFMET_HLTCaloMET = HLTPFMET_phi - HLTCaloMET_phi;
 	float dPhi_RecoPFMET_HLTPFMET = RecoPFMET_phi - HLTPFMET_phi;
@@ -653,7 +763,7 @@ void HSCPAnalyzer_METStudies::Analyze(bool isData, int options, string outputfil
 	} else {
 	  h_twoCand_dPhi_RecoCaloMET_HLTCaloMET->Fill(dPhi_RecoCaloMET_HLTCaloMET);
 	}
-
+	*/
 
       }
 
@@ -684,6 +794,7 @@ void HSCPAnalyzer_METStudies::Analyze(bool isData, int options, string outputfil
       h_RecoPFMET_noPres_passMETOrMuon->Write();
       h_HLTCaloMET_noPres_passMETOrMuon->Write();
       h_HLTPFMET_noPres_passMETOrMuon->Write();
+      h_HSCP_pt_passPres->Write();
       h_RecoCaloMET_passPres->Write();
       h_RecoPFMET_passPres->Write();
       h_HLTCaloMET_passPres->Write();
@@ -725,6 +836,24 @@ void HSCPAnalyzer_METStudies::Analyze(bool isData, int options, string outputfil
       h_oneCand_dPhi_HLTPFMET_HLTCaloMET->Write();
       h_oneCand_dPhi_RecoPFMET_HLTPFMET->Write();
       h_oneCand_dPhi_RecoCaloMET_HLTCaloMET->Write();
+      h_oneCand_dPhi_HSCP_RecoCaloMET_HSCPPFMETdPhiPi->Write();
+      h_oneCand_dPhi_HSCP_RecoCaloMET_HSCPPFMETdPhiZero->Write();
+      h_oneCand_dPhi_RecoPFMET_RecoCaloMET_HSCPPFMETdPhiPi->Write();
+      h_oneCand_dPhi_RecoPFMET_RecoCaloMET_HSCPPFMETdPhiZero->Write();
+      h_oneCand_dPhi_HSCP_RecoPFMET_vs_RecoPFMET->Write();
+      h_oneCand_dPhi_HSCP_RecoPFMET_vs_RecoCaloMET->Write();
+      h_oneCand_dPhi_HSCP_RecoCaloMET_vs_RecoPFMET->Write();
+      h_oneCand_dPhi_HSCP_RecoCaloMET_vs_RecoCaloMET->Write();
+      h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET->Write();
+      h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_pt0to500->Write();
+      h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_pt500to1000->Write();
+      h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_pt1000to->Write();
+      h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_calomet0to100->Write();
+      h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_calomet100to500->Write();
+      h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_calomet500to->Write();
+      h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_pfmet0to100->Write();
+      h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_pfmet100to500->Write();
+      h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_pfmet500to->Write();
       h_twoCand_dPhi_HSCP1_HSCP2->Write();
       h_twoCand_dPhi_HSCP1_RecoPFMET->Write();
       h_twoCand_dPhi_HSCP2_RecoPFMET->Write();
@@ -762,6 +891,7 @@ void HSCPAnalyzer_METStudies::Analyze(bool isData, int options, string outputfil
       h_RecoPFMET_noPres_passMETOrMuon->Write();
       h_HLTCaloMET_noPres_passMETOrMuon->Write();
       h_HLTPFMET_noPres_passMETOrMuon->Write();
+      h_HSCP_pt_passPres->Write();
       h_RecoCaloMET_passPres->Write();
       h_RecoPFMET_passPres->Write();
       h_HLTCaloMET_passPres->Write();
@@ -803,6 +933,24 @@ void HSCPAnalyzer_METStudies::Analyze(bool isData, int options, string outputfil
       h_oneCand_dPhi_HLTPFMET_HLTCaloMET->Write();
       h_oneCand_dPhi_RecoPFMET_HLTPFMET->Write();
       h_oneCand_dPhi_RecoCaloMET_HLTCaloMET->Write();
+      h_oneCand_dPhi_HSCP_RecoCaloMET_HSCPPFMETdPhiPi->Write();
+      h_oneCand_dPhi_HSCP_RecoCaloMET_HSCPPFMETdPhiZero->Write();
+      h_oneCand_dPhi_RecoPFMET_RecoCaloMET_HSCPPFMETdPhiPi->Write();
+      h_oneCand_dPhi_RecoPFMET_RecoCaloMET_HSCPPFMETdPhiZero->Write();
+      h_oneCand_dPhi_HSCP_RecoPFMET_vs_RecoPFMET->Write();
+      h_oneCand_dPhi_HSCP_RecoPFMET_vs_RecoCaloMET->Write();
+      h_oneCand_dPhi_HSCP_RecoCaloMET_vs_RecoPFMET->Write();
+      h_oneCand_dPhi_HSCP_RecoCaloMET_vs_RecoCaloMET->Write();
+      h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET->Write();
+      h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_pt0to500->Write();
+      h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_pt500to1000->Write();
+      h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_pt1000to->Write();
+      h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_calomet0to100->Write();
+      h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_calomet100to500->Write();
+      h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_calomet500to->Write();
+      h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_pfmet0to100->Write();
+      h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_pfmet100to500->Write();
+      h_oneCand_dPhi_HSCP_RecoCaloMET_vs_dPhi_HSCP_RecoPFMET_pfmet500to->Write();
       h_twoCand_dPhi_HSCP1_HSCP2->Write();
       h_twoCand_dPhi_HSCP1_RecoPFMET->Write();
       h_twoCand_dPhi_HSCP2_RecoPFMET->Write();
