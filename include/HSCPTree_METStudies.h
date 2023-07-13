@@ -14,6 +14,7 @@
 #define MUON_PT_CUT 20
 #define N_MAX_GPARTICLES 5000
 #define N_MAX_HSCP 10
+#define N_MAX_MUONS 100
 
 #include <iostream>
 #include <string>
@@ -47,6 +48,7 @@ public:
   UInt_t  runNum, lumiSec, evtNum;
 
   float weight, pileupWeight;
+  int n_pv;
 
   bool HLT_Mu50, HLT_PFMET120_PFMHT120_IDTight, HLT_PFHT500_PFMET100_PFMHT100_IDTight, HLT_PFMETNoMu120_PFMHTNoMu120_IDTight_PFHT60, HLT_MET105_IsoTrk50;
 
@@ -58,6 +60,7 @@ public:
 
   // HSCP
   int nHSCP;
+  float HSCP_charge[N_MAX_HSCP];
   float HSCP_pt[N_MAX_HSCP];
   float HSCP_eta[N_MAX_HSCP];
   float HSCP_phi[N_MAX_HSCP];
@@ -77,6 +80,57 @@ public:
   float HSCP_dZ[N_MAX_HSCP];
   float HSCP_dXY[N_MAX_HSCP];
   bool HSCP_passPres[N_MAX_HSCP];
+  bool HSCP_isPFMuon[N_MAX_HSCP];
+  bool HSCP_isMuon[N_MAX_HSCP];
+  bool HSCP_isPhoton[N_MAX_HSCP];
+  bool HSCP_isElectron[N_MAX_HSCP];
+  bool HSCP_isChHadron[N_MAX_HSCP];
+  bool HSCP_isNeutHadron[N_MAX_HSCP];
+  bool HSCP_isPfTrack[N_MAX_HSCP];
+  bool HSCP_isUndefined[N_MAX_HSCP];
+  float HSCP_ECAL_energy[N_MAX_HSCP];
+  float HSCP_HCAL_energy[N_MAX_HSCP];
+  float HSCP_TOF[N_MAX_HSCP];
+
+
+  //Jets
+  int nJets;
+  float total_HT;
+  float total_HT_passJetID;
+  float Jets_pt[N_MAX_JETS];
+  float Jets_eta[N_MAX_JETS];
+  float Jets_phi[N_MAX_JETS];
+  float Jets_mass[N_MAX_JETS];
+  float Jets_energy[N_MAX_JETS];
+  float Jets_chargedEmEnergyFraction[N_MAX_JETS];
+  float Jets_neutralEmEnergyFraction[N_MAX_JETS];
+  float Jets_chargedHadronEnergyFraction[N_MAX_JETS];
+  float Jets_neutralHadronEnergyFraction[N_MAX_JETS];
+  float Jets_muonEnergyFraction[N_MAX_JETS];
+  int Jets_chargedMultiplicity[N_MAX_JETS];
+  int Jets_neutralMultiplicity[N_MAX_JETS];
+  float Jets_jetArea[N_MAX_JETS];
+  float Jets_pileupE[N_MAX_JETS];
+  bool Jets_passJetID[N_MAX_JETS];
+
+  //gParticles
+  int ngParticles;
+  int gParticles_Id[N_MAX_GPARTICLES];
+  int gParticles_Status[N_MAX_GPARTICLES];
+  float gParticles_E[N_MAX_GPARTICLES];
+  float gParticles_Pt[N_MAX_GPARTICLES];
+  float gParticles_Eta[N_MAX_GPARTICLES];
+  float gParticles_Phi[N_MAX_GPARTICLES];
+  float gParticles_Beta[N_MAX_GPARTICLES];
+  int gParticles_Charge[N_MAX_GPARTICLES];
+  int gParticles_MotherId[N_MAX_GPARTICLES];
+
+  //muons
+  int nMuons;
+  float Muons_Pt[N_MAX_MUONS];
+  float Muons_Eta[N_MAX_MUONS];
+  float Muons_Phi[N_MAX_MUONS];
+  int Muons_Type[N_MAX_MUONS];
 
   void InitVariables();
   void InitTree();

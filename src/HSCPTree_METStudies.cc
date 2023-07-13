@@ -16,38 +16,91 @@ void HSCPTree_METStudies::InitVariables()
 {
 
   //edit here to add branches
-  runNum=0; lumiSec=0; evtNum=0; weight = 0;
+  runNum=0; lumiSec=0; evtNum=0; weight=0; n_pv=0;
   HLT_Mu50 = false; HLT_PFMET120_PFMHT120_IDTight = false; HLT_PFHT500_PFMET100_PFMHT100_IDTight = false;
   HLT_PFMETNoMu120_PFMHTNoMu120_IDTight_PFHT60 = false; HLT_MET105_IsoTrk50 = false;
   RecoCaloMET = -999; RecoCaloMET_phi = -999; RecoPFMET = -999; RecoPFMET_phi = -999; RecoPFMHT = -999; HLTCaloMET = -999; HLTCaloMET_phi = -999; HLTCaloMET_sigf = -999; HLTCaloMETClean = -999; HLTCaloMETClean_phi = -999; HLTCaloMETClean_sigf = -999; HLTCaloMHT = -999; HLTCaloMHT_phi = -999; HLTCaloMHT_sigf = -999; HLTPFMET = -999; HLTPFMET_phi = -999; HLTPFMET_sigf = -999; HLTPFMHT = -999; HLTPFMHT_phi = -999; HLTPFMHT_sigf = -999;
   passPreselection = false;
   NCandPassPres = -999;
-
+  
   nHSCP = 0;
   pileupWeight = 0;
-  for( int i = 0; i < N_MAX_HSCP; i++ )
-  {
-   HSCP_pt[i] = -999.;
-   HSCP_eta[i] = -999.;
-   HSCP_phi[i] = -999.;
-   HSCP_nPixelHit[i] = -999;
-   HSCP_nHits[i] = -999;
-   HSCP_isHighPurity[i] = false;
-   HSCP_fracValidHits[i] = -999.;
-   HSCP_EOverP[i] = -999.;
-   HSCP_chi2[i] = -999.;
-   HSCP_nDof[i] = -999;
-   HSCP_track_genTrackMiniIsoSumPt[i] = -999.;
-   HSCP_pfMiniIso_relative[i] = -999.;
-   HSCP_probQ[i] = -999.;
-   HSCP_ptErr[i] = -999.;
-   HSCP_ias_StripOnly[i] = -999.;
-   HSCP_mass[i] = -999.;
-   HSCP_dZ[i] = -999.;
-   HSCP_dXY[i] = -999.;
-   HSCP_passPres[i] = false;
+  for( int i = 0; i < N_MAX_HSCP; i++ ) {
+    HSCP_charge[i] = -999.;
+    HSCP_pt[i] = -999.;
+    HSCP_eta[i] = -999.;
+    HSCP_phi[i] = -999.;
+    HSCP_nPixelHit[i] = -999;
+    HSCP_nHits[i] = -999;
+    HSCP_isHighPurity[i] = false;
+    HSCP_fracValidHits[i] = -999.;
+    HSCP_EOverP[i] = -999.;
+    HSCP_chi2[i] = -999.;
+    HSCP_nDof[i] = -999;
+    HSCP_track_genTrackMiniIsoSumPt[i] = -999.;
+    HSCP_pfMiniIso_relative[i] = -999.;
+    HSCP_probQ[i] = -999.;
+    HSCP_ptErr[i] = -999.;
+    HSCP_ias_StripOnly[i] = -999.;
+    HSCP_mass[i] = -999.;
+    HSCP_dZ[i] = -999.;
+    HSCP_dXY[i] = -999.;
+    HSCP_passPres[i] = false;
+    HSCP_isPFMuon[i] = false;
+    HSCP_isMuon[i] = false;
+    HSCP_isPhoton[i] = false;
+    HSCP_isElectron[i] = false;
+    HSCP_isChHadron[i] = false;
+    HSCP_isNeutHadron[i] = false;
+    HSCP_isPfTrack[i] = false;
+    HSCP_isUndefined[i] = false;
+    HSCP_ECAL_energy[i] = -999.;
+    HSCP_HCAL_energy[i] = -999.;
+    HSCP_TOF[i] = -999.;
   }
 
+  nJets = 0;
+  total_HT = 0;
+  total_HT_passJetID = 0;
+  for(int i = 0; i < N_MAX_JETS; i++) {
+    Jets_pt[i] = -999.;
+    Jets_eta[i] = -999.;
+    Jets_phi[i] = -999.;
+    Jets_mass[i] = -999.;
+    Jets_energy[i] = -999.;
+    Jets_chargedEmEnergyFraction[i] = -999.;
+    Jets_neutralEmEnergyFraction[i] = -999.;
+    Jets_chargedHadronEnergyFraction[i] = -999.;
+    Jets_neutralHadronEnergyFraction[i] = -999.;
+    Jets_muonEnergyFraction[i] = -999.;
+    Jets_chargedMultiplicity[i] = -999.;
+    Jets_neutralMultiplicity[i] = -999.;
+    Jets_jetArea[i] = -999.;
+    Jets_pileupE[i] = -999.;
+    Jets_passJetID[i] = false;
+  }  
+
+  ngParticles = 0;
+  for(int i = 0; i < N_MAX_GPARTICLES; i++) {
+    gParticles_Id[i] = -999;
+    gParticles_Status[i] = -999;
+    gParticles_E[i] = -999.;
+    gParticles_Pt[i] = -999.;
+    gParticles_Eta[i] = -999.;
+    gParticles_Phi[i] = -999.;
+    gParticles_Beta[i] = -999.;
+    gParticles_Charge[i] = -999;
+    gParticles_MotherId[i] = -999;
+    
+  }
+
+  nMuons = 0;
+  for(int i = 0; i < N_MAX_MUONS; i++) {
+    Muons_Pt[i] = -999.;
+    Muons_Eta[i] = -999.;
+    Muons_Phi[i] = -999.;
+    Muons_Type[i] = -999;
+  }
 
 };
 
@@ -63,6 +116,7 @@ void HSCPTree_METStudies::InitTree()
   tree_->SetBranchAddress("evtNum",      &evtNum);
   tree_->SetBranchAddress("weight",      &weight);
   tree_->SetBranchAddress("pileupWeight",      &pileupWeight);
+  tree_->SetBranchAddress("n_pv",        &n_pv);
   tree_->SetBranchAddress("HLT_Mu50",      &HLT_Mu50);
   tree_->SetBranchAddress("HLT_PFMET120_PFMHT120_IDTight",      &HLT_PFMET120_PFMHT120_IDTight);
   tree_->SetBranchAddress("HLT_PFHT500_PFMET100_PFMHT100_IDTight",      &HLT_PFHT500_PFMET100_PFMHT100_IDTight);
@@ -91,27 +145,76 @@ void HSCPTree_METStudies::InitTree()
   tree_->SetBranchAddress("passPreselection",      &passPreselection);
   tree_->SetBranchAddress("NCandPassPres",    &NCandPassPres);
   tree_->SetBranchAddress("nHSCP",      &nHSCP);
-  tree_->SetBranchAddress("HSCP_pt",      HSCP_pt);
-  tree_->SetBranchAddress("HSCP_eta",      HSCP_eta);
-  tree_->SetBranchAddress("HSCP_phi",      HSCP_phi);
-  tree_->SetBranchAddress("HSCP_nPixelHit",      HSCP_nPixelHit);
-  tree_->SetBranchAddress("HSCP_nHits",      HSCP_nHits);
-  tree_->SetBranchAddress("HSCP_isHighPurity",      HSCP_isHighPurity);
-  tree_->SetBranchAddress("HSCP_fracValidHits",      HSCP_fracValidHits);
-  tree_->SetBranchAddress("HSCP_EOverP",      HSCP_EOverP);
-  tree_->SetBranchAddress("HSCP_chi2",      HSCP_chi2);
-  tree_->SetBranchAddress("HSCP_nDof",      HSCP_nDof);
+  tree_->SetBranchAddress("HSCP_charge",          HSCP_charge);
+  tree_->SetBranchAddress("HSCP_pt",              HSCP_pt);
+  tree_->SetBranchAddress("HSCP_eta",             HSCP_eta);
+  tree_->SetBranchAddress("HSCP_phi",             HSCP_phi);
+  tree_->SetBranchAddress("HSCP_nPixelHit",       HSCP_nPixelHit);
+  tree_->SetBranchAddress("HSCP_nHits",           HSCP_nHits);
+  tree_->SetBranchAddress("HSCP_isHighPurity",    HSCP_isHighPurity);
+  tree_->SetBranchAddress("HSCP_fracValidHits",   HSCP_fracValidHits);
+  tree_->SetBranchAddress("HSCP_EOverP",          HSCP_EOverP);
+  tree_->SetBranchAddress("HSCP_chi2",            HSCP_chi2);
+  tree_->SetBranchAddress("HSCP_nDof",            HSCP_nDof);
   tree_->SetBranchAddress("HSCP_track_genTrackMiniIsoSumPt",      HSCP_track_genTrackMiniIsoSumPt);
   tree_->SetBranchAddress("HSCP_pfMiniIso_relative",      HSCP_pfMiniIso_relative);
-  tree_->SetBranchAddress("HSCP_probQ",      HSCP_probQ);
-  tree_->SetBranchAddress("HSCP_ptErr",      HSCP_ptErr);
-  tree_->SetBranchAddress("HSCP_ias_StripOnly",      HSCP_ias_StripOnly);
-  tree_->SetBranchAddress("HSCP_mass",      HSCP_mass);
-  tree_->SetBranchAddress("HSCP_dZ",      HSCP_dZ);
-  tree_->SetBranchAddress("HSCP_dXY",      HSCP_dXY);
-  tree_->SetBranchAddress("HSCP_passPres", HSCP_passPres);
+  tree_->SetBranchAddress("HSCP_probQ",           HSCP_probQ);
+  tree_->SetBranchAddress("HSCP_ptErr",           HSCP_ptErr);
+  tree_->SetBranchAddress("HSCP_ias_StripOnly",   HSCP_ias_StripOnly);
+  tree_->SetBranchAddress("HSCP_mass",            HSCP_mass);
+  tree_->SetBranchAddress("HSCP_dZ",              HSCP_dZ);
+  tree_->SetBranchAddress("HSCP_dXY",             HSCP_dXY);
+  tree_->SetBranchAddress("HSCP_passPres",        HSCP_passPres);
+  tree_->SetBranchAddress("HSCP_isPFMuon",        HSCP_isPFMuon);
+  tree_->SetBranchAddress("HSCP_isMuon",          HSCP_isMuon);
+  tree_->SetBranchAddress("HSCP_isPhoton",        HSCP_isPhoton);
+  tree_->SetBranchAddress("HSCP_isElectron",      HSCP_isElectron);
+  tree_->SetBranchAddress("HSCP_isChHadron",      HSCP_isChHadron);
+  tree_->SetBranchAddress("HSCP_isNeutHadron",    HSCP_isNeutHadron);
+  tree_->SetBranchAddress("HSCP_isPfTrack",       HSCP_isPfTrack);
+  tree_->SetBranchAddress("HSCP_isUndefined",     HSCP_isUndefined);
+  tree_->SetBranchAddress("HSCP_ECAL_energy",     HSCP_ECAL_energy);
+  tree_->SetBranchAddress("HSCP_HCAL_energy",     HSCP_HCAL_energy);
+  tree_->SetBranchAddress("HSCP_TOF",             HSCP_TOF);
+
+  tree_->SetBranchAddress("nJets",      &nJets);
+  tree_->SetBranchAddress("total_HT",   &total_HT);
+  tree_->SetBranchAddress("total_HT_passJetID", &total_HT_passJetID);
+  tree_->SetBranchAddress("Jets_pt",    Jets_pt);
+  tree_->SetBranchAddress("Jets_eta",   Jets_eta);
+  tree_->SetBranchAddress("Jets_phi",   Jets_phi);
+  tree_->SetBranchAddress("Jets_mass",  Jets_mass);
+  tree_->SetBranchAddress("Jets_energy",  Jets_energy);
+  tree_->SetBranchAddress("Jets_chargedEmEnergyFraction", Jets_chargedEmEnergyFraction);
+  tree_->SetBranchAddress("Jets_neutralEmEnergyFraction", Jets_neutralEmEnergyFraction);
+  tree_->SetBranchAddress("Jets_chargedHadronEnergyFraction", Jets_chargedHadronEnergyFraction);
+  tree_->SetBranchAddress("Jets_neutralHadronEnergyFraction", Jets_neutralHadronEnergyFraction);
+  tree_->SetBranchAddress("Jets_muonEnergyFraction", Jets_muonEnergyFraction);
+  tree_->SetBranchAddress("Jets_chargedMultiplicity", Jets_chargedMultiplicity);
+  tree_->SetBranchAddress("Jets_neutralMultiplicity", Jets_neutralMultiplicity);
+  tree_->SetBranchAddress("Jets_jetArea", Jets_jetArea);
+  tree_->SetBranchAddress("Jets_pileupE", Jets_pileupE);
+  tree_->SetBranchAddress("Jets_passJetID", Jets_passJetID);
+
+  tree_->SetBranchAddress("ngParticles",         &ngParticles);
+  tree_->SetBranchAddress("gParticles_Id",       gParticles_Id);
+  tree_->SetBranchAddress("gParticles_Status",   gParticles_Status);
+  tree_->SetBranchAddress("gParticles_E",        gParticles_E);
+  tree_->SetBranchAddress("gParticles_Pt",       gParticles_Pt);
+  tree_->SetBranchAddress("gParticles_Eta",      gParticles_Eta);
+  tree_->SetBranchAddress("gParticles_Phi",      gParticles_Phi);
+  tree_->SetBranchAddress("gParticles_Beta",     gParticles_Beta);
+  tree_->SetBranchAddress("gParticles_Charge",   gParticles_Charge);
+  tree_->SetBranchAddress("gParticles_MotherId", gParticles_MotherId);
+
+  tree_->SetBranchAddress("nMuons",               &nMuons);
+  tree_->SetBranchAddress("Muons_Pt",             Muons_Pt);
+  tree_->SetBranchAddress("Muons_Eta",            Muons_Eta);
+  tree_->SetBranchAddress("Muons_Phi",            Muons_Phi);
+  tree_->SetBranchAddress("Muons_Type",           Muons_Type);
 
 };
+
 void HSCPTree_METStudies::LoadTree(const char* file)
 {
   f_ = TFile::Open(file);
@@ -133,6 +236,8 @@ void HSCPTree_METStudies::CreateTree()
   tree_->Branch("evtNum",      &evtNum,     "evtNum/i");
   tree_->Branch("weight",      &weight,     "weight/F");
   tree_->Branch("pileupWeight",      &pileupWeight,     "pileupWeight/F");
+  tree_->Branch("n_pv",        &n_pv,       "n_pv/I");
+
   tree_->Branch("HLT_Mu50",      &HLT_Mu50,     "HLT_Mu50/O");
   tree_->Branch("HLT_PFMET120_PFMHT120_IDTight",      &HLT_PFMET120_PFMHT120_IDTight,     "HLT_PFMET120_PFMHT120_IDTight/O");      // event number
   tree_->Branch("HLT_PFHT500_PFMET100_PFMHT100_IDTight",      &HLT_PFHT500_PFMET100_PFMHT100_IDTight,     "HLT_PFHT500_PFMET100_PFMHT100_IDTight/O");      // event number
@@ -161,6 +266,7 @@ void HSCPTree_METStudies::CreateTree()
   tree_->Branch("passPreselection", &passPreselection, "passPreselection/O");
   tree_->Branch("NCandPassPres", &NCandPassPres, "NCandPassPres/I");
   tree_->Branch("nHSCP",      &nHSCP, "nHSCP/I");
+  tree_->Branch("HSCP_charge",  HSCP_charge, "HSCP_charge[nHSCP]/F");
   tree_->Branch("HSCP_pt",      HSCP_pt, "HSCP_pt[nHSCP]/F");
   tree_->Branch("HSCP_eta",      HSCP_eta, "HSCP_eta[nHSCP]/F");
   tree_->Branch("HSCP_phi",      HSCP_phi, "HSCP_phi[nHSCP]/F");
@@ -180,5 +286,55 @@ void HSCPTree_METStudies::CreateTree()
   tree_->Branch("HSCP_dZ",      HSCP_dZ, "HSCP_dZ[nHSCP]/F");
   tree_->Branch("HSCP_dXY",      HSCP_dXY, "HSCP_dXY[nHSCP]/F");
   tree_->Branch("HSCP_passPres", HSCP_passPres, "HSCP_passPres[nHSCP]/O");
+  tree_->Branch("HSCP_isPFMuon", HSCP_isPFMuon, "HSCP_isPFMuon[nHSCP]/O");
+  tree_->Branch("HSCP_isMuon", HSCP_isMuon, "HSCP_isMuon[nHSCP]/O");
+  tree_->Branch("HSCP_isPhoton", HSCP_isPhoton, "HSCP_isPhoton[nHSCP]/O");
+  tree_->Branch("HSCP_isElectron", HSCP_isElectron, "HSCP_isElctron[nHSCP]/O");
+  tree_->Branch("HSCP_isChHadron", HSCP_isChHadron, "HSCP_isChHadron[nHSCP]/O");
+  tree_->Branch("HSCP_isNeutHadron", HSCP_isNeutHadron, "HSCP_isNeutHadron[nHSCP]/O");
+  tree_->Branch("HSCP_isPfTrack", HSCP_isPfTrack, "HSCP_isPfTrack[nHSCP]/O");
+  tree_->Branch("HSCP_isUndefined", HSCP_isUndefined, "HSCP_isUndefined[nHSCP]/O");
+  tree_->Branch("HSCP_ECAL_energy", HSCP_ECAL_energy, "HSCP_ECAL_energy[nHSCP]/F");
+  tree_->Branch("HSCP_HCAL_energy", HSCP_HCAL_energy, "HSCP_HCAL_energy[nHSCP]/F");
+  tree_->Branch("HSCP_TOF", HSCP_TOF, "HSCP_TOF[nHSCP]/F");
+
+
+  tree_->Branch("nJets",         &nJets,    "nJets/I");
+  tree_->Branch("total_HT",      &total_HT, "total_HT/F");
+  tree_->Branch("total_HT_passJetID", &total_HT_passJetID, "total_HT_passJetID/F");
+  tree_->Branch("Jets_pt",       Jets_pt,   "Jets_pt[nJets]/F");
+  tree_->Branch("Jets_eta",      Jets_eta,  "Jets_eta[nJets]/F");
+  tree_->Branch("Jets_phi",      Jets_phi,  "Jets_phi[nJets]/F");
+  tree_->Branch("Jets_mass",     Jets_mass,  "Jets_mass[nJets]/F");
+  tree_->Branch("Jets_energy",   Jets_energy,  "Jets_energy[nJets]/F");
+  tree_->Branch("Jets_chargedEmEnergyFraction",      Jets_chargedEmEnergyFraction,  "Jets_chargedEmEnergyFraction[nJets]/F");
+  tree_->Branch("Jets_neutralEmEnergyFraction",      Jets_neutralEmEnergyFraction,  "Jets_neutralEmEnergyFraction[nJets]/F");
+  tree_->Branch("Jets_chargedHadronEnergyFraction",      Jets_chargedHadronEnergyFraction,  "Jets_chargedHadronEnergyFraction[nJets]/F");
+  tree_->Branch("Jets_neutralHadronEnergyFraction",      Jets_neutralHadronEnergyFraction,  "Jets_neutralHadronEnergyFraction[nJets]/F");
+  tree_->Branch("Jets_muonEnergyFraction",      Jets_muonEnergyFraction,  "Jets_muonEnergyFraction[nJets]/F");
+  tree_->Branch("Jets_chargedMultiplicity",      Jets_chargedMultiplicity,  "Jets_chargedMultiplicity[nJets]/I");
+  tree_->Branch("Jets_neutralMultiplicity",      Jets_neutralMultiplicity,  "Jets_neutralMultiplicity[nJets]/I");
+  tree_->Branch("Jets_jetArea",  Jets_jetArea,  "Jets_jetArea[nJets]/F");
+  tree_->Branch("Jets_pileupE",  Jets_pileupE,  "Jets_pileupE[nJets]/F");
+  tree_->Branch("Jets_passJetID", Jets_passJetID, "Jets_passJetID[nJets]/O");
+
+
+  tree_->Branch("ngParticles",   &ngParticles,   "ngParticles/I");
+  tree_->Branch("gParticles_Id", gParticles_Id, "gParticles_Id[ngParticles]/I");
+  tree_->Branch("gParticles_Status", gParticles_Status, "gParticles_Status[ngParticles]/I");
+  tree_->Branch("gParticles_E", gParticles_E, "gParticles_E[ngParticles]/F");
+  tree_->Branch("gParticles_Pt", gParticles_Pt, "gParticles_Pt[ngParticles]/F");
+  tree_->Branch("gParticles_Eta", gParticles_Eta, "gParticles_Eta[ngParticles]/F");
+  tree_->Branch("gParticles_Phi", gParticles_Phi, "gParticles_Phi[ngParticles]/F");
+  tree_->Branch("gParticles_Beta", gParticles_Beta, "gParticles_Beta[ngParticles]/F");
+  tree_->Branch("gParticles_Charge", gParticles_Charge, "gParticles_Charge[ngParticles]/I");
+  tree_->Branch("gParticles_MotherId", gParticles_MotherId, "gParticles_MotherId[ngParticles]/I");
+
+
+  tree_->Branch("nMuons",    &nMuons,   "nMuons/I");
+  tree_->Branch("Muons_Pt",   Muons_Pt,   "Muons_Pt[nMuons]/F");
+  tree_->Branch("Muons_Eta",  Muons_Eta,  "Muons_Eta[nMuons]/F");
+  tree_->Branch("Muons_Phi",  Muons_Phi,  "Muons_Phi[nMuons]/F");
+  tree_->Branch("Muons_Type", Muons_Type, "Muons_Type[nMuons]/I");
 
 };

@@ -4267,12 +4267,14 @@ void make_trig_plots () {
   Gluino1400_METEff_RecoCaloMET_passPres_TEff->Draw("pe same");
   Gluino1800_METEff_RecoCaloMET_passPres_TEff->Draw("pe same");
   Gluino2400_METEff_RecoCaloMET_passPres_TEff->Draw("pe same");
+  /*TEMP
   auto Gluino_METEff_RecoCaloMET_legend = new TLegend(0.37,0.13,0.75,0.36);
   Gluino_METEff_RecoCaloMET_legend->AddEntry(Gluino800_METEff_RecoCaloMET_passPres_TEff,"Gluino 800 GeV");
   Gluino_METEff_RecoCaloMET_legend->AddEntry(Gluino1400_METEff_RecoCaloMET_passPres_TEff,"Gluino 1400 GeV");
   Gluino_METEff_RecoCaloMET_legend->AddEntry(Gluino1800_METEff_RecoCaloMET_passPres_TEff,"Gluino 1800 GeV");
   Gluino_METEff_RecoCaloMET_legend->AddEntry(Gluino2400_METEff_RecoCaloMET_passPres_TEff,"Gluino 2400 GeV");
   Gluino_METEff_RecoCaloMET_legend->Draw();
+  *///TEMP
   c_met->SaveAs("./png/Gluino_METEff_RecoCaloMET_passPres.png");
 
   // 1234.04) Muon trigger efficiency vs RECO Calo MET, pass preselection
@@ -4330,12 +4332,14 @@ void make_trig_plots () {
   Gluino1400_METEff_RecoPFMET_passPres_TEff->Draw("pe same");
   Gluino1800_METEff_RecoPFMET_passPres_TEff->Draw("pe same");
   Gluino2400_METEff_RecoPFMET_passPres_TEff->Draw("pe same");
+  /*TEMP
   auto Gluino_METEff_RecoPFMET_legend = new TLegend(0.37,0.13,0.75,0.36);
   Gluino_METEff_RecoPFMET_legend->AddEntry(Gluino800_METEff_RecoPFMET_passPres_TEff,"Gluino 800 GeV");
   Gluino_METEff_RecoPFMET_legend->AddEntry(Gluino1400_METEff_RecoPFMET_passPres_TEff,"Gluino 1400 GeV");
   Gluino_METEff_RecoPFMET_legend->AddEntry(Gluino1800_METEff_RecoPFMET_passPres_TEff,"Gluino 1800 GeV");
   Gluino_METEff_RecoPFMET_legend->AddEntry(Gluino2400_METEff_RecoPFMET_passPres_TEff,"Gluino 2400 GeV");
   Gluino_METEff_RecoPFMET_legend->Draw();
+  *///TEMP
   c_met->SaveAs("./png/Gluino_METEff_RecoPFMET_passPres.png");
 
   // 1234.10) Muon trigger efficiency vs RECO PF MET, pass preselection
