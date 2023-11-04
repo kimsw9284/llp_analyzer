@@ -1,7 +1,7 @@
 import os
 
 #mc
-version = "V1p3"
+version = "V1p4"
 path  = "/eos/uscms//store/group/lpchscp/ntuples/" + version + "/MC_UL18/"
 list_path = "lists/ntuples/" + version + "/MC_UL18/"
 

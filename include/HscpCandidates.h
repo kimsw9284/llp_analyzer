@@ -86,6 +86,14 @@ public :
    Float_t         HLTPFMHT;
    Float_t         HLTPFMHT_phi;
    Float_t         HLTPFMHT_sigf;
+   Float_t         L1MET;
+   Float_t         L1MET_phi;
+   Float_t         L1METHF;
+   Float_t         L1METHF_phi;
+   Float_t         L1MHT;
+   Float_t         L1MHT_phi;
+   Float_t         L1ETSum;
+   Float_t         L1HTSum;
    Bool_t          matchedMuonWasFound;
    vector<int>     *gParticleId;
    vector<int>     *gParticleStatus;
@@ -358,6 +366,14 @@ public :
    TBranch        *b_HLTPFMHT;   //!
    TBranch        *b_HLTPFMHT_phi;   //!
    TBranch        *b_HLTPFMHT_sigf;   //!
+   TBranch        *b_L1MET;
+   TBranch        *b_L1MET_phi;
+   TBranch        *b_L1METHF;
+   TBranch        *b_L1METHF_phi;
+   TBranch        *b_L1MHT;
+   TBranch        *b_L1MHT_phi;
+   TBranch        *b_L1ETSum;
+   TBranch        *b_L1HTSum;
    TBranch        *b_matchedMuonWasFound;   //!
    TBranch        *b_gParticleId;   //!
    TBranch        *b_gParticleStatus;   //!
@@ -930,6 +946,14 @@ void HscpCandidates::Init(TTree *tree)
    fChain->SetBranchAddress("HLTPFMHT", &HLTPFMHT, &b_HLTPFMHT);
    fChain->SetBranchAddress("HLTPFMHT_phi", &HLTPFMHT_phi, &b_HLTPFMHT_phi);
    fChain->SetBranchAddress("HLTPFMHT_sigf", &HLTPFMHT_sigf, &b_HLTPFMHT_sigf);
+   fChain->SetBranchAddress("L1MET", &L1MET, &b_L1MET);
+   fChain->SetBranchAddress("L1MET_phi", &L1MET_phi, &b_L1MET_phi);
+   fChain->SetBranchAddress("L1METHF", &L1METHF, &b_L1METHF);
+   fChain->SetBranchAddress("L1METHF_phi", &L1METHF_phi, &b_L1METHF_phi);
+   fChain->SetBranchAddress("L1MHT", &L1MHT, &b_L1MHT);
+   fChain->SetBranchAddress("L1MHT_phi", &L1MHT_phi, &b_L1MHT_phi);
+   fChain->SetBranchAddress("L1ETSum", &L1ETSum, &b_L1ETSum);
+   fChain->SetBranchAddress("L1HTSum", &L1HTSum, &b_L1HTSum);
    fChain->SetBranchAddress("matchedMuonWasFound", &matchedMuonWasFound, &b_matchedMuonWasFound);
    fChain->SetBranchAddress("gParticleId", &gParticleId, &b_gParticleId);
    fChain->SetBranchAddress("gParticleStatus", &gParticleStatus, &b_gParticleStatus);

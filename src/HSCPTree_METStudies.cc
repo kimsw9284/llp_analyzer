@@ -19,10 +19,39 @@ void HSCPTree_METStudies::InitVariables()
   runNum=0; lumiSec=0; evtNum=0; weight=0; n_pv=0;
   HLT_Mu50 = false; HLT_PFMET120_PFMHT120_IDTight = false; HLT_PFHT500_PFMET100_PFMHT100_IDTight = false;
   HLT_PFMETNoMu120_PFMHTNoMu120_IDTight_PFHT60 = false; HLT_MET105_IsoTrk50 = false;
-  RecoCaloMET = -999; RecoCaloMET_phi = -999; RecoPFMET = -999; RecoPFMET_phi = -999; RecoPFMHT = -999; HLTCaloMET = -999; HLTCaloMET_phi = -999; HLTCaloMET_sigf = -999; HLTCaloMETClean = -999; HLTCaloMETClean_phi = -999; HLTCaloMETClean_sigf = -999; HLTCaloMHT = -999; HLTCaloMHT_phi = -999; HLTCaloMHT_sigf = -999; HLTPFMET = -999; HLTPFMET_phi = -999; HLTPFMET_sigf = -999; HLTPFMHT = -999; HLTPFMHT_phi = -999; HLTPFMHT_sigf = -999;
+  RecoCaloMET = -999; RecoCaloMET_phi = -999; RecoPFMET = -999; RecoPFMET_phi = -999; RecoPFMHT = -999; HLTCaloMET = -999; HLTCaloMET_phi = -999; HLTCaloMET_sigf = -999; HLTCaloMETClean = -999; HLTCaloMETClean_phi = -999; HLTCaloMETClean_sigf = -999; HLTCaloMHT = -999; HLTCaloMHT_phi = -999; HLTCaloMHT_sigf = -999; HLTPFMET = -999; HLTPFMET_phi = -999; HLTPFMET_sigf = -999; HLTPFMHT = -999; HLTPFMHT_phi = -999; HLTPFMHT_sigf = -999; L1MET = -999; L1MET_phi = -999; L1METHF = -999; L1METHF_phi = -999; L1MHT = -999; L1MHT_phi = -999; L1ETSum = -999; L1HTSum = -999;
   passPreselection = false;
   NCandPassPres = -999;
-  
+  genHSCPChargeConfig = -999;
+  HSCP1_Eta = -999;
+  HSCP1_Phi = -999;
+  HSCP1_Charge = -999;
+  HSCP1_Beta = -999;
+  HSCP1_Pt = -999;
+  HSCP2_Eta = -999;
+  HSCP2_Phi = -999;
+  HSCP2_Charge = -999;
+  HSCP2_Beta = -999;
+  HSCP2_Pt = -999;
+  NNonHSCPGen1GeV = -999;
+  NNonHSCPGen10GeV = -999;
+  NNonHSCPGen50GeV = -999; 
+  NNonHSCPGen100GeV = -999;
+  GenPtMag_dPhi0p4_neg_diHSCP = -999;
+  diHSCP_pT_mag = -999;
+  diHSCP_pT_phi = -999;
+  dPhi_HSCP1_HSCP2 = -999;
+  dPt_HSCP1_HSCP2 = -999;
+  dP_HSCP1_HSCP2 = -999;
+  dPhi_diHSCP_HSCP1 = -999;
+  dPhi_diHSCP_HSCP2 = -999;
+  dPhi_RecoCaloMET_diHSCP = -999;
+  dPhi_RecoCaloMET_HSCP1 = -999;
+  dPhi_RecoCaloMET_HSCP2 = -999;
+  dPhi_HLTCaloMET_diHSCP = -999;
+  dPhi_HLTCaloMET_HSCP1 = -999;
+  dPhi_HLTCaloMET_HSCP2 = -999;
+
   nHSCP = 0;
   pileupWeight = 0;
   for( int i = 0; i < N_MAX_HSCP; i++ ) {
@@ -86,6 +115,8 @@ void HSCPTree_METStudies::InitVariables()
     gParticles_Status[i] = -999;
     gParticles_E[i] = -999.;
     gParticles_Pt[i] = -999.;
+    gParticles_Pz[i] = -999.;
+    gParticles_P[i] = -999.;
     gParticles_Eta[i] = -999.;
     gParticles_Phi[i] = -999.;
     gParticles_Beta[i] = -999.;
@@ -100,6 +131,9 @@ void HSCPTree_METStudies::InitVariables()
     Muons_Eta[i] = -999.;
     Muons_Phi[i] = -999.;
     Muons_Type[i] = -999;
+    Muons_IsLoose[i] = false;
+    Muons_IsMedium[i] = false;
+    Muons_IsTight[i] = false;
   }
 
 };
@@ -142,8 +176,47 @@ void HSCPTree_METStudies::InitTree()
   tree_->SetBranchAddress("HLTPFMHT",              &HLTPFMHT);
   tree_->SetBranchAddress("HLTPFMHT_phi",          &HLTPFMHT_phi);
   tree_->SetBranchAddress("HLTPFMHT_sigf",         &HLTPFMHT_sigf);
+  tree_->SetBranchAddress("L1MET",                 &L1MET);
+  tree_->SetBranchAddress("L1MET_phi",             &L1MET_phi);
+  tree_->SetBranchAddress("L1METHF",               &L1METHF);
+  tree_->SetBranchAddress("L1METHF_phi",           &L1METHF_phi);
+  tree_->SetBranchAddress("L1MHT",                 &L1MHT);
+  tree_->SetBranchAddress("L1MHT_phi",             &L1MHT_phi);
+  tree_->SetBranchAddress("L1ETSum",               &L1ETSum);
+  tree_->SetBranchAddress("L1HTSum",               &L1HTSum);
+
+
   tree_->SetBranchAddress("passPreselection",      &passPreselection);
   tree_->SetBranchAddress("NCandPassPres",    &NCandPassPres);
+  tree_->SetBranchAddress("genHSCPChargeConfig",    &genHSCPChargeConfig);
+  tree_->SetBranchAddress("HSCP1_Eta",    &HSCP1_Eta);
+  tree_->SetBranchAddress("HSCP1_Phi",    &HSCP1_Phi);
+  tree_->SetBranchAddress("HSCP1_Charge",    &HSCP1_Charge);
+  tree_->SetBranchAddress("HSCP1_Beta",    &HSCP1_Beta);
+  tree_->SetBranchAddress("HSCP1_Pt",    &HSCP1_Pt);
+  tree_->SetBranchAddress("HSCP2_Eta",    &HSCP2_Eta);
+  tree_->SetBranchAddress("HSCP2_Phi",    &HSCP2_Phi);
+  tree_->SetBranchAddress("HSCP2_Charge",    &HSCP2_Charge);
+  tree_->SetBranchAddress("HSCP2_Beta",    &HSCP2_Beta);
+  tree_->SetBranchAddress("HSCP2_Pt",    &HSCP2_Pt);
+  tree_->SetBranchAddress("NNonHSCPGen1GeV",    &NNonHSCPGen1GeV);
+  tree_->SetBranchAddress("NNonHSCPGen10GeV",    &NNonHSCPGen10GeV);
+  tree_->SetBranchAddress("NNonHSCPGen50GeV",    &NNonHSCPGen50GeV);
+  tree_->SetBranchAddress("NNonHSCPGen100GeV",    &NNonHSCPGen100GeV);
+  tree_->SetBranchAddress("GenPtMag_dPhi0p4_neg_diHSCP",    &GenPtMag_dPhi0p4_neg_diHSCP);
+  tree_->SetBranchAddress("diHSCP_pT_mag",    &diHSCP_pT_mag);
+  tree_->SetBranchAddress("diHSCP_pT_phi",    &diHSCP_pT_phi);
+  tree_->SetBranchAddress("dPhi_HSCP1_HSCP2", &dPhi_HSCP1_HSCP2);
+  tree_->SetBranchAddress("dPt_HSCP1_HSCP2", &dPt_HSCP1_HSCP2);
+  tree_->SetBranchAddress("dP_HSCP1_HSCP2", &dP_HSCP1_HSCP2);
+  tree_->SetBranchAddress("dPhi_diHSCP_HSCP1", &dPhi_diHSCP_HSCP1);
+  tree_->SetBranchAddress("dPhi_diHSCP_HSCP2", &dPhi_diHSCP_HSCP2);
+  tree_->SetBranchAddress("dPhi_RecoCaloMET_diHSCP", &dPhi_RecoCaloMET_diHSCP);
+  tree_->SetBranchAddress("dPhi_RecoCaloMET_HSCP1", &dPhi_RecoCaloMET_HSCP1);
+  tree_->SetBranchAddress("dPhi_RecoCaloMET_HSCP2", &dPhi_RecoCaloMET_HSCP2);
+  tree_->SetBranchAddress("dPhi_HLTCaloMET_diHSCP", &dPhi_HLTCaloMET_diHSCP);
+  tree_->SetBranchAddress("dPhi_HLTCaloMET_HSCP1", &dPhi_HLTCaloMET_HSCP1);
+  tree_->SetBranchAddress("dPhi_HLTCaloMET_HSCP2", &dPhi_HLTCaloMET_HSCP2);
   tree_->SetBranchAddress("nHSCP",      &nHSCP);
   tree_->SetBranchAddress("HSCP_charge",          HSCP_charge);
   tree_->SetBranchAddress("HSCP_pt",              HSCP_pt);
@@ -201,6 +274,8 @@ void HSCPTree_METStudies::InitTree()
   tree_->SetBranchAddress("gParticles_Status",   gParticles_Status);
   tree_->SetBranchAddress("gParticles_E",        gParticles_E);
   tree_->SetBranchAddress("gParticles_Pt",       gParticles_Pt);
+  tree_->SetBranchAddress("gParticles_Pz",       gParticles_Pz);
+  tree_->SetBranchAddress("gParticles_P",        gParticles_P);
   tree_->SetBranchAddress("gParticles_Eta",      gParticles_Eta);
   tree_->SetBranchAddress("gParticles_Phi",      gParticles_Phi);
   tree_->SetBranchAddress("gParticles_Beta",     gParticles_Beta);
@@ -212,6 +287,9 @@ void HSCPTree_METStudies::InitTree()
   tree_->SetBranchAddress("Muons_Eta",            Muons_Eta);
   tree_->SetBranchAddress("Muons_Phi",            Muons_Phi);
   tree_->SetBranchAddress("Muons_Type",           Muons_Type);
+  tree_->SetBranchAddress("Muons_IsLoose",        Muons_IsLoose);
+  tree_->SetBranchAddress("Muons_IsMedium",       Muons_IsMedium);
+  tree_->SetBranchAddress("Muons_IsTight",        Muons_IsTight);
 
 };
 
@@ -263,8 +341,46 @@ void HSCPTree_METStudies::CreateTree()
   tree_->Branch("HLTPFMHT",  &HLTPFMHT, "HLTPFMHT/F");
   tree_->Branch("HLTPFMHT_phi",  &HLTPFMHT_phi, "HLTPFMHT_phi/F");
   tree_->Branch("HLTPFMHT_sigf",  &HLTPFMHT_sigf, "HLTPFMHT_sigf/F");
+  tree_->Branch("L1MET",   &L1MET,  "L1MET/F");
+  tree_->Branch("L1MET_phi",   &L1MET_phi,  "L1MET_phi/F");
+  tree_->Branch("L1METHF",   &L1METHF,  "L1METHF/F");
+  tree_->Branch("L1METHF_phi",   &L1METHF_phi,  "L1METHF_phi/F");
+  tree_->Branch("L1MHT",   &L1MHT,  "L1MHT/F");
+  tree_->Branch("L1MHT_phi",   &L1MHT_phi,  "L1MHT_phi/F");
+  tree_->Branch("L1ETSum",   &L1ETSum,  "L1ETSum/F");
+  tree_->Branch("L1HTSum",   &L1HTSum,  "L1HTSum/F");
+
   tree_->Branch("passPreselection", &passPreselection, "passPreselection/O");
   tree_->Branch("NCandPassPres", &NCandPassPres, "NCandPassPres/I");
+  tree_->Branch("genHSCPChargeConfig", &genHSCPChargeConfig, "genHSCPChargeConfig/I");
+  tree_->Branch("HSCP1_Eta", &HSCP1_Eta, "HSCP1_Eta/F");
+  tree_->Branch("HSCP1_Phi", &HSCP1_Phi, "HSCP1_Phi/F");
+  tree_->Branch("HSCP1_Charge", &HSCP1_Charge, "HSCP1_Charge/I");
+  tree_->Branch("HSCP1_Beta", &HSCP1_Beta, "HSCP1_Beta/F");
+  tree_->Branch("HSCP1_Pt", &HSCP1_Pt, "HSCP1_Pt/F");
+  tree_->Branch("HSCP2_Eta", &HSCP2_Eta, "HSCP2_Eta/F");
+  tree_->Branch("HSCP2_Phi", &HSCP2_Phi, "HSCP2_Phi/F");
+  tree_->Branch("HSCP2_Charge", &HSCP2_Charge, "HSCP2_Charge/I");
+  tree_->Branch("HSCP2_Beta", &HSCP2_Beta, "HSCP2_Beta/F");
+  tree_->Branch("HSCP2_Pt", &HSCP2_Pt, "HSCP2_Pt/F");
+  tree_->Branch("NNonHSCPGen1GeV", &NNonHSCPGen1GeV, "NNonHSCPGen1GeV/I");
+  tree_->Branch("NNonHSCPGen10GeV", &NNonHSCPGen10GeV, "NNonHSCPGen10GeV/I");
+  tree_->Branch("NNonHSCPGen50GeV", &NNonHSCPGen50GeV, "NNonHSCPGen50GeV/I");
+  tree_->Branch("NNonHSCPGen100GeV", &NNonHSCPGen100GeV, "NNonHSCPGen100GeV/I");
+  tree_->Branch("GenPtMag_dPhi0p4_neg_diHSCP", &GenPtMag_dPhi0p4_neg_diHSCP, "GenPtMag_dPhi0p4_neg_diHSCP/F");
+  tree_->Branch("diHSCP_pT_mag", &diHSCP_pT_mag, "diHSCP_pT_mag/F");
+  tree_->Branch("diHSCP_pT_phi", &diHSCP_pT_phi, "diHSCP_pT_phi/F");
+  tree_->Branch("dPhi_HSCP1_HSCP2", &dPhi_HSCP1_HSCP2, "dPhi_HSCP1_HSCP2/F");
+  tree_->Branch("dPt_HSCP1_HSCP2", &dPt_HSCP1_HSCP2, "dPt_HSCP1_HSCP2/F");
+  tree_->Branch("dP_HSCP1_HSCP2", &dP_HSCP1_HSCP2, "dP_HSCP1_HSCP2/F");
+  tree_->Branch("dPhi_diHSCP_HSCP1", &dPhi_diHSCP_HSCP1, "dPhi_diHSCP_HSCP1/F");
+  tree_->Branch("dPhi_diHSCP_HSCP2", &dPhi_diHSCP_HSCP2, "dPhi_diHSCP_HSCP2/F");
+  tree_->Branch("dPhi_RecoCaloMET_diHSCP", &dPhi_RecoCaloMET_diHSCP, "dPhi_RecoCaloMET_diHSCP/F");
+  tree_->Branch("dPhi_RecoCaloMET_HSCP1", &dPhi_RecoCaloMET_HSCP1, "dPhi_RecoCaloMET_HSCP1/F");
+  tree_->Branch("dPhi_RecoCaloMET_HSCP2", &dPhi_RecoCaloMET_HSCP2, "dPhi_RecoCaloMET_HSCP2/F");
+  tree_->Branch("dPhi_HLTCaloMET_diHSCP", &dPhi_HLTCaloMET_diHSCP, "dPhi_HLTCaloMET_diHSCP/F");
+  tree_->Branch("dPhi_HLTCaloMET_HSCP1", &dPhi_HLTCaloMET_HSCP1, "dPhi_HLTCaloMET_HSCP1/F");
+  tree_->Branch("dPhi_HLTCaloMET_HSCP2", &dPhi_HLTCaloMET_HSCP2, "dPhi_HLTCaloMET_HSCP2/F");
   tree_->Branch("nHSCP",      &nHSCP, "nHSCP/I");
   tree_->Branch("HSCP_charge",  HSCP_charge, "HSCP_charge[nHSCP]/F");
   tree_->Branch("HSCP_pt",      HSCP_pt, "HSCP_pt[nHSCP]/F");
@@ -324,6 +440,8 @@ void HSCPTree_METStudies::CreateTree()
   tree_->Branch("gParticles_Status", gParticles_Status, "gParticles_Status[ngParticles]/I");
   tree_->Branch("gParticles_E", gParticles_E, "gParticles_E[ngParticles]/F");
   tree_->Branch("gParticles_Pt", gParticles_Pt, "gParticles_Pt[ngParticles]/F");
+  tree_->Branch("gParticles_Pz", gParticles_Pz, "gParticles_Pz[ngParticles]/F");
+  tree_->Branch("gParticles_P", gParticles_P, "gParticles_P[ngParticles]/F");
   tree_->Branch("gParticles_Eta", gParticles_Eta, "gParticles_Eta[ngParticles]/F");
   tree_->Branch("gParticles_Phi", gParticles_Phi, "gParticles_Phi[ngParticles]/F");
   tree_->Branch("gParticles_Beta", gParticles_Beta, "gParticles_Beta[ngParticles]/F");
@@ -336,5 +454,7 @@ void HSCPTree_METStudies::CreateTree()
   tree_->Branch("Muons_Eta",  Muons_Eta,  "Muons_Eta[nMuons]/F");
   tree_->Branch("Muons_Phi",  Muons_Phi,  "Muons_Phi[nMuons]/F");
   tree_->Branch("Muons_Type", Muons_Type, "Muons_Type[nMuons]/I");
-
+  tree_->Branch("Muons_IsLoose", Muons_IsLoose, "Muons_IsLoose[nMuons]/O");
+  tree_->Branch("Muons_IsMedium", Muons_IsMedium, "Muons_IsMedium[nMuons]/O");
+  tree_->Branch("Muons_IsTight", Muons_IsTight, "Muons_IsTight[nMuons]/O");
 };

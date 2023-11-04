@@ -17,21 +17,23 @@ void make_trig_plots () {
 
   TH1::SetDefaultSumw2();
 
-  TFile* f_in01 = new TFile("../Gluino_M800_histos.root");
-  TFile* f_in02 = new TFile("../Gluino_M1400_histos.root");
-  TFile* f_in03 = new TFile("../Gluino_M1800_histos.root");
-  TFile* f_in04 = new TFile("../Gluino_M2400_histos.root");
-  TFile* f_in05 = new TFile("../GluinoN_M800_histos.root");
-  TFile* f_in06 = new TFile("../GluinoN_M1400_histos.root");
-  TFile* f_in07 = new TFile("../GluinoN_M1800_histos.root");
-  TFile* f_in08 = new TFile("../GluinoN_M2400_histos.root");
-  TFile* f_in09 = new TFile("../GMSBStau_M200_histos.root");
-  TFile* f_in10 = new TFile("../GMSBStau_M432_histos.root");
-  TFile* f_in11 = new TFile("../GMSBStau_M651_histos.root");
-  TFile* f_in12 = new TFile("../GMSBStau_M871_histos.root");
-  TFile* f_in13 = new TFile("../PairStau_M200_histos.root");
-  TFile* f_in14 = new TFile("../PairStau_M432_histos.root");
-  TFile* f_in15 = new TFile("../PairStau_M651_histos.root");
+  TFile* f_in01 = new TFile("../output_files/V1p4/Gluino_M800_histos.root");
+  TFile* f_in02 = new TFile("../output_files/V1p4/Gluino_M1400_histos.root");
+  TFile* f_in03 = new TFile("../output_files/V1p4/Gluino_M1800_histos.root");
+  
+  TFile* f_in04 = new TFile("../output_files/V1p4/Gluino_M2400_histos.root");
+  TFile* f_in05 = new TFile("../output_files/V1p4/GluinoN_M800_histos.root");
+  TFile* f_in06 = new TFile("../output_files/V1p4/GluinoN_M1400_histos.root");
+  TFile* f_in07 = new TFile("../output_files/V1p4/GluinoN_M1800_histos.root");
+  TFile* f_in08 = new TFile("../output_files/V1p4/GluinoN_M2400_histos.root");
+  TFile* f_in09 = new TFile("../output_files/V1p4/GMSBStau_M200_histos.root");
+  TFile* f_in10 = new TFile("../output_files/V1p4/GMSBStau_M308_histos.root");
+  TFile* f_in11 = new TFile("../output_files/V1p4/GMSBStau_M557_histos.root");
+  TFile* f_in12 = new TFile("../output_files/V1p4/GMSBStau_M745_histos.root");
+  TFile* f_in13 = new TFile("../output_files/V1p4/PairStau_M200_histos.root");
+  TFile* f_in14 = new TFile("../output_files/V1p4/PairStau_M308_histos.root");
+  TFile* f_in15 = new TFile("../output_files/V1p4/PairStau_M557_histos.root");
+  TFile* f_in16 = new TFile("../output_files/V1p4/PairStau_M745_histos.root");
 
   //get histograms
   TH1F* Gluino800_RecoCaloMET_noPres_ = (TH1F*) f_in01->Get("h_RecoCaloMET_noPres");
@@ -331,104 +333,104 @@ void make_trig_plots () {
   TH1F* GMSBStau200_HLTCaloMET_passPres_passMETOrMuon_ = (TH1F*) f_in09->Get("h_HLTCaloMET_passPres_passMETOrMuon");
   TH1F* GMSBStau200_HLTPFMET_passPres_passMETOrMuon_ = (TH1F*) f_in09->Get("h_HLTPFMET_passPres_passMETOrMuon");
 
-  TH1F* GMSBStau432_RecoCaloMET_noPres_ = (TH1F*) f_in10->Get("h_RecoCaloMET_noPres");
-  TH1F* GMSBStau432_RecoPFMET_noPres_ = (TH1F*) f_in10->Get("h_RecoPFMET_noPres");
-  TH1F* GMSBStau432_HLTCaloMET_noPres_ = (TH1F*) f_in10->Get("h_HLTCaloMET_noPres");
-  TH1F* GMSBStau432_HLTPFMET_noPres_ = (TH1F*) f_in10->Get("h_HLTPFMET_noPres");
-  TH1F* GMSBStau432_RecoCaloMET_noPres_passMET_ = (TH1F*) f_in10->Get("h_RecoCaloMET_noPres_passMET");
-  TH1F* GMSBStau432_RecoPFMET_noPres_passMET_ = (TH1F*) f_in10->Get("h_RecoPFMET_noPres_passMET");
-  TH1F* GMSBStau432_HLTCaloMET_noPres_passMET_ = (TH1F*) f_in10->Get("h_HLTCaloMET_noPres_passMET");
-  TH1F* GMSBStau432_HLTPFMET_noPres_passMET_ = (TH1F*) f_in10->Get("h_HLTPFMET_noPres_passMET");
-  TH1F* GMSBStau432_RecoCaloMET_noPres_passMuon_ = (TH1F*) f_in10->Get("h_RecoCaloMET_noPres_passMuon");
-  TH1F* GMSBStau432_RecoPFMET_noPres_passMuon_ = (TH1F*) f_in10->Get("h_RecoPFMET_noPres_passMuon");
-  TH1F* GMSBStau432_HLTCaloMET_noPres_passMuon_ = (TH1F*) f_in10->Get("h_HLTCaloMET_noPres_passMuon");
-  TH1F* GMSBStau432_HLTPFMET_noPres_passMuon_ = (TH1F*) f_in10->Get("h_HLTPFMET_noPres_passMuon");
-  TH1F* GMSBStau432_RecoCaloMET_noPres_passMETOrMuon_ = (TH1F*) f_in10->Get("h_RecoCaloMET_noPres_passMETOrMuon");
-  TH1F* GMSBStau432_RecoPFMET_noPres_passMETOrMuon_ = (TH1F*) f_in10->Get("h_RecoPFMET_noPres_passMETOrMuon");
-  TH1F* GMSBStau432_HLTCaloMET_noPres_passMETOrMuon_ = (TH1F*) f_in10->Get("h_HLTCaloMET_noPres_passMETOrMuon");
-  TH1F* GMSBStau432_HLTPFMET_noPres_passMETOrMuon_ = (TH1F*) f_in10->Get("h_HLTPFMET_noPres_passMETOrMuon");
-  TH1F* GMSBStau432_RecoCaloMET_passPres_ = (TH1F*) f_in10->Get("h_RecoCaloMET_passPres");
-  TH1F* GMSBStau432_RecoPFMET_passPres_ = (TH1F*) f_in10->Get("h_RecoPFMET_passPres");
-  TH1F* GMSBStau432_HLTCaloMET_passPres_ = (TH1F*) f_in10->Get("h_HLTCaloMET_passPres");
-  TH1F* GMSBStau432_HLTPFMET_passPres_ = (TH1F*) f_in10->Get("h_HLTPFMET_passPres");
-  TH1F* GMSBStau432_RecoCaloMET_passPres_passMET_ = (TH1F*) f_in10->Get("h_RecoCaloMET_passPres_passMET");
-  TH1F* GMSBStau432_RecoPFMET_passPres_passMET_ = (TH1F*) f_in10->Get("h_RecoPFMET_passPres_passMET");
-  TH1F* GMSBStau432_HLTCaloMET_passPres_passMET_ = (TH1F*) f_in10->Get("h_HLTCaloMET_passPres_passMET");
-  TH1F* GMSBStau432_HLTPFMET_passPres_passMET_ = (TH1F*) f_in10->Get("h_HLTPFMET_passPres_passMET");
-  TH1F* GMSBStau432_RecoCaloMET_passPres_passMuon_ = (TH1F*) f_in10->Get("h_RecoCaloMET_passPres_passMuon");
-  TH1F* GMSBStau432_RecoPFMET_passPres_passMuon_ = (TH1F*) f_in10->Get("h_RecoPFMET_passPres_passMuon");
-  TH1F* GMSBStau432_HLTCaloMET_passPres_passMuon_ = (TH1F*) f_in10->Get("h_HLTCaloMET_passPres_passMuon");
-  TH1F* GMSBStau432_HLTPFMET_passPres_passMuon_ = (TH1F*) f_in10->Get("h_HLTPFMET_passPres_passMuon");
-  TH1F* GMSBStau432_RecoCaloMET_passPres_passMETOrMuon_ = (TH1F*) f_in10->Get("h_RecoCaloMET_passPres_passMETOrMuon");
-  TH1F* GMSBStau432_RecoPFMET_passPres_passMETOrMuon_ = (TH1F*) f_in10->Get("h_RecoPFMET_passPres_passMETOrMuon");
-  TH1F* GMSBStau432_HLTCaloMET_passPres_passMETOrMuon_ = (TH1F*) f_in10->Get("h_HLTCaloMET_passPres_passMETOrMuon");
-  TH1F* GMSBStau432_HLTPFMET_passPres_passMETOrMuon_ = (TH1F*) f_in10->Get("h_HLTPFMET_passPres_passMETOrMuon");
+  TH1F* GMSBStau308_RecoCaloMET_noPres_ = (TH1F*) f_in10->Get("h_RecoCaloMET_noPres");
+  TH1F* GMSBStau308_RecoPFMET_noPres_ = (TH1F*) f_in10->Get("h_RecoPFMET_noPres");
+  TH1F* GMSBStau308_HLTCaloMET_noPres_ = (TH1F*) f_in10->Get("h_HLTCaloMET_noPres");
+  TH1F* GMSBStau308_HLTPFMET_noPres_ = (TH1F*) f_in10->Get("h_HLTPFMET_noPres");
+  TH1F* GMSBStau308_RecoCaloMET_noPres_passMET_ = (TH1F*) f_in10->Get("h_RecoCaloMET_noPres_passMET");
+  TH1F* GMSBStau308_RecoPFMET_noPres_passMET_ = (TH1F*) f_in10->Get("h_RecoPFMET_noPres_passMET");
+  TH1F* GMSBStau308_HLTCaloMET_noPres_passMET_ = (TH1F*) f_in10->Get("h_HLTCaloMET_noPres_passMET");
+  TH1F* GMSBStau308_HLTPFMET_noPres_passMET_ = (TH1F*) f_in10->Get("h_HLTPFMET_noPres_passMET");
+  TH1F* GMSBStau308_RecoCaloMET_noPres_passMuon_ = (TH1F*) f_in10->Get("h_RecoCaloMET_noPres_passMuon");
+  TH1F* GMSBStau308_RecoPFMET_noPres_passMuon_ = (TH1F*) f_in10->Get("h_RecoPFMET_noPres_passMuon");
+  TH1F* GMSBStau308_HLTCaloMET_noPres_passMuon_ = (TH1F*) f_in10->Get("h_HLTCaloMET_noPres_passMuon");
+  TH1F* GMSBStau308_HLTPFMET_noPres_passMuon_ = (TH1F*) f_in10->Get("h_HLTPFMET_noPres_passMuon");
+  TH1F* GMSBStau308_RecoCaloMET_noPres_passMETOrMuon_ = (TH1F*) f_in10->Get("h_RecoCaloMET_noPres_passMETOrMuon");
+  TH1F* GMSBStau308_RecoPFMET_noPres_passMETOrMuon_ = (TH1F*) f_in10->Get("h_RecoPFMET_noPres_passMETOrMuon");
+  TH1F* GMSBStau308_HLTCaloMET_noPres_passMETOrMuon_ = (TH1F*) f_in10->Get("h_HLTCaloMET_noPres_passMETOrMuon");
+  TH1F* GMSBStau308_HLTPFMET_noPres_passMETOrMuon_ = (TH1F*) f_in10->Get("h_HLTPFMET_noPres_passMETOrMuon");
+  TH1F* GMSBStau308_RecoCaloMET_passPres_ = (TH1F*) f_in10->Get("h_RecoCaloMET_passPres");
+  TH1F* GMSBStau308_RecoPFMET_passPres_ = (TH1F*) f_in10->Get("h_RecoPFMET_passPres");
+  TH1F* GMSBStau308_HLTCaloMET_passPres_ = (TH1F*) f_in10->Get("h_HLTCaloMET_passPres");
+  TH1F* GMSBStau308_HLTPFMET_passPres_ = (TH1F*) f_in10->Get("h_HLTPFMET_passPres");
+  TH1F* GMSBStau308_RecoCaloMET_passPres_passMET_ = (TH1F*) f_in10->Get("h_RecoCaloMET_passPres_passMET");
+  TH1F* GMSBStau308_RecoPFMET_passPres_passMET_ = (TH1F*) f_in10->Get("h_RecoPFMET_passPres_passMET");
+  TH1F* GMSBStau308_HLTCaloMET_passPres_passMET_ = (TH1F*) f_in10->Get("h_HLTCaloMET_passPres_passMET");
+  TH1F* GMSBStau308_HLTPFMET_passPres_passMET_ = (TH1F*) f_in10->Get("h_HLTPFMET_passPres_passMET");
+  TH1F* GMSBStau308_RecoCaloMET_passPres_passMuon_ = (TH1F*) f_in10->Get("h_RecoCaloMET_passPres_passMuon");
+  TH1F* GMSBStau308_RecoPFMET_passPres_passMuon_ = (TH1F*) f_in10->Get("h_RecoPFMET_passPres_passMuon");
+  TH1F* GMSBStau308_HLTCaloMET_passPres_passMuon_ = (TH1F*) f_in10->Get("h_HLTCaloMET_passPres_passMuon");
+  TH1F* GMSBStau308_HLTPFMET_passPres_passMuon_ = (TH1F*) f_in10->Get("h_HLTPFMET_passPres_passMuon");
+  TH1F* GMSBStau308_RecoCaloMET_passPres_passMETOrMuon_ = (TH1F*) f_in10->Get("h_RecoCaloMET_passPres_passMETOrMuon");
+  TH1F* GMSBStau308_RecoPFMET_passPres_passMETOrMuon_ = (TH1F*) f_in10->Get("h_RecoPFMET_passPres_passMETOrMuon");
+  TH1F* GMSBStau308_HLTCaloMET_passPres_passMETOrMuon_ = (TH1F*) f_in10->Get("h_HLTCaloMET_passPres_passMETOrMuon");
+  TH1F* GMSBStau308_HLTPFMET_passPres_passMETOrMuon_ = (TH1F*) f_in10->Get("h_HLTPFMET_passPres_passMETOrMuon");
 
-  TH1F* GMSBStau651_RecoCaloMET_noPres_ = (TH1F*) f_in11->Get("h_RecoCaloMET_noPres");
-  TH1F* GMSBStau651_RecoPFMET_noPres_ = (TH1F*) f_in11->Get("h_RecoPFMET_noPres");
-  TH1F* GMSBStau651_HLTCaloMET_noPres_ = (TH1F*) f_in11->Get("h_HLTCaloMET_noPres");
-  TH1F* GMSBStau651_HLTPFMET_noPres_ = (TH1F*) f_in11->Get("h_HLTPFMET_noPres");
-  TH1F* GMSBStau651_RecoCaloMET_noPres_passMET_ = (TH1F*) f_in11->Get("h_RecoCaloMET_noPres_passMET");
-  TH1F* GMSBStau651_RecoPFMET_noPres_passMET_ = (TH1F*) f_in11->Get("h_RecoPFMET_noPres_passMET");
-  TH1F* GMSBStau651_HLTCaloMET_noPres_passMET_ = (TH1F*) f_in11->Get("h_HLTCaloMET_noPres_passMET");
-  TH1F* GMSBStau651_HLTPFMET_noPres_passMET_ = (TH1F*) f_in11->Get("h_HLTPFMET_noPres_passMET");
-  TH1F* GMSBStau651_RecoCaloMET_noPres_passMuon_ = (TH1F*) f_in11->Get("h_RecoCaloMET_noPres_passMuon");
-  TH1F* GMSBStau651_RecoPFMET_noPres_passMuon_ = (TH1F*) f_in11->Get("h_RecoPFMET_noPres_passMuon");
-  TH1F* GMSBStau651_HLTCaloMET_noPres_passMuon_ = (TH1F*) f_in11->Get("h_HLTCaloMET_noPres_passMuon");
-  TH1F* GMSBStau651_HLTPFMET_noPres_passMuon_ = (TH1F*) f_in11->Get("h_HLTPFMET_noPres_passMuon");
-  TH1F* GMSBStau651_RecoCaloMET_noPres_passMETOrMuon_ = (TH1F*) f_in11->Get("h_RecoCaloMET_noPres_passMETOrMuon");
-  TH1F* GMSBStau651_RecoPFMET_noPres_passMETOrMuon_ = (TH1F*) f_in11->Get("h_RecoPFMET_noPres_passMETOrMuon");
-  TH1F* GMSBStau651_HLTCaloMET_noPres_passMETOrMuon_ = (TH1F*) f_in11->Get("h_HLTCaloMET_noPres_passMETOrMuon");
-  TH1F* GMSBStau651_HLTPFMET_noPres_passMETOrMuon_ = (TH1F*) f_in11->Get("h_HLTPFMET_noPres_passMETOrMuon");
-  TH1F* GMSBStau651_RecoCaloMET_passPres_ = (TH1F*) f_in11->Get("h_RecoCaloMET_passPres");
-  TH1F* GMSBStau651_RecoPFMET_passPres_ = (TH1F*) f_in11->Get("h_RecoPFMET_passPres");
-  TH1F* GMSBStau651_HLTCaloMET_passPres_ = (TH1F*) f_in11->Get("h_HLTCaloMET_passPres");
-  TH1F* GMSBStau651_HLTPFMET_passPres_ = (TH1F*) f_in11->Get("h_HLTPFMET_passPres");
-  TH1F* GMSBStau651_RecoCaloMET_passPres_passMET_ = (TH1F*) f_in11->Get("h_RecoCaloMET_passPres_passMET");
-  TH1F* GMSBStau651_RecoPFMET_passPres_passMET_ = (TH1F*) f_in11->Get("h_RecoPFMET_passPres_passMET");
-  TH1F* GMSBStau651_HLTCaloMET_passPres_passMET_ = (TH1F*) f_in11->Get("h_HLTCaloMET_passPres_passMET");
-  TH1F* GMSBStau651_HLTPFMET_passPres_passMET_ = (TH1F*) f_in11->Get("h_HLTPFMET_passPres_passMET");
-  TH1F* GMSBStau651_RecoCaloMET_passPres_passMuon_ = (TH1F*) f_in11->Get("h_RecoCaloMET_passPres_passMuon");
-  TH1F* GMSBStau651_RecoPFMET_passPres_passMuon_ = (TH1F*) f_in11->Get("h_RecoPFMET_passPres_passMuon");
-  TH1F* GMSBStau651_HLTCaloMET_passPres_passMuon_ = (TH1F*) f_in11->Get("h_HLTCaloMET_passPres_passMuon");
-  TH1F* GMSBStau651_HLTPFMET_passPres_passMuon_ = (TH1F*) f_in11->Get("h_HLTPFMET_passPres_passMuon");
-  TH1F* GMSBStau651_RecoCaloMET_passPres_passMETOrMuon_ = (TH1F*) f_in11->Get("h_RecoCaloMET_passPres_passMETOrMuon");
-  TH1F* GMSBStau651_RecoPFMET_passPres_passMETOrMuon_ = (TH1F*) f_in11->Get("h_RecoPFMET_passPres_passMETOrMuon");
-  TH1F* GMSBStau651_HLTCaloMET_passPres_passMETOrMuon_ = (TH1F*) f_in11->Get("h_HLTCaloMET_passPres_passMETOrMuon");
-  TH1F* GMSBStau651_HLTPFMET_passPres_passMETOrMuon_ = (TH1F*) f_in11->Get("h_HLTPFMET_passPres_passMETOrMuon");
+  TH1F* GMSBStau557_RecoCaloMET_noPres_ = (TH1F*) f_in11->Get("h_RecoCaloMET_noPres");
+  TH1F* GMSBStau557_RecoPFMET_noPres_ = (TH1F*) f_in11->Get("h_RecoPFMET_noPres");
+  TH1F* GMSBStau557_HLTCaloMET_noPres_ = (TH1F*) f_in11->Get("h_HLTCaloMET_noPres");
+  TH1F* GMSBStau557_HLTPFMET_noPres_ = (TH1F*) f_in11->Get("h_HLTPFMET_noPres");
+  TH1F* GMSBStau557_RecoCaloMET_noPres_passMET_ = (TH1F*) f_in11->Get("h_RecoCaloMET_noPres_passMET");
+  TH1F* GMSBStau557_RecoPFMET_noPres_passMET_ = (TH1F*) f_in11->Get("h_RecoPFMET_noPres_passMET");
+  TH1F* GMSBStau557_HLTCaloMET_noPres_passMET_ = (TH1F*) f_in11->Get("h_HLTCaloMET_noPres_passMET");
+  TH1F* GMSBStau557_HLTPFMET_noPres_passMET_ = (TH1F*) f_in11->Get("h_HLTPFMET_noPres_passMET");
+  TH1F* GMSBStau557_RecoCaloMET_noPres_passMuon_ = (TH1F*) f_in11->Get("h_RecoCaloMET_noPres_passMuon");
+  TH1F* GMSBStau557_RecoPFMET_noPres_passMuon_ = (TH1F*) f_in11->Get("h_RecoPFMET_noPres_passMuon");
+  TH1F* GMSBStau557_HLTCaloMET_noPres_passMuon_ = (TH1F*) f_in11->Get("h_HLTCaloMET_noPres_passMuon");
+  TH1F* GMSBStau557_HLTPFMET_noPres_passMuon_ = (TH1F*) f_in11->Get("h_HLTPFMET_noPres_passMuon");
+  TH1F* GMSBStau557_RecoCaloMET_noPres_passMETOrMuon_ = (TH1F*) f_in11->Get("h_RecoCaloMET_noPres_passMETOrMuon");
+  TH1F* GMSBStau557_RecoPFMET_noPres_passMETOrMuon_ = (TH1F*) f_in11->Get("h_RecoPFMET_noPres_passMETOrMuon");
+  TH1F* GMSBStau557_HLTCaloMET_noPres_passMETOrMuon_ = (TH1F*) f_in11->Get("h_HLTCaloMET_noPres_passMETOrMuon");
+  TH1F* GMSBStau557_HLTPFMET_noPres_passMETOrMuon_ = (TH1F*) f_in11->Get("h_HLTPFMET_noPres_passMETOrMuon");
+  TH1F* GMSBStau557_RecoCaloMET_passPres_ = (TH1F*) f_in11->Get("h_RecoCaloMET_passPres");
+  TH1F* GMSBStau557_RecoPFMET_passPres_ = (TH1F*) f_in11->Get("h_RecoPFMET_passPres");
+  TH1F* GMSBStau557_HLTCaloMET_passPres_ = (TH1F*) f_in11->Get("h_HLTCaloMET_passPres");
+  TH1F* GMSBStau557_HLTPFMET_passPres_ = (TH1F*) f_in11->Get("h_HLTPFMET_passPres");
+  TH1F* GMSBStau557_RecoCaloMET_passPres_passMET_ = (TH1F*) f_in11->Get("h_RecoCaloMET_passPres_passMET");
+  TH1F* GMSBStau557_RecoPFMET_passPres_passMET_ = (TH1F*) f_in11->Get("h_RecoPFMET_passPres_passMET");
+  TH1F* GMSBStau557_HLTCaloMET_passPres_passMET_ = (TH1F*) f_in11->Get("h_HLTCaloMET_passPres_passMET");
+  TH1F* GMSBStau557_HLTPFMET_passPres_passMET_ = (TH1F*) f_in11->Get("h_HLTPFMET_passPres_passMET");
+  TH1F* GMSBStau557_RecoCaloMET_passPres_passMuon_ = (TH1F*) f_in11->Get("h_RecoCaloMET_passPres_passMuon");
+  TH1F* GMSBStau557_RecoPFMET_passPres_passMuon_ = (TH1F*) f_in11->Get("h_RecoPFMET_passPres_passMuon");
+  TH1F* GMSBStau557_HLTCaloMET_passPres_passMuon_ = (TH1F*) f_in11->Get("h_HLTCaloMET_passPres_passMuon");
+  TH1F* GMSBStau557_HLTPFMET_passPres_passMuon_ = (TH1F*) f_in11->Get("h_HLTPFMET_passPres_passMuon");
+  TH1F* GMSBStau557_RecoCaloMET_passPres_passMETOrMuon_ = (TH1F*) f_in11->Get("h_RecoCaloMET_passPres_passMETOrMuon");
+  TH1F* GMSBStau557_RecoPFMET_passPres_passMETOrMuon_ = (TH1F*) f_in11->Get("h_RecoPFMET_passPres_passMETOrMuon");
+  TH1F* GMSBStau557_HLTCaloMET_passPres_passMETOrMuon_ = (TH1F*) f_in11->Get("h_HLTCaloMET_passPres_passMETOrMuon");
+  TH1F* GMSBStau557_HLTPFMET_passPres_passMETOrMuon_ = (TH1F*) f_in11->Get("h_HLTPFMET_passPres_passMETOrMuon");
 
-  TH1F* GMSBStau871_RecoCaloMET_noPres_ = (TH1F*) f_in12->Get("h_RecoCaloMET_noPres");
-  TH1F* GMSBStau871_RecoPFMET_noPres_ = (TH1F*) f_in12->Get("h_RecoPFMET_noPres");
-  TH1F* GMSBStau871_HLTCaloMET_noPres_ = (TH1F*) f_in12->Get("h_HLTCaloMET_noPres");
-  TH1F* GMSBStau871_HLTPFMET_noPres_ = (TH1F*) f_in12->Get("h_HLTPFMET_noPres");
-  TH1F* GMSBStau871_RecoCaloMET_noPres_passMET_ = (TH1F*) f_in12->Get("h_RecoCaloMET_noPres_passMET");
-  TH1F* GMSBStau871_RecoPFMET_noPres_passMET_ = (TH1F*) f_in12->Get("h_RecoPFMET_noPres_passMET");
-  TH1F* GMSBStau871_HLTCaloMET_noPres_passMET_ = (TH1F*) f_in12->Get("h_HLTCaloMET_noPres_passMET");
-  TH1F* GMSBStau871_HLTPFMET_noPres_passMET_ = (TH1F*) f_in12->Get("h_HLTPFMET_noPres_passMET");
-  TH1F* GMSBStau871_RecoCaloMET_noPres_passMuon_ = (TH1F*) f_in12->Get("h_RecoCaloMET_noPres_passMuon");
-  TH1F* GMSBStau871_RecoPFMET_noPres_passMuon_ = (TH1F*) f_in12->Get("h_RecoPFMET_noPres_passMuon");
-  TH1F* GMSBStau871_HLTCaloMET_noPres_passMuon_ = (TH1F*) f_in12->Get("h_HLTCaloMET_noPres_passMuon");
-  TH1F* GMSBStau871_HLTPFMET_noPres_passMuon_ = (TH1F*) f_in12->Get("h_HLTPFMET_noPres_passMuon");
-  TH1F* GMSBStau871_RecoCaloMET_noPres_passMETOrMuon_ = (TH1F*) f_in12->Get("h_RecoCaloMET_noPres_passMETOrMuon");
-  TH1F* GMSBStau871_RecoPFMET_noPres_passMETOrMuon_ = (TH1F*) f_in12->Get("h_RecoPFMET_noPres_passMETOrMuon");
-  TH1F* GMSBStau871_HLTCaloMET_noPres_passMETOrMuon_ = (TH1F*) f_in12->Get("h_HLTCaloMET_noPres_passMETOrMuon");
-  TH1F* GMSBStau871_HLTPFMET_noPres_passMETOrMuon_ = (TH1F*) f_in12->Get("h_HLTPFMET_noPres_passMETOrMuon");
-  TH1F* GMSBStau871_RecoCaloMET_passPres_ = (TH1F*) f_in12->Get("h_RecoCaloMET_passPres");
-  TH1F* GMSBStau871_RecoPFMET_passPres_ = (TH1F*) f_in12->Get("h_RecoPFMET_passPres");
-  TH1F* GMSBStau871_HLTCaloMET_passPres_ = (TH1F*) f_in12->Get("h_HLTCaloMET_passPres");
-  TH1F* GMSBStau871_HLTPFMET_passPres_ = (TH1F*) f_in12->Get("h_HLTPFMET_passPres");
-  TH1F* GMSBStau871_RecoCaloMET_passPres_passMET_ = (TH1F*) f_in12->Get("h_RecoCaloMET_passPres_passMET");
-  TH1F* GMSBStau871_RecoPFMET_passPres_passMET_ = (TH1F*) f_in12->Get("h_RecoPFMET_passPres_passMET");
-  TH1F* GMSBStau871_HLTCaloMET_passPres_passMET_ = (TH1F*) f_in12->Get("h_HLTCaloMET_passPres_passMET");
-  TH1F* GMSBStau871_HLTPFMET_passPres_passMET_ = (TH1F*) f_in12->Get("h_HLTPFMET_passPres_passMET");
-  TH1F* GMSBStau871_RecoCaloMET_passPres_passMuon_ = (TH1F*) f_in12->Get("h_RecoCaloMET_passPres_passMuon");
-  TH1F* GMSBStau871_RecoPFMET_passPres_passMuon_ = (TH1F*) f_in12->Get("h_RecoPFMET_passPres_passMuon");
-  TH1F* GMSBStau871_HLTCaloMET_passPres_passMuon_ = (TH1F*) f_in12->Get("h_HLTCaloMET_passPres_passMuon");
-  TH1F* GMSBStau871_HLTPFMET_passPres_passMuon_ = (TH1F*) f_in12->Get("h_HLTPFMET_passPres_passMuon");
-  TH1F* GMSBStau871_RecoCaloMET_passPres_passMETOrMuon_ = (TH1F*) f_in12->Get("h_RecoCaloMET_passPres_passMETOrMuon");
-  TH1F* GMSBStau871_RecoPFMET_passPres_passMETOrMuon_ = (TH1F*) f_in12->Get("h_RecoPFMET_passPres_passMETOrMuon");
-  TH1F* GMSBStau871_HLTCaloMET_passPres_passMETOrMuon_ = (TH1F*) f_in12->Get("h_HLTCaloMET_passPres_passMETOrMuon");
-  TH1F* GMSBStau871_HLTPFMET_passPres_passMETOrMuon_ = (TH1F*) f_in12->Get("h_HLTPFMET_passPres_passMETOrMuon");
+  TH1F* GMSBStau745_RecoCaloMET_noPres_ = (TH1F*) f_in12->Get("h_RecoCaloMET_noPres");
+  TH1F* GMSBStau745_RecoPFMET_noPres_ = (TH1F*) f_in12->Get("h_RecoPFMET_noPres");
+  TH1F* GMSBStau745_HLTCaloMET_noPres_ = (TH1F*) f_in12->Get("h_HLTCaloMET_noPres");
+  TH1F* GMSBStau745_HLTPFMET_noPres_ = (TH1F*) f_in12->Get("h_HLTPFMET_noPres");
+  TH1F* GMSBStau745_RecoCaloMET_noPres_passMET_ = (TH1F*) f_in12->Get("h_RecoCaloMET_noPres_passMET");
+  TH1F* GMSBStau745_RecoPFMET_noPres_passMET_ = (TH1F*) f_in12->Get("h_RecoPFMET_noPres_passMET");
+  TH1F* GMSBStau745_HLTCaloMET_noPres_passMET_ = (TH1F*) f_in12->Get("h_HLTCaloMET_noPres_passMET");
+  TH1F* GMSBStau745_HLTPFMET_noPres_passMET_ = (TH1F*) f_in12->Get("h_HLTPFMET_noPres_passMET");
+  TH1F* GMSBStau745_RecoCaloMET_noPres_passMuon_ = (TH1F*) f_in12->Get("h_RecoCaloMET_noPres_passMuon");
+  TH1F* GMSBStau745_RecoPFMET_noPres_passMuon_ = (TH1F*) f_in12->Get("h_RecoPFMET_noPres_passMuon");
+  TH1F* GMSBStau745_HLTCaloMET_noPres_passMuon_ = (TH1F*) f_in12->Get("h_HLTCaloMET_noPres_passMuon");
+  TH1F* GMSBStau745_HLTPFMET_noPres_passMuon_ = (TH1F*) f_in12->Get("h_HLTPFMET_noPres_passMuon");
+  TH1F* GMSBStau745_RecoCaloMET_noPres_passMETOrMuon_ = (TH1F*) f_in12->Get("h_RecoCaloMET_noPres_passMETOrMuon");
+  TH1F* GMSBStau745_RecoPFMET_noPres_passMETOrMuon_ = (TH1F*) f_in12->Get("h_RecoPFMET_noPres_passMETOrMuon");
+  TH1F* GMSBStau745_HLTCaloMET_noPres_passMETOrMuon_ = (TH1F*) f_in12->Get("h_HLTCaloMET_noPres_passMETOrMuon");
+  TH1F* GMSBStau745_HLTPFMET_noPres_passMETOrMuon_ = (TH1F*) f_in12->Get("h_HLTPFMET_noPres_passMETOrMuon");
+  TH1F* GMSBStau745_RecoCaloMET_passPres_ = (TH1F*) f_in12->Get("h_RecoCaloMET_passPres");
+  TH1F* GMSBStau745_RecoPFMET_passPres_ = (TH1F*) f_in12->Get("h_RecoPFMET_passPres");
+  TH1F* GMSBStau745_HLTCaloMET_passPres_ = (TH1F*) f_in12->Get("h_HLTCaloMET_passPres");
+  TH1F* GMSBStau745_HLTPFMET_passPres_ = (TH1F*) f_in12->Get("h_HLTPFMET_passPres");
+  TH1F* GMSBStau745_RecoCaloMET_passPres_passMET_ = (TH1F*) f_in12->Get("h_RecoCaloMET_passPres_passMET");
+  TH1F* GMSBStau745_RecoPFMET_passPres_passMET_ = (TH1F*) f_in12->Get("h_RecoPFMET_passPres_passMET");
+  TH1F* GMSBStau745_HLTCaloMET_passPres_passMET_ = (TH1F*) f_in12->Get("h_HLTCaloMET_passPres_passMET");
+  TH1F* GMSBStau745_HLTPFMET_passPres_passMET_ = (TH1F*) f_in12->Get("h_HLTPFMET_passPres_passMET");
+  TH1F* GMSBStau745_RecoCaloMET_passPres_passMuon_ = (TH1F*) f_in12->Get("h_RecoCaloMET_passPres_passMuon");
+  TH1F* GMSBStau745_RecoPFMET_passPres_passMuon_ = (TH1F*) f_in12->Get("h_RecoPFMET_passPres_passMuon");
+  TH1F* GMSBStau745_HLTCaloMET_passPres_passMuon_ = (TH1F*) f_in12->Get("h_HLTCaloMET_passPres_passMuon");
+  TH1F* GMSBStau745_HLTPFMET_passPres_passMuon_ = (TH1F*) f_in12->Get("h_HLTPFMET_passPres_passMuon");
+  TH1F* GMSBStau745_RecoCaloMET_passPres_passMETOrMuon_ = (TH1F*) f_in12->Get("h_RecoCaloMET_passPres_passMETOrMuon");
+  TH1F* GMSBStau745_RecoPFMET_passPres_passMETOrMuon_ = (TH1F*) f_in12->Get("h_RecoPFMET_passPres_passMETOrMuon");
+  TH1F* GMSBStau745_HLTCaloMET_passPres_passMETOrMuon_ = (TH1F*) f_in12->Get("h_HLTCaloMET_passPres_passMETOrMuon");
+  TH1F* GMSBStau745_HLTPFMET_passPres_passMETOrMuon_ = (TH1F*) f_in12->Get("h_HLTPFMET_passPres_passMETOrMuon");
 
   TH1F* PairStau200_RecoCaloMET_noPres_ = (TH1F*) f_in13->Get("h_RecoCaloMET_noPres");
   TH1F* PairStau200_RecoPFMET_noPres_ = (TH1F*) f_in13->Get("h_RecoPFMET_noPres");
@@ -463,71 +465,71 @@ void make_trig_plots () {
   TH1F* PairStau200_HLTCaloMET_passPres_passMETOrMuon_ = (TH1F*) f_in13->Get("h_HLTCaloMET_passPres_passMETOrMuon");
   TH1F* PairStau200_HLTPFMET_passPres_passMETOrMuon_ = (TH1F*) f_in13->Get("h_HLTPFMET_passPres_passMETOrMuon");
 
-  TH1F* PairStau432_RecoCaloMET_noPres_ = (TH1F*) f_in14->Get("h_RecoCaloMET_noPres");
-  TH1F* PairStau432_RecoPFMET_noPres_ = (TH1F*) f_in14->Get("h_RecoPFMET_noPres");
-  TH1F* PairStau432_HLTCaloMET_noPres_ = (TH1F*) f_in14->Get("h_HLTCaloMET_noPres");
-  TH1F* PairStau432_HLTPFMET_noPres_ = (TH1F*) f_in14->Get("h_HLTPFMET_noPres");
-  TH1F* PairStau432_RecoCaloMET_noPres_passMET_ = (TH1F*) f_in14->Get("h_RecoCaloMET_noPres_passMET");
-  TH1F* PairStau432_RecoPFMET_noPres_passMET_ = (TH1F*) f_in14->Get("h_RecoPFMET_noPres_passMET");
-  TH1F* PairStau432_HLTCaloMET_noPres_passMET_ = (TH1F*) f_in14->Get("h_HLTCaloMET_noPres_passMET");
-  TH1F* PairStau432_HLTPFMET_noPres_passMET_ = (TH1F*) f_in14->Get("h_HLTPFMET_noPres_passMET");
-  TH1F* PairStau432_RecoCaloMET_noPres_passMuon_ = (TH1F*) f_in14->Get("h_RecoCaloMET_noPres_passMuon");
-  TH1F* PairStau432_RecoPFMET_noPres_passMuon_ = (TH1F*) f_in14->Get("h_RecoPFMET_noPres_passMuon");
-  TH1F* PairStau432_HLTCaloMET_noPres_passMuon_ = (TH1F*) f_in14->Get("h_HLTCaloMET_noPres_passMuon");
-  TH1F* PairStau432_HLTPFMET_noPres_passMuon_ = (TH1F*) f_in14->Get("h_HLTPFMET_noPres_passMuon");
-  TH1F* PairStau432_RecoCaloMET_noPres_passMETOrMuon_ = (TH1F*) f_in14->Get("h_RecoCaloMET_noPres_passMETOrMuon");
-  TH1F* PairStau432_RecoPFMET_noPres_passMETOrMuon_ = (TH1F*) f_in14->Get("h_RecoPFMET_noPres_passMETOrMuon");
-  TH1F* PairStau432_HLTCaloMET_noPres_passMETOrMuon_ = (TH1F*) f_in14->Get("h_HLTCaloMET_noPres_passMETOrMuon");
-  TH1F* PairStau432_HLTPFMET_noPres_passMETOrMuon_ = (TH1F*) f_in14->Get("h_HLTPFMET_noPres_passMETOrMuon");
-  TH1F* PairStau432_RecoCaloMET_passPres_ = (TH1F*) f_in14->Get("h_RecoCaloMET_passPres");
-  TH1F* PairStau432_RecoPFMET_passPres_ = (TH1F*) f_in14->Get("h_RecoPFMET_passPres");
-  TH1F* PairStau432_HLTCaloMET_passPres_ = (TH1F*) f_in14->Get("h_HLTCaloMET_passPres");
-  TH1F* PairStau432_HLTPFMET_passPres_ = (TH1F*) f_in14->Get("h_HLTPFMET_passPres");
-  TH1F* PairStau432_RecoCaloMET_passPres_passMET_ = (TH1F*) f_in14->Get("h_RecoCaloMET_passPres_passMET");
-  TH1F* PairStau432_RecoPFMET_passPres_passMET_ = (TH1F*) f_in14->Get("h_RecoPFMET_passPres_passMET");
-  TH1F* PairStau432_HLTCaloMET_passPres_passMET_ = (TH1F*) f_in14->Get("h_HLTCaloMET_passPres_passMET");
-  TH1F* PairStau432_HLTPFMET_passPres_passMET_ = (TH1F*) f_in14->Get("h_HLTPFMET_passPres_passMET");
-  TH1F* PairStau432_RecoCaloMET_passPres_passMuon_ = (TH1F*) f_in14->Get("h_RecoCaloMET_passPres_passMuon");
-  TH1F* PairStau432_RecoPFMET_passPres_passMuon_ = (TH1F*) f_in14->Get("h_RecoPFMET_passPres_passMuon");
-  TH1F* PairStau432_HLTCaloMET_passPres_passMuon_ = (TH1F*) f_in14->Get("h_HLTCaloMET_passPres_passMuon");
-  TH1F* PairStau432_HLTPFMET_passPres_passMuon_ = (TH1F*) f_in14->Get("h_HLTPFMET_passPres_passMuon");
-  TH1F* PairStau432_RecoCaloMET_passPres_passMETOrMuon_ = (TH1F*) f_in14->Get("h_RecoCaloMET_passPres_passMETOrMuon");
-  TH1F* PairStau432_RecoPFMET_passPres_passMETOrMuon_ = (TH1F*) f_in14->Get("h_RecoPFMET_passPres_passMETOrMuon");
-  TH1F* PairStau432_HLTCaloMET_passPres_passMETOrMuon_ = (TH1F*) f_in14->Get("h_HLTCaloMET_passPres_passMETOrMuon");
-  TH1F* PairStau432_HLTPFMET_passPres_passMETOrMuon_ = (TH1F*) f_in14->Get("h_HLTPFMET_passPres_passMETOrMuon");
+  TH1F* PairStau308_RecoCaloMET_noPres_ = (TH1F*) f_in14->Get("h_RecoCaloMET_noPres");
+  TH1F* PairStau308_RecoPFMET_noPres_ = (TH1F*) f_in14->Get("h_RecoPFMET_noPres");
+  TH1F* PairStau308_HLTCaloMET_noPres_ = (TH1F*) f_in14->Get("h_HLTCaloMET_noPres");
+  TH1F* PairStau308_HLTPFMET_noPres_ = (TH1F*) f_in14->Get("h_HLTPFMET_noPres");
+  TH1F* PairStau308_RecoCaloMET_noPres_passMET_ = (TH1F*) f_in14->Get("h_RecoCaloMET_noPres_passMET");
+  TH1F* PairStau308_RecoPFMET_noPres_passMET_ = (TH1F*) f_in14->Get("h_RecoPFMET_noPres_passMET");
+  TH1F* PairStau308_HLTCaloMET_noPres_passMET_ = (TH1F*) f_in14->Get("h_HLTCaloMET_noPres_passMET");
+  TH1F* PairStau308_HLTPFMET_noPres_passMET_ = (TH1F*) f_in14->Get("h_HLTPFMET_noPres_passMET");
+  TH1F* PairStau308_RecoCaloMET_noPres_passMuon_ = (TH1F*) f_in14->Get("h_RecoCaloMET_noPres_passMuon");
+  TH1F* PairStau308_RecoPFMET_noPres_passMuon_ = (TH1F*) f_in14->Get("h_RecoPFMET_noPres_passMuon");
+  TH1F* PairStau308_HLTCaloMET_noPres_passMuon_ = (TH1F*) f_in14->Get("h_HLTCaloMET_noPres_passMuon");
+  TH1F* PairStau308_HLTPFMET_noPres_passMuon_ = (TH1F*) f_in14->Get("h_HLTPFMET_noPres_passMuon");
+  TH1F* PairStau308_RecoCaloMET_noPres_passMETOrMuon_ = (TH1F*) f_in14->Get("h_RecoCaloMET_noPres_passMETOrMuon");
+  TH1F* PairStau308_RecoPFMET_noPres_passMETOrMuon_ = (TH1F*) f_in14->Get("h_RecoPFMET_noPres_passMETOrMuon");
+  TH1F* PairStau308_HLTCaloMET_noPres_passMETOrMuon_ = (TH1F*) f_in14->Get("h_HLTCaloMET_noPres_passMETOrMuon");
+  TH1F* PairStau308_HLTPFMET_noPres_passMETOrMuon_ = (TH1F*) f_in14->Get("h_HLTPFMET_noPres_passMETOrMuon");
+  TH1F* PairStau308_RecoCaloMET_passPres_ = (TH1F*) f_in14->Get("h_RecoCaloMET_passPres");
+  TH1F* PairStau308_RecoPFMET_passPres_ = (TH1F*) f_in14->Get("h_RecoPFMET_passPres");
+  TH1F* PairStau308_HLTCaloMET_passPres_ = (TH1F*) f_in14->Get("h_HLTCaloMET_passPres");
+  TH1F* PairStau308_HLTPFMET_passPres_ = (TH1F*) f_in14->Get("h_HLTPFMET_passPres");
+  TH1F* PairStau308_RecoCaloMET_passPres_passMET_ = (TH1F*) f_in14->Get("h_RecoCaloMET_passPres_passMET");
+  TH1F* PairStau308_RecoPFMET_passPres_passMET_ = (TH1F*) f_in14->Get("h_RecoPFMET_passPres_passMET");
+  TH1F* PairStau308_HLTCaloMET_passPres_passMET_ = (TH1F*) f_in14->Get("h_HLTCaloMET_passPres_passMET");
+  TH1F* PairStau308_HLTPFMET_passPres_passMET_ = (TH1F*) f_in14->Get("h_HLTPFMET_passPres_passMET");
+  TH1F* PairStau308_RecoCaloMET_passPres_passMuon_ = (TH1F*) f_in14->Get("h_RecoCaloMET_passPres_passMuon");
+  TH1F* PairStau308_RecoPFMET_passPres_passMuon_ = (TH1F*) f_in14->Get("h_RecoPFMET_passPres_passMuon");
+  TH1F* PairStau308_HLTCaloMET_passPres_passMuon_ = (TH1F*) f_in14->Get("h_HLTCaloMET_passPres_passMuon");
+  TH1F* PairStau308_HLTPFMET_passPres_passMuon_ = (TH1F*) f_in14->Get("h_HLTPFMET_passPres_passMuon");
+  TH1F* PairStau308_RecoCaloMET_passPres_passMETOrMuon_ = (TH1F*) f_in14->Get("h_RecoCaloMET_passPres_passMETOrMuon");
+  TH1F* PairStau308_RecoPFMET_passPres_passMETOrMuon_ = (TH1F*) f_in14->Get("h_RecoPFMET_passPres_passMETOrMuon");
+  TH1F* PairStau308_HLTCaloMET_passPres_passMETOrMuon_ = (TH1F*) f_in14->Get("h_HLTCaloMET_passPres_passMETOrMuon");
+  TH1F* PairStau308_HLTPFMET_passPres_passMETOrMuon_ = (TH1F*) f_in14->Get("h_HLTPFMET_passPres_passMETOrMuon");
 
-  TH1F* PairStau651_RecoCaloMET_noPres_ = (TH1F*) f_in15->Get("h_RecoCaloMET_noPres");
-  TH1F* PairStau651_RecoPFMET_noPres_ = (TH1F*) f_in15->Get("h_RecoPFMET_noPres");
-  TH1F* PairStau651_HLTCaloMET_noPres_ = (TH1F*) f_in15->Get("h_HLTCaloMET_noPres");
-  TH1F* PairStau651_HLTPFMET_noPres_ = (TH1F*) f_in15->Get("h_HLTPFMET_noPres");
-  TH1F* PairStau651_RecoCaloMET_noPres_passMET_ = (TH1F*) f_in15->Get("h_RecoCaloMET_noPres_passMET");
-  TH1F* PairStau651_RecoPFMET_noPres_passMET_ = (TH1F*) f_in15->Get("h_RecoPFMET_noPres_passMET");
-  TH1F* PairStau651_HLTCaloMET_noPres_passMET_ = (TH1F*) f_in15->Get("h_HLTCaloMET_noPres_passMET");
-  TH1F* PairStau651_HLTPFMET_noPres_passMET_ = (TH1F*) f_in15->Get("h_HLTPFMET_noPres_passMET");
-  TH1F* PairStau651_RecoCaloMET_noPres_passMuon_ = (TH1F*) f_in15->Get("h_RecoCaloMET_noPres_passMuon");
-  TH1F* PairStau651_RecoPFMET_noPres_passMuon_ = (TH1F*) f_in15->Get("h_RecoPFMET_noPres_passMuon");
-  TH1F* PairStau651_HLTCaloMET_noPres_passMuon_ = (TH1F*) f_in15->Get("h_HLTCaloMET_noPres_passMuon");
-  TH1F* PairStau651_HLTPFMET_noPres_passMuon_ = (TH1F*) f_in15->Get("h_HLTPFMET_noPres_passMuon");
-  TH1F* PairStau651_RecoCaloMET_noPres_passMETOrMuon_ = (TH1F*) f_in15->Get("h_RecoCaloMET_noPres_passMETOrMuon");
-  TH1F* PairStau651_RecoPFMET_noPres_passMETOrMuon_ = (TH1F*) f_in15->Get("h_RecoPFMET_noPres_passMETOrMuon");
-  TH1F* PairStau651_HLTCaloMET_noPres_passMETOrMuon_ = (TH1F*) f_in15->Get("h_HLTCaloMET_noPres_passMETOrMuon");
-  TH1F* PairStau651_HLTPFMET_noPres_passMETOrMuon_ = (TH1F*) f_in15->Get("h_HLTPFMET_noPres_passMETOrMuon");
-  TH1F* PairStau651_RecoCaloMET_passPres_ = (TH1F*) f_in15->Get("h_RecoCaloMET_passPres");
-  TH1F* PairStau651_RecoPFMET_passPres_ = (TH1F*) f_in15->Get("h_RecoPFMET_passPres");
-  TH1F* PairStau651_HLTCaloMET_passPres_ = (TH1F*) f_in15->Get("h_HLTCaloMET_passPres");
-  TH1F* PairStau651_HLTPFMET_passPres_ = (TH1F*) f_in15->Get("h_HLTPFMET_passPres");
-  TH1F* PairStau651_RecoCaloMET_passPres_passMET_ = (TH1F*) f_in15->Get("h_RecoCaloMET_passPres_passMET");
-  TH1F* PairStau651_RecoPFMET_passPres_passMET_ = (TH1F*) f_in15->Get("h_RecoPFMET_passPres_passMET");
-  TH1F* PairStau651_HLTCaloMET_passPres_passMET_ = (TH1F*) f_in15->Get("h_HLTCaloMET_passPres_passMET");
-  TH1F* PairStau651_HLTPFMET_passPres_passMET_ = (TH1F*) f_in15->Get("h_HLTPFMET_passPres_passMET");
-  TH1F* PairStau651_RecoCaloMET_passPres_passMuon_ = (TH1F*) f_in15->Get("h_RecoCaloMET_passPres_passMuon");
-  TH1F* PairStau651_RecoPFMET_passPres_passMuon_ = (TH1F*) f_in15->Get("h_RecoPFMET_passPres_passMuon");
-  TH1F* PairStau651_HLTCaloMET_passPres_passMuon_ = (TH1F*) f_in15->Get("h_HLTCaloMET_passPres_passMuon");
-  TH1F* PairStau651_HLTPFMET_passPres_passMuon_ = (TH1F*) f_in15->Get("h_HLTPFMET_passPres_passMuon");
-  TH1F* PairStau651_RecoCaloMET_passPres_passMETOrMuon_ = (TH1F*) f_in15->Get("h_RecoCaloMET_passPres_passMETOrMuon");
-  TH1F* PairStau651_RecoPFMET_passPres_passMETOrMuon_ = (TH1F*) f_in15->Get("h_RecoPFMET_passPres_passMETOrMuon");
-  TH1F* PairStau651_HLTCaloMET_passPres_passMETOrMuon_ = (TH1F*) f_in15->Get("h_HLTCaloMET_passPres_passMETOrMuon");
-  TH1F* PairStau651_HLTPFMET_passPres_passMETOrMuon_ = (TH1F*) f_in15->Get("h_HLTPFMET_passPres_passMETOrMuon");
+  TH1F* PairStau557_RecoCaloMET_noPres_ = (TH1F*) f_in15->Get("h_RecoCaloMET_noPres");
+  TH1F* PairStau557_RecoPFMET_noPres_ = (TH1F*) f_in15->Get("h_RecoPFMET_noPres");
+  TH1F* PairStau557_HLTCaloMET_noPres_ = (TH1F*) f_in15->Get("h_HLTCaloMET_noPres");
+  TH1F* PairStau557_HLTPFMET_noPres_ = (TH1F*) f_in15->Get("h_HLTPFMET_noPres");
+  TH1F* PairStau557_RecoCaloMET_noPres_passMET_ = (TH1F*) f_in15->Get("h_RecoCaloMET_noPres_passMET");
+  TH1F* PairStau557_RecoPFMET_noPres_passMET_ = (TH1F*) f_in15->Get("h_RecoPFMET_noPres_passMET");
+  TH1F* PairStau557_HLTCaloMET_noPres_passMET_ = (TH1F*) f_in15->Get("h_HLTCaloMET_noPres_passMET");
+  TH1F* PairStau557_HLTPFMET_noPres_passMET_ = (TH1F*) f_in15->Get("h_HLTPFMET_noPres_passMET");
+  TH1F* PairStau557_RecoCaloMET_noPres_passMuon_ = (TH1F*) f_in15->Get("h_RecoCaloMET_noPres_passMuon");
+  TH1F* PairStau557_RecoPFMET_noPres_passMuon_ = (TH1F*) f_in15->Get("h_RecoPFMET_noPres_passMuon");
+  TH1F* PairStau557_HLTCaloMET_noPres_passMuon_ = (TH1F*) f_in15->Get("h_HLTCaloMET_noPres_passMuon");
+  TH1F* PairStau557_HLTPFMET_noPres_passMuon_ = (TH1F*) f_in15->Get("h_HLTPFMET_noPres_passMuon");
+  TH1F* PairStau557_RecoCaloMET_noPres_passMETOrMuon_ = (TH1F*) f_in15->Get("h_RecoCaloMET_noPres_passMETOrMuon");
+  TH1F* PairStau557_RecoPFMET_noPres_passMETOrMuon_ = (TH1F*) f_in15->Get("h_RecoPFMET_noPres_passMETOrMuon");
+  TH1F* PairStau557_HLTCaloMET_noPres_passMETOrMuon_ = (TH1F*) f_in15->Get("h_HLTCaloMET_noPres_passMETOrMuon");
+  TH1F* PairStau557_HLTPFMET_noPres_passMETOrMuon_ = (TH1F*) f_in15->Get("h_HLTPFMET_noPres_passMETOrMuon");
+  TH1F* PairStau557_RecoCaloMET_passPres_ = (TH1F*) f_in15->Get("h_RecoCaloMET_passPres");
+  TH1F* PairStau557_RecoPFMET_passPres_ = (TH1F*) f_in15->Get("h_RecoPFMET_passPres");
+  TH1F* PairStau557_HLTCaloMET_passPres_ = (TH1F*) f_in15->Get("h_HLTCaloMET_passPres");
+  TH1F* PairStau557_HLTPFMET_passPres_ = (TH1F*) f_in15->Get("h_HLTPFMET_passPres");
+  TH1F* PairStau557_RecoCaloMET_passPres_passMET_ = (TH1F*) f_in15->Get("h_RecoCaloMET_passPres_passMET");
+  TH1F* PairStau557_RecoPFMET_passPres_passMET_ = (TH1F*) f_in15->Get("h_RecoPFMET_passPres_passMET");
+  TH1F* PairStau557_HLTCaloMET_passPres_passMET_ = (TH1F*) f_in15->Get("h_HLTCaloMET_passPres_passMET");
+  TH1F* PairStau557_HLTPFMET_passPres_passMET_ = (TH1F*) f_in15->Get("h_HLTPFMET_passPres_passMET");
+  TH1F* PairStau557_RecoCaloMET_passPres_passMuon_ = (TH1F*) f_in15->Get("h_RecoCaloMET_passPres_passMuon");
+  TH1F* PairStau557_RecoPFMET_passPres_passMuon_ = (TH1F*) f_in15->Get("h_RecoPFMET_passPres_passMuon");
+  TH1F* PairStau557_HLTCaloMET_passPres_passMuon_ = (TH1F*) f_in15->Get("h_HLTCaloMET_passPres_passMuon");
+  TH1F* PairStau557_HLTPFMET_passPres_passMuon_ = (TH1F*) f_in15->Get("h_HLTPFMET_passPres_passMuon");
+  TH1F* PairStau557_RecoCaloMET_passPres_passMETOrMuon_ = (TH1F*) f_in15->Get("h_RecoCaloMET_passPres_passMETOrMuon");
+  TH1F* PairStau557_RecoPFMET_passPres_passMETOrMuon_ = (TH1F*) f_in15->Get("h_RecoPFMET_passPres_passMETOrMuon");
+  TH1F* PairStau557_HLTCaloMET_passPres_passMETOrMuon_ = (TH1F*) f_in15->Get("h_HLTCaloMET_passPres_passMETOrMuon");
+  TH1F* PairStau557_HLTPFMET_passPres_passMETOrMuon_ = (TH1F*) f_in15->Get("h_HLTPFMET_passPres_passMETOrMuon");
 
 
 
@@ -2786,736 +2788,736 @@ void make_trig_plots () {
   c_met->SaveAs("./png/GMSBStau200_METOrMuonEff_HLTPFMET_passPres.png");
 
   //=====================
-  //  GMSBStau 432 GeV  
+  //  GMSBStau 308 GeV  
   //=====================
 
   /* // 10.1) MET trigger efficiency vs RECO Calo MET, no preselection
-  TH2F* GMSBStau432_METEff_RecoCaloMET_noPres = new TH2F("GMSBStau432_METEff_RecoCaloMET_noPres","no preselection;RECO Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau432_METEff_RecoCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau432_METEff_RecoCaloMET_noPres->Draw();  
-  TEfficiency* GMSBStau432_METEff_RecoCaloMET_noPres_TEff = new TEfficiency(*GMSBStau432_RecoCaloMET_noPres_passMET_,*GMSBStau432_RecoCaloMET_noPres_);
-  GMSBStau432_METEff_RecoCaloMET_noPres_TEff->SetLineColor(kRed);
-  GMSBStau432_METEff_RecoCaloMET_noPres_TEff->SetMarkerColor(kRed);
-  GMSBStau432_METEff_RecoCaloMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau432_METEff_RecoCaloMET_noPres.png"); */
+  TH2F* GMSBStau308_METEff_RecoCaloMET_noPres = new TH2F("GMSBStau308_METEff_RecoCaloMET_noPres","no preselection;RECO Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau308_METEff_RecoCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau308_METEff_RecoCaloMET_noPres->Draw();  
+  TEfficiency* GMSBStau308_METEff_RecoCaloMET_noPres_TEff = new TEfficiency(*GMSBStau308_RecoCaloMET_noPres_passMET_,*GMSBStau308_RecoCaloMET_noPres_);
+  GMSBStau308_METEff_RecoCaloMET_noPres_TEff->SetLineColor(kRed);
+  GMSBStau308_METEff_RecoCaloMET_noPres_TEff->SetMarkerColor(kRed);
+  GMSBStau308_METEff_RecoCaloMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau308_METEff_RecoCaloMET_noPres.png"); */
 
   // 10.2) MET trigger efficiency vs RECO Calo MET, pass preselection
-  TH2F* GMSBStau432_METEff_RecoCaloMET_passPres = new TH2F("GMSBStau432_METEff_RecoCaloMET_passPres","pass preselection;RECO Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau432_METEff_RecoCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau432_METEff_RecoCaloMET_passPres->Draw();  
-  TEfficiency* GMSBStau432_METEff_RecoCaloMET_passPres_TEff = new TEfficiency(*GMSBStau432_RecoCaloMET_passPres_passMET_,*GMSBStau432_RecoCaloMET_passPres_);
-  GMSBStau432_METEff_RecoCaloMET_passPres_TEff->SetLineColor(kRed);
-  GMSBStau432_METEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau432_METEff_RecoCaloMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau432_METEff_RecoCaloMET_passPres.png");
+  TH2F* GMSBStau308_METEff_RecoCaloMET_passPres = new TH2F("GMSBStau308_METEff_RecoCaloMET_passPres","pass preselection;RECO Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau308_METEff_RecoCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau308_METEff_RecoCaloMET_passPres->Draw();  
+  TEfficiency* GMSBStau308_METEff_RecoCaloMET_passPres_TEff = new TEfficiency(*GMSBStau308_RecoCaloMET_passPres_passMET_,*GMSBStau308_RecoCaloMET_passPres_);
+  GMSBStau308_METEff_RecoCaloMET_passPres_TEff->SetLineColor(kRed);
+  GMSBStau308_METEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kRed);
+  GMSBStau308_METEff_RecoCaloMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau308_METEff_RecoCaloMET_passPres.png");
 
   /* // 10.3) Muon trigger efficiency vs RECO Calo MET, no preselection
-  TH2F* GMSBStau432_MuonEff_RecoCaloMET_noPres = new TH2F("GMSBStau432_MuonEff_RecoCaloMET_noPres","no preselection;RECO Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau432_MuonEff_RecoCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau432_MuonEff_RecoCaloMET_noPres->Draw();  
-  TEfficiency* GMSBStau432_MuonEff_RecoCaloMET_noPres_TEff = new TEfficiency(*GMSBStau432_RecoCaloMET_noPres_passMuon_,*GMSBStau432_RecoCaloMET_noPres_);
-  GMSBStau432_MuonEff_RecoCaloMET_noPres_TEff->SetLineColor(kRed);
-  GMSBStau432_MuonEff_RecoCaloMET_noPres_TEff->SetMarkerColor(kRed);
-  GMSBStau432_MuonEff_RecoCaloMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau432_MuonEff_RecoCaloMET_noPres.png"); */
+  TH2F* GMSBStau308_MuonEff_RecoCaloMET_noPres = new TH2F("GMSBStau308_MuonEff_RecoCaloMET_noPres","no preselection;RECO Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau308_MuonEff_RecoCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau308_MuonEff_RecoCaloMET_noPres->Draw();  
+  TEfficiency* GMSBStau308_MuonEff_RecoCaloMET_noPres_TEff = new TEfficiency(*GMSBStau308_RecoCaloMET_noPres_passMuon_,*GMSBStau308_RecoCaloMET_noPres_);
+  GMSBStau308_MuonEff_RecoCaloMET_noPres_TEff->SetLineColor(kRed);
+  GMSBStau308_MuonEff_RecoCaloMET_noPres_TEff->SetMarkerColor(kRed);
+  GMSBStau308_MuonEff_RecoCaloMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau308_MuonEff_RecoCaloMET_noPres.png"); */
 
   // 10.4) Muon trigger efficiency vs RECO Calo MET, pass preselection
-  TH2F* GMSBStau432_MuonEff_RecoCaloMET_passPres = new TH2F("GMSBStau432_MuonEff_RecoCaloMET_passPres","pass preselection;RECO Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau432_MuonEff_RecoCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau432_MuonEff_RecoCaloMET_passPres->Draw();  
-  TEfficiency* GMSBStau432_MuonEff_RecoCaloMET_passPres_TEff = new TEfficiency(*GMSBStau432_RecoCaloMET_passPres_passMuon_,*GMSBStau432_RecoCaloMET_passPres_);
-  GMSBStau432_MuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kRed);
-  GMSBStau432_MuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau432_MuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau432_MuonEff_RecoCaloMET_passPres.png");
+  TH2F* GMSBStau308_MuonEff_RecoCaloMET_passPres = new TH2F("GMSBStau308_MuonEff_RecoCaloMET_passPres","pass preselection;RECO Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau308_MuonEff_RecoCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau308_MuonEff_RecoCaloMET_passPres->Draw();  
+  TEfficiency* GMSBStau308_MuonEff_RecoCaloMET_passPres_TEff = new TEfficiency(*GMSBStau308_RecoCaloMET_passPres_passMuon_,*GMSBStau308_RecoCaloMET_passPres_);
+  GMSBStau308_MuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kRed);
+  GMSBStau308_MuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kRed);
+  GMSBStau308_MuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau308_MuonEff_RecoCaloMET_passPres.png");
 
   /* // 10.5) MET or Muon trigger efficiency vs RECO Calo MET, no preselection
-  TH2F* GMSBStau432_METOrMuonEff_RecoCaloMET_noPres = new TH2F("GMSBStau432_METOrMuonEff_RecoCaloMET_noPres","no preselection;RECO Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau432_METOrMuonEff_RecoCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau432_METOrMuonEff_RecoCaloMET_noPres->Draw();  
-  TEfficiency* GMSBStau432_METOrMuonEff_RecoCaloMET_noPres_TEff = new TEfficiency(*GMSBStau432_RecoCaloMET_noPres_passMETOrMuon_,*GMSBStau432_RecoCaloMET_noPres_);
-  GMSBStau432_METOrMuonEff_RecoCaloMET_noPres_TEff->SetLineColor(kRed);
-  GMSBStau432_METOrMuonEff_RecoCaloMET_noPres_TEff->SetMarkerColor(kRed);
-  GMSBStau432_METOrMuonEff_RecoCaloMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau432_METOrMuonEff_RecoCaloMET_noPres.png"); */
+  TH2F* GMSBStau308_METOrMuonEff_RecoCaloMET_noPres = new TH2F("GMSBStau308_METOrMuonEff_RecoCaloMET_noPres","no preselection;RECO Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau308_METOrMuonEff_RecoCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau308_METOrMuonEff_RecoCaloMET_noPres->Draw();  
+  TEfficiency* GMSBStau308_METOrMuonEff_RecoCaloMET_noPres_TEff = new TEfficiency(*GMSBStau308_RecoCaloMET_noPres_passMETOrMuon_,*GMSBStau308_RecoCaloMET_noPres_);
+  GMSBStau308_METOrMuonEff_RecoCaloMET_noPres_TEff->SetLineColor(kRed);
+  GMSBStau308_METOrMuonEff_RecoCaloMET_noPres_TEff->SetMarkerColor(kRed);
+  GMSBStau308_METOrMuonEff_RecoCaloMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau308_METOrMuonEff_RecoCaloMET_noPres.png"); */
 
   // 10.6) MET or Muon trigger efficiency vs RECO Calo MET, pass preselection
-  TH2F* GMSBStau432_METOrMuonEff_RecoCaloMET_passPres = new TH2F("GMSBStau432_METOrMuonEff_RecoCaloMET_passPres","pass preselection;RECO Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau432_METOrMuonEff_RecoCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau432_METOrMuonEff_RecoCaloMET_passPres->Draw();  
-  TEfficiency* GMSBStau432_METOrMuonEff_RecoCaloMET_passPres_TEff = new TEfficiency(*GMSBStau432_RecoCaloMET_passPres_passMETOrMuon_,*GMSBStau432_RecoCaloMET_passPres_);
-  GMSBStau432_METOrMuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kRed);
-  GMSBStau432_METOrMuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau432_METOrMuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau432_METOrMuonEff_RecoCaloMET_passPres.png");
+  TH2F* GMSBStau308_METOrMuonEff_RecoCaloMET_passPres = new TH2F("GMSBStau308_METOrMuonEff_RecoCaloMET_passPres","pass preselection;RECO Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau308_METOrMuonEff_RecoCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau308_METOrMuonEff_RecoCaloMET_passPres->Draw();  
+  TEfficiency* GMSBStau308_METOrMuonEff_RecoCaloMET_passPres_TEff = new TEfficiency(*GMSBStau308_RecoCaloMET_passPres_passMETOrMuon_,*GMSBStau308_RecoCaloMET_passPres_);
+  GMSBStau308_METOrMuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kRed);
+  GMSBStau308_METOrMuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kRed);
+  GMSBStau308_METOrMuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau308_METOrMuonEff_RecoCaloMET_passPres.png");
 
   /* // 10.7) MET trigger efficiency vs RECO PF MET, no preselection
-  TH2F* GMSBStau432_METEff_RecoPFMET_noPres = new TH2F("GMSBStau432_METEff_RecoPFMET_noPres","no preselection;RECO PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau432_METEff_RecoPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau432_METEff_RecoPFMET_noPres->Draw();  
-  TEfficiency* GMSBStau432_METEff_RecoPFMET_noPres_TEff = new TEfficiency(*GMSBStau432_RecoPFMET_noPres_passMET_,*GMSBStau432_RecoPFMET_noPres_);
-  GMSBStau432_METEff_RecoPFMET_noPres_TEff->SetLineColor(kRed);
-  GMSBStau432_METEff_RecoPFMET_noPres_TEff->SetMarkerColor(kRed);
-  GMSBStau432_METEff_RecoPFMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau432_METEff_RecoPFMET_noPres.png"); */
+  TH2F* GMSBStau308_METEff_RecoPFMET_noPres = new TH2F("GMSBStau308_METEff_RecoPFMET_noPres","no preselection;RECO PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau308_METEff_RecoPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau308_METEff_RecoPFMET_noPres->Draw();  
+  TEfficiency* GMSBStau308_METEff_RecoPFMET_noPres_TEff = new TEfficiency(*GMSBStau308_RecoPFMET_noPres_passMET_,*GMSBStau308_RecoPFMET_noPres_);
+  GMSBStau308_METEff_RecoPFMET_noPres_TEff->SetLineColor(kRed);
+  GMSBStau308_METEff_RecoPFMET_noPres_TEff->SetMarkerColor(kRed);
+  GMSBStau308_METEff_RecoPFMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau308_METEff_RecoPFMET_noPres.png"); */
 
   // 10.8) MET trigger efficiency vs RECO PF MET, pass preselection
-  TH2F* GMSBStau432_METEff_RecoPFMET_passPres = new TH2F("GMSBStau432_METEff_RecoPFMET_passPres","pass preselection;RECO PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau432_METEff_RecoPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau432_METEff_RecoPFMET_passPres->Draw();  
-  TEfficiency* GMSBStau432_METEff_RecoPFMET_passPres_TEff = new TEfficiency(*GMSBStau432_RecoPFMET_passPres_passMET_,*GMSBStau432_RecoPFMET_passPres_);
-  GMSBStau432_METEff_RecoPFMET_passPres_TEff->SetLineColor(kRed);
-  GMSBStau432_METEff_RecoPFMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau432_METEff_RecoPFMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau432_METEff_RecoPFMET_passPres.png");
+  TH2F* GMSBStau308_METEff_RecoPFMET_passPres = new TH2F("GMSBStau308_METEff_RecoPFMET_passPres","pass preselection;RECO PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau308_METEff_RecoPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau308_METEff_RecoPFMET_passPres->Draw();  
+  TEfficiency* GMSBStau308_METEff_RecoPFMET_passPres_TEff = new TEfficiency(*GMSBStau308_RecoPFMET_passPres_passMET_,*GMSBStau308_RecoPFMET_passPres_);
+  GMSBStau308_METEff_RecoPFMET_passPres_TEff->SetLineColor(kRed);
+  GMSBStau308_METEff_RecoPFMET_passPres_TEff->SetMarkerColor(kRed);
+  GMSBStau308_METEff_RecoPFMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau308_METEff_RecoPFMET_passPres.png");
 
   /* // 10.9) Muon trigger efficiency vs RECO PF MET, no preselection
-  TH2F* GMSBStau432_MuonEff_RecoPFMET_noPres = new TH2F("GMSBStau432_MuonEff_RecoPFMET_noPres","no preselection;RECO PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau432_MuonEff_RecoPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau432_MuonEff_RecoPFMET_noPres->Draw();  
-  TEfficiency* GMSBStau432_MuonEff_RecoPFMET_noPres_TEff = new TEfficiency(*GMSBStau432_RecoPFMET_noPres_passMuon_,*GMSBStau432_RecoPFMET_noPres_);
-  GMSBStau432_MuonEff_RecoPFMET_noPres_TEff->SetLineColor(kRed);
-  GMSBStau432_MuonEff_RecoPFMET_noPres_TEff->SetMarkerColor(kRed);
-  GMSBStau432_MuonEff_RecoPFMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau432_MuonEff_RecoPFMET_noPres.png"); */
+  TH2F* GMSBStau308_MuonEff_RecoPFMET_noPres = new TH2F("GMSBStau308_MuonEff_RecoPFMET_noPres","no preselection;RECO PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau308_MuonEff_RecoPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau308_MuonEff_RecoPFMET_noPres->Draw();  
+  TEfficiency* GMSBStau308_MuonEff_RecoPFMET_noPres_TEff = new TEfficiency(*GMSBStau308_RecoPFMET_noPres_passMuon_,*GMSBStau308_RecoPFMET_noPres_);
+  GMSBStau308_MuonEff_RecoPFMET_noPres_TEff->SetLineColor(kRed);
+  GMSBStau308_MuonEff_RecoPFMET_noPres_TEff->SetMarkerColor(kRed);
+  GMSBStau308_MuonEff_RecoPFMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau308_MuonEff_RecoPFMET_noPres.png"); */
 
   // 10.10) Muon trigger efficiency vs RECO PF MET, pass preselection
-  TH2F* GMSBStau432_MuonEff_RecoPFMET_passPres = new TH2F("GMSBStau432_MuonEff_RecoPFMET_passPres","pass preselection;RECO PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau432_MuonEff_RecoPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau432_MuonEff_RecoPFMET_passPres->Draw();  
-  TEfficiency* GMSBStau432_MuonEff_RecoPFMET_passPres_TEff = new TEfficiency(*GMSBStau432_RecoPFMET_passPres_passMuon_,*GMSBStau432_RecoPFMET_passPres_);
-  GMSBStau432_MuonEff_RecoPFMET_passPres_TEff->SetLineColor(kRed);
-  GMSBStau432_MuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau432_MuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau432_MuonEff_RecoPFMET_passPres.png");
+  TH2F* GMSBStau308_MuonEff_RecoPFMET_passPres = new TH2F("GMSBStau308_MuonEff_RecoPFMET_passPres","pass preselection;RECO PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau308_MuonEff_RecoPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau308_MuonEff_RecoPFMET_passPres->Draw();  
+  TEfficiency* GMSBStau308_MuonEff_RecoPFMET_passPres_TEff = new TEfficiency(*GMSBStau308_RecoPFMET_passPres_passMuon_,*GMSBStau308_RecoPFMET_passPres_);
+  GMSBStau308_MuonEff_RecoPFMET_passPres_TEff->SetLineColor(kRed);
+  GMSBStau308_MuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kRed);
+  GMSBStau308_MuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau308_MuonEff_RecoPFMET_passPres.png");
 
   /* // 10.11) MET or Muon trigger efficiency vs RECO PF MET, no preselection
-  TH2F* GMSBStau432_METOrMuonEff_RecoPFMET_noPres = new TH2F("GMSBStau432_METOrMuonEff_RecoPFMET_noPres","no preselection;RECO PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau432_METOrMuonEff_RecoPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau432_METOrMuonEff_RecoPFMET_noPres->Draw();  
-  TEfficiency* GMSBStau432_METOrMuonEff_RecoPFMET_noPres_TEff = new TEfficiency(*GMSBStau432_RecoPFMET_noPres_passMETOrMuon_,*GMSBStau432_RecoPFMET_noPres_);
-  GMSBStau432_METOrMuonEff_RecoPFMET_noPres_TEff->SetLineColor(kRed);
-  GMSBStau432_METOrMuonEff_RecoPFMET_noPres_TEff->SetMarkerColor(kRed);
-  GMSBStau432_METOrMuonEff_RecoPFMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau432_METOrMuonEff_RecoPFMET_noPres.png"); */
+  TH2F* GMSBStau308_METOrMuonEff_RecoPFMET_noPres = new TH2F("GMSBStau308_METOrMuonEff_RecoPFMET_noPres","no preselection;RECO PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau308_METOrMuonEff_RecoPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau308_METOrMuonEff_RecoPFMET_noPres->Draw();  
+  TEfficiency* GMSBStau308_METOrMuonEff_RecoPFMET_noPres_TEff = new TEfficiency(*GMSBStau308_RecoPFMET_noPres_passMETOrMuon_,*GMSBStau308_RecoPFMET_noPres_);
+  GMSBStau308_METOrMuonEff_RecoPFMET_noPres_TEff->SetLineColor(kRed);
+  GMSBStau308_METOrMuonEff_RecoPFMET_noPres_TEff->SetMarkerColor(kRed);
+  GMSBStau308_METOrMuonEff_RecoPFMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau308_METOrMuonEff_RecoPFMET_noPres.png"); */
 
   // 10.12) MET or Muon trigger efficiency vs RECO PF MET, pass preselection
-  TH2F* GMSBStau432_METOrMuonEff_RecoPFMET_passPres = new TH2F("GMSBStau432_METOrMuonEff_RecoPFMET_passPres","pass preselection;RECO PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau432_METOrMuonEff_RecoPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau432_METOrMuonEff_RecoPFMET_passPres->Draw();  
-  TEfficiency* GMSBStau432_METOrMuonEff_RecoPFMET_passPres_TEff = new TEfficiency(*GMSBStau432_RecoPFMET_passPres_passMETOrMuon_,*GMSBStau432_RecoPFMET_passPres_);
-  GMSBStau432_METOrMuonEff_RecoPFMET_passPres_TEff->SetLineColor(kRed);
-  GMSBStau432_METOrMuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau432_METOrMuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau432_METOrMuonEff_RecoPFMET_passPres.png");
+  TH2F* GMSBStau308_METOrMuonEff_RecoPFMET_passPres = new TH2F("GMSBStau308_METOrMuonEff_RecoPFMET_passPres","pass preselection;RECO PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau308_METOrMuonEff_RecoPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau308_METOrMuonEff_RecoPFMET_passPres->Draw();  
+  TEfficiency* GMSBStau308_METOrMuonEff_RecoPFMET_passPres_TEff = new TEfficiency(*GMSBStau308_RecoPFMET_passPres_passMETOrMuon_,*GMSBStau308_RecoPFMET_passPres_);
+  GMSBStau308_METOrMuonEff_RecoPFMET_passPres_TEff->SetLineColor(kRed);
+  GMSBStau308_METOrMuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kRed);
+  GMSBStau308_METOrMuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau308_METOrMuonEff_RecoPFMET_passPres.png");
 
   /* // 10.13) MET trigger efficiency vs HLT Calo MET, no preselection
-  TH2F* GMSBStau432_METEff_HLTCaloMET_noPres = new TH2F("GMSBStau432_METEff_HLTCaloMET_noPres","no preselection;HLT Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau432_METEff_HLTCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau432_METEff_HLTCaloMET_noPres->Draw();  
-  TEfficiency* GMSBStau432_METEff_HLTCaloMET_noPres_TEff = new TEfficiency(*GMSBStau432_HLTCaloMET_noPres_passMET_,*GMSBStau432_HLTCaloMET_noPres_);
-  GMSBStau432_METEff_HLTCaloMET_noPres_TEff->SetLineColor(kRed);
-  GMSBStau432_METEff_HLTCaloMET_noPres_TEff->SetMarkerColor(kRed);
-  GMSBStau432_METEff_HLTCaloMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau432_METEff_HLTCaloMET_noPres.png"); */
+  TH2F* GMSBStau308_METEff_HLTCaloMET_noPres = new TH2F("GMSBStau308_METEff_HLTCaloMET_noPres","no preselection;HLT Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau308_METEff_HLTCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau308_METEff_HLTCaloMET_noPres->Draw();  
+  TEfficiency* GMSBStau308_METEff_HLTCaloMET_noPres_TEff = new TEfficiency(*GMSBStau308_HLTCaloMET_noPres_passMET_,*GMSBStau308_HLTCaloMET_noPres_);
+  GMSBStau308_METEff_HLTCaloMET_noPres_TEff->SetLineColor(kRed);
+  GMSBStau308_METEff_HLTCaloMET_noPres_TEff->SetMarkerColor(kRed);
+  GMSBStau308_METEff_HLTCaloMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau308_METEff_HLTCaloMET_noPres.png"); */
 
   // 10.14) MET trigger efficiency vs HLT Calo MET, pass preselection
-  TH2F* GMSBStau432_METEff_HLTCaloMET_passPres = new TH2F("GMSBStau432_METEff_HLTCaloMET_passPres","pass preselection;HLT Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau432_METEff_HLTCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau432_METEff_HLTCaloMET_passPres->Draw();  
-  TEfficiency* GMSBStau432_METEff_HLTCaloMET_passPres_TEff = new TEfficiency(*GMSBStau432_HLTCaloMET_passPres_passMET_,*GMSBStau432_HLTCaloMET_passPres_);
-  GMSBStau432_METEff_HLTCaloMET_passPres_TEff->SetLineColor(kRed);
-  GMSBStau432_METEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau432_METEff_HLTCaloMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau432_METEff_HLTCaloMET_passPres.png");
+  TH2F* GMSBStau308_METEff_HLTCaloMET_passPres = new TH2F("GMSBStau308_METEff_HLTCaloMET_passPres","pass preselection;HLT Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau308_METEff_HLTCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau308_METEff_HLTCaloMET_passPres->Draw();  
+  TEfficiency* GMSBStau308_METEff_HLTCaloMET_passPres_TEff = new TEfficiency(*GMSBStau308_HLTCaloMET_passPres_passMET_,*GMSBStau308_HLTCaloMET_passPres_);
+  GMSBStau308_METEff_HLTCaloMET_passPres_TEff->SetLineColor(kRed);
+  GMSBStau308_METEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kRed);
+  GMSBStau308_METEff_HLTCaloMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau308_METEff_HLTCaloMET_passPres.png");
 
   /* // 10.15) Muon trigger efficiency vs HLT Calo MET, no preselection
-  TH2F* GMSBStau432_MuonEff_HLTCaloMET_noPres = new TH2F("GMSBStau432_MuonEff_HLTCaloMET_noPres","no preselection;HLT Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau432_MuonEff_HLTCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau432_MuonEff_HLTCaloMET_noPres->Draw();  
-  TEfficiency* GMSBStau432_MuonEff_HLTCaloMET_noPres_TEff = new TEfficiency(*GMSBStau432_HLTCaloMET_noPres_passMuon_,*GMSBStau432_HLTCaloMET_noPres_);
-  GMSBStau432_MuonEff_HLTCaloMET_noPres_TEff->SetLineColor(kRed);
-  GMSBStau432_MuonEff_HLTCaloMET_noPres_TEff->SetMarkerColor(kRed);
-  GMSBStau432_MuonEff_HLTCaloMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau432_MuonEff_HLTCaloMET_noPres.png"); */
+  TH2F* GMSBStau308_MuonEff_HLTCaloMET_noPres = new TH2F("GMSBStau308_MuonEff_HLTCaloMET_noPres","no preselection;HLT Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau308_MuonEff_HLTCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau308_MuonEff_HLTCaloMET_noPres->Draw();  
+  TEfficiency* GMSBStau308_MuonEff_HLTCaloMET_noPres_TEff = new TEfficiency(*GMSBStau308_HLTCaloMET_noPres_passMuon_,*GMSBStau308_HLTCaloMET_noPres_);
+  GMSBStau308_MuonEff_HLTCaloMET_noPres_TEff->SetLineColor(kRed);
+  GMSBStau308_MuonEff_HLTCaloMET_noPres_TEff->SetMarkerColor(kRed);
+  GMSBStau308_MuonEff_HLTCaloMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau308_MuonEff_HLTCaloMET_noPres.png"); */
 
   // 10.16) Muon trigger efficiency vs HLT Calo MET, pass preselection
-  TH2F* GMSBStau432_MuonEff_HLTCaloMET_passPres = new TH2F("GMSBStau432_MuonEff_HLTCaloMET_passPres","pass preselection;HLT Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau432_MuonEff_HLTCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau432_MuonEff_HLTCaloMET_passPres->Draw();  
-  TEfficiency* GMSBStau432_MuonEff_HLTCaloMET_passPres_TEff = new TEfficiency(*GMSBStau432_HLTCaloMET_passPres_passMuon_,*GMSBStau432_HLTCaloMET_passPres_);
-  GMSBStau432_MuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kRed);
-  GMSBStau432_MuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau432_MuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau432_MuonEff_HLTCaloMET_passPres.png");
+  TH2F* GMSBStau308_MuonEff_HLTCaloMET_passPres = new TH2F("GMSBStau308_MuonEff_HLTCaloMET_passPres","pass preselection;HLT Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau308_MuonEff_HLTCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau308_MuonEff_HLTCaloMET_passPres->Draw();  
+  TEfficiency* GMSBStau308_MuonEff_HLTCaloMET_passPres_TEff = new TEfficiency(*GMSBStau308_HLTCaloMET_passPres_passMuon_,*GMSBStau308_HLTCaloMET_passPres_);
+  GMSBStau308_MuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kRed);
+  GMSBStau308_MuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kRed);
+  GMSBStau308_MuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau308_MuonEff_HLTCaloMET_passPres.png");
 
   /* // 10.17) MET or Muon trigger efficiency vs HLT Calo MET, no preselection
-  TH2F* GMSBStau432_METOrMuonEff_HLTCaloMET_noPres = new TH2F("GMSBStau432_METOrMuonEff_HLTCaloMET_noPres","no preselection;HLT Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau432_METOrMuonEff_HLTCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau432_METOrMuonEff_HLTCaloMET_noPres->Draw();  
-  TEfficiency* GMSBStau432_METOrMuonEff_HLTCaloMET_noPres_TEff = new TEfficiency(*GMSBStau432_HLTCaloMET_noPres_passMETOrMuon_,*GMSBStau432_HLTCaloMET_noPres_);
-  GMSBStau432_METOrMuonEff_HLTCaloMET_noPres_TEff->SetLineColor(kRed);
-  GMSBStau432_METOrMuonEff_HLTCaloMET_noPres_TEff->SetMarkerColor(kRed);
-  GMSBStau432_METOrMuonEff_HLTCaloMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau432_METOrMuonEff_HLTCaloMET_noPres.png"); */
+  TH2F* GMSBStau308_METOrMuonEff_HLTCaloMET_noPres = new TH2F("GMSBStau308_METOrMuonEff_HLTCaloMET_noPres","no preselection;HLT Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau308_METOrMuonEff_HLTCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau308_METOrMuonEff_HLTCaloMET_noPres->Draw();  
+  TEfficiency* GMSBStau308_METOrMuonEff_HLTCaloMET_noPres_TEff = new TEfficiency(*GMSBStau308_HLTCaloMET_noPres_passMETOrMuon_,*GMSBStau308_HLTCaloMET_noPres_);
+  GMSBStau308_METOrMuonEff_HLTCaloMET_noPres_TEff->SetLineColor(kRed);
+  GMSBStau308_METOrMuonEff_HLTCaloMET_noPres_TEff->SetMarkerColor(kRed);
+  GMSBStau308_METOrMuonEff_HLTCaloMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau308_METOrMuonEff_HLTCaloMET_noPres.png"); */
 
   // 10.18) MET or Muon trigger efficiency vs HLT Calo MET, pass preselection
-  TH2F* GMSBStau432_METOrMuonEff_HLTCaloMET_passPres = new TH2F("GMSBStau432_METOrMuonEff_HLTCaloMET_passPres","pass preselection;HLT Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau432_METOrMuonEff_HLTCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau432_METOrMuonEff_HLTCaloMET_passPres->Draw();  
-  TEfficiency* GMSBStau432_METOrMuonEff_HLTCaloMET_passPres_TEff = new TEfficiency(*GMSBStau432_HLTCaloMET_passPres_passMETOrMuon_,*GMSBStau432_HLTCaloMET_passPres_);
-  GMSBStau432_METOrMuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kRed);
-  GMSBStau432_METOrMuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau432_METOrMuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau432_METOrMuonEff_HLTCaloMET_passPres.png");
+  TH2F* GMSBStau308_METOrMuonEff_HLTCaloMET_passPres = new TH2F("GMSBStau308_METOrMuonEff_HLTCaloMET_passPres","pass preselection;HLT Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau308_METOrMuonEff_HLTCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau308_METOrMuonEff_HLTCaloMET_passPres->Draw();  
+  TEfficiency* GMSBStau308_METOrMuonEff_HLTCaloMET_passPres_TEff = new TEfficiency(*GMSBStau308_HLTCaloMET_passPres_passMETOrMuon_,*GMSBStau308_HLTCaloMET_passPres_);
+  GMSBStau308_METOrMuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kRed);
+  GMSBStau308_METOrMuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kRed);
+  GMSBStau308_METOrMuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau308_METOrMuonEff_HLTCaloMET_passPres.png");
 
   /* // 10.19) MET trigger efficiency vs HLT PF MET, no preselection
-  TH2F* GMSBStau432_METEff_HLTPFMET_noPres = new TH2F("GMSBStau432_METEff_HLTPFMET_noPres","no preselection;HLT PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau432_METEff_HLTPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau432_METEff_HLTPFMET_noPres->Draw();  
-  TEfficiency* GMSBStau432_METEff_HLTPFMET_noPres_TEff = new TEfficiency(*GMSBStau432_HLTPFMET_noPres_passMET_,*GMSBStau432_HLTPFMET_noPres_);
-  GMSBStau432_METEff_HLTPFMET_noPres_TEff->SetLineColor(kRed);
-  GMSBStau432_METEff_HLTPFMET_noPres_TEff->SetMarkerColor(kRed);
-  GMSBStau432_METEff_HLTPFMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau432_METEff_HLTPFMET_noPres.png"); */
+  TH2F* GMSBStau308_METEff_HLTPFMET_noPres = new TH2F("GMSBStau308_METEff_HLTPFMET_noPres","no preselection;HLT PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau308_METEff_HLTPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau308_METEff_HLTPFMET_noPres->Draw();  
+  TEfficiency* GMSBStau308_METEff_HLTPFMET_noPres_TEff = new TEfficiency(*GMSBStau308_HLTPFMET_noPres_passMET_,*GMSBStau308_HLTPFMET_noPres_);
+  GMSBStau308_METEff_HLTPFMET_noPres_TEff->SetLineColor(kRed);
+  GMSBStau308_METEff_HLTPFMET_noPres_TEff->SetMarkerColor(kRed);
+  GMSBStau308_METEff_HLTPFMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau308_METEff_HLTPFMET_noPres.png"); */
 
   // 10.20) MET trigger efficiency vs HLT PF MET, pass preselection
-  TH2F* GMSBStau432_METEff_HLTPFMET_passPres = new TH2F("GMSBStau432_METEff_HLTPFMET_passPres","pass preselection;HLT PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau432_METEff_HLTPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau432_METEff_HLTPFMET_passPres->Draw();  
-  TEfficiency* GMSBStau432_METEff_HLTPFMET_passPres_TEff = new TEfficiency(*GMSBStau432_HLTPFMET_passPres_passMET_,*GMSBStau432_HLTPFMET_passPres_);
-  GMSBStau432_METEff_HLTPFMET_passPres_TEff->SetLineColor(kRed);
-  GMSBStau432_METEff_HLTPFMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau432_METEff_HLTPFMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau432_METEff_HLTPFMET_passPres.png");
+  TH2F* GMSBStau308_METEff_HLTPFMET_passPres = new TH2F("GMSBStau308_METEff_HLTPFMET_passPres","pass preselection;HLT PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau308_METEff_HLTPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau308_METEff_HLTPFMET_passPres->Draw();  
+  TEfficiency* GMSBStau308_METEff_HLTPFMET_passPres_TEff = new TEfficiency(*GMSBStau308_HLTPFMET_passPres_passMET_,*GMSBStau308_HLTPFMET_passPres_);
+  GMSBStau308_METEff_HLTPFMET_passPres_TEff->SetLineColor(kRed);
+  GMSBStau308_METEff_HLTPFMET_passPres_TEff->SetMarkerColor(kRed);
+  GMSBStau308_METEff_HLTPFMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau308_METEff_HLTPFMET_passPres.png");
 
   /* // 10.21) Muon trigger efficiency vs HLT PF MET, no preselection
-  TH2F* GMSBStau432_MuonEff_HLTPFMET_noPres = new TH2F("GMSBStau432_MuonEff_HLTPFMET_noPres","no preselection;HLT PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau432_MuonEff_HLTPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau432_MuonEff_HLTPFMET_noPres->Draw();  
-  TEfficiency* GMSBStau432_MuonEff_HLTPFMET_noPres_TEff = new TEfficiency(*GMSBStau432_HLTPFMET_noPres_passMuon_,*GMSBStau432_HLTPFMET_noPres_);
-  GMSBStau432_MuonEff_HLTPFMET_noPres_TEff->SetLineColor(kRed);
-  GMSBStau432_MuonEff_HLTPFMET_noPres_TEff->SetMarkerColor(kRed);
-  GMSBStau432_MuonEff_HLTPFMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau432_MuonEff_HLTPFMET_noPres.png"); */
+  TH2F* GMSBStau308_MuonEff_HLTPFMET_noPres = new TH2F("GMSBStau308_MuonEff_HLTPFMET_noPres","no preselection;HLT PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau308_MuonEff_HLTPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau308_MuonEff_HLTPFMET_noPres->Draw();  
+  TEfficiency* GMSBStau308_MuonEff_HLTPFMET_noPres_TEff = new TEfficiency(*GMSBStau308_HLTPFMET_noPres_passMuon_,*GMSBStau308_HLTPFMET_noPres_);
+  GMSBStau308_MuonEff_HLTPFMET_noPres_TEff->SetLineColor(kRed);
+  GMSBStau308_MuonEff_HLTPFMET_noPres_TEff->SetMarkerColor(kRed);
+  GMSBStau308_MuonEff_HLTPFMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau308_MuonEff_HLTPFMET_noPres.png"); */
 
   // 10.22) Muon trigger efficiency vs HLT PF MET, pass preselection
-  TH2F* GMSBStau432_MuonEff_HLTPFMET_passPres = new TH2F("GMSBStau432_MuonEff_HLTPFMET_passPres","pass preselection;HLT PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau432_MuonEff_HLTPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau432_MuonEff_HLTPFMET_passPres->Draw();  
-  TEfficiency* GMSBStau432_MuonEff_HLTPFMET_passPres_TEff = new TEfficiency(*GMSBStau432_HLTPFMET_passPres_passMuon_,*GMSBStau432_HLTPFMET_passPres_);
-  GMSBStau432_MuonEff_HLTPFMET_passPres_TEff->SetLineColor(kRed);
-  GMSBStau432_MuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau432_MuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau432_MuonEff_HLTPFMET_passPres.png");
+  TH2F* GMSBStau308_MuonEff_HLTPFMET_passPres = new TH2F("GMSBStau308_MuonEff_HLTPFMET_passPres","pass preselection;HLT PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau308_MuonEff_HLTPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau308_MuonEff_HLTPFMET_passPres->Draw();  
+  TEfficiency* GMSBStau308_MuonEff_HLTPFMET_passPres_TEff = new TEfficiency(*GMSBStau308_HLTPFMET_passPres_passMuon_,*GMSBStau308_HLTPFMET_passPres_);
+  GMSBStau308_MuonEff_HLTPFMET_passPres_TEff->SetLineColor(kRed);
+  GMSBStau308_MuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kRed);
+  GMSBStau308_MuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau308_MuonEff_HLTPFMET_passPres.png");
 
   /* // 10.23) MET or Muon trigger efficiency vs HLT PF MET, no preselection
-  TH2F* GMSBStau432_METOrMuonEff_HLTPFMET_noPres = new TH2F("GMSBStau432_METOrMuonEff_HLTPFMET_noPres","no preselection;HLT PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau432_METOrMuonEff_HLTPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau432_METOrMuonEff_HLTPFMET_noPres->Draw();  
-  TEfficiency* GMSBStau432_METOrMuonEff_HLTPFMET_noPres_TEff = new TEfficiency(*GMSBStau432_HLTPFMET_noPres_passMETOrMuon_,*GMSBStau432_HLTPFMET_noPres_);
-  GMSBStau432_METOrMuonEff_HLTPFMET_noPres_TEff->SetLineColor(kRed);
-  GMSBStau432_METOrMuonEff_HLTPFMET_noPres_TEff->SetMarkerColor(kRed);
-  GMSBStau432_METOrMuonEff_HLTPFMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau432_METOrMuonEff_HLTPFMET_noPres.png"); */
+  TH2F* GMSBStau308_METOrMuonEff_HLTPFMET_noPres = new TH2F("GMSBStau308_METOrMuonEff_HLTPFMET_noPres","no preselection;HLT PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau308_METOrMuonEff_HLTPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau308_METOrMuonEff_HLTPFMET_noPres->Draw();  
+  TEfficiency* GMSBStau308_METOrMuonEff_HLTPFMET_noPres_TEff = new TEfficiency(*GMSBStau308_HLTPFMET_noPres_passMETOrMuon_,*GMSBStau308_HLTPFMET_noPres_);
+  GMSBStau308_METOrMuonEff_HLTPFMET_noPres_TEff->SetLineColor(kRed);
+  GMSBStau308_METOrMuonEff_HLTPFMET_noPres_TEff->SetMarkerColor(kRed);
+  GMSBStau308_METOrMuonEff_HLTPFMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau308_METOrMuonEff_HLTPFMET_noPres.png"); */
 
   // 10.24) MET or Muon trigger efficiency vs HLT PF MET, pass preselection
-  TH2F* GMSBStau432_METOrMuonEff_HLTPFMET_passPres = new TH2F("GMSBStau432_METOrMuonEff_HLTPFMET_passPres","pass preselection;HLT PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau432_METOrMuonEff_HLTPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau432_METOrMuonEff_HLTPFMET_passPres->Draw();  
-  TEfficiency* GMSBStau432_METOrMuonEff_HLTPFMET_passPres_TEff = new TEfficiency(*GMSBStau432_HLTPFMET_passPres_passMETOrMuon_,*GMSBStau432_HLTPFMET_passPres_);
-  GMSBStau432_METOrMuonEff_HLTPFMET_passPres_TEff->SetLineColor(kRed);
-  GMSBStau432_METOrMuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau432_METOrMuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau432_METOrMuonEff_HLTPFMET_passPres.png");
+  TH2F* GMSBStau308_METOrMuonEff_HLTPFMET_passPres = new TH2F("GMSBStau308_METOrMuonEff_HLTPFMET_passPres","pass preselection;HLT PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau308_METOrMuonEff_HLTPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau308_METOrMuonEff_HLTPFMET_passPres->Draw();  
+  TEfficiency* GMSBStau308_METOrMuonEff_HLTPFMET_passPres_TEff = new TEfficiency(*GMSBStau308_HLTPFMET_passPres_passMETOrMuon_,*GMSBStau308_HLTPFMET_passPres_);
+  GMSBStau308_METOrMuonEff_HLTPFMET_passPres_TEff->SetLineColor(kRed);
+  GMSBStau308_METOrMuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kRed);
+  GMSBStau308_METOrMuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau308_METOrMuonEff_HLTPFMET_passPres.png");
 
   //=====================
-  //  GMSBStau 651 GeV  
+  //  GMSBStau 557 GeV  
   //=====================
 
   /* // 11.1) MET trigger efficiency vs RECO Calo MET, no preselection
-  TH2F* GMSBStau651_METEff_RecoCaloMET_noPres = new TH2F("GMSBStau651_METEff_RecoCaloMET_noPres","no preselection;RECO Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau651_METEff_RecoCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau651_METEff_RecoCaloMET_noPres->Draw();  
-  TEfficiency* GMSBStau651_METEff_RecoCaloMET_noPres_TEff = new TEfficiency(*GMSBStau651_RecoCaloMET_noPres_passMET_,*GMSBStau651_RecoCaloMET_noPres_);
-  GMSBStau651_METEff_RecoCaloMET_noPres_TEff->SetLineColor(kRed);
-  GMSBStau651_METEff_RecoCaloMET_noPres_TEff->SetMarkerColor(kRed);
-  GMSBStau651_METEff_RecoCaloMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau651_METEff_RecoCaloMET_noPres.png"); */
+  TH2F* GMSBStau557_METEff_RecoCaloMET_noPres = new TH2F("GMSBStau557_METEff_RecoCaloMET_noPres","no preselection;RECO Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau557_METEff_RecoCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau557_METEff_RecoCaloMET_noPres->Draw();  
+  TEfficiency* GMSBStau557_METEff_RecoCaloMET_noPres_TEff = new TEfficiency(*GMSBStau557_RecoCaloMET_noPres_passMET_,*GMSBStau557_RecoCaloMET_noPres_);
+  GMSBStau557_METEff_RecoCaloMET_noPres_TEff->SetLineColor(kRed);
+  GMSBStau557_METEff_RecoCaloMET_noPres_TEff->SetMarkerColor(kRed);
+  GMSBStau557_METEff_RecoCaloMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau557_METEff_RecoCaloMET_noPres.png"); */
 
   // 11.2) MET trigger efficiency vs RECO Calo MET, pass preselection
-  TH2F* GMSBStau651_METEff_RecoCaloMET_passPres = new TH2F("GMSBStau651_METEff_RecoCaloMET_passPres","pass preselection;RECO Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau651_METEff_RecoCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau651_METEff_RecoCaloMET_passPres->Draw();  
-  TEfficiency* GMSBStau651_METEff_RecoCaloMET_passPres_TEff = new TEfficiency(*GMSBStau651_RecoCaloMET_passPres_passMET_,*GMSBStau651_RecoCaloMET_passPres_);
-  GMSBStau651_METEff_RecoCaloMET_passPres_TEff->SetLineColor(kRed);
-  GMSBStau651_METEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau651_METEff_RecoCaloMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau651_METEff_RecoCaloMET_passPres.png");
+  TH2F* GMSBStau557_METEff_RecoCaloMET_passPres = new TH2F("GMSBStau557_METEff_RecoCaloMET_passPres","pass preselection;RECO Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau557_METEff_RecoCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau557_METEff_RecoCaloMET_passPres->Draw();  
+  TEfficiency* GMSBStau557_METEff_RecoCaloMET_passPres_TEff = new TEfficiency(*GMSBStau557_RecoCaloMET_passPres_passMET_,*GMSBStau557_RecoCaloMET_passPres_);
+  GMSBStau557_METEff_RecoCaloMET_passPres_TEff->SetLineColor(kRed);
+  GMSBStau557_METEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kRed);
+  GMSBStau557_METEff_RecoCaloMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau557_METEff_RecoCaloMET_passPres.png");
 
   /* // 11.3) Muon trigger efficiency vs RECO Calo MET, no preselection
-  TH2F* GMSBStau651_MuonEff_RecoCaloMET_noPres = new TH2F("GMSBStau651_MuonEff_RecoCaloMET_noPres","no preselection;RECO Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau651_MuonEff_RecoCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau651_MuonEff_RecoCaloMET_noPres->Draw();  
-  TEfficiency* GMSBStau651_MuonEff_RecoCaloMET_noPres_TEff = new TEfficiency(*GMSBStau651_RecoCaloMET_noPres_passMuon_,*GMSBStau651_RecoCaloMET_noPres_);
-  GMSBStau651_MuonEff_RecoCaloMET_noPres_TEff->SetLineColor(kRed);
-  GMSBStau651_MuonEff_RecoCaloMET_noPres_TEff->SetMarkerColor(kRed);
-  GMSBStau651_MuonEff_RecoCaloMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau651_MuonEff_RecoCaloMET_noPres.png"); */
+  TH2F* GMSBStau557_MuonEff_RecoCaloMET_noPres = new TH2F("GMSBStau557_MuonEff_RecoCaloMET_noPres","no preselection;RECO Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau557_MuonEff_RecoCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau557_MuonEff_RecoCaloMET_noPres->Draw();  
+  TEfficiency* GMSBStau557_MuonEff_RecoCaloMET_noPres_TEff = new TEfficiency(*GMSBStau557_RecoCaloMET_noPres_passMuon_,*GMSBStau557_RecoCaloMET_noPres_);
+  GMSBStau557_MuonEff_RecoCaloMET_noPres_TEff->SetLineColor(kRed);
+  GMSBStau557_MuonEff_RecoCaloMET_noPres_TEff->SetMarkerColor(kRed);
+  GMSBStau557_MuonEff_RecoCaloMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau557_MuonEff_RecoCaloMET_noPres.png"); */
 
   // 11.4) Muon trigger efficiency vs RECO Calo MET, pass preselection
-  TH2F* GMSBStau651_MuonEff_RecoCaloMET_passPres = new TH2F("GMSBStau651_MuonEff_RecoCaloMET_passPres","pass preselection;RECO Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau651_MuonEff_RecoCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau651_MuonEff_RecoCaloMET_passPres->Draw();  
-  TEfficiency* GMSBStau651_MuonEff_RecoCaloMET_passPres_TEff = new TEfficiency(*GMSBStau651_RecoCaloMET_passPres_passMuon_,*GMSBStau651_RecoCaloMET_passPres_);
-  GMSBStau651_MuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kRed);
-  GMSBStau651_MuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau651_MuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau651_MuonEff_RecoCaloMET_passPres.png");
+  TH2F* GMSBStau557_MuonEff_RecoCaloMET_passPres = new TH2F("GMSBStau557_MuonEff_RecoCaloMET_passPres","pass preselection;RECO Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau557_MuonEff_RecoCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau557_MuonEff_RecoCaloMET_passPres->Draw();  
+  TEfficiency* GMSBStau557_MuonEff_RecoCaloMET_passPres_TEff = new TEfficiency(*GMSBStau557_RecoCaloMET_passPres_passMuon_,*GMSBStau557_RecoCaloMET_passPres_);
+  GMSBStau557_MuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kRed);
+  GMSBStau557_MuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kRed);
+  GMSBStau557_MuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau557_MuonEff_RecoCaloMET_passPres.png");
 
   /* // 11.5) MET or Muon trigger efficiency vs RECO Calo MET, no preselection
-  TH2F* GMSBStau651_METOrMuonEff_RecoCaloMET_noPres = new TH2F("GMSBStau651_METOrMuonEff_RecoCaloMET_noPres","no preselection;RECO Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau651_METOrMuonEff_RecoCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau651_METOrMuonEff_RecoCaloMET_noPres->Draw();  
-  TEfficiency* GMSBStau651_METOrMuonEff_RecoCaloMET_noPres_TEff = new TEfficiency(*GMSBStau651_RecoCaloMET_noPres_passMETOrMuon_,*GMSBStau651_RecoCaloMET_noPres_);
-  GMSBStau651_METOrMuonEff_RecoCaloMET_noPres_TEff->SetLineColor(kRed);
-  GMSBStau651_METOrMuonEff_RecoCaloMET_noPres_TEff->SetMarkerColor(kRed);
-  GMSBStau651_METOrMuonEff_RecoCaloMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau651_METOrMuonEff_RecoCaloMET_noPres.png"); */
+  TH2F* GMSBStau557_METOrMuonEff_RecoCaloMET_noPres = new TH2F("GMSBStau557_METOrMuonEff_RecoCaloMET_noPres","no preselection;RECO Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau557_METOrMuonEff_RecoCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau557_METOrMuonEff_RecoCaloMET_noPres->Draw();  
+  TEfficiency* GMSBStau557_METOrMuonEff_RecoCaloMET_noPres_TEff = new TEfficiency(*GMSBStau557_RecoCaloMET_noPres_passMETOrMuon_,*GMSBStau557_RecoCaloMET_noPres_);
+  GMSBStau557_METOrMuonEff_RecoCaloMET_noPres_TEff->SetLineColor(kRed);
+  GMSBStau557_METOrMuonEff_RecoCaloMET_noPres_TEff->SetMarkerColor(kRed);
+  GMSBStau557_METOrMuonEff_RecoCaloMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau557_METOrMuonEff_RecoCaloMET_noPres.png"); */
 
   // 11.6) MET or Muon trigger efficiency vs RECO Calo MET, pass preselection
-  TH2F* GMSBStau651_METOrMuonEff_RecoCaloMET_passPres = new TH2F("GMSBStau651_METOrMuonEff_RecoCaloMET_passPres","pass preselection;RECO Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau651_METOrMuonEff_RecoCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau651_METOrMuonEff_RecoCaloMET_passPres->Draw();  
-  TEfficiency* GMSBStau651_METOrMuonEff_RecoCaloMET_passPres_TEff = new TEfficiency(*GMSBStau651_RecoCaloMET_passPres_passMETOrMuon_,*GMSBStau651_RecoCaloMET_passPres_);
-  GMSBStau651_METOrMuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kRed);
-  GMSBStau651_METOrMuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau651_METOrMuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau651_METOrMuonEff_RecoCaloMET_passPres.png");
+  TH2F* GMSBStau557_METOrMuonEff_RecoCaloMET_passPres = new TH2F("GMSBStau557_METOrMuonEff_RecoCaloMET_passPres","pass preselection;RECO Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau557_METOrMuonEff_RecoCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau557_METOrMuonEff_RecoCaloMET_passPres->Draw();  
+  TEfficiency* GMSBStau557_METOrMuonEff_RecoCaloMET_passPres_TEff = new TEfficiency(*GMSBStau557_RecoCaloMET_passPres_passMETOrMuon_,*GMSBStau557_RecoCaloMET_passPres_);
+  GMSBStau557_METOrMuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kRed);
+  GMSBStau557_METOrMuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kRed);
+  GMSBStau557_METOrMuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau557_METOrMuonEff_RecoCaloMET_passPres.png");
 
   /* // 11.7) MET trigger efficiency vs RECO PF MET, no preselection
-  TH2F* GMSBStau651_METEff_RecoPFMET_noPres = new TH2F("GMSBStau651_METEff_RecoPFMET_noPres","no preselection;RECO PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau651_METEff_RecoPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau651_METEff_RecoPFMET_noPres->Draw();  
-  TEfficiency* GMSBStau651_METEff_RecoPFMET_noPres_TEff = new TEfficiency(*GMSBStau651_RecoPFMET_noPres_passMET_,*GMSBStau651_RecoPFMET_noPres_);
-  GMSBStau651_METEff_RecoPFMET_noPres_TEff->SetLineColor(kRed);
-  GMSBStau651_METEff_RecoPFMET_noPres_TEff->SetMarkerColor(kRed);
-  GMSBStau651_METEff_RecoPFMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau651_METEff_RecoPFMET_noPres.png"); */
+  TH2F* GMSBStau557_METEff_RecoPFMET_noPres = new TH2F("GMSBStau557_METEff_RecoPFMET_noPres","no preselection;RECO PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau557_METEff_RecoPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau557_METEff_RecoPFMET_noPres->Draw();  
+  TEfficiency* GMSBStau557_METEff_RecoPFMET_noPres_TEff = new TEfficiency(*GMSBStau557_RecoPFMET_noPres_passMET_,*GMSBStau557_RecoPFMET_noPres_);
+  GMSBStau557_METEff_RecoPFMET_noPres_TEff->SetLineColor(kRed);
+  GMSBStau557_METEff_RecoPFMET_noPres_TEff->SetMarkerColor(kRed);
+  GMSBStau557_METEff_RecoPFMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau557_METEff_RecoPFMET_noPres.png"); */
 
   // 11.8) MET trigger efficiency vs RECO PF MET, pass preselection
-  TH2F* GMSBStau651_METEff_RecoPFMET_passPres = new TH2F("GMSBStau651_METEff_RecoPFMET_passPres","pass preselection;RECO PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau651_METEff_RecoPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau651_METEff_RecoPFMET_passPres->Draw();  
-  TEfficiency* GMSBStau651_METEff_RecoPFMET_passPres_TEff = new TEfficiency(*GMSBStau651_RecoPFMET_passPres_passMET_,*GMSBStau651_RecoPFMET_passPres_);
-  GMSBStau651_METEff_RecoPFMET_passPres_TEff->SetLineColor(kRed);
-  GMSBStau651_METEff_RecoPFMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau651_METEff_RecoPFMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau651_METEff_RecoPFMET_passPres.png");
+  TH2F* GMSBStau557_METEff_RecoPFMET_passPres = new TH2F("GMSBStau557_METEff_RecoPFMET_passPres","pass preselection;RECO PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau557_METEff_RecoPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau557_METEff_RecoPFMET_passPres->Draw();  
+  TEfficiency* GMSBStau557_METEff_RecoPFMET_passPres_TEff = new TEfficiency(*GMSBStau557_RecoPFMET_passPres_passMET_,*GMSBStau557_RecoPFMET_passPres_);
+  GMSBStau557_METEff_RecoPFMET_passPres_TEff->SetLineColor(kRed);
+  GMSBStau557_METEff_RecoPFMET_passPres_TEff->SetMarkerColor(kRed);
+  GMSBStau557_METEff_RecoPFMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau557_METEff_RecoPFMET_passPres.png");
 
   /* // 11.9) Muon trigger efficiency vs RECO PF MET, no preselection
-  TH2F* GMSBStau651_MuonEff_RecoPFMET_noPres = new TH2F("GMSBStau651_MuonEff_RecoPFMET_noPres","no preselection;RECO PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau651_MuonEff_RecoPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau651_MuonEff_RecoPFMET_noPres->Draw();  
-  TEfficiency* GMSBStau651_MuonEff_RecoPFMET_noPres_TEff = new TEfficiency(*GMSBStau651_RecoPFMET_noPres_passMuon_,*GMSBStau651_RecoPFMET_noPres_);
-  GMSBStau651_MuonEff_RecoPFMET_noPres_TEff->SetLineColor(kRed);
-  GMSBStau651_MuonEff_RecoPFMET_noPres_TEff->SetMarkerColor(kRed);
-  GMSBStau651_MuonEff_RecoPFMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau651_MuonEff_RecoPFMET_noPres.png"); */
+  TH2F* GMSBStau557_MuonEff_RecoPFMET_noPres = new TH2F("GMSBStau557_MuonEff_RecoPFMET_noPres","no preselection;RECO PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau557_MuonEff_RecoPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau557_MuonEff_RecoPFMET_noPres->Draw();  
+  TEfficiency* GMSBStau557_MuonEff_RecoPFMET_noPres_TEff = new TEfficiency(*GMSBStau557_RecoPFMET_noPres_passMuon_,*GMSBStau557_RecoPFMET_noPres_);
+  GMSBStau557_MuonEff_RecoPFMET_noPres_TEff->SetLineColor(kRed);
+  GMSBStau557_MuonEff_RecoPFMET_noPres_TEff->SetMarkerColor(kRed);
+  GMSBStau557_MuonEff_RecoPFMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau557_MuonEff_RecoPFMET_noPres.png"); */
 
   // 11.10) Muon trigger efficiency vs RECO PF MET, pass preselection
-  TH2F* GMSBStau651_MuonEff_RecoPFMET_passPres = new TH2F("GMSBStau651_MuonEff_RecoPFMET_passPres","pass preselection;RECO PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau651_MuonEff_RecoPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau651_MuonEff_RecoPFMET_passPres->Draw();  
-  TEfficiency* GMSBStau651_MuonEff_RecoPFMET_passPres_TEff = new TEfficiency(*GMSBStau651_RecoPFMET_passPres_passMuon_,*GMSBStau651_RecoPFMET_passPres_);
-  GMSBStau651_MuonEff_RecoPFMET_passPres_TEff->SetLineColor(kRed);
-  GMSBStau651_MuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau651_MuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau651_MuonEff_RecoPFMET_passPres.png");
+  TH2F* GMSBStau557_MuonEff_RecoPFMET_passPres = new TH2F("GMSBStau557_MuonEff_RecoPFMET_passPres","pass preselection;RECO PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau557_MuonEff_RecoPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau557_MuonEff_RecoPFMET_passPres->Draw();  
+  TEfficiency* GMSBStau557_MuonEff_RecoPFMET_passPres_TEff = new TEfficiency(*GMSBStau557_RecoPFMET_passPres_passMuon_,*GMSBStau557_RecoPFMET_passPres_);
+  GMSBStau557_MuonEff_RecoPFMET_passPres_TEff->SetLineColor(kRed);
+  GMSBStau557_MuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kRed);
+  GMSBStau557_MuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau557_MuonEff_RecoPFMET_passPres.png");
 
   /* // 11.11) MET or Muon trigger efficiency vs RECO PF MET, no preselection
-  TH2F* GMSBStau651_METOrMuonEff_RecoPFMET_noPres = new TH2F("GMSBStau651_METOrMuonEff_RecoPFMET_noPres","no preselection;RECO PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau651_METOrMuonEff_RecoPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau651_METOrMuonEff_RecoPFMET_noPres->Draw();  
-  TEfficiency* GMSBStau651_METOrMuonEff_RecoPFMET_noPres_TEff = new TEfficiency(*GMSBStau651_RecoPFMET_noPres_passMETOrMuon_,*GMSBStau651_RecoPFMET_noPres_);
-  GMSBStau651_METOrMuonEff_RecoPFMET_noPres_TEff->SetLineColor(kRed);
-  GMSBStau651_METOrMuonEff_RecoPFMET_noPres_TEff->SetMarkerColor(kRed);
-  GMSBStau651_METOrMuonEff_RecoPFMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau651_METOrMuonEff_RecoPFMET_noPres.png"); */
+  TH2F* GMSBStau557_METOrMuonEff_RecoPFMET_noPres = new TH2F("GMSBStau557_METOrMuonEff_RecoPFMET_noPres","no preselection;RECO PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau557_METOrMuonEff_RecoPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau557_METOrMuonEff_RecoPFMET_noPres->Draw();  
+  TEfficiency* GMSBStau557_METOrMuonEff_RecoPFMET_noPres_TEff = new TEfficiency(*GMSBStau557_RecoPFMET_noPres_passMETOrMuon_,*GMSBStau557_RecoPFMET_noPres_);
+  GMSBStau557_METOrMuonEff_RecoPFMET_noPres_TEff->SetLineColor(kRed);
+  GMSBStau557_METOrMuonEff_RecoPFMET_noPres_TEff->SetMarkerColor(kRed);
+  GMSBStau557_METOrMuonEff_RecoPFMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau557_METOrMuonEff_RecoPFMET_noPres.png"); */
 
   // 11.12) MET or Muon trigger efficiency vs RECO PF MET, pass preselection
-  TH2F* GMSBStau651_METOrMuonEff_RecoPFMET_passPres = new TH2F("GMSBStau651_METOrMuonEff_RecoPFMET_passPres","pass preselection;RECO PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau651_METOrMuonEff_RecoPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau651_METOrMuonEff_RecoPFMET_passPres->Draw();  
-  TEfficiency* GMSBStau651_METOrMuonEff_RecoPFMET_passPres_TEff = new TEfficiency(*GMSBStau651_RecoPFMET_passPres_passMETOrMuon_,*GMSBStau651_RecoPFMET_passPres_);
-  GMSBStau651_METOrMuonEff_RecoPFMET_passPres_TEff->SetLineColor(kRed);
-  GMSBStau651_METOrMuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau651_METOrMuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau651_METOrMuonEff_RecoPFMET_passPres.png");
+  TH2F* GMSBStau557_METOrMuonEff_RecoPFMET_passPres = new TH2F("GMSBStau557_METOrMuonEff_RecoPFMET_passPres","pass preselection;RECO PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau557_METOrMuonEff_RecoPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau557_METOrMuonEff_RecoPFMET_passPres->Draw();  
+  TEfficiency* GMSBStau557_METOrMuonEff_RecoPFMET_passPres_TEff = new TEfficiency(*GMSBStau557_RecoPFMET_passPres_passMETOrMuon_,*GMSBStau557_RecoPFMET_passPres_);
+  GMSBStau557_METOrMuonEff_RecoPFMET_passPres_TEff->SetLineColor(kRed);
+  GMSBStau557_METOrMuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kRed);
+  GMSBStau557_METOrMuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau557_METOrMuonEff_RecoPFMET_passPres.png");
 
   /* // 11.13) MET trigger efficiency vs HLT Calo MET, no preselection
-  TH2F* GMSBStau651_METEff_HLTCaloMET_noPres = new TH2F("GMSBStau651_METEff_HLTCaloMET_noPres","no preselection;HLT Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau651_METEff_HLTCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau651_METEff_HLTCaloMET_noPres->Draw();  
-  TEfficiency* GMSBStau651_METEff_HLTCaloMET_noPres_TEff = new TEfficiency(*GMSBStau651_HLTCaloMET_noPres_passMET_,*GMSBStau651_HLTCaloMET_noPres_);
-  GMSBStau651_METEff_HLTCaloMET_noPres_TEff->SetLineColor(kRed);
-  GMSBStau651_METEff_HLTCaloMET_noPres_TEff->SetMarkerColor(kRed);
-  GMSBStau651_METEff_HLTCaloMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau651_METEff_HLTCaloMET_noPres.png"); */
+  TH2F* GMSBStau557_METEff_HLTCaloMET_noPres = new TH2F("GMSBStau557_METEff_HLTCaloMET_noPres","no preselection;HLT Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau557_METEff_HLTCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau557_METEff_HLTCaloMET_noPres->Draw();  
+  TEfficiency* GMSBStau557_METEff_HLTCaloMET_noPres_TEff = new TEfficiency(*GMSBStau557_HLTCaloMET_noPres_passMET_,*GMSBStau557_HLTCaloMET_noPres_);
+  GMSBStau557_METEff_HLTCaloMET_noPres_TEff->SetLineColor(kRed);
+  GMSBStau557_METEff_HLTCaloMET_noPres_TEff->SetMarkerColor(kRed);
+  GMSBStau557_METEff_HLTCaloMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau557_METEff_HLTCaloMET_noPres.png"); */
 
   // 11.14) MET trigger efficiency vs HLT Calo MET, pass preselection
-  TH2F* GMSBStau651_METEff_HLTCaloMET_passPres = new TH2F("GMSBStau651_METEff_HLTCaloMET_passPres","pass preselection;HLT Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau651_METEff_HLTCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau651_METEff_HLTCaloMET_passPres->Draw();  
-  TEfficiency* GMSBStau651_METEff_HLTCaloMET_passPres_TEff = new TEfficiency(*GMSBStau651_HLTCaloMET_passPres_passMET_,*GMSBStau651_HLTCaloMET_passPres_);
-  GMSBStau651_METEff_HLTCaloMET_passPres_TEff->SetLineColor(kRed);
-  GMSBStau651_METEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau651_METEff_HLTCaloMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau651_METEff_HLTCaloMET_passPres.png");
+  TH2F* GMSBStau557_METEff_HLTCaloMET_passPres = new TH2F("GMSBStau557_METEff_HLTCaloMET_passPres","pass preselection;HLT Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau557_METEff_HLTCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau557_METEff_HLTCaloMET_passPres->Draw();  
+  TEfficiency* GMSBStau557_METEff_HLTCaloMET_passPres_TEff = new TEfficiency(*GMSBStau557_HLTCaloMET_passPres_passMET_,*GMSBStau557_HLTCaloMET_passPres_);
+  GMSBStau557_METEff_HLTCaloMET_passPres_TEff->SetLineColor(kRed);
+  GMSBStau557_METEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kRed);
+  GMSBStau557_METEff_HLTCaloMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau557_METEff_HLTCaloMET_passPres.png");
 
   /* // 11.15) Muon trigger efficiency vs HLT Calo MET, no preselection
-  TH2F* GMSBStau651_MuonEff_HLTCaloMET_noPres = new TH2F("GMSBStau651_MuonEff_HLTCaloMET_noPres","no preselection;HLT Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau651_MuonEff_HLTCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau651_MuonEff_HLTCaloMET_noPres->Draw();  
-  TEfficiency* GMSBStau651_MuonEff_HLTCaloMET_noPres_TEff = new TEfficiency(*GMSBStau651_HLTCaloMET_noPres_passMuon_,*GMSBStau651_HLTCaloMET_noPres_);
-  GMSBStau651_MuonEff_HLTCaloMET_noPres_TEff->SetLineColor(kRed);
-  GMSBStau651_MuonEff_HLTCaloMET_noPres_TEff->SetMarkerColor(kRed);
-  GMSBStau651_MuonEff_HLTCaloMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau651_MuonEff_HLTCaloMET_noPres.png"); */
+  TH2F* GMSBStau557_MuonEff_HLTCaloMET_noPres = new TH2F("GMSBStau557_MuonEff_HLTCaloMET_noPres","no preselection;HLT Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau557_MuonEff_HLTCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau557_MuonEff_HLTCaloMET_noPres->Draw();  
+  TEfficiency* GMSBStau557_MuonEff_HLTCaloMET_noPres_TEff = new TEfficiency(*GMSBStau557_HLTCaloMET_noPres_passMuon_,*GMSBStau557_HLTCaloMET_noPres_);
+  GMSBStau557_MuonEff_HLTCaloMET_noPres_TEff->SetLineColor(kRed);
+  GMSBStau557_MuonEff_HLTCaloMET_noPres_TEff->SetMarkerColor(kRed);
+  GMSBStau557_MuonEff_HLTCaloMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau557_MuonEff_HLTCaloMET_noPres.png"); */
 
   // 11.16) Muon trigger efficiency vs HLT Calo MET, pass preselection
-  TH2F* GMSBStau651_MuonEff_HLTCaloMET_passPres = new TH2F("GMSBStau651_MuonEff_HLTCaloMET_passPres","pass preselection;HLT Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau651_MuonEff_HLTCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau651_MuonEff_HLTCaloMET_passPres->Draw();  
-  TEfficiency* GMSBStau651_MuonEff_HLTCaloMET_passPres_TEff = new TEfficiency(*GMSBStau651_HLTCaloMET_passPres_passMuon_,*GMSBStau651_HLTCaloMET_passPres_);
-  GMSBStau651_MuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kRed);
-  GMSBStau651_MuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau651_MuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau651_MuonEff_HLTCaloMET_passPres.png");
+  TH2F* GMSBStau557_MuonEff_HLTCaloMET_passPres = new TH2F("GMSBStau557_MuonEff_HLTCaloMET_passPres","pass preselection;HLT Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau557_MuonEff_HLTCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau557_MuonEff_HLTCaloMET_passPres->Draw();  
+  TEfficiency* GMSBStau557_MuonEff_HLTCaloMET_passPres_TEff = new TEfficiency(*GMSBStau557_HLTCaloMET_passPres_passMuon_,*GMSBStau557_HLTCaloMET_passPres_);
+  GMSBStau557_MuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kRed);
+  GMSBStau557_MuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kRed);
+  GMSBStau557_MuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau557_MuonEff_HLTCaloMET_passPres.png");
 
   /* // 11.17) MET or Muon trigger efficiency vs HLT Calo MET, no preselection
-  TH2F* GMSBStau651_METOrMuonEff_HLTCaloMET_noPres = new TH2F("GMSBStau651_METOrMuonEff_HLTCaloMET_noPres","no preselection;HLT Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau651_METOrMuonEff_HLTCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau651_METOrMuonEff_HLTCaloMET_noPres->Draw();  
-  TEfficiency* GMSBStau651_METOrMuonEff_HLTCaloMET_noPres_TEff = new TEfficiency(*GMSBStau651_HLTCaloMET_noPres_passMETOrMuon_,*GMSBStau651_HLTCaloMET_noPres_);
-  GMSBStau651_METOrMuonEff_HLTCaloMET_noPres_TEff->SetLineColor(kRed);
-  GMSBStau651_METOrMuonEff_HLTCaloMET_noPres_TEff->SetMarkerColor(kRed);
-  GMSBStau651_METOrMuonEff_HLTCaloMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau651_METOrMuonEff_HLTCaloMET_noPres.png"); */
+  TH2F* GMSBStau557_METOrMuonEff_HLTCaloMET_noPres = new TH2F("GMSBStau557_METOrMuonEff_HLTCaloMET_noPres","no preselection;HLT Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau557_METOrMuonEff_HLTCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau557_METOrMuonEff_HLTCaloMET_noPres->Draw();  
+  TEfficiency* GMSBStau557_METOrMuonEff_HLTCaloMET_noPres_TEff = new TEfficiency(*GMSBStau557_HLTCaloMET_noPres_passMETOrMuon_,*GMSBStau557_HLTCaloMET_noPres_);
+  GMSBStau557_METOrMuonEff_HLTCaloMET_noPres_TEff->SetLineColor(kRed);
+  GMSBStau557_METOrMuonEff_HLTCaloMET_noPres_TEff->SetMarkerColor(kRed);
+  GMSBStau557_METOrMuonEff_HLTCaloMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau557_METOrMuonEff_HLTCaloMET_noPres.png"); */
 
   // 11.18) MET or Muon trigger efficiency vs HLT Calo MET, pass preselection
-  TH2F* GMSBStau651_METOrMuonEff_HLTCaloMET_passPres = new TH2F("GMSBStau651_METOrMuonEff_HLTCaloMET_passPres","pass preselection;HLT Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau651_METOrMuonEff_HLTCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau651_METOrMuonEff_HLTCaloMET_passPres->Draw();  
-  TEfficiency* GMSBStau651_METOrMuonEff_HLTCaloMET_passPres_TEff = new TEfficiency(*GMSBStau651_HLTCaloMET_passPres_passMETOrMuon_,*GMSBStau651_HLTCaloMET_passPres_);
-  GMSBStau651_METOrMuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kRed);
-  GMSBStau651_METOrMuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau651_METOrMuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau651_METOrMuonEff_HLTCaloMET_passPres.png");
+  TH2F* GMSBStau557_METOrMuonEff_HLTCaloMET_passPres = new TH2F("GMSBStau557_METOrMuonEff_HLTCaloMET_passPres","pass preselection;HLT Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau557_METOrMuonEff_HLTCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau557_METOrMuonEff_HLTCaloMET_passPres->Draw();  
+  TEfficiency* GMSBStau557_METOrMuonEff_HLTCaloMET_passPres_TEff = new TEfficiency(*GMSBStau557_HLTCaloMET_passPres_passMETOrMuon_,*GMSBStau557_HLTCaloMET_passPres_);
+  GMSBStau557_METOrMuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kRed);
+  GMSBStau557_METOrMuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kRed);
+  GMSBStau557_METOrMuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau557_METOrMuonEff_HLTCaloMET_passPres.png");
 
   /* // 11.19) MET trigger efficiency vs HLT PF MET, no preselection
-  TH2F* GMSBStau651_METEff_HLTPFMET_noPres = new TH2F("GMSBStau651_METEff_HLTPFMET_noPres","no preselection;HLT PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau651_METEff_HLTPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau651_METEff_HLTPFMET_noPres->Draw();  
-  TEfficiency* GMSBStau651_METEff_HLTPFMET_noPres_TEff = new TEfficiency(*GMSBStau651_HLTPFMET_noPres_passMET_,*GMSBStau651_HLTPFMET_noPres_);
-  GMSBStau651_METEff_HLTPFMET_noPres_TEff->SetLineColor(kRed);
-  GMSBStau651_METEff_HLTPFMET_noPres_TEff->SetMarkerColor(kRed);
-  GMSBStau651_METEff_HLTPFMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau651_METEff_HLTPFMET_noPres.png"); */
+  TH2F* GMSBStau557_METEff_HLTPFMET_noPres = new TH2F("GMSBStau557_METEff_HLTPFMET_noPres","no preselection;HLT PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau557_METEff_HLTPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau557_METEff_HLTPFMET_noPres->Draw();  
+  TEfficiency* GMSBStau557_METEff_HLTPFMET_noPres_TEff = new TEfficiency(*GMSBStau557_HLTPFMET_noPres_passMET_,*GMSBStau557_HLTPFMET_noPres_);
+  GMSBStau557_METEff_HLTPFMET_noPres_TEff->SetLineColor(kRed);
+  GMSBStau557_METEff_HLTPFMET_noPres_TEff->SetMarkerColor(kRed);
+  GMSBStau557_METEff_HLTPFMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau557_METEff_HLTPFMET_noPres.png"); */
 
   // 11.20) MET trigger efficiency vs HLT PF MET, pass preselection
-  TH2F* GMSBStau651_METEff_HLTPFMET_passPres = new TH2F("GMSBStau651_METEff_HLTPFMET_passPres","pass preselection;HLT PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau651_METEff_HLTPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau651_METEff_HLTPFMET_passPres->Draw();  
-  TEfficiency* GMSBStau651_METEff_HLTPFMET_passPres_TEff = new TEfficiency(*GMSBStau651_HLTPFMET_passPres_passMET_,*GMSBStau651_HLTPFMET_passPres_);
-  GMSBStau651_METEff_HLTPFMET_passPres_TEff->SetLineColor(kRed);
-  GMSBStau651_METEff_HLTPFMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau651_METEff_HLTPFMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau651_METEff_HLTPFMET_passPres.png");
+  TH2F* GMSBStau557_METEff_HLTPFMET_passPres = new TH2F("GMSBStau557_METEff_HLTPFMET_passPres","pass preselection;HLT PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau557_METEff_HLTPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau557_METEff_HLTPFMET_passPres->Draw();  
+  TEfficiency* GMSBStau557_METEff_HLTPFMET_passPres_TEff = new TEfficiency(*GMSBStau557_HLTPFMET_passPres_passMET_,*GMSBStau557_HLTPFMET_passPres_);
+  GMSBStau557_METEff_HLTPFMET_passPres_TEff->SetLineColor(kRed);
+  GMSBStau557_METEff_HLTPFMET_passPres_TEff->SetMarkerColor(kRed);
+  GMSBStau557_METEff_HLTPFMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau557_METEff_HLTPFMET_passPres.png");
 
   /* // 11.21) Muon trigger efficiency vs HLT PF MET, no preselection
-  TH2F* GMSBStau651_MuonEff_HLTPFMET_noPres = new TH2F("GMSBStau651_MuonEff_HLTPFMET_noPres","no preselection;HLT PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau651_MuonEff_HLTPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau651_MuonEff_HLTPFMET_noPres->Draw();  
-  TEfficiency* GMSBStau651_MuonEff_HLTPFMET_noPres_TEff = new TEfficiency(*GMSBStau651_HLTPFMET_noPres_passMuon_,*GMSBStau651_HLTPFMET_noPres_);
-  GMSBStau651_MuonEff_HLTPFMET_noPres_TEff->SetLineColor(kRed);
-  GMSBStau651_MuonEff_HLTPFMET_noPres_TEff->SetMarkerColor(kRed);
-  GMSBStau651_MuonEff_HLTPFMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau651_MuonEff_HLTPFMET_noPres.png"); */
+  TH2F* GMSBStau557_MuonEff_HLTPFMET_noPres = new TH2F("GMSBStau557_MuonEff_HLTPFMET_noPres","no preselection;HLT PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau557_MuonEff_HLTPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau557_MuonEff_HLTPFMET_noPres->Draw();  
+  TEfficiency* GMSBStau557_MuonEff_HLTPFMET_noPres_TEff = new TEfficiency(*GMSBStau557_HLTPFMET_noPres_passMuon_,*GMSBStau557_HLTPFMET_noPres_);
+  GMSBStau557_MuonEff_HLTPFMET_noPres_TEff->SetLineColor(kRed);
+  GMSBStau557_MuonEff_HLTPFMET_noPres_TEff->SetMarkerColor(kRed);
+  GMSBStau557_MuonEff_HLTPFMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau557_MuonEff_HLTPFMET_noPres.png"); */
 
   // 11.22) Muon trigger efficiency vs HLT PF MET, pass preselection
-  TH2F* GMSBStau651_MuonEff_HLTPFMET_passPres = new TH2F("GMSBStau651_MuonEff_HLTPFMET_passPres","pass preselection;HLT PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau651_MuonEff_HLTPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau651_MuonEff_HLTPFMET_passPres->Draw();  
-  TEfficiency* GMSBStau651_MuonEff_HLTPFMET_passPres_TEff = new TEfficiency(*GMSBStau651_HLTPFMET_passPres_passMuon_,*GMSBStau651_HLTPFMET_passPres_);
-  GMSBStau651_MuonEff_HLTPFMET_passPres_TEff->SetLineColor(kRed);
-  GMSBStau651_MuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau651_MuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau651_MuonEff_HLTPFMET_passPres.png");
+  TH2F* GMSBStau557_MuonEff_HLTPFMET_passPres = new TH2F("GMSBStau557_MuonEff_HLTPFMET_passPres","pass preselection;HLT PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau557_MuonEff_HLTPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau557_MuonEff_HLTPFMET_passPres->Draw();  
+  TEfficiency* GMSBStau557_MuonEff_HLTPFMET_passPres_TEff = new TEfficiency(*GMSBStau557_HLTPFMET_passPres_passMuon_,*GMSBStau557_HLTPFMET_passPres_);
+  GMSBStau557_MuonEff_HLTPFMET_passPres_TEff->SetLineColor(kRed);
+  GMSBStau557_MuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kRed);
+  GMSBStau557_MuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau557_MuonEff_HLTPFMET_passPres.png");
 
   /* // 11.23) MET or Muon trigger efficiency vs HLT PF MET, no preselection
-  TH2F* GMSBStau651_METOrMuonEff_HLTPFMET_noPres = new TH2F("GMSBStau651_METOrMuonEff_HLTPFMET_noPres","no preselection;HLT PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau651_METOrMuonEff_HLTPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau651_METOrMuonEff_HLTPFMET_noPres->Draw();  
-  TEfficiency* GMSBStau651_METOrMuonEff_HLTPFMET_noPres_TEff = new TEfficiency(*GMSBStau651_HLTPFMET_noPres_passMETOrMuon_,*GMSBStau651_HLTPFMET_noPres_);
-  GMSBStau651_METOrMuonEff_HLTPFMET_noPres_TEff->SetLineColor(kRed);
-  GMSBStau651_METOrMuonEff_HLTPFMET_noPres_TEff->SetMarkerColor(kRed);
-  GMSBStau651_METOrMuonEff_HLTPFMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau651_METOrMuonEff_HLTPFMET_noPres.png"); */
+  TH2F* GMSBStau557_METOrMuonEff_HLTPFMET_noPres = new TH2F("GMSBStau557_METOrMuonEff_HLTPFMET_noPres","no preselection;HLT PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau557_METOrMuonEff_HLTPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau557_METOrMuonEff_HLTPFMET_noPres->Draw();  
+  TEfficiency* GMSBStau557_METOrMuonEff_HLTPFMET_noPres_TEff = new TEfficiency(*GMSBStau557_HLTPFMET_noPres_passMETOrMuon_,*GMSBStau557_HLTPFMET_noPres_);
+  GMSBStau557_METOrMuonEff_HLTPFMET_noPres_TEff->SetLineColor(kRed);
+  GMSBStau557_METOrMuonEff_HLTPFMET_noPres_TEff->SetMarkerColor(kRed);
+  GMSBStau557_METOrMuonEff_HLTPFMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau557_METOrMuonEff_HLTPFMET_noPres.png"); */
 
   // 11.24) MET or Muon trigger efficiency vs HLT PF MET, pass preselection
-  TH2F* GMSBStau651_METOrMuonEff_HLTPFMET_passPres = new TH2F("GMSBStau651_METOrMuonEff_HLTPFMET_passPres","pass preselection;HLT PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau651_METOrMuonEff_HLTPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau651_METOrMuonEff_HLTPFMET_passPres->Draw();  
-  TEfficiency* GMSBStau651_METOrMuonEff_HLTPFMET_passPres_TEff = new TEfficiency(*GMSBStau651_HLTPFMET_passPres_passMETOrMuon_,*GMSBStau651_HLTPFMET_passPres_);
-  GMSBStau651_METOrMuonEff_HLTPFMET_passPres_TEff->SetLineColor(kRed);
-  GMSBStau651_METOrMuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau651_METOrMuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau651_METOrMuonEff_HLTPFMET_passPres.png");
+  TH2F* GMSBStau557_METOrMuonEff_HLTPFMET_passPres = new TH2F("GMSBStau557_METOrMuonEff_HLTPFMET_passPres","pass preselection;HLT PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau557_METOrMuonEff_HLTPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau557_METOrMuonEff_HLTPFMET_passPres->Draw();  
+  TEfficiency* GMSBStau557_METOrMuonEff_HLTPFMET_passPres_TEff = new TEfficiency(*GMSBStau557_HLTPFMET_passPres_passMETOrMuon_,*GMSBStau557_HLTPFMET_passPres_);
+  GMSBStau557_METOrMuonEff_HLTPFMET_passPres_TEff->SetLineColor(kRed);
+  GMSBStau557_METOrMuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kRed);
+  GMSBStau557_METOrMuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau557_METOrMuonEff_HLTPFMET_passPres.png");
 
   //=====================
-  //  GMSBStau 871 GeV  
+  //  GMSBStau 745 GeV  
   //=====================
 
   /* // 12.1) MET trigger efficiency vs RECO Calo MET, no preselection
-  TH2F* GMSBStau871_METEff_RecoCaloMET_noPres = new TH2F("GMSBStau871_METEff_RecoCaloMET_noPres","no preselection;RECO Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau871_METEff_RecoCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau871_METEff_RecoCaloMET_noPres->Draw();  
-  TEfficiency* GMSBStau871_METEff_RecoCaloMET_noPres_TEff = new TEfficiency(*GMSBStau871_RecoCaloMET_noPres_passMET_,*GMSBStau871_RecoCaloMET_noPres_);
-  GMSBStau871_METEff_RecoCaloMET_noPres_TEff->SetLineColor(kRed);
-  GMSBStau871_METEff_RecoCaloMET_noPres_TEff->SetMarkerColor(kRed);
-  GMSBStau871_METEff_RecoCaloMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau871_METEff_RecoCaloMET_noPres.png"); */
+  TH2F* GMSBStau745_METEff_RecoCaloMET_noPres = new TH2F("GMSBStau745_METEff_RecoCaloMET_noPres","no preselection;RECO Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau745_METEff_RecoCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau745_METEff_RecoCaloMET_noPres->Draw();  
+  TEfficiency* GMSBStau745_METEff_RecoCaloMET_noPres_TEff = new TEfficiency(*GMSBStau745_RecoCaloMET_noPres_passMET_,*GMSBStau745_RecoCaloMET_noPres_);
+  GMSBStau745_METEff_RecoCaloMET_noPres_TEff->SetLineColor(kRed);
+  GMSBStau745_METEff_RecoCaloMET_noPres_TEff->SetMarkerColor(kRed);
+  GMSBStau745_METEff_RecoCaloMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau745_METEff_RecoCaloMET_noPres.png"); */
 
   // 12.2) MET trigger efficiency vs RECO Calo MET, pass preselection
-  TH2F* GMSBStau871_METEff_RecoCaloMET_passPres = new TH2F("GMSBStau871_METEff_RecoCaloMET_passPres","pass preselection;RECO Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau871_METEff_RecoCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau871_METEff_RecoCaloMET_passPres->Draw();  
-  TEfficiency* GMSBStau871_METEff_RecoCaloMET_passPres_TEff = new TEfficiency(*GMSBStau871_RecoCaloMET_passPres_passMET_,*GMSBStau871_RecoCaloMET_passPres_);
-  GMSBStau871_METEff_RecoCaloMET_passPres_TEff->SetLineColor(kRed);
-  GMSBStau871_METEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau871_METEff_RecoCaloMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau871_METEff_RecoCaloMET_passPres.png");
+  TH2F* GMSBStau745_METEff_RecoCaloMET_passPres = new TH2F("GMSBStau745_METEff_RecoCaloMET_passPres","pass preselection;RECO Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau745_METEff_RecoCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau745_METEff_RecoCaloMET_passPres->Draw();  
+  TEfficiency* GMSBStau745_METEff_RecoCaloMET_passPres_TEff = new TEfficiency(*GMSBStau745_RecoCaloMET_passPres_passMET_,*GMSBStau745_RecoCaloMET_passPres_);
+  GMSBStau745_METEff_RecoCaloMET_passPres_TEff->SetLineColor(kRed);
+  GMSBStau745_METEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kRed);
+  GMSBStau745_METEff_RecoCaloMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau745_METEff_RecoCaloMET_passPres.png");
 
   /* // 12.3) Muon trigger efficiency vs RECO Calo MET, no preselection
-  TH2F* GMSBStau871_MuonEff_RecoCaloMET_noPres = new TH2F("GMSBStau871_MuonEff_RecoCaloMET_noPres","no preselection;RECO Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau871_MuonEff_RecoCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau871_MuonEff_RecoCaloMET_noPres->Draw();  
-  TEfficiency* GMSBStau871_MuonEff_RecoCaloMET_noPres_TEff = new TEfficiency(*GMSBStau871_RecoCaloMET_noPres_passMuon_,*GMSBStau871_RecoCaloMET_noPres_);
-  GMSBStau871_MuonEff_RecoCaloMET_noPres_TEff->SetLineColor(kRed);
-  GMSBStau871_MuonEff_RecoCaloMET_noPres_TEff->SetMarkerColor(kRed);
-  GMSBStau871_MuonEff_RecoCaloMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau871_MuonEff_RecoCaloMET_noPres.png"); */
+  TH2F* GMSBStau745_MuonEff_RecoCaloMET_noPres = new TH2F("GMSBStau745_MuonEff_RecoCaloMET_noPres","no preselection;RECO Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau745_MuonEff_RecoCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau745_MuonEff_RecoCaloMET_noPres->Draw();  
+  TEfficiency* GMSBStau745_MuonEff_RecoCaloMET_noPres_TEff = new TEfficiency(*GMSBStau745_RecoCaloMET_noPres_passMuon_,*GMSBStau745_RecoCaloMET_noPres_);
+  GMSBStau745_MuonEff_RecoCaloMET_noPres_TEff->SetLineColor(kRed);
+  GMSBStau745_MuonEff_RecoCaloMET_noPres_TEff->SetMarkerColor(kRed);
+  GMSBStau745_MuonEff_RecoCaloMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau745_MuonEff_RecoCaloMET_noPres.png"); */
 
   // 12.4) Muon trigger efficiency vs RECO Calo MET, pass preselection
-  TH2F* GMSBStau871_MuonEff_RecoCaloMET_passPres = new TH2F("GMSBStau871_MuonEff_RecoCaloMET_passPres","pass preselection;RECO Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau871_MuonEff_RecoCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau871_MuonEff_RecoCaloMET_passPres->Draw();  
-  TEfficiency* GMSBStau871_MuonEff_RecoCaloMET_passPres_TEff = new TEfficiency(*GMSBStau871_RecoCaloMET_passPres_passMuon_,*GMSBStau871_RecoCaloMET_passPres_);
-  GMSBStau871_MuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kRed);
-  GMSBStau871_MuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau871_MuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau871_MuonEff_RecoCaloMET_passPres.png");
+  TH2F* GMSBStau745_MuonEff_RecoCaloMET_passPres = new TH2F("GMSBStau745_MuonEff_RecoCaloMET_passPres","pass preselection;RECO Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau745_MuonEff_RecoCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau745_MuonEff_RecoCaloMET_passPres->Draw();  
+  TEfficiency* GMSBStau745_MuonEff_RecoCaloMET_passPres_TEff = new TEfficiency(*GMSBStau745_RecoCaloMET_passPres_passMuon_,*GMSBStau745_RecoCaloMET_passPres_);
+  GMSBStau745_MuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kRed);
+  GMSBStau745_MuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kRed);
+  GMSBStau745_MuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau745_MuonEff_RecoCaloMET_passPres.png");
 
   /* // 12.5) MET or Muon trigger efficiency vs RECO Calo MET, no preselection
-  TH2F* GMSBStau871_METOrMuonEff_RecoCaloMET_noPres = new TH2F("GMSBStau871_METOrMuonEff_RecoCaloMET_noPres","no preselection;RECO Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau871_METOrMuonEff_RecoCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau871_METOrMuonEff_RecoCaloMET_noPres->Draw();  
-  TEfficiency* GMSBStau871_METOrMuonEff_RecoCaloMET_noPres_TEff = new TEfficiency(*GMSBStau871_RecoCaloMET_noPres_passMETOrMuon_,*GMSBStau871_RecoCaloMET_noPres_);
-  GMSBStau871_METOrMuonEff_RecoCaloMET_noPres_TEff->SetLineColor(kRed);
-  GMSBStau871_METOrMuonEff_RecoCaloMET_noPres_TEff->SetMarkerColor(kRed);
-  GMSBStau871_METOrMuonEff_RecoCaloMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau871_METOrMuonEff_RecoCaloMET_noPres.png"); */
+  TH2F* GMSBStau745_METOrMuonEff_RecoCaloMET_noPres = new TH2F("GMSBStau745_METOrMuonEff_RecoCaloMET_noPres","no preselection;RECO Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau745_METOrMuonEff_RecoCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau745_METOrMuonEff_RecoCaloMET_noPres->Draw();  
+  TEfficiency* GMSBStau745_METOrMuonEff_RecoCaloMET_noPres_TEff = new TEfficiency(*GMSBStau745_RecoCaloMET_noPres_passMETOrMuon_,*GMSBStau745_RecoCaloMET_noPres_);
+  GMSBStau745_METOrMuonEff_RecoCaloMET_noPres_TEff->SetLineColor(kRed);
+  GMSBStau745_METOrMuonEff_RecoCaloMET_noPres_TEff->SetMarkerColor(kRed);
+  GMSBStau745_METOrMuonEff_RecoCaloMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau745_METOrMuonEff_RecoCaloMET_noPres.png"); */
 
   // 12.6) MET or Muon trigger efficiency vs RECO Calo MET, pass preselection
-  TH2F* GMSBStau871_METOrMuonEff_RecoCaloMET_passPres = new TH2F("GMSBStau871_METOrMuonEff_RecoCaloMET_passPres","pass preselection;RECO Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau871_METOrMuonEff_RecoCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau871_METOrMuonEff_RecoCaloMET_passPres->Draw();  
-  TEfficiency* GMSBStau871_METOrMuonEff_RecoCaloMET_passPres_TEff = new TEfficiency(*GMSBStau871_RecoCaloMET_passPres_passMETOrMuon_,*GMSBStau871_RecoCaloMET_passPres_);
-  GMSBStau871_METOrMuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kRed);
-  GMSBStau871_METOrMuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau871_METOrMuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau871_METOrMuonEff_RecoCaloMET_passPres.png");
+  TH2F* GMSBStau745_METOrMuonEff_RecoCaloMET_passPres = new TH2F("GMSBStau745_METOrMuonEff_RecoCaloMET_passPres","pass preselection;RECO Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau745_METOrMuonEff_RecoCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau745_METOrMuonEff_RecoCaloMET_passPres->Draw();  
+  TEfficiency* GMSBStau745_METOrMuonEff_RecoCaloMET_passPres_TEff = new TEfficiency(*GMSBStau745_RecoCaloMET_passPres_passMETOrMuon_,*GMSBStau745_RecoCaloMET_passPres_);
+  GMSBStau745_METOrMuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kRed);
+  GMSBStau745_METOrMuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kRed);
+  GMSBStau745_METOrMuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau745_METOrMuonEff_RecoCaloMET_passPres.png");
 
   /* // 12.7) MET trigger efficiency vs RECO PF MET, no preselection
-  TH2F* GMSBStau871_METEff_RecoPFMET_noPres = new TH2F("GMSBStau871_METEff_RecoPFMET_noPres","no preselection;RECO PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau871_METEff_RecoPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau871_METEff_RecoPFMET_noPres->Draw();  
-  TEfficiency* GMSBStau871_METEff_RecoPFMET_noPres_TEff = new TEfficiency(*GMSBStau871_RecoPFMET_noPres_passMET_,*GMSBStau871_RecoPFMET_noPres_);
-  GMSBStau871_METEff_RecoPFMET_noPres_TEff->SetLineColor(kRed);
-  GMSBStau871_METEff_RecoPFMET_noPres_TEff->SetMarkerColor(kRed);
-  GMSBStau871_METEff_RecoPFMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau871_METEff_RecoPFMET_noPres.png"); */
+  TH2F* GMSBStau745_METEff_RecoPFMET_noPres = new TH2F("GMSBStau745_METEff_RecoPFMET_noPres","no preselection;RECO PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau745_METEff_RecoPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau745_METEff_RecoPFMET_noPres->Draw();  
+  TEfficiency* GMSBStau745_METEff_RecoPFMET_noPres_TEff = new TEfficiency(*GMSBStau745_RecoPFMET_noPres_passMET_,*GMSBStau745_RecoPFMET_noPres_);
+  GMSBStau745_METEff_RecoPFMET_noPres_TEff->SetLineColor(kRed);
+  GMSBStau745_METEff_RecoPFMET_noPres_TEff->SetMarkerColor(kRed);
+  GMSBStau745_METEff_RecoPFMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau745_METEff_RecoPFMET_noPres.png"); */
 
   // 12.8) MET trigger efficiency vs RECO PF MET, pass preselection
-  TH2F* GMSBStau871_METEff_RecoPFMET_passPres = new TH2F("GMSBStau871_METEff_RecoPFMET_passPres","pass preselection;RECO PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau871_METEff_RecoPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau871_METEff_RecoPFMET_passPres->Draw();  
-  TEfficiency* GMSBStau871_METEff_RecoPFMET_passPres_TEff = new TEfficiency(*GMSBStau871_RecoPFMET_passPres_passMET_,*GMSBStau871_RecoPFMET_passPres_);
-  GMSBStau871_METEff_RecoPFMET_passPres_TEff->SetLineColor(kRed);
-  GMSBStau871_METEff_RecoPFMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau871_METEff_RecoPFMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau871_METEff_RecoPFMET_passPres.png");
+  TH2F* GMSBStau745_METEff_RecoPFMET_passPres = new TH2F("GMSBStau745_METEff_RecoPFMET_passPres","pass preselection;RECO PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau745_METEff_RecoPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau745_METEff_RecoPFMET_passPres->Draw();  
+  TEfficiency* GMSBStau745_METEff_RecoPFMET_passPres_TEff = new TEfficiency(*GMSBStau745_RecoPFMET_passPres_passMET_,*GMSBStau745_RecoPFMET_passPres_);
+  GMSBStau745_METEff_RecoPFMET_passPres_TEff->SetLineColor(kRed);
+  GMSBStau745_METEff_RecoPFMET_passPres_TEff->SetMarkerColor(kRed);
+  GMSBStau745_METEff_RecoPFMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau745_METEff_RecoPFMET_passPres.png");
 
   /* // 12.9) Muon trigger efficiency vs RECO PF MET, no preselection
-  TH2F* GMSBStau871_MuonEff_RecoPFMET_noPres = new TH2F("GMSBStau871_MuonEff_RecoPFMET_noPres","no preselection;RECO PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau871_MuonEff_RecoPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau871_MuonEff_RecoPFMET_noPres->Draw();  
-  TEfficiency* GMSBStau871_MuonEff_RecoPFMET_noPres_TEff = new TEfficiency(*GMSBStau871_RecoPFMET_noPres_passMuon_,*GMSBStau871_RecoPFMET_noPres_);
-  GMSBStau871_MuonEff_RecoPFMET_noPres_TEff->SetLineColor(kRed);
-  GMSBStau871_MuonEff_RecoPFMET_noPres_TEff->SetMarkerColor(kRed);
-  GMSBStau871_MuonEff_RecoPFMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau871_MuonEff_RecoPFMET_noPres.png"); */
+  TH2F* GMSBStau745_MuonEff_RecoPFMET_noPres = new TH2F("GMSBStau745_MuonEff_RecoPFMET_noPres","no preselection;RECO PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau745_MuonEff_RecoPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau745_MuonEff_RecoPFMET_noPres->Draw();  
+  TEfficiency* GMSBStau745_MuonEff_RecoPFMET_noPres_TEff = new TEfficiency(*GMSBStau745_RecoPFMET_noPres_passMuon_,*GMSBStau745_RecoPFMET_noPres_);
+  GMSBStau745_MuonEff_RecoPFMET_noPres_TEff->SetLineColor(kRed);
+  GMSBStau745_MuonEff_RecoPFMET_noPres_TEff->SetMarkerColor(kRed);
+  GMSBStau745_MuonEff_RecoPFMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau745_MuonEff_RecoPFMET_noPres.png"); */
 
   // 12.10) Muon trigger efficiency vs RECO PF MET, pass preselection
-  TH2F* GMSBStau871_MuonEff_RecoPFMET_passPres = new TH2F("GMSBStau871_MuonEff_RecoPFMET_passPres","pass preselection;RECO PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau871_MuonEff_RecoPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau871_MuonEff_RecoPFMET_passPres->Draw();  
-  TEfficiency* GMSBStau871_MuonEff_RecoPFMET_passPres_TEff = new TEfficiency(*GMSBStau871_RecoPFMET_passPres_passMuon_,*GMSBStau871_RecoPFMET_passPres_);
-  GMSBStau871_MuonEff_RecoPFMET_passPres_TEff->SetLineColor(kRed);
-  GMSBStau871_MuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau871_MuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau871_MuonEff_RecoPFMET_passPres.png");
+  TH2F* GMSBStau745_MuonEff_RecoPFMET_passPres = new TH2F("GMSBStau745_MuonEff_RecoPFMET_passPres","pass preselection;RECO PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau745_MuonEff_RecoPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau745_MuonEff_RecoPFMET_passPres->Draw();  
+  TEfficiency* GMSBStau745_MuonEff_RecoPFMET_passPres_TEff = new TEfficiency(*GMSBStau745_RecoPFMET_passPres_passMuon_,*GMSBStau745_RecoPFMET_passPres_);
+  GMSBStau745_MuonEff_RecoPFMET_passPres_TEff->SetLineColor(kRed);
+  GMSBStau745_MuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kRed);
+  GMSBStau745_MuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau745_MuonEff_RecoPFMET_passPres.png");
 
   /* // 12.11) MET or Muon trigger efficiency vs RECO PF MET, no preselection
-  TH2F* GMSBStau871_METOrMuonEff_RecoPFMET_noPres = new TH2F("GMSBStau871_METOrMuonEff_RecoPFMET_noPres","no preselection;RECO PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau871_METOrMuonEff_RecoPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau871_METOrMuonEff_RecoPFMET_noPres->Draw();  
-  TEfficiency* GMSBStau871_METOrMuonEff_RecoPFMET_noPres_TEff = new TEfficiency(*GMSBStau871_RecoPFMET_noPres_passMETOrMuon_,*GMSBStau871_RecoPFMET_noPres_);
-  GMSBStau871_METOrMuonEff_RecoPFMET_noPres_TEff->SetLineColor(kRed);
-  GMSBStau871_METOrMuonEff_RecoPFMET_noPres_TEff->SetMarkerColor(kRed);
-  GMSBStau871_METOrMuonEff_RecoPFMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau871_METOrMuonEff_RecoPFMET_noPres.png"); */
+  TH2F* GMSBStau745_METOrMuonEff_RecoPFMET_noPres = new TH2F("GMSBStau745_METOrMuonEff_RecoPFMET_noPres","no preselection;RECO PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau745_METOrMuonEff_RecoPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau745_METOrMuonEff_RecoPFMET_noPres->Draw();  
+  TEfficiency* GMSBStau745_METOrMuonEff_RecoPFMET_noPres_TEff = new TEfficiency(*GMSBStau745_RecoPFMET_noPres_passMETOrMuon_,*GMSBStau745_RecoPFMET_noPres_);
+  GMSBStau745_METOrMuonEff_RecoPFMET_noPres_TEff->SetLineColor(kRed);
+  GMSBStau745_METOrMuonEff_RecoPFMET_noPres_TEff->SetMarkerColor(kRed);
+  GMSBStau745_METOrMuonEff_RecoPFMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau745_METOrMuonEff_RecoPFMET_noPres.png"); */
 
   // 12.12) MET or Muon trigger efficiency vs RECO PF MET, pass preselection
-  TH2F* GMSBStau871_METOrMuonEff_RecoPFMET_passPres = new TH2F("GMSBStau871_METOrMuonEff_RecoPFMET_passPres","pass preselection;RECO PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau871_METOrMuonEff_RecoPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau871_METOrMuonEff_RecoPFMET_passPres->Draw();  
-  TEfficiency* GMSBStau871_METOrMuonEff_RecoPFMET_passPres_TEff = new TEfficiency(*GMSBStau871_RecoPFMET_passPres_passMETOrMuon_,*GMSBStau871_RecoPFMET_passPres_);
-  GMSBStau871_METOrMuonEff_RecoPFMET_passPres_TEff->SetLineColor(kRed);
-  GMSBStau871_METOrMuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau871_METOrMuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau871_METOrMuonEff_RecoPFMET_passPres.png");
+  TH2F* GMSBStau745_METOrMuonEff_RecoPFMET_passPres = new TH2F("GMSBStau745_METOrMuonEff_RecoPFMET_passPres","pass preselection;RECO PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau745_METOrMuonEff_RecoPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau745_METOrMuonEff_RecoPFMET_passPres->Draw();  
+  TEfficiency* GMSBStau745_METOrMuonEff_RecoPFMET_passPres_TEff = new TEfficiency(*GMSBStau745_RecoPFMET_passPres_passMETOrMuon_,*GMSBStau745_RecoPFMET_passPres_);
+  GMSBStau745_METOrMuonEff_RecoPFMET_passPres_TEff->SetLineColor(kRed);
+  GMSBStau745_METOrMuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kRed);
+  GMSBStau745_METOrMuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau745_METOrMuonEff_RecoPFMET_passPres.png");
 
   /* // 12.13) MET trigger efficiency vs HLT Calo MET, no preselection
-  TH2F* GMSBStau871_METEff_HLTCaloMET_noPres = new TH2F("GMSBStau871_METEff_HLTCaloMET_noPres","no preselection;HLT Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau871_METEff_HLTCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau871_METEff_HLTCaloMET_noPres->Draw();  
-  TEfficiency* GMSBStau871_METEff_HLTCaloMET_noPres_TEff = new TEfficiency(*GMSBStau871_HLTCaloMET_noPres_passMET_,*GMSBStau871_HLTCaloMET_noPres_);
-  GMSBStau871_METEff_HLTCaloMET_noPres_TEff->SetLineColor(kRed);
-  GMSBStau871_METEff_HLTCaloMET_noPres_TEff->SetMarkerColor(kRed);
-  GMSBStau871_METEff_HLTCaloMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau871_METEff_HLTCaloMET_noPres.png"); */
+  TH2F* GMSBStau745_METEff_HLTCaloMET_noPres = new TH2F("GMSBStau745_METEff_HLTCaloMET_noPres","no preselection;HLT Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau745_METEff_HLTCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau745_METEff_HLTCaloMET_noPres->Draw();  
+  TEfficiency* GMSBStau745_METEff_HLTCaloMET_noPres_TEff = new TEfficiency(*GMSBStau745_HLTCaloMET_noPres_passMET_,*GMSBStau745_HLTCaloMET_noPres_);
+  GMSBStau745_METEff_HLTCaloMET_noPres_TEff->SetLineColor(kRed);
+  GMSBStau745_METEff_HLTCaloMET_noPres_TEff->SetMarkerColor(kRed);
+  GMSBStau745_METEff_HLTCaloMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau745_METEff_HLTCaloMET_noPres.png"); */
 
   // 12.14) MET trigger efficiency vs HLT Calo MET, pass preselection
-  TH2F* GMSBStau871_METEff_HLTCaloMET_passPres = new TH2F("GMSBStau871_METEff_HLTCaloMET_passPres","pass preselection;HLT Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau871_METEff_HLTCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau871_METEff_HLTCaloMET_passPres->Draw();  
-  TEfficiency* GMSBStau871_METEff_HLTCaloMET_passPres_TEff = new TEfficiency(*GMSBStau871_HLTCaloMET_passPres_passMET_,*GMSBStau871_HLTCaloMET_passPres_);
-  GMSBStau871_METEff_HLTCaloMET_passPres_TEff->SetLineColor(kRed);
-  GMSBStau871_METEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau871_METEff_HLTCaloMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau871_METEff_HLTCaloMET_passPres.png");
+  TH2F* GMSBStau745_METEff_HLTCaloMET_passPres = new TH2F("GMSBStau745_METEff_HLTCaloMET_passPres","pass preselection;HLT Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau745_METEff_HLTCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau745_METEff_HLTCaloMET_passPres->Draw();  
+  TEfficiency* GMSBStau745_METEff_HLTCaloMET_passPres_TEff = new TEfficiency(*GMSBStau745_HLTCaloMET_passPres_passMET_,*GMSBStau745_HLTCaloMET_passPres_);
+  GMSBStau745_METEff_HLTCaloMET_passPres_TEff->SetLineColor(kRed);
+  GMSBStau745_METEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kRed);
+  GMSBStau745_METEff_HLTCaloMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau745_METEff_HLTCaloMET_passPres.png");
 
   /* // 12.15) Muon trigger efficiency vs HLT Calo MET, no preselection
-  TH2F* GMSBStau871_MuonEff_HLTCaloMET_noPres = new TH2F("GMSBStau871_MuonEff_HLTCaloMET_noPres","no preselection;HLT Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau871_MuonEff_HLTCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau871_MuonEff_HLTCaloMET_noPres->Draw();  
-  TEfficiency* GMSBStau871_MuonEff_HLTCaloMET_noPres_TEff = new TEfficiency(*GMSBStau871_HLTCaloMET_noPres_passMuon_,*GMSBStau871_HLTCaloMET_noPres_);
-  GMSBStau871_MuonEff_HLTCaloMET_noPres_TEff->SetLineColor(kRed);
-  GMSBStau871_MuonEff_HLTCaloMET_noPres_TEff->SetMarkerColor(kRed);
-  GMSBStau871_MuonEff_HLTCaloMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau871_MuonEff_HLTCaloMET_noPres.png"); */
+  TH2F* GMSBStau745_MuonEff_HLTCaloMET_noPres = new TH2F("GMSBStau745_MuonEff_HLTCaloMET_noPres","no preselection;HLT Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau745_MuonEff_HLTCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau745_MuonEff_HLTCaloMET_noPres->Draw();  
+  TEfficiency* GMSBStau745_MuonEff_HLTCaloMET_noPres_TEff = new TEfficiency(*GMSBStau745_HLTCaloMET_noPres_passMuon_,*GMSBStau745_HLTCaloMET_noPres_);
+  GMSBStau745_MuonEff_HLTCaloMET_noPres_TEff->SetLineColor(kRed);
+  GMSBStau745_MuonEff_HLTCaloMET_noPres_TEff->SetMarkerColor(kRed);
+  GMSBStau745_MuonEff_HLTCaloMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau745_MuonEff_HLTCaloMET_noPres.png"); */
 
   // 12.16) Muon trigger efficiency vs HLT Calo MET, pass preselection
-  TH2F* GMSBStau871_MuonEff_HLTCaloMET_passPres = new TH2F("GMSBStau871_MuonEff_HLTCaloMET_passPres","pass preselection;HLT Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau871_MuonEff_HLTCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau871_MuonEff_HLTCaloMET_passPres->Draw();  
-  TEfficiency* GMSBStau871_MuonEff_HLTCaloMET_passPres_TEff = new TEfficiency(*GMSBStau871_HLTCaloMET_passPres_passMuon_,*GMSBStau871_HLTCaloMET_passPres_);
-  GMSBStau871_MuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kRed);
-  GMSBStau871_MuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau871_MuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau871_MuonEff_HLTCaloMET_passPres.png");
+  TH2F* GMSBStau745_MuonEff_HLTCaloMET_passPres = new TH2F("GMSBStau745_MuonEff_HLTCaloMET_passPres","pass preselection;HLT Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau745_MuonEff_HLTCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau745_MuonEff_HLTCaloMET_passPres->Draw();  
+  TEfficiency* GMSBStau745_MuonEff_HLTCaloMET_passPres_TEff = new TEfficiency(*GMSBStau745_HLTCaloMET_passPres_passMuon_,*GMSBStau745_HLTCaloMET_passPres_);
+  GMSBStau745_MuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kRed);
+  GMSBStau745_MuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kRed);
+  GMSBStau745_MuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau745_MuonEff_HLTCaloMET_passPres.png");
 
   /* // 12.17) MET or Muon trigger efficiency vs HLT Calo MET, no preselection
-  TH2F* GMSBStau871_METOrMuonEff_HLTCaloMET_noPres = new TH2F("GMSBStau871_METOrMuonEff_HLTCaloMET_noPres","no preselection;HLT Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau871_METOrMuonEff_HLTCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau871_METOrMuonEff_HLTCaloMET_noPres->Draw();  
-  TEfficiency* GMSBStau871_METOrMuonEff_HLTCaloMET_noPres_TEff = new TEfficiency(*GMSBStau871_HLTCaloMET_noPres_passMETOrMuon_,*GMSBStau871_HLTCaloMET_noPres_);
-  GMSBStau871_METOrMuonEff_HLTCaloMET_noPres_TEff->SetLineColor(kRed);
-  GMSBStau871_METOrMuonEff_HLTCaloMET_noPres_TEff->SetMarkerColor(kRed);
-  GMSBStau871_METOrMuonEff_HLTCaloMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau871_METOrMuonEff_HLTCaloMET_noPres.png"); */
+  TH2F* GMSBStau745_METOrMuonEff_HLTCaloMET_noPres = new TH2F("GMSBStau745_METOrMuonEff_HLTCaloMET_noPres","no preselection;HLT Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau745_METOrMuonEff_HLTCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau745_METOrMuonEff_HLTCaloMET_noPres->Draw();  
+  TEfficiency* GMSBStau745_METOrMuonEff_HLTCaloMET_noPres_TEff = new TEfficiency(*GMSBStau745_HLTCaloMET_noPres_passMETOrMuon_,*GMSBStau745_HLTCaloMET_noPres_);
+  GMSBStau745_METOrMuonEff_HLTCaloMET_noPres_TEff->SetLineColor(kRed);
+  GMSBStau745_METOrMuonEff_HLTCaloMET_noPres_TEff->SetMarkerColor(kRed);
+  GMSBStau745_METOrMuonEff_HLTCaloMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau745_METOrMuonEff_HLTCaloMET_noPres.png"); */
 
   // 12.18) MET or Muon trigger efficiency vs HLT Calo MET, pass preselection
-  TH2F* GMSBStau871_METOrMuonEff_HLTCaloMET_passPres = new TH2F("GMSBStau871_METOrMuonEff_HLTCaloMET_passPres","pass preselection;HLT Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau871_METOrMuonEff_HLTCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau871_METOrMuonEff_HLTCaloMET_passPres->Draw();  
-  TEfficiency* GMSBStau871_METOrMuonEff_HLTCaloMET_passPres_TEff = new TEfficiency(*GMSBStau871_HLTCaloMET_passPres_passMETOrMuon_,*GMSBStau871_HLTCaloMET_passPres_);
-  GMSBStau871_METOrMuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kRed);
-  GMSBStau871_METOrMuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau871_METOrMuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau871_METOrMuonEff_HLTCaloMET_passPres.png");
+  TH2F* GMSBStau745_METOrMuonEff_HLTCaloMET_passPres = new TH2F("GMSBStau745_METOrMuonEff_HLTCaloMET_passPres","pass preselection;HLT Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau745_METOrMuonEff_HLTCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau745_METOrMuonEff_HLTCaloMET_passPres->Draw();  
+  TEfficiency* GMSBStau745_METOrMuonEff_HLTCaloMET_passPres_TEff = new TEfficiency(*GMSBStau745_HLTCaloMET_passPres_passMETOrMuon_,*GMSBStau745_HLTCaloMET_passPres_);
+  GMSBStau745_METOrMuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kRed);
+  GMSBStau745_METOrMuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kRed);
+  GMSBStau745_METOrMuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau745_METOrMuonEff_HLTCaloMET_passPres.png");
 
   /* // 12.19) MET trigger efficiency vs HLT PF MET, no preselection
-  TH2F* GMSBStau871_METEff_HLTPFMET_noPres = new TH2F("GMSBStau871_METEff_HLTPFMET_noPres","no preselection;HLT PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau871_METEff_HLTPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau871_METEff_HLTPFMET_noPres->Draw();  
-  TEfficiency* GMSBStau871_METEff_HLTPFMET_noPres_TEff = new TEfficiency(*GMSBStau871_HLTPFMET_noPres_passMET_,*GMSBStau871_HLTPFMET_noPres_);
-  GMSBStau871_METEff_HLTPFMET_noPres_TEff->SetLineColor(kRed);
-  GMSBStau871_METEff_HLTPFMET_noPres_TEff->SetMarkerColor(kRed);
-  GMSBStau871_METEff_HLTPFMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau871_METEff_HLTPFMET_noPres.png"); */
+  TH2F* GMSBStau745_METEff_HLTPFMET_noPres = new TH2F("GMSBStau745_METEff_HLTPFMET_noPres","no preselection;HLT PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau745_METEff_HLTPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau745_METEff_HLTPFMET_noPres->Draw();  
+  TEfficiency* GMSBStau745_METEff_HLTPFMET_noPres_TEff = new TEfficiency(*GMSBStau745_HLTPFMET_noPres_passMET_,*GMSBStau745_HLTPFMET_noPres_);
+  GMSBStau745_METEff_HLTPFMET_noPres_TEff->SetLineColor(kRed);
+  GMSBStau745_METEff_HLTPFMET_noPres_TEff->SetMarkerColor(kRed);
+  GMSBStau745_METEff_HLTPFMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau745_METEff_HLTPFMET_noPres.png"); */
 
   // 12.20) MET trigger efficiency vs HLT PF MET, pass preselection
-  TH2F* GMSBStau871_METEff_HLTPFMET_passPres = new TH2F("GMSBStau871_METEff_HLTPFMET_passPres","pass preselection;HLT PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau871_METEff_HLTPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau871_METEff_HLTPFMET_passPres->Draw();  
-  TEfficiency* GMSBStau871_METEff_HLTPFMET_passPres_TEff = new TEfficiency(*GMSBStau871_HLTPFMET_passPres_passMET_,*GMSBStau871_HLTPFMET_passPres_);
-  GMSBStau871_METEff_HLTPFMET_passPres_TEff->SetLineColor(kRed);
-  GMSBStau871_METEff_HLTPFMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau871_METEff_HLTPFMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau871_METEff_HLTPFMET_passPres.png");
+  TH2F* GMSBStau745_METEff_HLTPFMET_passPres = new TH2F("GMSBStau745_METEff_HLTPFMET_passPres","pass preselection;HLT PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau745_METEff_HLTPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau745_METEff_HLTPFMET_passPres->Draw();  
+  TEfficiency* GMSBStau745_METEff_HLTPFMET_passPres_TEff = new TEfficiency(*GMSBStau745_HLTPFMET_passPres_passMET_,*GMSBStau745_HLTPFMET_passPres_);
+  GMSBStau745_METEff_HLTPFMET_passPres_TEff->SetLineColor(kRed);
+  GMSBStau745_METEff_HLTPFMET_passPres_TEff->SetMarkerColor(kRed);
+  GMSBStau745_METEff_HLTPFMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau745_METEff_HLTPFMET_passPres.png");
 
   /* // 12.21) Muon trigger efficiency vs HLT PF MET, no preselection
-  TH2F* GMSBStau871_MuonEff_HLTPFMET_noPres = new TH2F("GMSBStau871_MuonEff_HLTPFMET_noPres","no preselection;HLT PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau871_MuonEff_HLTPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau871_MuonEff_HLTPFMET_noPres->Draw();  
-  TEfficiency* GMSBStau871_MuonEff_HLTPFMET_noPres_TEff = new TEfficiency(*GMSBStau871_HLTPFMET_noPres_passMuon_,*GMSBStau871_HLTPFMET_noPres_);
-  GMSBStau871_MuonEff_HLTPFMET_noPres_TEff->SetLineColor(kRed);
-  GMSBStau871_MuonEff_HLTPFMET_noPres_TEff->SetMarkerColor(kRed);
-  GMSBStau871_MuonEff_HLTPFMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau871_MuonEff_HLTPFMET_noPres.png"); */
+  TH2F* GMSBStau745_MuonEff_HLTPFMET_noPres = new TH2F("GMSBStau745_MuonEff_HLTPFMET_noPres","no preselection;HLT PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau745_MuonEff_HLTPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau745_MuonEff_HLTPFMET_noPres->Draw();  
+  TEfficiency* GMSBStau745_MuonEff_HLTPFMET_noPres_TEff = new TEfficiency(*GMSBStau745_HLTPFMET_noPres_passMuon_,*GMSBStau745_HLTPFMET_noPres_);
+  GMSBStau745_MuonEff_HLTPFMET_noPres_TEff->SetLineColor(kRed);
+  GMSBStau745_MuonEff_HLTPFMET_noPres_TEff->SetMarkerColor(kRed);
+  GMSBStau745_MuonEff_HLTPFMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau745_MuonEff_HLTPFMET_noPres.png"); */
 
   // 12.22) Muon trigger efficiency vs HLT PF MET, pass preselection
-  TH2F* GMSBStau871_MuonEff_HLTPFMET_passPres = new TH2F("GMSBStau871_MuonEff_HLTPFMET_passPres","pass preselection;HLT PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau871_MuonEff_HLTPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau871_MuonEff_HLTPFMET_passPres->Draw();  
-  TEfficiency* GMSBStau871_MuonEff_HLTPFMET_passPres_TEff = new TEfficiency(*GMSBStau871_HLTPFMET_passPres_passMuon_,*GMSBStau871_HLTPFMET_passPres_);
-  GMSBStau871_MuonEff_HLTPFMET_passPres_TEff->SetLineColor(kRed);
-  GMSBStau871_MuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau871_MuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau871_MuonEff_HLTPFMET_passPres.png");
+  TH2F* GMSBStau745_MuonEff_HLTPFMET_passPres = new TH2F("GMSBStau745_MuonEff_HLTPFMET_passPres","pass preselection;HLT PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau745_MuonEff_HLTPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau745_MuonEff_HLTPFMET_passPres->Draw();  
+  TEfficiency* GMSBStau745_MuonEff_HLTPFMET_passPres_TEff = new TEfficiency(*GMSBStau745_HLTPFMET_passPres_passMuon_,*GMSBStau745_HLTPFMET_passPres_);
+  GMSBStau745_MuonEff_HLTPFMET_passPres_TEff->SetLineColor(kRed);
+  GMSBStau745_MuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kRed);
+  GMSBStau745_MuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau745_MuonEff_HLTPFMET_passPres.png");
 
   /* // 12.23) MET or Muon trigger efficiency vs HLT PF MET, no preselection
-  TH2F* GMSBStau871_METOrMuonEff_HLTPFMET_noPres = new TH2F("GMSBStau871_METOrMuonEff_HLTPFMET_noPres","no preselection;HLT PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau871_METOrMuonEff_HLTPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau871_METOrMuonEff_HLTPFMET_noPres->Draw();  
-  TEfficiency* GMSBStau871_METOrMuonEff_HLTPFMET_noPres_TEff = new TEfficiency(*GMSBStau871_HLTPFMET_noPres_passMETOrMuon_,*GMSBStau871_HLTPFMET_noPres_);
-  GMSBStau871_METOrMuonEff_HLTPFMET_noPres_TEff->SetLineColor(kRed);
-  GMSBStau871_METOrMuonEff_HLTPFMET_noPres_TEff->SetMarkerColor(kRed);
-  GMSBStau871_METOrMuonEff_HLTPFMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau871_METOrMuonEff_HLTPFMET_noPres.png"); */
+  TH2F* GMSBStau745_METOrMuonEff_HLTPFMET_noPres = new TH2F("GMSBStau745_METOrMuonEff_HLTPFMET_noPres","no preselection;HLT PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau745_METOrMuonEff_HLTPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau745_METOrMuonEff_HLTPFMET_noPres->Draw();  
+  TEfficiency* GMSBStau745_METOrMuonEff_HLTPFMET_noPres_TEff = new TEfficiency(*GMSBStau745_HLTPFMET_noPres_passMETOrMuon_,*GMSBStau745_HLTPFMET_noPres_);
+  GMSBStau745_METOrMuonEff_HLTPFMET_noPres_TEff->SetLineColor(kRed);
+  GMSBStau745_METOrMuonEff_HLTPFMET_noPres_TEff->SetMarkerColor(kRed);
+  GMSBStau745_METOrMuonEff_HLTPFMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau745_METOrMuonEff_HLTPFMET_noPres.png"); */
 
   // 12.24) MET or Muon trigger efficiency vs HLT PF MET, pass preselection
-  TH2F* GMSBStau871_METOrMuonEff_HLTPFMET_passPres = new TH2F("GMSBStau871_METOrMuonEff_HLTPFMET_passPres","pass preselection;HLT PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  GMSBStau871_METOrMuonEff_HLTPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  GMSBStau871_METOrMuonEff_HLTPFMET_passPres->Draw();  
-  TEfficiency* GMSBStau871_METOrMuonEff_HLTPFMET_passPres_TEff = new TEfficiency(*GMSBStau871_HLTPFMET_passPres_passMETOrMuon_,*GMSBStau871_HLTPFMET_passPres_);
-  GMSBStau871_METOrMuonEff_HLTPFMET_passPres_TEff->SetLineColor(kRed);
-  GMSBStau871_METOrMuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau871_METOrMuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/GMSBStau871_METOrMuonEff_HLTPFMET_passPres.png");
+  TH2F* GMSBStau745_METOrMuonEff_HLTPFMET_passPres = new TH2F("GMSBStau745_METOrMuonEff_HLTPFMET_passPres","pass preselection;HLT PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  GMSBStau745_METOrMuonEff_HLTPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  GMSBStau745_METOrMuonEff_HLTPFMET_passPres->Draw();  
+  TEfficiency* GMSBStau745_METOrMuonEff_HLTPFMET_passPres_TEff = new TEfficiency(*GMSBStau745_HLTPFMET_passPres_passMETOrMuon_,*GMSBStau745_HLTPFMET_passPres_);
+  GMSBStau745_METOrMuonEff_HLTPFMET_passPres_TEff->SetLineColor(kRed);
+  GMSBStau745_METOrMuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kRed);
+  GMSBStau745_METOrMuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/GMSBStau745_METOrMuonEff_HLTPFMET_passPres.png");
 
   //=====================
   //  PairStau 200 GeV  
@@ -3762,492 +3764,492 @@ void make_trig_plots () {
   c_met->SaveAs("./png/PairStau200_METOrMuonEff_HLTPFMET_passPres.png");
 
   //=====================
-  //  PairStau 432 GeV  
+  //  PairStau 308 GeV  
   //=====================
 
   /* // 14.1) MET trigger efficiency vs RECO Calo MET, no preselection
-  TH2F* PairStau432_METEff_RecoCaloMET_noPres = new TH2F("PairStau432_METEff_RecoCaloMET_noPres","no preselection;RECO Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  PairStau432_METEff_RecoCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau432_METEff_RecoCaloMET_noPres->Draw();  
-  TEfficiency* PairStau432_METEff_RecoCaloMET_noPres_TEff = new TEfficiency(*PairStau432_RecoCaloMET_noPres_passMET_,*PairStau432_RecoCaloMET_noPres_);
-  PairStau432_METEff_RecoCaloMET_noPres_TEff->SetLineColor(kRed);
-  PairStau432_METEff_RecoCaloMET_noPres_TEff->SetMarkerColor(kRed);
-  PairStau432_METEff_RecoCaloMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau432_METEff_RecoCaloMET_noPres.png"); */
+  TH2F* PairStau308_METEff_RecoCaloMET_noPres = new TH2F("PairStau308_METEff_RecoCaloMET_noPres","no preselection;RECO Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  PairStau308_METEff_RecoCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau308_METEff_RecoCaloMET_noPres->Draw();  
+  TEfficiency* PairStau308_METEff_RecoCaloMET_noPres_TEff = new TEfficiency(*PairStau308_RecoCaloMET_noPres_passMET_,*PairStau308_RecoCaloMET_noPres_);
+  PairStau308_METEff_RecoCaloMET_noPres_TEff->SetLineColor(kRed);
+  PairStau308_METEff_RecoCaloMET_noPres_TEff->SetMarkerColor(kRed);
+  PairStau308_METEff_RecoCaloMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau308_METEff_RecoCaloMET_noPres.png"); */
 
   // 14.2) MET trigger efficiency vs RECO Calo MET, pass preselection
-  TH2F* PairStau432_METEff_RecoCaloMET_passPres = new TH2F("PairStau432_METEff_RecoCaloMET_passPres","pass preselection;RECO Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  PairStau432_METEff_RecoCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau432_METEff_RecoCaloMET_passPres->Draw();  
-  TEfficiency* PairStau432_METEff_RecoCaloMET_passPres_TEff = new TEfficiency(*PairStau432_RecoCaloMET_passPres_passMET_,*PairStau432_RecoCaloMET_passPres_);
-  PairStau432_METEff_RecoCaloMET_passPres_TEff->SetLineColor(kRed);
-  PairStau432_METEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  PairStau432_METEff_RecoCaloMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau432_METEff_RecoCaloMET_passPres.png");
+  TH2F* PairStau308_METEff_RecoCaloMET_passPres = new TH2F("PairStau308_METEff_RecoCaloMET_passPres","pass preselection;RECO Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  PairStau308_METEff_RecoCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau308_METEff_RecoCaloMET_passPres->Draw();  
+  TEfficiency* PairStau308_METEff_RecoCaloMET_passPres_TEff = new TEfficiency(*PairStau308_RecoCaloMET_passPres_passMET_,*PairStau308_RecoCaloMET_passPres_);
+  PairStau308_METEff_RecoCaloMET_passPres_TEff->SetLineColor(kRed);
+  PairStau308_METEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kRed);
+  PairStau308_METEff_RecoCaloMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau308_METEff_RecoCaloMET_passPres.png");
 
   /* // 14.3) Muon trigger efficiency vs RECO Calo MET, no preselection
-  TH2F* PairStau432_MuonEff_RecoCaloMET_noPres = new TH2F("PairStau432_MuonEff_RecoCaloMET_noPres","no preselection;RECO Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  PairStau432_MuonEff_RecoCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau432_MuonEff_RecoCaloMET_noPres->Draw();  
-  TEfficiency* PairStau432_MuonEff_RecoCaloMET_noPres_TEff = new TEfficiency(*PairStau432_RecoCaloMET_noPres_passMuon_,*PairStau432_RecoCaloMET_noPres_);
-  PairStau432_MuonEff_RecoCaloMET_noPres_TEff->SetLineColor(kRed);
-  PairStau432_MuonEff_RecoCaloMET_noPres_TEff->SetMarkerColor(kRed);
-  PairStau432_MuonEff_RecoCaloMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau432_MuonEff_RecoCaloMET_noPres.png"); */
+  TH2F* PairStau308_MuonEff_RecoCaloMET_noPres = new TH2F("PairStau308_MuonEff_RecoCaloMET_noPres","no preselection;RECO Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  PairStau308_MuonEff_RecoCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau308_MuonEff_RecoCaloMET_noPres->Draw();  
+  TEfficiency* PairStau308_MuonEff_RecoCaloMET_noPres_TEff = new TEfficiency(*PairStau308_RecoCaloMET_noPres_passMuon_,*PairStau308_RecoCaloMET_noPres_);
+  PairStau308_MuonEff_RecoCaloMET_noPres_TEff->SetLineColor(kRed);
+  PairStau308_MuonEff_RecoCaloMET_noPres_TEff->SetMarkerColor(kRed);
+  PairStau308_MuonEff_RecoCaloMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau308_MuonEff_RecoCaloMET_noPres.png"); */
 
   // 14.4) Muon trigger efficiency vs RECO Calo MET, pass preselection
-  TH2F* PairStau432_MuonEff_RecoCaloMET_passPres = new TH2F("PairStau432_MuonEff_RecoCaloMET_passPres","pass preselection;RECO Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  PairStau432_MuonEff_RecoCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau432_MuonEff_RecoCaloMET_passPres->Draw();  
-  TEfficiency* PairStau432_MuonEff_RecoCaloMET_passPres_TEff = new TEfficiency(*PairStau432_RecoCaloMET_passPres_passMuon_,*PairStau432_RecoCaloMET_passPres_);
-  PairStau432_MuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kRed);
-  PairStau432_MuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  PairStau432_MuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau432_MuonEff_RecoCaloMET_passPres.png");
+  TH2F* PairStau308_MuonEff_RecoCaloMET_passPres = new TH2F("PairStau308_MuonEff_RecoCaloMET_passPres","pass preselection;RECO Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  PairStau308_MuonEff_RecoCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau308_MuonEff_RecoCaloMET_passPres->Draw();  
+  TEfficiency* PairStau308_MuonEff_RecoCaloMET_passPres_TEff = new TEfficiency(*PairStau308_RecoCaloMET_passPres_passMuon_,*PairStau308_RecoCaloMET_passPres_);
+  PairStau308_MuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kRed);
+  PairStau308_MuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kRed);
+  PairStau308_MuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau308_MuonEff_RecoCaloMET_passPres.png");
 
   /* // 14.5) MET or Muon trigger efficiency vs RECO Calo MET, no preselection
-  TH2F* PairStau432_METOrMuonEff_RecoCaloMET_noPres = new TH2F("PairStau432_METOrMuonEff_RecoCaloMET_noPres","no preselection;RECO Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  PairStau432_METOrMuonEff_RecoCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau432_METOrMuonEff_RecoCaloMET_noPres->Draw();  
-  TEfficiency* PairStau432_METOrMuonEff_RecoCaloMET_noPres_TEff = new TEfficiency(*PairStau432_RecoCaloMET_noPres_passMETOrMuon_,*PairStau432_RecoCaloMET_noPres_);
-  PairStau432_METOrMuonEff_RecoCaloMET_noPres_TEff->SetLineColor(kRed);
-  PairStau432_METOrMuonEff_RecoCaloMET_noPres_TEff->SetMarkerColor(kRed);
-  PairStau432_METOrMuonEff_RecoCaloMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau432_METOrMuonEff_RecoCaloMET_noPres.png"); */
+  TH2F* PairStau308_METOrMuonEff_RecoCaloMET_noPres = new TH2F("PairStau308_METOrMuonEff_RecoCaloMET_noPres","no preselection;RECO Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  PairStau308_METOrMuonEff_RecoCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau308_METOrMuonEff_RecoCaloMET_noPres->Draw();  
+  TEfficiency* PairStau308_METOrMuonEff_RecoCaloMET_noPres_TEff = new TEfficiency(*PairStau308_RecoCaloMET_noPres_passMETOrMuon_,*PairStau308_RecoCaloMET_noPres_);
+  PairStau308_METOrMuonEff_RecoCaloMET_noPres_TEff->SetLineColor(kRed);
+  PairStau308_METOrMuonEff_RecoCaloMET_noPres_TEff->SetMarkerColor(kRed);
+  PairStau308_METOrMuonEff_RecoCaloMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau308_METOrMuonEff_RecoCaloMET_noPres.png"); */
 
   // 14.6) MET or Muon trigger efficiency vs RECO Calo MET, pass preselection
-  TH2F* PairStau432_METOrMuonEff_RecoCaloMET_passPres = new TH2F("PairStau432_METOrMuonEff_RecoCaloMET_passPres","pass preselection;RECO Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  PairStau432_METOrMuonEff_RecoCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau432_METOrMuonEff_RecoCaloMET_passPres->Draw();  
-  TEfficiency* PairStau432_METOrMuonEff_RecoCaloMET_passPres_TEff = new TEfficiency(*PairStau432_RecoCaloMET_passPres_passMETOrMuon_,*PairStau432_RecoCaloMET_passPres_);
-  PairStau432_METOrMuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kRed);
-  PairStau432_METOrMuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  PairStau432_METOrMuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau432_METOrMuonEff_RecoCaloMET_passPres.png");
+  TH2F* PairStau308_METOrMuonEff_RecoCaloMET_passPres = new TH2F("PairStau308_METOrMuonEff_RecoCaloMET_passPres","pass preselection;RECO Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  PairStau308_METOrMuonEff_RecoCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau308_METOrMuonEff_RecoCaloMET_passPres->Draw();  
+  TEfficiency* PairStau308_METOrMuonEff_RecoCaloMET_passPres_TEff = new TEfficiency(*PairStau308_RecoCaloMET_passPres_passMETOrMuon_,*PairStau308_RecoCaloMET_passPres_);
+  PairStau308_METOrMuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kRed);
+  PairStau308_METOrMuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kRed);
+  PairStau308_METOrMuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau308_METOrMuonEff_RecoCaloMET_passPres.png");
 
   /* // 14.7) MET trigger efficiency vs RECO PF MET, no preselection
-  TH2F* PairStau432_METEff_RecoPFMET_noPres = new TH2F("PairStau432_METEff_RecoPFMET_noPres","no preselection;RECO PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  PairStau432_METEff_RecoPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau432_METEff_RecoPFMET_noPres->Draw();  
-  TEfficiency* PairStau432_METEff_RecoPFMET_noPres_TEff = new TEfficiency(*PairStau432_RecoPFMET_noPres_passMET_,*PairStau432_RecoPFMET_noPres_);
-  PairStau432_METEff_RecoPFMET_noPres_TEff->SetLineColor(kRed);
-  PairStau432_METEff_RecoPFMET_noPres_TEff->SetMarkerColor(kRed);
-  PairStau432_METEff_RecoPFMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau432_METEff_RecoPFMET_noPres.png"); */
+  TH2F* PairStau308_METEff_RecoPFMET_noPres = new TH2F("PairStau308_METEff_RecoPFMET_noPres","no preselection;RECO PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  PairStau308_METEff_RecoPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau308_METEff_RecoPFMET_noPres->Draw();  
+  TEfficiency* PairStau308_METEff_RecoPFMET_noPres_TEff = new TEfficiency(*PairStau308_RecoPFMET_noPres_passMET_,*PairStau308_RecoPFMET_noPres_);
+  PairStau308_METEff_RecoPFMET_noPres_TEff->SetLineColor(kRed);
+  PairStau308_METEff_RecoPFMET_noPres_TEff->SetMarkerColor(kRed);
+  PairStau308_METEff_RecoPFMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau308_METEff_RecoPFMET_noPres.png"); */
 
   // 14.8) MET trigger efficiency vs RECO PF MET, pass preselection
-  TH2F* PairStau432_METEff_RecoPFMET_passPres = new TH2F("PairStau432_METEff_RecoPFMET_passPres","pass preselection;RECO PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  PairStau432_METEff_RecoPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau432_METEff_RecoPFMET_passPres->Draw();  
-  TEfficiency* PairStau432_METEff_RecoPFMET_passPres_TEff = new TEfficiency(*PairStau432_RecoPFMET_passPres_passMET_,*PairStau432_RecoPFMET_passPres_);
-  PairStau432_METEff_RecoPFMET_passPres_TEff->SetLineColor(kRed);
-  PairStau432_METEff_RecoPFMET_passPres_TEff->SetMarkerColor(kRed);
-  PairStau432_METEff_RecoPFMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau432_METEff_RecoPFMET_passPres.png");
+  TH2F* PairStau308_METEff_RecoPFMET_passPres = new TH2F("PairStau308_METEff_RecoPFMET_passPres","pass preselection;RECO PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  PairStau308_METEff_RecoPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau308_METEff_RecoPFMET_passPres->Draw();  
+  TEfficiency* PairStau308_METEff_RecoPFMET_passPres_TEff = new TEfficiency(*PairStau308_RecoPFMET_passPres_passMET_,*PairStau308_RecoPFMET_passPres_);
+  PairStau308_METEff_RecoPFMET_passPres_TEff->SetLineColor(kRed);
+  PairStau308_METEff_RecoPFMET_passPres_TEff->SetMarkerColor(kRed);
+  PairStau308_METEff_RecoPFMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau308_METEff_RecoPFMET_passPres.png");
 
   /* // 14.9) Muon trigger efficiency vs RECO PF MET, no preselection
-  TH2F* PairStau432_MuonEff_RecoPFMET_noPres = new TH2F("PairStau432_MuonEff_RecoPFMET_noPres","no preselection;RECO PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  PairStau432_MuonEff_RecoPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau432_MuonEff_RecoPFMET_noPres->Draw();  
-  TEfficiency* PairStau432_MuonEff_RecoPFMET_noPres_TEff = new TEfficiency(*PairStau432_RecoPFMET_noPres_passMuon_,*PairStau432_RecoPFMET_noPres_);
-  PairStau432_MuonEff_RecoPFMET_noPres_TEff->SetLineColor(kRed);
-  PairStau432_MuonEff_RecoPFMET_noPres_TEff->SetMarkerColor(kRed);
-  PairStau432_MuonEff_RecoPFMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau432_MuonEff_RecoPFMET_noPres.png"); */
+  TH2F* PairStau308_MuonEff_RecoPFMET_noPres = new TH2F("PairStau308_MuonEff_RecoPFMET_noPres","no preselection;RECO PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  PairStau308_MuonEff_RecoPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau308_MuonEff_RecoPFMET_noPres->Draw();  
+  TEfficiency* PairStau308_MuonEff_RecoPFMET_noPres_TEff = new TEfficiency(*PairStau308_RecoPFMET_noPres_passMuon_,*PairStau308_RecoPFMET_noPres_);
+  PairStau308_MuonEff_RecoPFMET_noPres_TEff->SetLineColor(kRed);
+  PairStau308_MuonEff_RecoPFMET_noPres_TEff->SetMarkerColor(kRed);
+  PairStau308_MuonEff_RecoPFMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau308_MuonEff_RecoPFMET_noPres.png"); */
 
   // 14.10) Muon trigger efficiency vs RECO PF MET, pass preselection
-  TH2F* PairStau432_MuonEff_RecoPFMET_passPres = new TH2F("PairStau432_MuonEff_RecoPFMET_passPres","pass preselection;RECO PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  PairStau432_MuonEff_RecoPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau432_MuonEff_RecoPFMET_passPres->Draw();  
-  TEfficiency* PairStau432_MuonEff_RecoPFMET_passPres_TEff = new TEfficiency(*PairStau432_RecoPFMET_passPres_passMuon_,*PairStau432_RecoPFMET_passPres_);
-  PairStau432_MuonEff_RecoPFMET_passPres_TEff->SetLineColor(kRed);
-  PairStau432_MuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kRed);
-  PairStau432_MuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau432_MuonEff_RecoPFMET_passPres.png");
+  TH2F* PairStau308_MuonEff_RecoPFMET_passPres = new TH2F("PairStau308_MuonEff_RecoPFMET_passPres","pass preselection;RECO PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  PairStau308_MuonEff_RecoPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau308_MuonEff_RecoPFMET_passPres->Draw();  
+  TEfficiency* PairStau308_MuonEff_RecoPFMET_passPres_TEff = new TEfficiency(*PairStau308_RecoPFMET_passPres_passMuon_,*PairStau308_RecoPFMET_passPres_);
+  PairStau308_MuonEff_RecoPFMET_passPres_TEff->SetLineColor(kRed);
+  PairStau308_MuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kRed);
+  PairStau308_MuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau308_MuonEff_RecoPFMET_passPres.png");
 
   /* // 14.11) MET or Muon trigger efficiency vs RECO PF MET, no preselection
-  TH2F* PairStau432_METOrMuonEff_RecoPFMET_noPres = new TH2F("PairStau432_METOrMuonEff_RecoPFMET_noPres","no preselection;RECO PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  PairStau432_METOrMuonEff_RecoPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau432_METOrMuonEff_RecoPFMET_noPres->Draw();  
-  TEfficiency* PairStau432_METOrMuonEff_RecoPFMET_noPres_TEff = new TEfficiency(*PairStau432_RecoPFMET_noPres_passMETOrMuon_,*PairStau432_RecoPFMET_noPres_);
-  PairStau432_METOrMuonEff_RecoPFMET_noPres_TEff->SetLineColor(kRed);
-  PairStau432_METOrMuonEff_RecoPFMET_noPres_TEff->SetMarkerColor(kRed);
-  PairStau432_METOrMuonEff_RecoPFMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau432_METOrMuonEff_RecoPFMET_noPres.png"); */
+  TH2F* PairStau308_METOrMuonEff_RecoPFMET_noPres = new TH2F("PairStau308_METOrMuonEff_RecoPFMET_noPres","no preselection;RECO PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  PairStau308_METOrMuonEff_RecoPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau308_METOrMuonEff_RecoPFMET_noPres->Draw();  
+  TEfficiency* PairStau308_METOrMuonEff_RecoPFMET_noPres_TEff = new TEfficiency(*PairStau308_RecoPFMET_noPres_passMETOrMuon_,*PairStau308_RecoPFMET_noPres_);
+  PairStau308_METOrMuonEff_RecoPFMET_noPres_TEff->SetLineColor(kRed);
+  PairStau308_METOrMuonEff_RecoPFMET_noPres_TEff->SetMarkerColor(kRed);
+  PairStau308_METOrMuonEff_RecoPFMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau308_METOrMuonEff_RecoPFMET_noPres.png"); */
 
   // 14.12) MET or Muon trigger efficiency vs RECO PF MET, pass preselection
-  TH2F* PairStau432_METOrMuonEff_RecoPFMET_passPres = new TH2F("PairStau432_METOrMuonEff_RecoPFMET_passPres","pass preselection;RECO PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  PairStau432_METOrMuonEff_RecoPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau432_METOrMuonEff_RecoPFMET_passPres->Draw();  
-  TEfficiency* PairStau432_METOrMuonEff_RecoPFMET_passPres_TEff = new TEfficiency(*PairStau432_RecoPFMET_passPres_passMETOrMuon_,*PairStau432_RecoPFMET_passPres_);
-  PairStau432_METOrMuonEff_RecoPFMET_passPres_TEff->SetLineColor(kRed);
-  PairStau432_METOrMuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kRed);
-  PairStau432_METOrMuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau432_METOrMuonEff_RecoPFMET_passPres.png");
+  TH2F* PairStau308_METOrMuonEff_RecoPFMET_passPres = new TH2F("PairStau308_METOrMuonEff_RecoPFMET_passPres","pass preselection;RECO PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  PairStau308_METOrMuonEff_RecoPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau308_METOrMuonEff_RecoPFMET_passPres->Draw();  
+  TEfficiency* PairStau308_METOrMuonEff_RecoPFMET_passPres_TEff = new TEfficiency(*PairStau308_RecoPFMET_passPres_passMETOrMuon_,*PairStau308_RecoPFMET_passPres_);
+  PairStau308_METOrMuonEff_RecoPFMET_passPres_TEff->SetLineColor(kRed);
+  PairStau308_METOrMuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kRed);
+  PairStau308_METOrMuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau308_METOrMuonEff_RecoPFMET_passPres.png");
 
   /* // 14.13) MET trigger efficiency vs HLT Calo MET, no preselection
-  TH2F* PairStau432_METEff_HLTCaloMET_noPres = new TH2F("PairStau432_METEff_HLTCaloMET_noPres","no preselection;HLT Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  PairStau432_METEff_HLTCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau432_METEff_HLTCaloMET_noPres->Draw();  
-  TEfficiency* PairStau432_METEff_HLTCaloMET_noPres_TEff = new TEfficiency(*PairStau432_HLTCaloMET_noPres_passMET_,*PairStau432_HLTCaloMET_noPres_);
-  PairStau432_METEff_HLTCaloMET_noPres_TEff->SetLineColor(kRed);
-  PairStau432_METEff_HLTCaloMET_noPres_TEff->SetMarkerColor(kRed);
-  PairStau432_METEff_HLTCaloMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau432_METEff_HLTCaloMET_noPres.png"); */
+  TH2F* PairStau308_METEff_HLTCaloMET_noPres = new TH2F("PairStau308_METEff_HLTCaloMET_noPres","no preselection;HLT Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  PairStau308_METEff_HLTCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau308_METEff_HLTCaloMET_noPres->Draw();  
+  TEfficiency* PairStau308_METEff_HLTCaloMET_noPres_TEff = new TEfficiency(*PairStau308_HLTCaloMET_noPres_passMET_,*PairStau308_HLTCaloMET_noPres_);
+  PairStau308_METEff_HLTCaloMET_noPres_TEff->SetLineColor(kRed);
+  PairStau308_METEff_HLTCaloMET_noPres_TEff->SetMarkerColor(kRed);
+  PairStau308_METEff_HLTCaloMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau308_METEff_HLTCaloMET_noPres.png"); */
 
   // 14.14) MET trigger efficiency vs HLT Calo MET, pass preselection
-  TH2F* PairStau432_METEff_HLTCaloMET_passPres = new TH2F("PairStau432_METEff_HLTCaloMET_passPres","pass preselection;HLT Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  PairStau432_METEff_HLTCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau432_METEff_HLTCaloMET_passPres->Draw();  
-  TEfficiency* PairStau432_METEff_HLTCaloMET_passPres_TEff = new TEfficiency(*PairStau432_HLTCaloMET_passPres_passMET_,*PairStau432_HLTCaloMET_passPres_);
-  PairStau432_METEff_HLTCaloMET_passPres_TEff->SetLineColor(kRed);
-  PairStau432_METEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  PairStau432_METEff_HLTCaloMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau432_METEff_HLTCaloMET_passPres.png");
+  TH2F* PairStau308_METEff_HLTCaloMET_passPres = new TH2F("PairStau308_METEff_HLTCaloMET_passPres","pass preselection;HLT Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  PairStau308_METEff_HLTCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau308_METEff_HLTCaloMET_passPres->Draw();  
+  TEfficiency* PairStau308_METEff_HLTCaloMET_passPres_TEff = new TEfficiency(*PairStau308_HLTCaloMET_passPres_passMET_,*PairStau308_HLTCaloMET_passPres_);
+  PairStau308_METEff_HLTCaloMET_passPres_TEff->SetLineColor(kRed);
+  PairStau308_METEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kRed);
+  PairStau308_METEff_HLTCaloMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau308_METEff_HLTCaloMET_passPres.png");
 
   /* // 14.15) Muon trigger efficiency vs HLT Calo MET, no preselection
-  TH2F* PairStau432_MuonEff_HLTCaloMET_noPres = new TH2F("PairStau432_MuonEff_HLTCaloMET_noPres","no preselection;HLT Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  PairStau432_MuonEff_HLTCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau432_MuonEff_HLTCaloMET_noPres->Draw();  
-  TEfficiency* PairStau432_MuonEff_HLTCaloMET_noPres_TEff = new TEfficiency(*PairStau432_HLTCaloMET_noPres_passMuon_,*PairStau432_HLTCaloMET_noPres_);
-  PairStau432_MuonEff_HLTCaloMET_noPres_TEff->SetLineColor(kRed);
-  PairStau432_MuonEff_HLTCaloMET_noPres_TEff->SetMarkerColor(kRed);
-  PairStau432_MuonEff_HLTCaloMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau432_MuonEff_HLTCaloMET_noPres.png"); */
+  TH2F* PairStau308_MuonEff_HLTCaloMET_noPres = new TH2F("PairStau308_MuonEff_HLTCaloMET_noPres","no preselection;HLT Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  PairStau308_MuonEff_HLTCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau308_MuonEff_HLTCaloMET_noPres->Draw();  
+  TEfficiency* PairStau308_MuonEff_HLTCaloMET_noPres_TEff = new TEfficiency(*PairStau308_HLTCaloMET_noPres_passMuon_,*PairStau308_HLTCaloMET_noPres_);
+  PairStau308_MuonEff_HLTCaloMET_noPres_TEff->SetLineColor(kRed);
+  PairStau308_MuonEff_HLTCaloMET_noPres_TEff->SetMarkerColor(kRed);
+  PairStau308_MuonEff_HLTCaloMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau308_MuonEff_HLTCaloMET_noPres.png"); */
 
   // 14.16) Muon trigger efficiency vs HLT Calo MET, pass preselection
-  TH2F* PairStau432_MuonEff_HLTCaloMET_passPres = new TH2F("PairStau432_MuonEff_HLTCaloMET_passPres","pass preselection;HLT Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  PairStau432_MuonEff_HLTCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau432_MuonEff_HLTCaloMET_passPres->Draw();  
-  TEfficiency* PairStau432_MuonEff_HLTCaloMET_passPres_TEff = new TEfficiency(*PairStau432_HLTCaloMET_passPres_passMuon_,*PairStau432_HLTCaloMET_passPres_);
-  PairStau432_MuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kRed);
-  PairStau432_MuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  PairStau432_MuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau432_MuonEff_HLTCaloMET_passPres.png");
+  TH2F* PairStau308_MuonEff_HLTCaloMET_passPres = new TH2F("PairStau308_MuonEff_HLTCaloMET_passPres","pass preselection;HLT Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  PairStau308_MuonEff_HLTCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau308_MuonEff_HLTCaloMET_passPres->Draw();  
+  TEfficiency* PairStau308_MuonEff_HLTCaloMET_passPres_TEff = new TEfficiency(*PairStau308_HLTCaloMET_passPres_passMuon_,*PairStau308_HLTCaloMET_passPres_);
+  PairStau308_MuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kRed);
+  PairStau308_MuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kRed);
+  PairStau308_MuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau308_MuonEff_HLTCaloMET_passPres.png");
 
   /* // 14.17) MET or Muon trigger efficiency vs HLT Calo MET, no preselection
-  TH2F* PairStau432_METOrMuonEff_HLTCaloMET_noPres = new TH2F("PairStau432_METOrMuonEff_HLTCaloMET_noPres","no preselection;HLT Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  PairStau432_METOrMuonEff_HLTCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau432_METOrMuonEff_HLTCaloMET_noPres->Draw();  
-  TEfficiency* PairStau432_METOrMuonEff_HLTCaloMET_noPres_TEff = new TEfficiency(*PairStau432_HLTCaloMET_noPres_passMETOrMuon_,*PairStau432_HLTCaloMET_noPres_);
-  PairStau432_METOrMuonEff_HLTCaloMET_noPres_TEff->SetLineColor(kRed);
-  PairStau432_METOrMuonEff_HLTCaloMET_noPres_TEff->SetMarkerColor(kRed);
-  PairStau432_METOrMuonEff_HLTCaloMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau432_METOrMuonEff_HLTCaloMET_noPres.png"); */
+  TH2F* PairStau308_METOrMuonEff_HLTCaloMET_noPres = new TH2F("PairStau308_METOrMuonEff_HLTCaloMET_noPres","no preselection;HLT Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  PairStau308_METOrMuonEff_HLTCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau308_METOrMuonEff_HLTCaloMET_noPres->Draw();  
+  TEfficiency* PairStau308_METOrMuonEff_HLTCaloMET_noPres_TEff = new TEfficiency(*PairStau308_HLTCaloMET_noPres_passMETOrMuon_,*PairStau308_HLTCaloMET_noPres_);
+  PairStau308_METOrMuonEff_HLTCaloMET_noPres_TEff->SetLineColor(kRed);
+  PairStau308_METOrMuonEff_HLTCaloMET_noPres_TEff->SetMarkerColor(kRed);
+  PairStau308_METOrMuonEff_HLTCaloMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau308_METOrMuonEff_HLTCaloMET_noPres.png"); */
 
   // 14.18) MET or Muon trigger efficiency vs HLT Calo MET, pass preselection
-  TH2F* PairStau432_METOrMuonEff_HLTCaloMET_passPres = new TH2F("PairStau432_METOrMuonEff_HLTCaloMET_passPres","pass preselection;HLT Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  PairStau432_METOrMuonEff_HLTCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau432_METOrMuonEff_HLTCaloMET_passPres->Draw();  
-  TEfficiency* PairStau432_METOrMuonEff_HLTCaloMET_passPres_TEff = new TEfficiency(*PairStau432_HLTCaloMET_passPres_passMETOrMuon_,*PairStau432_HLTCaloMET_passPres_);
-  PairStau432_METOrMuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kRed);
-  PairStau432_METOrMuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  PairStau432_METOrMuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau432_METOrMuonEff_HLTCaloMET_passPres.png");
+  TH2F* PairStau308_METOrMuonEff_HLTCaloMET_passPres = new TH2F("PairStau308_METOrMuonEff_HLTCaloMET_passPres","pass preselection;HLT Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  PairStau308_METOrMuonEff_HLTCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau308_METOrMuonEff_HLTCaloMET_passPres->Draw();  
+  TEfficiency* PairStau308_METOrMuonEff_HLTCaloMET_passPres_TEff = new TEfficiency(*PairStau308_HLTCaloMET_passPres_passMETOrMuon_,*PairStau308_HLTCaloMET_passPres_);
+  PairStau308_METOrMuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kRed);
+  PairStau308_METOrMuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kRed);
+  PairStau308_METOrMuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau308_METOrMuonEff_HLTCaloMET_passPres.png");
 
   /* // 14.19) MET trigger efficiency vs HLT PF MET, no preselection
-  TH2F* PairStau432_METEff_HLTPFMET_noPres = new TH2F("PairStau432_METEff_HLTPFMET_noPres","no preselection;HLT PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  PairStau432_METEff_HLTPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau432_METEff_HLTPFMET_noPres->Draw();  
-  TEfficiency* PairStau432_METEff_HLTPFMET_noPres_TEff = new TEfficiency(*PairStau432_HLTPFMET_noPres_passMET_,*PairStau432_HLTPFMET_noPres_);
-  PairStau432_METEff_HLTPFMET_noPres_TEff->SetLineColor(kRed);
-  PairStau432_METEff_HLTPFMET_noPres_TEff->SetMarkerColor(kRed);
-  PairStau432_METEff_HLTPFMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau432_METEff_HLTPFMET_noPres.png"); */
+  TH2F* PairStau308_METEff_HLTPFMET_noPres = new TH2F("PairStau308_METEff_HLTPFMET_noPres","no preselection;HLT PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  PairStau308_METEff_HLTPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau308_METEff_HLTPFMET_noPres->Draw();  
+  TEfficiency* PairStau308_METEff_HLTPFMET_noPres_TEff = new TEfficiency(*PairStau308_HLTPFMET_noPres_passMET_,*PairStau308_HLTPFMET_noPres_);
+  PairStau308_METEff_HLTPFMET_noPres_TEff->SetLineColor(kRed);
+  PairStau308_METEff_HLTPFMET_noPres_TEff->SetMarkerColor(kRed);
+  PairStau308_METEff_HLTPFMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau308_METEff_HLTPFMET_noPres.png"); */
 
   // 14.20) MET trigger efficiency vs HLT PF MET, pass preselection
-  TH2F* PairStau432_METEff_HLTPFMET_passPres = new TH2F("PairStau432_METEff_HLTPFMET_passPres","pass preselection;HLT PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  PairStau432_METEff_HLTPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau432_METEff_HLTPFMET_passPres->Draw();  
-  TEfficiency* PairStau432_METEff_HLTPFMET_passPres_TEff = new TEfficiency(*PairStau432_HLTPFMET_passPres_passMET_,*PairStau432_HLTPFMET_passPres_);
-  PairStau432_METEff_HLTPFMET_passPres_TEff->SetLineColor(kRed);
-  PairStau432_METEff_HLTPFMET_passPres_TEff->SetMarkerColor(kRed);
-  PairStau432_METEff_HLTPFMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau432_METEff_HLTPFMET_passPres.png");
+  TH2F* PairStau308_METEff_HLTPFMET_passPres = new TH2F("PairStau308_METEff_HLTPFMET_passPres","pass preselection;HLT PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  PairStau308_METEff_HLTPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau308_METEff_HLTPFMET_passPres->Draw();  
+  TEfficiency* PairStau308_METEff_HLTPFMET_passPres_TEff = new TEfficiency(*PairStau308_HLTPFMET_passPres_passMET_,*PairStau308_HLTPFMET_passPres_);
+  PairStau308_METEff_HLTPFMET_passPres_TEff->SetLineColor(kRed);
+  PairStau308_METEff_HLTPFMET_passPres_TEff->SetMarkerColor(kRed);
+  PairStau308_METEff_HLTPFMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau308_METEff_HLTPFMET_passPres.png");
 
   /* // 14.21) Muon trigger efficiency vs HLT PF MET, no preselection
-  TH2F* PairStau432_MuonEff_HLTPFMET_noPres = new TH2F("PairStau432_MuonEff_HLTPFMET_noPres","no preselection;HLT PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  PairStau432_MuonEff_HLTPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau432_MuonEff_HLTPFMET_noPres->Draw();  
-  TEfficiency* PairStau432_MuonEff_HLTPFMET_noPres_TEff = new TEfficiency(*PairStau432_HLTPFMET_noPres_passMuon_,*PairStau432_HLTPFMET_noPres_);
-  PairStau432_MuonEff_HLTPFMET_noPres_TEff->SetLineColor(kRed);
-  PairStau432_MuonEff_HLTPFMET_noPres_TEff->SetMarkerColor(kRed);
-  PairStau432_MuonEff_HLTPFMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau432_MuonEff_HLTPFMET_noPres.png"); */
+  TH2F* PairStau308_MuonEff_HLTPFMET_noPres = new TH2F("PairStau308_MuonEff_HLTPFMET_noPres","no preselection;HLT PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  PairStau308_MuonEff_HLTPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau308_MuonEff_HLTPFMET_noPres->Draw();  
+  TEfficiency* PairStau308_MuonEff_HLTPFMET_noPres_TEff = new TEfficiency(*PairStau308_HLTPFMET_noPres_passMuon_,*PairStau308_HLTPFMET_noPres_);
+  PairStau308_MuonEff_HLTPFMET_noPres_TEff->SetLineColor(kRed);
+  PairStau308_MuonEff_HLTPFMET_noPres_TEff->SetMarkerColor(kRed);
+  PairStau308_MuonEff_HLTPFMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau308_MuonEff_HLTPFMET_noPres.png"); */
 
   // 14.22) Muon trigger efficiency vs HLT PF MET, pass preselection
-  TH2F* PairStau432_MuonEff_HLTPFMET_passPres = new TH2F("PairStau432_MuonEff_HLTPFMET_passPres","pass preselection;HLT PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  PairStau432_MuonEff_HLTPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau432_MuonEff_HLTPFMET_passPres->Draw();  
-  TEfficiency* PairStau432_MuonEff_HLTPFMET_passPres_TEff = new TEfficiency(*PairStau432_HLTPFMET_passPres_passMuon_,*PairStau432_HLTPFMET_passPres_);
-  PairStau432_MuonEff_HLTPFMET_passPres_TEff->SetLineColor(kRed);
-  PairStau432_MuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kRed);
-  PairStau432_MuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau432_MuonEff_HLTPFMET_passPres.png");
+  TH2F* PairStau308_MuonEff_HLTPFMET_passPres = new TH2F("PairStau308_MuonEff_HLTPFMET_passPres","pass preselection;HLT PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  PairStau308_MuonEff_HLTPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau308_MuonEff_HLTPFMET_passPres->Draw();  
+  TEfficiency* PairStau308_MuonEff_HLTPFMET_passPres_TEff = new TEfficiency(*PairStau308_HLTPFMET_passPres_passMuon_,*PairStau308_HLTPFMET_passPres_);
+  PairStau308_MuonEff_HLTPFMET_passPres_TEff->SetLineColor(kRed);
+  PairStau308_MuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kRed);
+  PairStau308_MuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau308_MuonEff_HLTPFMET_passPres.png");
 
   /* // 14.23) MET or Muon trigger efficiency vs HLT PF MET, no preselection
-  TH2F* PairStau432_METOrMuonEff_HLTPFMET_noPres = new TH2F("PairStau432_METOrMuonEff_HLTPFMET_noPres","no preselection;HLT PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  PairStau432_METOrMuonEff_HLTPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau432_METOrMuonEff_HLTPFMET_noPres->Draw();  
-  TEfficiency* PairStau432_METOrMuonEff_HLTPFMET_noPres_TEff = new TEfficiency(*PairStau432_HLTPFMET_noPres_passMETOrMuon_,*PairStau432_HLTPFMET_noPres_);
-  PairStau432_METOrMuonEff_HLTPFMET_noPres_TEff->SetLineColor(kRed);
-  PairStau432_METOrMuonEff_HLTPFMET_noPres_TEff->SetMarkerColor(kRed);
-  PairStau432_METOrMuonEff_HLTPFMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau432_METOrMuonEff_HLTPFMET_noPres.png"); */
+  TH2F* PairStau308_METOrMuonEff_HLTPFMET_noPres = new TH2F("PairStau308_METOrMuonEff_HLTPFMET_noPres","no preselection;HLT PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  PairStau308_METOrMuonEff_HLTPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau308_METOrMuonEff_HLTPFMET_noPres->Draw();  
+  TEfficiency* PairStau308_METOrMuonEff_HLTPFMET_noPres_TEff = new TEfficiency(*PairStau308_HLTPFMET_noPres_passMETOrMuon_,*PairStau308_HLTPFMET_noPres_);
+  PairStau308_METOrMuonEff_HLTPFMET_noPres_TEff->SetLineColor(kRed);
+  PairStau308_METOrMuonEff_HLTPFMET_noPres_TEff->SetMarkerColor(kRed);
+  PairStau308_METOrMuonEff_HLTPFMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau308_METOrMuonEff_HLTPFMET_noPres.png"); */
 
   // 14.24) MET or Muon trigger efficiency vs HLT PF MET, pass preselection
-  TH2F* PairStau432_METOrMuonEff_HLTPFMET_passPres = new TH2F("PairStau432_METOrMuonEff_HLTPFMET_passPres","pass preselection;HLT PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  PairStau432_METOrMuonEff_HLTPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau432_METOrMuonEff_HLTPFMET_passPres->Draw();  
-  TEfficiency* PairStau432_METOrMuonEff_HLTPFMET_passPres_TEff = new TEfficiency(*PairStau432_HLTPFMET_passPres_passMETOrMuon_,*PairStau432_HLTPFMET_passPres_);
-  PairStau432_METOrMuonEff_HLTPFMET_passPres_TEff->SetLineColor(kRed);
-  PairStau432_METOrMuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kRed);
-  PairStau432_METOrMuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau432_METOrMuonEff_HLTPFMET_passPres.png");
+  TH2F* PairStau308_METOrMuonEff_HLTPFMET_passPres = new TH2F("PairStau308_METOrMuonEff_HLTPFMET_passPres","pass preselection;HLT PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  PairStau308_METOrMuonEff_HLTPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau308_METOrMuonEff_HLTPFMET_passPres->Draw();  
+  TEfficiency* PairStau308_METOrMuonEff_HLTPFMET_passPres_TEff = new TEfficiency(*PairStau308_HLTPFMET_passPres_passMETOrMuon_,*PairStau308_HLTPFMET_passPres_);
+  PairStau308_METOrMuonEff_HLTPFMET_passPres_TEff->SetLineColor(kRed);
+  PairStau308_METOrMuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kRed);
+  PairStau308_METOrMuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau308_METOrMuonEff_HLTPFMET_passPres.png");
 
   //=====================
-  //  PairStau 651 GeV  
+  //  PairStau 557 GeV  
   //=====================
 
   /* // 15.1) MET trigger efficiency vs RECO Calo MET, no preselection
-  TH2F* PairStau651_METEff_RecoCaloMET_noPres = new TH2F("PairStau651_METEff_RecoCaloMET_noPres","no preselection;RECO Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  PairStau651_METEff_RecoCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau651_METEff_RecoCaloMET_noPres->Draw();  
-  TEfficiency* PairStau651_METEff_RecoCaloMET_noPres_TEff = new TEfficiency(*PairStau651_RecoCaloMET_noPres_passMET_,*PairStau651_RecoCaloMET_noPres_);
-  PairStau651_METEff_RecoCaloMET_noPres_TEff->SetLineColor(kRed);
-  PairStau651_METEff_RecoCaloMET_noPres_TEff->SetMarkerColor(kRed);
-  PairStau651_METEff_RecoCaloMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau651_METEff_RecoCaloMET_noPres.png"); */
+  TH2F* PairStau557_METEff_RecoCaloMET_noPres = new TH2F("PairStau557_METEff_RecoCaloMET_noPres","no preselection;RECO Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  PairStau557_METEff_RecoCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau557_METEff_RecoCaloMET_noPres->Draw();  
+  TEfficiency* PairStau557_METEff_RecoCaloMET_noPres_TEff = new TEfficiency(*PairStau557_RecoCaloMET_noPres_passMET_,*PairStau557_RecoCaloMET_noPres_);
+  PairStau557_METEff_RecoCaloMET_noPres_TEff->SetLineColor(kRed);
+  PairStau557_METEff_RecoCaloMET_noPres_TEff->SetMarkerColor(kRed);
+  PairStau557_METEff_RecoCaloMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau557_METEff_RecoCaloMET_noPres.png"); */
 
   // 15.2) MET trigger efficiency vs RECO Calo MET, pass preselection
-  TH2F* PairStau651_METEff_RecoCaloMET_passPres = new TH2F("PairStau651_METEff_RecoCaloMET_passPres","pass preselection;RECO Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  PairStau651_METEff_RecoCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau651_METEff_RecoCaloMET_passPres->Draw();  
-  TEfficiency* PairStau651_METEff_RecoCaloMET_passPres_TEff = new TEfficiency(*PairStau651_RecoCaloMET_passPres_passMET_,*PairStau651_RecoCaloMET_passPres_);
-  PairStau651_METEff_RecoCaloMET_passPres_TEff->SetLineColor(kRed);
-  PairStau651_METEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  PairStau651_METEff_RecoCaloMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau651_METEff_RecoCaloMET_passPres.png");
+  TH2F* PairStau557_METEff_RecoCaloMET_passPres = new TH2F("PairStau557_METEff_RecoCaloMET_passPres","pass preselection;RECO Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  PairStau557_METEff_RecoCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau557_METEff_RecoCaloMET_passPres->Draw();  
+  TEfficiency* PairStau557_METEff_RecoCaloMET_passPres_TEff = new TEfficiency(*PairStau557_RecoCaloMET_passPres_passMET_,*PairStau557_RecoCaloMET_passPres_);
+  PairStau557_METEff_RecoCaloMET_passPres_TEff->SetLineColor(kRed);
+  PairStau557_METEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kRed);
+  PairStau557_METEff_RecoCaloMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau557_METEff_RecoCaloMET_passPres.png");
 
   /* // 15.3) Muon trigger efficiency vs RECO Calo MET, no preselection
-  TH2F* PairStau651_MuonEff_RecoCaloMET_noPres = new TH2F("PairStau651_MuonEff_RecoCaloMET_noPres","no preselection;RECO Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  PairStau651_MuonEff_RecoCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau651_MuonEff_RecoCaloMET_noPres->Draw();  
-  TEfficiency* PairStau651_MuonEff_RecoCaloMET_noPres_TEff = new TEfficiency(*PairStau651_RecoCaloMET_noPres_passMuon_,*PairStau651_RecoCaloMET_noPres_);
-  PairStau651_MuonEff_RecoCaloMET_noPres_TEff->SetLineColor(kRed);
-  PairStau651_MuonEff_RecoCaloMET_noPres_TEff->SetMarkerColor(kRed);
-  PairStau651_MuonEff_RecoCaloMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau651_MuonEff_RecoCaloMET_noPres.png"); */
+  TH2F* PairStau557_MuonEff_RecoCaloMET_noPres = new TH2F("PairStau557_MuonEff_RecoCaloMET_noPres","no preselection;RECO Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  PairStau557_MuonEff_RecoCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau557_MuonEff_RecoCaloMET_noPres->Draw();  
+  TEfficiency* PairStau557_MuonEff_RecoCaloMET_noPres_TEff = new TEfficiency(*PairStau557_RecoCaloMET_noPres_passMuon_,*PairStau557_RecoCaloMET_noPres_);
+  PairStau557_MuonEff_RecoCaloMET_noPres_TEff->SetLineColor(kRed);
+  PairStau557_MuonEff_RecoCaloMET_noPres_TEff->SetMarkerColor(kRed);
+  PairStau557_MuonEff_RecoCaloMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau557_MuonEff_RecoCaloMET_noPres.png"); */
 
   // 15.4) Muon trigger efficiency vs RECO Calo MET, pass preselection
-  TH2F* PairStau651_MuonEff_RecoCaloMET_passPres = new TH2F("PairStau651_MuonEff_RecoCaloMET_passPres","pass preselection;RECO Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  PairStau651_MuonEff_RecoCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau651_MuonEff_RecoCaloMET_passPres->Draw();  
-  TEfficiency* PairStau651_MuonEff_RecoCaloMET_passPres_TEff = new TEfficiency(*PairStau651_RecoCaloMET_passPres_passMuon_,*PairStau651_RecoCaloMET_passPres_);
-  PairStau651_MuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kRed);
-  PairStau651_MuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  PairStau651_MuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau651_MuonEff_RecoCaloMET_passPres.png");
+  TH2F* PairStau557_MuonEff_RecoCaloMET_passPres = new TH2F("PairStau557_MuonEff_RecoCaloMET_passPres","pass preselection;RECO Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  PairStau557_MuonEff_RecoCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau557_MuonEff_RecoCaloMET_passPres->Draw();  
+  TEfficiency* PairStau557_MuonEff_RecoCaloMET_passPres_TEff = new TEfficiency(*PairStau557_RecoCaloMET_passPres_passMuon_,*PairStau557_RecoCaloMET_passPres_);
+  PairStau557_MuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kRed);
+  PairStau557_MuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kRed);
+  PairStau557_MuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau557_MuonEff_RecoCaloMET_passPres.png");
 
   /* // 15.5) MET or Muon trigger efficiency vs RECO Calo MET, no preselection
-  TH2F* PairStau651_METOrMuonEff_RecoCaloMET_noPres = new TH2F("PairStau651_METOrMuonEff_RecoCaloMET_noPres","no preselection;RECO Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  PairStau651_METOrMuonEff_RecoCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau651_METOrMuonEff_RecoCaloMET_noPres->Draw();  
-  TEfficiency* PairStau651_METOrMuonEff_RecoCaloMET_noPres_TEff = new TEfficiency(*PairStau651_RecoCaloMET_noPres_passMETOrMuon_,*PairStau651_RecoCaloMET_noPres_);
-  PairStau651_METOrMuonEff_RecoCaloMET_noPres_TEff->SetLineColor(kRed);
-  PairStau651_METOrMuonEff_RecoCaloMET_noPres_TEff->SetMarkerColor(kRed);
-  PairStau651_METOrMuonEff_RecoCaloMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau651_METOrMuonEff_RecoCaloMET_noPres.png"); */
+  TH2F* PairStau557_METOrMuonEff_RecoCaloMET_noPres = new TH2F("PairStau557_METOrMuonEff_RecoCaloMET_noPres","no preselection;RECO Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  PairStau557_METOrMuonEff_RecoCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau557_METOrMuonEff_RecoCaloMET_noPres->Draw();  
+  TEfficiency* PairStau557_METOrMuonEff_RecoCaloMET_noPres_TEff = new TEfficiency(*PairStau557_RecoCaloMET_noPres_passMETOrMuon_,*PairStau557_RecoCaloMET_noPres_);
+  PairStau557_METOrMuonEff_RecoCaloMET_noPres_TEff->SetLineColor(kRed);
+  PairStau557_METOrMuonEff_RecoCaloMET_noPres_TEff->SetMarkerColor(kRed);
+  PairStau557_METOrMuonEff_RecoCaloMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau557_METOrMuonEff_RecoCaloMET_noPres.png"); */
 
   // 15.6) MET or Muon trigger efficiency vs RECO Calo MET, pass preselection
-  TH2F* PairStau651_METOrMuonEff_RecoCaloMET_passPres = new TH2F("PairStau651_METOrMuonEff_RecoCaloMET_passPres","pass preselection;RECO Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  PairStau651_METOrMuonEff_RecoCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau651_METOrMuonEff_RecoCaloMET_passPres->Draw();  
-  TEfficiency* PairStau651_METOrMuonEff_RecoCaloMET_passPres_TEff = new TEfficiency(*PairStau651_RecoCaloMET_passPres_passMETOrMuon_,*PairStau651_RecoCaloMET_passPres_);
-  PairStau651_METOrMuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kRed);
-  PairStau651_METOrMuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  PairStau651_METOrMuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau651_METOrMuonEff_RecoCaloMET_passPres.png");
+  TH2F* PairStau557_METOrMuonEff_RecoCaloMET_passPres = new TH2F("PairStau557_METOrMuonEff_RecoCaloMET_passPres","pass preselection;RECO Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  PairStau557_METOrMuonEff_RecoCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau557_METOrMuonEff_RecoCaloMET_passPres->Draw();  
+  TEfficiency* PairStau557_METOrMuonEff_RecoCaloMET_passPres_TEff = new TEfficiency(*PairStau557_RecoCaloMET_passPres_passMETOrMuon_,*PairStau557_RecoCaloMET_passPres_);
+  PairStau557_METOrMuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kRed);
+  PairStau557_METOrMuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kRed);
+  PairStau557_METOrMuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau557_METOrMuonEff_RecoCaloMET_passPres.png");
 
   /* // 15.7) MET trigger efficiency vs RECO PF MET, no preselection
-  TH2F* PairStau651_METEff_RecoPFMET_noPres = new TH2F("PairStau651_METEff_RecoPFMET_noPres","no preselection;RECO PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  PairStau651_METEff_RecoPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau651_METEff_RecoPFMET_noPres->Draw();  
-  TEfficiency* PairStau651_METEff_RecoPFMET_noPres_TEff = new TEfficiency(*PairStau651_RecoPFMET_noPres_passMET_,*PairStau651_RecoPFMET_noPres_);
-  PairStau651_METEff_RecoPFMET_noPres_TEff->SetLineColor(kRed);
-  PairStau651_METEff_RecoPFMET_noPres_TEff->SetMarkerColor(kRed);
-  PairStau651_METEff_RecoPFMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau651_METEff_RecoPFMET_noPres.png"); */
+  TH2F* PairStau557_METEff_RecoPFMET_noPres = new TH2F("PairStau557_METEff_RecoPFMET_noPres","no preselection;RECO PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  PairStau557_METEff_RecoPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau557_METEff_RecoPFMET_noPres->Draw();  
+  TEfficiency* PairStau557_METEff_RecoPFMET_noPres_TEff = new TEfficiency(*PairStau557_RecoPFMET_noPres_passMET_,*PairStau557_RecoPFMET_noPres_);
+  PairStau557_METEff_RecoPFMET_noPres_TEff->SetLineColor(kRed);
+  PairStau557_METEff_RecoPFMET_noPres_TEff->SetMarkerColor(kRed);
+  PairStau557_METEff_RecoPFMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau557_METEff_RecoPFMET_noPres.png"); */
 
   // 15.8) MET trigger efficiency vs RECO PF MET, pass preselection
-  TH2F* PairStau651_METEff_RecoPFMET_passPres = new TH2F("PairStau651_METEff_RecoPFMET_passPres","pass preselection;RECO PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  PairStau651_METEff_RecoPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau651_METEff_RecoPFMET_passPres->Draw();  
-  TEfficiency* PairStau651_METEff_RecoPFMET_passPres_TEff = new TEfficiency(*PairStau651_RecoPFMET_passPres_passMET_,*PairStau651_RecoPFMET_passPres_);
-  PairStau651_METEff_RecoPFMET_passPres_TEff->SetLineColor(kRed);
-  PairStau651_METEff_RecoPFMET_passPres_TEff->SetMarkerColor(kRed);
-  PairStau651_METEff_RecoPFMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau651_METEff_RecoPFMET_passPres.png");
+  TH2F* PairStau557_METEff_RecoPFMET_passPres = new TH2F("PairStau557_METEff_RecoPFMET_passPres","pass preselection;RECO PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  PairStau557_METEff_RecoPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau557_METEff_RecoPFMET_passPres->Draw();  
+  TEfficiency* PairStau557_METEff_RecoPFMET_passPres_TEff = new TEfficiency(*PairStau557_RecoPFMET_passPres_passMET_,*PairStau557_RecoPFMET_passPres_);
+  PairStau557_METEff_RecoPFMET_passPres_TEff->SetLineColor(kRed);
+  PairStau557_METEff_RecoPFMET_passPres_TEff->SetMarkerColor(kRed);
+  PairStau557_METEff_RecoPFMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau557_METEff_RecoPFMET_passPres.png");
 
   /* // 15.9) Muon trigger efficiency vs RECO PF MET, no preselection
-  TH2F* PairStau651_MuonEff_RecoPFMET_noPres = new TH2F("PairStau651_MuonEff_RecoPFMET_noPres","no preselection;RECO PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  PairStau651_MuonEff_RecoPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau651_MuonEff_RecoPFMET_noPres->Draw();  
-  TEfficiency* PairStau651_MuonEff_RecoPFMET_noPres_TEff = new TEfficiency(*PairStau651_RecoPFMET_noPres_passMuon_,*PairStau651_RecoPFMET_noPres_);
-  PairStau651_MuonEff_RecoPFMET_noPres_TEff->SetLineColor(kRed);
-  PairStau651_MuonEff_RecoPFMET_noPres_TEff->SetMarkerColor(kRed);
-  PairStau651_MuonEff_RecoPFMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau651_MuonEff_RecoPFMET_noPres.png"); */
+  TH2F* PairStau557_MuonEff_RecoPFMET_noPres = new TH2F("PairStau557_MuonEff_RecoPFMET_noPres","no preselection;RECO PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  PairStau557_MuonEff_RecoPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau557_MuonEff_RecoPFMET_noPres->Draw();  
+  TEfficiency* PairStau557_MuonEff_RecoPFMET_noPres_TEff = new TEfficiency(*PairStau557_RecoPFMET_noPres_passMuon_,*PairStau557_RecoPFMET_noPres_);
+  PairStau557_MuonEff_RecoPFMET_noPres_TEff->SetLineColor(kRed);
+  PairStau557_MuonEff_RecoPFMET_noPres_TEff->SetMarkerColor(kRed);
+  PairStau557_MuonEff_RecoPFMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau557_MuonEff_RecoPFMET_noPres.png"); */
 
   // 15.10) Muon trigger efficiency vs RECO PF MET, pass preselection
-  TH2F* PairStau651_MuonEff_RecoPFMET_passPres = new TH2F("PairStau651_MuonEff_RecoPFMET_passPres","pass preselection;RECO PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  PairStau651_MuonEff_RecoPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau651_MuonEff_RecoPFMET_passPres->Draw();  
-  TEfficiency* PairStau651_MuonEff_RecoPFMET_passPres_TEff = new TEfficiency(*PairStau651_RecoPFMET_passPres_passMuon_,*PairStau651_RecoPFMET_passPres_);
-  PairStau651_MuonEff_RecoPFMET_passPres_TEff->SetLineColor(kRed);
-  PairStau651_MuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kRed);
-  PairStau651_MuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau651_MuonEff_RecoPFMET_passPres.png");
+  TH2F* PairStau557_MuonEff_RecoPFMET_passPres = new TH2F("PairStau557_MuonEff_RecoPFMET_passPres","pass preselection;RECO PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  PairStau557_MuonEff_RecoPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau557_MuonEff_RecoPFMET_passPres->Draw();  
+  TEfficiency* PairStau557_MuonEff_RecoPFMET_passPres_TEff = new TEfficiency(*PairStau557_RecoPFMET_passPres_passMuon_,*PairStau557_RecoPFMET_passPres_);
+  PairStau557_MuonEff_RecoPFMET_passPres_TEff->SetLineColor(kRed);
+  PairStau557_MuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kRed);
+  PairStau557_MuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau557_MuonEff_RecoPFMET_passPres.png");
 
   /* // 15.11) MET or Muon trigger efficiency vs RECO PF MET, no preselection
-  TH2F* PairStau651_METOrMuonEff_RecoPFMET_noPres = new TH2F("PairStau651_METOrMuonEff_RecoPFMET_noPres","no preselection;RECO PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  PairStau651_METOrMuonEff_RecoPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau651_METOrMuonEff_RecoPFMET_noPres->Draw();  
-  TEfficiency* PairStau651_METOrMuonEff_RecoPFMET_noPres_TEff = new TEfficiency(*PairStau651_RecoPFMET_noPres_passMETOrMuon_,*PairStau651_RecoPFMET_noPres_);
-  PairStau651_METOrMuonEff_RecoPFMET_noPres_TEff->SetLineColor(kRed);
-  PairStau651_METOrMuonEff_RecoPFMET_noPres_TEff->SetMarkerColor(kRed);
-  PairStau651_METOrMuonEff_RecoPFMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau651_METOrMuonEff_RecoPFMET_noPres.png"); */
+  TH2F* PairStau557_METOrMuonEff_RecoPFMET_noPres = new TH2F("PairStau557_METOrMuonEff_RecoPFMET_noPres","no preselection;RECO PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  PairStau557_METOrMuonEff_RecoPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau557_METOrMuonEff_RecoPFMET_noPres->Draw();  
+  TEfficiency* PairStau557_METOrMuonEff_RecoPFMET_noPres_TEff = new TEfficiency(*PairStau557_RecoPFMET_noPres_passMETOrMuon_,*PairStau557_RecoPFMET_noPres_);
+  PairStau557_METOrMuonEff_RecoPFMET_noPres_TEff->SetLineColor(kRed);
+  PairStau557_METOrMuonEff_RecoPFMET_noPres_TEff->SetMarkerColor(kRed);
+  PairStau557_METOrMuonEff_RecoPFMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau557_METOrMuonEff_RecoPFMET_noPres.png"); */
 
   // 15.12) MET or Muon trigger efficiency vs RECO PF MET, pass preselection
-  TH2F* PairStau651_METOrMuonEff_RecoPFMET_passPres = new TH2F("PairStau651_METOrMuonEff_RecoPFMET_passPres","pass preselection;RECO PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  PairStau651_METOrMuonEff_RecoPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau651_METOrMuonEff_RecoPFMET_passPres->Draw();  
-  TEfficiency* PairStau651_METOrMuonEff_RecoPFMET_passPres_TEff = new TEfficiency(*PairStau651_RecoPFMET_passPres_passMETOrMuon_,*PairStau651_RecoPFMET_passPres_);
-  PairStau651_METOrMuonEff_RecoPFMET_passPres_TEff->SetLineColor(kRed);
-  PairStau651_METOrMuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kRed);
-  PairStau651_METOrMuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau651_METOrMuonEff_RecoPFMET_passPres.png");
+  TH2F* PairStau557_METOrMuonEff_RecoPFMET_passPres = new TH2F("PairStau557_METOrMuonEff_RecoPFMET_passPres","pass preselection;RECO PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  PairStau557_METOrMuonEff_RecoPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau557_METOrMuonEff_RecoPFMET_passPres->Draw();  
+  TEfficiency* PairStau557_METOrMuonEff_RecoPFMET_passPres_TEff = new TEfficiency(*PairStau557_RecoPFMET_passPres_passMETOrMuon_,*PairStau557_RecoPFMET_passPres_);
+  PairStau557_METOrMuonEff_RecoPFMET_passPres_TEff->SetLineColor(kRed);
+  PairStau557_METOrMuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kRed);
+  PairStau557_METOrMuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau557_METOrMuonEff_RecoPFMET_passPres.png");
 
   /* // 15.13) MET trigger efficiency vs HLT Calo MET, no preselection
-  TH2F* PairStau651_METEff_HLTCaloMET_noPres = new TH2F("PairStau651_METEff_HLTCaloMET_noPres","no preselection;HLT Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  PairStau651_METEff_HLTCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau651_METEff_HLTCaloMET_noPres->Draw();  
-  TEfficiency* PairStau651_METEff_HLTCaloMET_noPres_TEff = new TEfficiency(*PairStau651_HLTCaloMET_noPres_passMET_,*PairStau651_HLTCaloMET_noPres_);
-  PairStau651_METEff_HLTCaloMET_noPres_TEff->SetLineColor(kRed);
-  PairStau651_METEff_HLTCaloMET_noPres_TEff->SetMarkerColor(kRed);
-  PairStau651_METEff_HLTCaloMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau651_METEff_HLTCaloMET_noPres.png"); */
+  TH2F* PairStau557_METEff_HLTCaloMET_noPres = new TH2F("PairStau557_METEff_HLTCaloMET_noPres","no preselection;HLT Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  PairStau557_METEff_HLTCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau557_METEff_HLTCaloMET_noPres->Draw();  
+  TEfficiency* PairStau557_METEff_HLTCaloMET_noPres_TEff = new TEfficiency(*PairStau557_HLTCaloMET_noPres_passMET_,*PairStau557_HLTCaloMET_noPres_);
+  PairStau557_METEff_HLTCaloMET_noPres_TEff->SetLineColor(kRed);
+  PairStau557_METEff_HLTCaloMET_noPres_TEff->SetMarkerColor(kRed);
+  PairStau557_METEff_HLTCaloMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau557_METEff_HLTCaloMET_noPres.png"); */
 
   // 15.14) MET trigger efficiency vs HLT Calo MET, pass preselection
-  TH2F* PairStau651_METEff_HLTCaloMET_passPres = new TH2F("PairStau651_METEff_HLTCaloMET_passPres","pass preselection;HLT Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  PairStau651_METEff_HLTCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau651_METEff_HLTCaloMET_passPres->Draw();  
-  TEfficiency* PairStau651_METEff_HLTCaloMET_passPres_TEff = new TEfficiency(*PairStau651_HLTCaloMET_passPres_passMET_,*PairStau651_HLTCaloMET_passPres_);
-  PairStau651_METEff_HLTCaloMET_passPres_TEff->SetLineColor(kRed);
-  PairStau651_METEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  PairStau651_METEff_HLTCaloMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau651_METEff_HLTCaloMET_passPres.png");
+  TH2F* PairStau557_METEff_HLTCaloMET_passPres = new TH2F("PairStau557_METEff_HLTCaloMET_passPres","pass preselection;HLT Calo MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  PairStau557_METEff_HLTCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau557_METEff_HLTCaloMET_passPres->Draw();  
+  TEfficiency* PairStau557_METEff_HLTCaloMET_passPres_TEff = new TEfficiency(*PairStau557_HLTCaloMET_passPres_passMET_,*PairStau557_HLTCaloMET_passPres_);
+  PairStau557_METEff_HLTCaloMET_passPres_TEff->SetLineColor(kRed);
+  PairStau557_METEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kRed);
+  PairStau557_METEff_HLTCaloMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau557_METEff_HLTCaloMET_passPres.png");
 
   /* // 15.15) Muon trigger efficiency vs HLT Calo MET, no preselection
-  TH2F* PairStau651_MuonEff_HLTCaloMET_noPres = new TH2F("PairStau651_MuonEff_HLTCaloMET_noPres","no preselection;HLT Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  PairStau651_MuonEff_HLTCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau651_MuonEff_HLTCaloMET_noPres->Draw();  
-  TEfficiency* PairStau651_MuonEff_HLTCaloMET_noPres_TEff = new TEfficiency(*PairStau651_HLTCaloMET_noPres_passMuon_,*PairStau651_HLTCaloMET_noPres_);
-  PairStau651_MuonEff_HLTCaloMET_noPres_TEff->SetLineColor(kRed);
-  PairStau651_MuonEff_HLTCaloMET_noPres_TEff->SetMarkerColor(kRed);
-  PairStau651_MuonEff_HLTCaloMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau651_MuonEff_HLTCaloMET_noPres.png"); */
+  TH2F* PairStau557_MuonEff_HLTCaloMET_noPres = new TH2F("PairStau557_MuonEff_HLTCaloMET_noPres","no preselection;HLT Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  PairStau557_MuonEff_HLTCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau557_MuonEff_HLTCaloMET_noPres->Draw();  
+  TEfficiency* PairStau557_MuonEff_HLTCaloMET_noPres_TEff = new TEfficiency(*PairStau557_HLTCaloMET_noPres_passMuon_,*PairStau557_HLTCaloMET_noPres_);
+  PairStau557_MuonEff_HLTCaloMET_noPres_TEff->SetLineColor(kRed);
+  PairStau557_MuonEff_HLTCaloMET_noPres_TEff->SetMarkerColor(kRed);
+  PairStau557_MuonEff_HLTCaloMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau557_MuonEff_HLTCaloMET_noPres.png"); */
 
   // 15.16) Muon trigger efficiency vs HLT Calo MET, pass preselection
-  TH2F* PairStau651_MuonEff_HLTCaloMET_passPres = new TH2F("PairStau651_MuonEff_HLTCaloMET_passPres","pass preselection;HLT Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  PairStau651_MuonEff_HLTCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau651_MuonEff_HLTCaloMET_passPres->Draw();  
-  TEfficiency* PairStau651_MuonEff_HLTCaloMET_passPres_TEff = new TEfficiency(*PairStau651_HLTCaloMET_passPres_passMuon_,*PairStau651_HLTCaloMET_passPres_);
-  PairStau651_MuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kRed);
-  PairStau651_MuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  PairStau651_MuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau651_MuonEff_HLTCaloMET_passPres.png");
+  TH2F* PairStau557_MuonEff_HLTCaloMET_passPres = new TH2F("PairStau557_MuonEff_HLTCaloMET_passPres","pass preselection;HLT Calo MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  PairStau557_MuonEff_HLTCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau557_MuonEff_HLTCaloMET_passPres->Draw();  
+  TEfficiency* PairStau557_MuonEff_HLTCaloMET_passPres_TEff = new TEfficiency(*PairStau557_HLTCaloMET_passPres_passMuon_,*PairStau557_HLTCaloMET_passPres_);
+  PairStau557_MuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kRed);
+  PairStau557_MuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kRed);
+  PairStau557_MuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau557_MuonEff_HLTCaloMET_passPres.png");
 
   /* // 15.17) MET or Muon trigger efficiency vs HLT Calo MET, no preselection
-  TH2F* PairStau651_METOrMuonEff_HLTCaloMET_noPres = new TH2F("PairStau651_METOrMuonEff_HLTCaloMET_noPres","no preselection;HLT Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  PairStau651_METOrMuonEff_HLTCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau651_METOrMuonEff_HLTCaloMET_noPres->Draw();  
-  TEfficiency* PairStau651_METOrMuonEff_HLTCaloMET_noPres_TEff = new TEfficiency(*PairStau651_HLTCaloMET_noPres_passMETOrMuon_,*PairStau651_HLTCaloMET_noPres_);
-  PairStau651_METOrMuonEff_HLTCaloMET_noPres_TEff->SetLineColor(kRed);
-  PairStau651_METOrMuonEff_HLTCaloMET_noPres_TEff->SetMarkerColor(kRed);
-  PairStau651_METOrMuonEff_HLTCaloMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau651_METOrMuonEff_HLTCaloMET_noPres.png"); */
+  TH2F* PairStau557_METOrMuonEff_HLTCaloMET_noPres = new TH2F("PairStau557_METOrMuonEff_HLTCaloMET_noPres","no preselection;HLT Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  PairStau557_METOrMuonEff_HLTCaloMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau557_METOrMuonEff_HLTCaloMET_noPres->Draw();  
+  TEfficiency* PairStau557_METOrMuonEff_HLTCaloMET_noPres_TEff = new TEfficiency(*PairStau557_HLTCaloMET_noPres_passMETOrMuon_,*PairStau557_HLTCaloMET_noPres_);
+  PairStau557_METOrMuonEff_HLTCaloMET_noPres_TEff->SetLineColor(kRed);
+  PairStau557_METOrMuonEff_HLTCaloMET_noPres_TEff->SetMarkerColor(kRed);
+  PairStau557_METOrMuonEff_HLTCaloMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau557_METOrMuonEff_HLTCaloMET_noPres.png"); */
 
   // 15.18) MET or Muon trigger efficiency vs HLT Calo MET, pass preselection
-  TH2F* PairStau651_METOrMuonEff_HLTCaloMET_passPres = new TH2F("PairStau651_METOrMuonEff_HLTCaloMET_passPres","pass preselection;HLT Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  PairStau651_METOrMuonEff_HLTCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau651_METOrMuonEff_HLTCaloMET_passPres->Draw();  
-  TEfficiency* PairStau651_METOrMuonEff_HLTCaloMET_passPres_TEff = new TEfficiency(*PairStau651_HLTCaloMET_passPres_passMETOrMuon_,*PairStau651_HLTCaloMET_passPres_);
-  PairStau651_METOrMuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kRed);
-  PairStau651_METOrMuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  PairStau651_METOrMuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau651_METOrMuonEff_HLTCaloMET_passPres.png");
+  TH2F* PairStau557_METOrMuonEff_HLTCaloMET_passPres = new TH2F("PairStau557_METOrMuonEff_HLTCaloMET_passPres","pass preselection;HLT Calo MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  PairStau557_METOrMuonEff_HLTCaloMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau557_METOrMuonEff_HLTCaloMET_passPres->Draw();  
+  TEfficiency* PairStau557_METOrMuonEff_HLTCaloMET_passPres_TEff = new TEfficiency(*PairStau557_HLTCaloMET_passPres_passMETOrMuon_,*PairStau557_HLTCaloMET_passPres_);
+  PairStau557_METOrMuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kRed);
+  PairStau557_METOrMuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kRed);
+  PairStau557_METOrMuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau557_METOrMuonEff_HLTCaloMET_passPres.png");
 
   /* // 15.19) MET trigger efficiency vs HLT PF MET, no preselection
-  TH2F* PairStau651_METEff_HLTPFMET_noPres = new TH2F("PairStau651_METEff_HLTPFMET_noPres","no preselection;HLT PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  PairStau651_METEff_HLTPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau651_METEff_HLTPFMET_noPres->Draw();  
-  TEfficiency* PairStau651_METEff_HLTPFMET_noPres_TEff = new TEfficiency(*PairStau651_HLTPFMET_noPres_passMET_,*PairStau651_HLTPFMET_noPres_);
-  PairStau651_METEff_HLTPFMET_noPres_TEff->SetLineColor(kRed);
-  PairStau651_METEff_HLTPFMET_noPres_TEff->SetMarkerColor(kRed);
-  PairStau651_METEff_HLTPFMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau651_METEff_HLTPFMET_noPres.png"); */
+  TH2F* PairStau557_METEff_HLTPFMET_noPres = new TH2F("PairStau557_METEff_HLTPFMET_noPres","no preselection;HLT PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  PairStau557_METEff_HLTPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau557_METEff_HLTPFMET_noPres->Draw();  
+  TEfficiency* PairStau557_METEff_HLTPFMET_noPres_TEff = new TEfficiency(*PairStau557_HLTPFMET_noPres_passMET_,*PairStau557_HLTPFMET_noPres_);
+  PairStau557_METEff_HLTPFMET_noPres_TEff->SetLineColor(kRed);
+  PairStau557_METEff_HLTPFMET_noPres_TEff->SetMarkerColor(kRed);
+  PairStau557_METEff_HLTPFMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau557_METEff_HLTPFMET_noPres.png"); */
 
   // 15.20) MET trigger efficiency vs HLT PF MET, pass preselection
-  TH2F* PairStau651_METEff_HLTPFMET_passPres = new TH2F("PairStau651_METEff_HLTPFMET_passPres","pass preselection;HLT PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
-  PairStau651_METEff_HLTPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau651_METEff_HLTPFMET_passPres->Draw();  
-  TEfficiency* PairStau651_METEff_HLTPFMET_passPres_TEff = new TEfficiency(*PairStau651_HLTPFMET_passPres_passMET_,*PairStau651_HLTPFMET_passPres_);
-  PairStau651_METEff_HLTPFMET_passPres_TEff->SetLineColor(kRed);
-  PairStau651_METEff_HLTPFMET_passPres_TEff->SetMarkerColor(kRed);
-  PairStau651_METEff_HLTPFMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau651_METEff_HLTPFMET_passPres.png");
+  TH2F* PairStau557_METEff_HLTPFMET_passPres = new TH2F("PairStau557_METEff_HLTPFMET_passPres","pass preselection;HLT PF MET [GeV];MET trigger efficiency",100,0,1500,100,0,1);
+  PairStau557_METEff_HLTPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau557_METEff_HLTPFMET_passPres->Draw();  
+  TEfficiency* PairStau557_METEff_HLTPFMET_passPres_TEff = new TEfficiency(*PairStau557_HLTPFMET_passPres_passMET_,*PairStau557_HLTPFMET_passPres_);
+  PairStau557_METEff_HLTPFMET_passPres_TEff->SetLineColor(kRed);
+  PairStau557_METEff_HLTPFMET_passPres_TEff->SetMarkerColor(kRed);
+  PairStau557_METEff_HLTPFMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau557_METEff_HLTPFMET_passPres.png");
 
   /* // 15.21) Muon trigger efficiency vs HLT PF MET, no preselection
-  TH2F* PairStau651_MuonEff_HLTPFMET_noPres = new TH2F("PairStau651_MuonEff_HLTPFMET_noPres","no preselection;HLT PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  PairStau651_MuonEff_HLTPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau651_MuonEff_HLTPFMET_noPres->Draw();  
-  TEfficiency* PairStau651_MuonEff_HLTPFMET_noPres_TEff = new TEfficiency(*PairStau651_HLTPFMET_noPres_passMuon_,*PairStau651_HLTPFMET_noPres_);
-  PairStau651_MuonEff_HLTPFMET_noPres_TEff->SetLineColor(kRed);
-  PairStau651_MuonEff_HLTPFMET_noPres_TEff->SetMarkerColor(kRed);
-  PairStau651_MuonEff_HLTPFMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau651_MuonEff_HLTPFMET_noPres.png"); */
+  TH2F* PairStau557_MuonEff_HLTPFMET_noPres = new TH2F("PairStau557_MuonEff_HLTPFMET_noPres","no preselection;HLT PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  PairStau557_MuonEff_HLTPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau557_MuonEff_HLTPFMET_noPres->Draw();  
+  TEfficiency* PairStau557_MuonEff_HLTPFMET_noPres_TEff = new TEfficiency(*PairStau557_HLTPFMET_noPres_passMuon_,*PairStau557_HLTPFMET_noPres_);
+  PairStau557_MuonEff_HLTPFMET_noPres_TEff->SetLineColor(kRed);
+  PairStau557_MuonEff_HLTPFMET_noPres_TEff->SetMarkerColor(kRed);
+  PairStau557_MuonEff_HLTPFMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau557_MuonEff_HLTPFMET_noPres.png"); */
 
   // 15.22) Muon trigger efficiency vs HLT PF MET, pass preselection
-  TH2F* PairStau651_MuonEff_HLTPFMET_passPres = new TH2F("PairStau651_MuonEff_HLTPFMET_passPres","pass preselection;HLT PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
-  PairStau651_MuonEff_HLTPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau651_MuonEff_HLTPFMET_passPres->Draw();  
-  TEfficiency* PairStau651_MuonEff_HLTPFMET_passPres_TEff = new TEfficiency(*PairStau651_HLTPFMET_passPres_passMuon_,*PairStau651_HLTPFMET_passPres_);
-  PairStau651_MuonEff_HLTPFMET_passPres_TEff->SetLineColor(kRed);
-  PairStau651_MuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kRed);
-  PairStau651_MuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau651_MuonEff_HLTPFMET_passPres.png");
+  TH2F* PairStau557_MuonEff_HLTPFMET_passPres = new TH2F("PairStau557_MuonEff_HLTPFMET_passPres","pass preselection;HLT PF MET [GeV];Muon trigger efficiency",100,0,1500,100,0,1);
+  PairStau557_MuonEff_HLTPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau557_MuonEff_HLTPFMET_passPres->Draw();  
+  TEfficiency* PairStau557_MuonEff_HLTPFMET_passPres_TEff = new TEfficiency(*PairStau557_HLTPFMET_passPres_passMuon_,*PairStau557_HLTPFMET_passPres_);
+  PairStau557_MuonEff_HLTPFMET_passPres_TEff->SetLineColor(kRed);
+  PairStau557_MuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kRed);
+  PairStau557_MuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau557_MuonEff_HLTPFMET_passPres.png");
 
   /* // 15.23) MET or Muon trigger efficiency vs HLT PF MET, no preselection
-  TH2F* PairStau651_METOrMuonEff_HLTPFMET_noPres = new TH2F("PairStau651_METOrMuonEff_HLTPFMET_noPres","no preselection;HLT PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  PairStau651_METOrMuonEff_HLTPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau651_METOrMuonEff_HLTPFMET_noPres->Draw();  
-  TEfficiency* PairStau651_METOrMuonEff_HLTPFMET_noPres_TEff = new TEfficiency(*PairStau651_HLTPFMET_noPres_passMETOrMuon_,*PairStau651_HLTPFMET_noPres_);
-  PairStau651_METOrMuonEff_HLTPFMET_noPres_TEff->SetLineColor(kRed);
-  PairStau651_METOrMuonEff_HLTPFMET_noPres_TEff->SetMarkerColor(kRed);
-  PairStau651_METOrMuonEff_HLTPFMET_noPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau651_METOrMuonEff_HLTPFMET_noPres.png"); */
+  TH2F* PairStau557_METOrMuonEff_HLTPFMET_noPres = new TH2F("PairStau557_METOrMuonEff_HLTPFMET_noPres","no preselection;HLT PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  PairStau557_METOrMuonEff_HLTPFMET_noPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau557_METOrMuonEff_HLTPFMET_noPres->Draw();  
+  TEfficiency* PairStau557_METOrMuonEff_HLTPFMET_noPres_TEff = new TEfficiency(*PairStau557_HLTPFMET_noPres_passMETOrMuon_,*PairStau557_HLTPFMET_noPres_);
+  PairStau557_METOrMuonEff_HLTPFMET_noPres_TEff->SetLineColor(kRed);
+  PairStau557_METOrMuonEff_HLTPFMET_noPres_TEff->SetMarkerColor(kRed);
+  PairStau557_METOrMuonEff_HLTPFMET_noPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau557_METOrMuonEff_HLTPFMET_noPres.png"); */
 
   // 15.24) MET or Muon trigger efficiency vs HLT PF MET, pass preselection
-  TH2F* PairStau651_METOrMuonEff_HLTPFMET_passPres = new TH2F("PairStau651_METOrMuonEff_HLTPFMET_passPres","pass preselection;HLT PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
-  PairStau651_METOrMuonEff_HLTPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
-  PairStau651_METOrMuonEff_HLTPFMET_passPres->Draw();  
-  TEfficiency* PairStau651_METOrMuonEff_HLTPFMET_passPres_TEff = new TEfficiency(*PairStau651_HLTPFMET_passPres_passMETOrMuon_,*PairStau651_HLTPFMET_passPres_);
-  PairStau651_METOrMuonEff_HLTPFMET_passPres_TEff->SetLineColor(kRed);
-  PairStau651_METOrMuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kRed);
-  PairStau651_METOrMuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
-  c_met->SaveAs("./png/PairStau651_METOrMuonEff_HLTPFMET_passPres.png");
+  TH2F* PairStau557_METOrMuonEff_HLTPFMET_passPres = new TH2F("PairStau557_METOrMuonEff_HLTPFMET_passPres","pass preselection;HLT PF MET [GeV];MET or Muon trigger efficiency",100,0,1500,100,0,1);
+  PairStau557_METOrMuonEff_HLTPFMET_passPres->GetYaxis()->SetTitleOffset(0.98);
+  PairStau557_METOrMuonEff_HLTPFMET_passPres->Draw();  
+  TEfficiency* PairStau557_METOrMuonEff_HLTPFMET_passPres_TEff = new TEfficiency(*PairStau557_HLTPFMET_passPres_passMETOrMuon_,*PairStau557_HLTPFMET_passPres_);
+  PairStau557_METOrMuonEff_HLTPFMET_passPres_TEff->SetLineColor(kRed);
+  PairStau557_METOrMuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kRed);
+  PairStau557_METOrMuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
+  c_met->SaveAs("./png/PairStau557_METOrMuonEff_HLTPFMET_passPres.png");
 
 
   //==================
@@ -4765,456 +4767,456 @@ void make_trig_plots () {
   // 9101112.02) MET trigger efficiency vs RECO Calo MET, pass preselection
   GMSBStau200_METEff_RecoCaloMET_passPres_TEff->SetLineColor(kRed);
   GMSBStau200_METEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau432_METEff_RecoCaloMET_passPres_TEff->SetLineColor(kOrange);
-  GMSBStau432_METEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kOrange);
-  GMSBStau651_METEff_RecoCaloMET_passPres_TEff->SetLineColor(kAzure);
-  GMSBStau651_METEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kAzure);
-  GMSBStau871_METEff_RecoCaloMET_passPres_TEff->SetLineColor(kBlack);
-  GMSBStau871_METEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kBlack);
+  GMSBStau308_METEff_RecoCaloMET_passPres_TEff->SetLineColor(kOrange);
+  GMSBStau308_METEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kOrange);
+  GMSBStau557_METEff_RecoCaloMET_passPres_TEff->SetLineColor(kAzure);
+  GMSBStau557_METEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kAzure);
+  GMSBStau745_METEff_RecoCaloMET_passPres_TEff->SetLineColor(kBlack);
+  GMSBStau745_METEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kBlack);
   GMSBStau200_METEff_RecoCaloMET_passPres_TEff->Draw();
-  GMSBStau432_METEff_RecoCaloMET_passPres_TEff->Draw("pe same");
-  GMSBStau651_METEff_RecoCaloMET_passPres_TEff->Draw("pe same");
-  GMSBStau871_METEff_RecoCaloMET_passPres_TEff->Draw("pe same");
+  GMSBStau308_METEff_RecoCaloMET_passPres_TEff->Draw("pe same");
+  GMSBStau557_METEff_RecoCaloMET_passPres_TEff->Draw("pe same");
+  GMSBStau745_METEff_RecoCaloMET_passPres_TEff->Draw("pe same");
   auto GMSBStau_METEff_RecoCaloMET_legend = new TLegend(0.37,0.13,0.75,0.36);
   GMSBStau_METEff_RecoCaloMET_legend->AddEntry(GMSBStau200_METEff_RecoCaloMET_passPres_TEff,"GMSBStau 200 GeV");
-  GMSBStau_METEff_RecoCaloMET_legend->AddEntry(GMSBStau432_METEff_RecoCaloMET_passPres_TEff,"GMSBStau 432 GeV");
-  GMSBStau_METEff_RecoCaloMET_legend->AddEntry(GMSBStau651_METEff_RecoCaloMET_passPres_TEff,"GMSBStau 651 GeV");
-  GMSBStau_METEff_RecoCaloMET_legend->AddEntry(GMSBStau871_METEff_RecoCaloMET_passPres_TEff,"GMSBStau 871 GeV");
+  GMSBStau_METEff_RecoCaloMET_legend->AddEntry(GMSBStau308_METEff_RecoCaloMET_passPres_TEff,"GMSBStau 308 GeV");
+  GMSBStau_METEff_RecoCaloMET_legend->AddEntry(GMSBStau557_METEff_RecoCaloMET_passPres_TEff,"GMSBStau 557 GeV");
+  GMSBStau_METEff_RecoCaloMET_legend->AddEntry(GMSBStau745_METEff_RecoCaloMET_passPres_TEff,"GMSBStau 745 GeV");
   GMSBStau_METEff_RecoCaloMET_legend->Draw();
   c_met->SaveAs("./png/GMSBStau_METEff_RecoCaloMET_passPres.png");
 
   // 9101112.04) Muon trigger efficiency vs RECO Calo MET, pass preselection
   GMSBStau200_MuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kRed);
   GMSBStau200_MuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau432_MuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kOrange);
-  GMSBStau432_MuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kOrange);
-  GMSBStau651_MuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kAzure);
-  GMSBStau651_MuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kAzure);
-  GMSBStau871_MuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kBlack);
-  GMSBStau871_MuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kBlack);
+  GMSBStau308_MuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kOrange);
+  GMSBStau308_MuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kOrange);
+  GMSBStau557_MuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kAzure);
+  GMSBStau557_MuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kAzure);
+  GMSBStau745_MuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kBlack);
+  GMSBStau745_MuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kBlack);
   GMSBStau200_MuonEff_RecoCaloMET_passPres_TEff->Draw();
-  GMSBStau432_MuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
-  GMSBStau651_MuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
-  GMSBStau871_MuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
+  GMSBStau308_MuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
+  GMSBStau557_MuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
+  GMSBStau745_MuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
   auto GMSBStau_MuonEff_RecoCaloMET_legend = new TLegend(0.37,0.13,0.75,0.36);
   GMSBStau_MuonEff_RecoCaloMET_legend->AddEntry(GMSBStau200_MuonEff_RecoCaloMET_passPres_TEff,"GMSBStau 200 GeV");
-  GMSBStau_MuonEff_RecoCaloMET_legend->AddEntry(GMSBStau432_MuonEff_RecoCaloMET_passPres_TEff,"GMSBStau 432 GeV");
-  GMSBStau_MuonEff_RecoCaloMET_legend->AddEntry(GMSBStau651_MuonEff_RecoCaloMET_passPres_TEff,"GMSBStau 651 GeV");
-  GMSBStau_MuonEff_RecoCaloMET_legend->AddEntry(GMSBStau871_MuonEff_RecoCaloMET_passPres_TEff,"GMSBStau 871 GeV");
+  GMSBStau_MuonEff_RecoCaloMET_legend->AddEntry(GMSBStau308_MuonEff_RecoCaloMET_passPres_TEff,"GMSBStau 308 GeV");
+  GMSBStau_MuonEff_RecoCaloMET_legend->AddEntry(GMSBStau557_MuonEff_RecoCaloMET_passPres_TEff,"GMSBStau 557 GeV");
+  GMSBStau_MuonEff_RecoCaloMET_legend->AddEntry(GMSBStau745_MuonEff_RecoCaloMET_passPres_TEff,"GMSBStau 745 GeV");
   GMSBStau_MuonEff_RecoCaloMET_legend->Draw();
   c_met->SaveAs("./png/GMSBStau_MuonEff_RecoCaloMET_passPres.png");
 
   // 9101112.06) MET or Muon trigger efficiency vs RECO Calo MET, pass preselection
   GMSBStau200_METOrMuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kRed);
   GMSBStau200_METOrMuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau432_METOrMuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kOrange);
-  GMSBStau432_METOrMuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kOrange);
-  GMSBStau651_METOrMuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kAzure);
-  GMSBStau651_METOrMuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kAzure);
-  GMSBStau871_METOrMuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kBlack);
-  GMSBStau871_METOrMuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kBlack);
+  GMSBStau308_METOrMuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kOrange);
+  GMSBStau308_METOrMuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kOrange);
+  GMSBStau557_METOrMuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kAzure);
+  GMSBStau557_METOrMuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kAzure);
+  GMSBStau745_METOrMuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kBlack);
+  GMSBStau745_METOrMuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kBlack);
   GMSBStau200_METOrMuonEff_RecoCaloMET_passPres_TEff->Draw();
-  GMSBStau432_METOrMuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
-  GMSBStau651_METOrMuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
-  GMSBStau871_METOrMuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
+  GMSBStau308_METOrMuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
+  GMSBStau557_METOrMuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
+  GMSBStau745_METOrMuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
   auto GMSBStau_METOrMuonEff_RecoCaloMET_legend = new TLegend(0.37,0.13,0.75,0.36);
   GMSBStau_METOrMuonEff_RecoCaloMET_legend->AddEntry(GMSBStau200_METOrMuonEff_RecoCaloMET_passPres_TEff,"GMSBStau 200 GeV");
-  GMSBStau_METOrMuonEff_RecoCaloMET_legend->AddEntry(GMSBStau432_METOrMuonEff_RecoCaloMET_passPres_TEff,"GMSBStau 432 GeV");
-  GMSBStau_METOrMuonEff_RecoCaloMET_legend->AddEntry(GMSBStau651_METOrMuonEff_RecoCaloMET_passPres_TEff,"GMSBStau 651 GeV");
-  GMSBStau_METOrMuonEff_RecoCaloMET_legend->AddEntry(GMSBStau871_METOrMuonEff_RecoCaloMET_passPres_TEff,"GMSBStau 871 GeV");
+  GMSBStau_METOrMuonEff_RecoCaloMET_legend->AddEntry(GMSBStau308_METOrMuonEff_RecoCaloMET_passPres_TEff,"GMSBStau 308 GeV");
+  GMSBStau_METOrMuonEff_RecoCaloMET_legend->AddEntry(GMSBStau557_METOrMuonEff_RecoCaloMET_passPres_TEff,"GMSBStau 557 GeV");
+  GMSBStau_METOrMuonEff_RecoCaloMET_legend->AddEntry(GMSBStau745_METOrMuonEff_RecoCaloMET_passPres_TEff,"GMSBStau 745 GeV");
   GMSBStau_METOrMuonEff_RecoCaloMET_legend->Draw();
   c_met->SaveAs("./png/GMSBStau_METOrMuonEff_RecoCaloMET_passPres.png");
 
   // 9101112.08) MET trigger efficiency vs RECO PF MET, pass preselection
   GMSBStau200_METEff_RecoPFMET_passPres_TEff->SetLineColor(kRed);
   GMSBStau200_METEff_RecoPFMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau432_METEff_RecoPFMET_passPres_TEff->SetLineColor(kOrange);
-  GMSBStau432_METEff_RecoPFMET_passPres_TEff->SetMarkerColor(kOrange);
-  GMSBStau651_METEff_RecoPFMET_passPres_TEff->SetLineColor(kAzure);
-  GMSBStau651_METEff_RecoPFMET_passPres_TEff->SetMarkerColor(kAzure);
-  GMSBStau871_METEff_RecoPFMET_passPres_TEff->SetLineColor(kBlack);
-  GMSBStau871_METEff_RecoPFMET_passPres_TEff->SetMarkerColor(kBlack);
+  GMSBStau308_METEff_RecoPFMET_passPres_TEff->SetLineColor(kOrange);
+  GMSBStau308_METEff_RecoPFMET_passPres_TEff->SetMarkerColor(kOrange);
+  GMSBStau557_METEff_RecoPFMET_passPres_TEff->SetLineColor(kAzure);
+  GMSBStau557_METEff_RecoPFMET_passPres_TEff->SetMarkerColor(kAzure);
+  GMSBStau745_METEff_RecoPFMET_passPres_TEff->SetLineColor(kBlack);
+  GMSBStau745_METEff_RecoPFMET_passPres_TEff->SetMarkerColor(kBlack);
   GMSBStau200_METEff_RecoPFMET_passPres_TEff->Draw();
-  GMSBStau432_METEff_RecoPFMET_passPres_TEff->Draw("pe same");
-  GMSBStau651_METEff_RecoPFMET_passPres_TEff->Draw("pe same");
-  GMSBStau871_METEff_RecoPFMET_passPres_TEff->Draw("pe same");
+  GMSBStau308_METEff_RecoPFMET_passPres_TEff->Draw("pe same");
+  GMSBStau557_METEff_RecoPFMET_passPres_TEff->Draw("pe same");
+  GMSBStau745_METEff_RecoPFMET_passPres_TEff->Draw("pe same");
   auto GMSBStau_METEff_RecoPFMET_legend = new TLegend(0.37,0.13,0.75,0.36);
   GMSBStau_METEff_RecoPFMET_legend->AddEntry(GMSBStau200_METEff_RecoPFMET_passPres_TEff,"GMSBStau 200 GeV");
-  GMSBStau_METEff_RecoPFMET_legend->AddEntry(GMSBStau432_METEff_RecoPFMET_passPres_TEff,"GMSBStau 432 GeV");
-  GMSBStau_METEff_RecoPFMET_legend->AddEntry(GMSBStau651_METEff_RecoPFMET_passPres_TEff,"GMSBStau 651 GeV");
-  GMSBStau_METEff_RecoPFMET_legend->AddEntry(GMSBStau871_METEff_RecoPFMET_passPres_TEff,"GMSBStau 871 GeV");
+  GMSBStau_METEff_RecoPFMET_legend->AddEntry(GMSBStau308_METEff_RecoPFMET_passPres_TEff,"GMSBStau 308 GeV");
+  GMSBStau_METEff_RecoPFMET_legend->AddEntry(GMSBStau557_METEff_RecoPFMET_passPres_TEff,"GMSBStau 557 GeV");
+  GMSBStau_METEff_RecoPFMET_legend->AddEntry(GMSBStau745_METEff_RecoPFMET_passPres_TEff,"GMSBStau 745 GeV");
   GMSBStau_METEff_RecoPFMET_legend->Draw();
   c_met->SaveAs("./png/GMSBStau_METEff_RecoPFMET_passPres.png");
 
   // 9101112.10) Muon trigger efficiency vs RECO PF MET, pass preselection
   GMSBStau200_MuonEff_RecoPFMET_passPres_TEff->SetLineColor(kRed);
   GMSBStau200_MuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau432_MuonEff_RecoPFMET_passPres_TEff->SetLineColor(kOrange);
-  GMSBStau432_MuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kOrange);
-  GMSBStau651_MuonEff_RecoPFMET_passPres_TEff->SetLineColor(kAzure);
-  GMSBStau651_MuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kAzure);
-  GMSBStau871_MuonEff_RecoPFMET_passPres_TEff->SetLineColor(kBlack);
-  GMSBStau871_MuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kBlack);
+  GMSBStau308_MuonEff_RecoPFMET_passPres_TEff->SetLineColor(kOrange);
+  GMSBStau308_MuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kOrange);
+  GMSBStau557_MuonEff_RecoPFMET_passPres_TEff->SetLineColor(kAzure);
+  GMSBStau557_MuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kAzure);
+  GMSBStau745_MuonEff_RecoPFMET_passPres_TEff->SetLineColor(kBlack);
+  GMSBStau745_MuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kBlack);
   GMSBStau200_MuonEff_RecoPFMET_passPres_TEff->Draw();
-  GMSBStau432_MuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
-  GMSBStau651_MuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
-  GMSBStau871_MuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
+  GMSBStau308_MuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
+  GMSBStau557_MuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
+  GMSBStau745_MuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
   auto GMSBStau_MuonEff_RecoPFMET_legend = new TLegend(0.37,0.13,0.75,0.36);
   GMSBStau_MuonEff_RecoPFMET_legend->AddEntry(GMSBStau200_MuonEff_RecoPFMET_passPres_TEff,"GMSBStau 200 GeV");
-  GMSBStau_MuonEff_RecoPFMET_legend->AddEntry(GMSBStau432_MuonEff_RecoPFMET_passPres_TEff,"GMSBStau 432 GeV");
-  GMSBStau_MuonEff_RecoPFMET_legend->AddEntry(GMSBStau651_MuonEff_RecoPFMET_passPres_TEff,"GMSBStau 651 GeV");
-  GMSBStau_MuonEff_RecoPFMET_legend->AddEntry(GMSBStau871_MuonEff_RecoPFMET_passPres_TEff,"GMSBStau 871 GeV");
+  GMSBStau_MuonEff_RecoPFMET_legend->AddEntry(GMSBStau308_MuonEff_RecoPFMET_passPres_TEff,"GMSBStau 308 GeV");
+  GMSBStau_MuonEff_RecoPFMET_legend->AddEntry(GMSBStau557_MuonEff_RecoPFMET_passPres_TEff,"GMSBStau 557 GeV");
+  GMSBStau_MuonEff_RecoPFMET_legend->AddEntry(GMSBStau745_MuonEff_RecoPFMET_passPres_TEff,"GMSBStau 745 GeV");
   GMSBStau_MuonEff_RecoPFMET_legend->Draw();
   c_met->SaveAs("./png/GMSBStau_MuonEff_RecoPFMET_passPres.png");
 
   // 9101112.12) MET or Muon trigger efficiency vs RECO PF MET, pass preselection
   GMSBStau200_METOrMuonEff_RecoPFMET_passPres_TEff->SetLineColor(kRed);
   GMSBStau200_METOrMuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau432_METOrMuonEff_RecoPFMET_passPres_TEff->SetLineColor(kOrange);
-  GMSBStau432_METOrMuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kOrange);
-  GMSBStau651_METOrMuonEff_RecoPFMET_passPres_TEff->SetLineColor(kAzure);
-  GMSBStau651_METOrMuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kAzure);
-  GMSBStau871_METOrMuonEff_RecoPFMET_passPres_TEff->SetLineColor(kBlack);
-  GMSBStau871_METOrMuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kBlack);
+  GMSBStau308_METOrMuonEff_RecoPFMET_passPres_TEff->SetLineColor(kOrange);
+  GMSBStau308_METOrMuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kOrange);
+  GMSBStau557_METOrMuonEff_RecoPFMET_passPres_TEff->SetLineColor(kAzure);
+  GMSBStau557_METOrMuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kAzure);
+  GMSBStau745_METOrMuonEff_RecoPFMET_passPres_TEff->SetLineColor(kBlack);
+  GMSBStau745_METOrMuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kBlack);
   GMSBStau200_METOrMuonEff_RecoPFMET_passPres_TEff->Draw();
-  GMSBStau432_METOrMuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
-  GMSBStau651_METOrMuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
-  GMSBStau871_METOrMuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
+  GMSBStau308_METOrMuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
+  GMSBStau557_METOrMuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
+  GMSBStau745_METOrMuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
   auto GMSBStau_METOrMuonEff_RecoPFMET_legend = new TLegend(0.37,0.13,0.75,0.36);
   GMSBStau_METOrMuonEff_RecoPFMET_legend->AddEntry(GMSBStau200_METOrMuonEff_RecoPFMET_passPres_TEff,"GMSBStau 200 GeV");
-  GMSBStau_METOrMuonEff_RecoPFMET_legend->AddEntry(GMSBStau432_METOrMuonEff_RecoPFMET_passPres_TEff,"GMSBStau 432 GeV");
-  GMSBStau_METOrMuonEff_RecoPFMET_legend->AddEntry(GMSBStau651_METOrMuonEff_RecoPFMET_passPres_TEff,"GMSBStau 651 GeV");
-  GMSBStau_METOrMuonEff_RecoPFMET_legend->AddEntry(GMSBStau871_METOrMuonEff_RecoPFMET_passPres_TEff,"GMSBStau 871 GeV");
+  GMSBStau_METOrMuonEff_RecoPFMET_legend->AddEntry(GMSBStau308_METOrMuonEff_RecoPFMET_passPres_TEff,"GMSBStau 308 GeV");
+  GMSBStau_METOrMuonEff_RecoPFMET_legend->AddEntry(GMSBStau557_METOrMuonEff_RecoPFMET_passPres_TEff,"GMSBStau 557 GeV");
+  GMSBStau_METOrMuonEff_RecoPFMET_legend->AddEntry(GMSBStau745_METOrMuonEff_RecoPFMET_passPres_TEff,"GMSBStau 745 GeV");
   GMSBStau_METOrMuonEff_RecoPFMET_legend->Draw();
   c_met->SaveAs("./png/GMSBStau_METOrMuonEff_RecoPFMET_passPres.png");
 
   // 9101112.14) MET trigger efficiency vs HLT Calo MET, pass preselection
   GMSBStau200_METEff_HLTCaloMET_passPres_TEff->SetLineColor(kRed);
   GMSBStau200_METEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau432_METEff_HLTCaloMET_passPres_TEff->SetLineColor(kOrange);
-  GMSBStau432_METEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kOrange);
-  GMSBStau651_METEff_HLTCaloMET_passPres_TEff->SetLineColor(kAzure);
-  GMSBStau651_METEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kAzure);
-  GMSBStau871_METEff_HLTCaloMET_passPres_TEff->SetLineColor(kBlack);
-  GMSBStau871_METEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kBlack);
+  GMSBStau308_METEff_HLTCaloMET_passPres_TEff->SetLineColor(kOrange);
+  GMSBStau308_METEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kOrange);
+  GMSBStau557_METEff_HLTCaloMET_passPres_TEff->SetLineColor(kAzure);
+  GMSBStau557_METEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kAzure);
+  GMSBStau745_METEff_HLTCaloMET_passPres_TEff->SetLineColor(kBlack);
+  GMSBStau745_METEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kBlack);
   GMSBStau200_METEff_HLTCaloMET_passPres_TEff->Draw();
-  GMSBStau432_METEff_HLTCaloMET_passPres_TEff->Draw("pe same");
-  GMSBStau651_METEff_HLTCaloMET_passPres_TEff->Draw("pe same");
-  GMSBStau871_METEff_HLTCaloMET_passPres_TEff->Draw("pe same");
+  GMSBStau308_METEff_HLTCaloMET_passPres_TEff->Draw("pe same");
+  GMSBStau557_METEff_HLTCaloMET_passPres_TEff->Draw("pe same");
+  GMSBStau745_METEff_HLTCaloMET_passPres_TEff->Draw("pe same");
   auto GMSBStau_METEff_HLTCaloMET_legend = new TLegend(0.37,0.13,0.75,0.36);
   GMSBStau_METEff_HLTCaloMET_legend->AddEntry(GMSBStau200_METEff_HLTCaloMET_passPres_TEff,"GMSBStau 200 GeV");
-  GMSBStau_METEff_HLTCaloMET_legend->AddEntry(GMSBStau432_METEff_HLTCaloMET_passPres_TEff,"GMSBStau 432 GeV");
-  GMSBStau_METEff_HLTCaloMET_legend->AddEntry(GMSBStau651_METEff_HLTCaloMET_passPres_TEff,"GMSBStau 651 GeV");
-  GMSBStau_METEff_HLTCaloMET_legend->AddEntry(GMSBStau871_METEff_HLTCaloMET_passPres_TEff,"GMSBStau 871 GeV");
+  GMSBStau_METEff_HLTCaloMET_legend->AddEntry(GMSBStau308_METEff_HLTCaloMET_passPres_TEff,"GMSBStau 308 GeV");
+  GMSBStau_METEff_HLTCaloMET_legend->AddEntry(GMSBStau557_METEff_HLTCaloMET_passPres_TEff,"GMSBStau 557 GeV");
+  GMSBStau_METEff_HLTCaloMET_legend->AddEntry(GMSBStau745_METEff_HLTCaloMET_passPres_TEff,"GMSBStau 745 GeV");
   GMSBStau_METEff_HLTCaloMET_legend->Draw();
   c_met->SaveAs("./png/GMSBStau_METEff_HLTCaloMET_passPres.png");
 
   // 9101112.16) Muon trigger efficiency vs HLT Calo MET, pass preselection
   GMSBStau200_MuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kRed);
   GMSBStau200_MuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau432_MuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kOrange);
-  GMSBStau432_MuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kOrange);
-  GMSBStau651_MuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kAzure);
-  GMSBStau651_MuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kAzure);
-  GMSBStau871_MuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kBlack);
-  GMSBStau871_MuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kBlack);
+  GMSBStau308_MuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kOrange);
+  GMSBStau308_MuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kOrange);
+  GMSBStau557_MuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kAzure);
+  GMSBStau557_MuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kAzure);
+  GMSBStau745_MuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kBlack);
+  GMSBStau745_MuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kBlack);
   GMSBStau200_MuonEff_HLTCaloMET_passPres_TEff->Draw();
-  GMSBStau432_MuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
-  GMSBStau651_MuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
-  GMSBStau871_MuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
+  GMSBStau308_MuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
+  GMSBStau557_MuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
+  GMSBStau745_MuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
   auto GMSBStau_MuonEff_HLTCaloMET_legend = new TLegend(0.37,0.13,0.75,0.36);
   GMSBStau_MuonEff_HLTCaloMET_legend->AddEntry(GMSBStau200_MuonEff_HLTCaloMET_passPres_TEff,"GMSBStau 200 GeV");
-  GMSBStau_MuonEff_HLTCaloMET_legend->AddEntry(GMSBStau432_MuonEff_HLTCaloMET_passPres_TEff,"GMSBStau 432 GeV");
-  GMSBStau_MuonEff_HLTCaloMET_legend->AddEntry(GMSBStau651_MuonEff_HLTCaloMET_passPres_TEff,"GMSBStau 651 GeV");
-  GMSBStau_MuonEff_HLTCaloMET_legend->AddEntry(GMSBStau871_MuonEff_HLTCaloMET_passPres_TEff,"GMSBStau 871 GeV");
+  GMSBStau_MuonEff_HLTCaloMET_legend->AddEntry(GMSBStau308_MuonEff_HLTCaloMET_passPres_TEff,"GMSBStau 308 GeV");
+  GMSBStau_MuonEff_HLTCaloMET_legend->AddEntry(GMSBStau557_MuonEff_HLTCaloMET_passPres_TEff,"GMSBStau 557 GeV");
+  GMSBStau_MuonEff_HLTCaloMET_legend->AddEntry(GMSBStau745_MuonEff_HLTCaloMET_passPres_TEff,"GMSBStau 745 GeV");
   GMSBStau_MuonEff_HLTCaloMET_legend->Draw();
   c_met->SaveAs("./png/GMSBStau_MuonEff_HLTCaloMET_passPres.png");
 
   // 9101112.18) MET or Muon trigger efficiency vs HLT Calo MET, pass preselection
   GMSBStau200_METOrMuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kRed);
   GMSBStau200_METOrMuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau432_METOrMuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kOrange);
-  GMSBStau432_METOrMuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kOrange);
-  GMSBStau651_METOrMuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kAzure);
-  GMSBStau651_METOrMuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kAzure);
-  GMSBStau871_METOrMuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kBlack);
-  GMSBStau871_METOrMuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kBlack);
+  GMSBStau308_METOrMuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kOrange);
+  GMSBStau308_METOrMuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kOrange);
+  GMSBStau557_METOrMuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kAzure);
+  GMSBStau557_METOrMuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kAzure);
+  GMSBStau745_METOrMuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kBlack);
+  GMSBStau745_METOrMuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kBlack);
   GMSBStau200_METOrMuonEff_HLTCaloMET_passPres_TEff->Draw();
-  GMSBStau432_METOrMuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
-  GMSBStau651_METOrMuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
-  GMSBStau871_METOrMuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
+  GMSBStau308_METOrMuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
+  GMSBStau557_METOrMuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
+  GMSBStau745_METOrMuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
   auto GMSBStau_METOrMuonEff_HLTCaloMET_legend = new TLegend(0.37,0.13,0.75,0.36);
   GMSBStau_METOrMuonEff_HLTCaloMET_legend->AddEntry(GMSBStau200_METOrMuonEff_HLTCaloMET_passPres_TEff,"GMSBStau 200 GeV");
-  GMSBStau_METOrMuonEff_HLTCaloMET_legend->AddEntry(GMSBStau432_METOrMuonEff_HLTCaloMET_passPres_TEff,"GMSBStau 432 GeV");
-  GMSBStau_METOrMuonEff_HLTCaloMET_legend->AddEntry(GMSBStau651_METOrMuonEff_HLTCaloMET_passPres_TEff,"GMSBStau 651 GeV");
-  GMSBStau_METOrMuonEff_HLTCaloMET_legend->AddEntry(GMSBStau871_METOrMuonEff_HLTCaloMET_passPres_TEff,"GMSBStau 871 GeV");
+  GMSBStau_METOrMuonEff_HLTCaloMET_legend->AddEntry(GMSBStau308_METOrMuonEff_HLTCaloMET_passPres_TEff,"GMSBStau 308 GeV");
+  GMSBStau_METOrMuonEff_HLTCaloMET_legend->AddEntry(GMSBStau557_METOrMuonEff_HLTCaloMET_passPres_TEff,"GMSBStau 557 GeV");
+  GMSBStau_METOrMuonEff_HLTCaloMET_legend->AddEntry(GMSBStau745_METOrMuonEff_HLTCaloMET_passPres_TEff,"GMSBStau 745 GeV");
   GMSBStau_METOrMuonEff_HLTCaloMET_legend->Draw();
   c_met->SaveAs("./png/GMSBStau_METOrMuonEff_HLTCaloMET_passPres.png");
 
   // 9101112.20) MET trigger efficiency vs HLT PF MET, pass preselection
   GMSBStau200_METEff_HLTPFMET_passPres_TEff->SetLineColor(kRed);
   GMSBStau200_METEff_HLTPFMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau432_METEff_HLTPFMET_passPres_TEff->SetLineColor(kOrange);
-  GMSBStau432_METEff_HLTPFMET_passPres_TEff->SetMarkerColor(kOrange);
-  GMSBStau651_METEff_HLTPFMET_passPres_TEff->SetLineColor(kAzure);
-  GMSBStau651_METEff_HLTPFMET_passPres_TEff->SetMarkerColor(kAzure);
-  GMSBStau871_METEff_HLTPFMET_passPres_TEff->SetLineColor(kBlack);
-  GMSBStau871_METEff_HLTPFMET_passPres_TEff->SetMarkerColor(kBlack);
+  GMSBStau308_METEff_HLTPFMET_passPres_TEff->SetLineColor(kOrange);
+  GMSBStau308_METEff_HLTPFMET_passPres_TEff->SetMarkerColor(kOrange);
+  GMSBStau557_METEff_HLTPFMET_passPres_TEff->SetLineColor(kAzure);
+  GMSBStau557_METEff_HLTPFMET_passPres_TEff->SetMarkerColor(kAzure);
+  GMSBStau745_METEff_HLTPFMET_passPres_TEff->SetLineColor(kBlack);
+  GMSBStau745_METEff_HLTPFMET_passPres_TEff->SetMarkerColor(kBlack);
   GMSBStau200_METEff_HLTPFMET_passPres_TEff->Draw();
-  GMSBStau432_METEff_HLTPFMET_passPres_TEff->Draw("pe same");
-  GMSBStau651_METEff_HLTPFMET_passPres_TEff->Draw("pe same");
-  GMSBStau871_METEff_HLTPFMET_passPres_TEff->Draw("pe same");
+  GMSBStau308_METEff_HLTPFMET_passPres_TEff->Draw("pe same");
+  GMSBStau557_METEff_HLTPFMET_passPres_TEff->Draw("pe same");
+  GMSBStau745_METEff_HLTPFMET_passPres_TEff->Draw("pe same");
   auto GMSBStau_METEff_HLTPFMET_legend = new TLegend(0.37,0.13,0.75,0.36);
   GMSBStau_METEff_HLTPFMET_legend->AddEntry(GMSBStau200_METEff_HLTPFMET_passPres_TEff,"GMSBStau 200 GeV");
-  GMSBStau_METEff_HLTPFMET_legend->AddEntry(GMSBStau432_METEff_HLTPFMET_passPres_TEff,"GMSBStau 432 GeV");
-  GMSBStau_METEff_HLTPFMET_legend->AddEntry(GMSBStau651_METEff_HLTPFMET_passPres_TEff,"GMSBStau 651 GeV");
-  GMSBStau_METEff_HLTPFMET_legend->AddEntry(GMSBStau871_METEff_HLTPFMET_passPres_TEff,"GMSBStau 871 GeV");
+  GMSBStau_METEff_HLTPFMET_legend->AddEntry(GMSBStau308_METEff_HLTPFMET_passPres_TEff,"GMSBStau 308 GeV");
+  GMSBStau_METEff_HLTPFMET_legend->AddEntry(GMSBStau557_METEff_HLTPFMET_passPres_TEff,"GMSBStau 557 GeV");
+  GMSBStau_METEff_HLTPFMET_legend->AddEntry(GMSBStau745_METEff_HLTPFMET_passPres_TEff,"GMSBStau 745 GeV");
   GMSBStau_METEff_HLTPFMET_legend->Draw();
   c_met->SaveAs("./png/GMSBStau_METEff_HLTPFMET_passPres.png");
 
   // 9101112.22) Muon trigger efficiency vs HLT PF MET, pass preselection
   GMSBStau200_MuonEff_HLTPFMET_passPres_TEff->SetLineColor(kRed);
   GMSBStau200_MuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau432_MuonEff_HLTPFMET_passPres_TEff->SetLineColor(kOrange);
-  GMSBStau432_MuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kOrange);
-  GMSBStau651_MuonEff_HLTPFMET_passPres_TEff->SetLineColor(kAzure);
-  GMSBStau651_MuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kAzure);
-  GMSBStau871_MuonEff_HLTPFMET_passPres_TEff->SetLineColor(kBlack);
-  GMSBStau871_MuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kBlack);
+  GMSBStau308_MuonEff_HLTPFMET_passPres_TEff->SetLineColor(kOrange);
+  GMSBStau308_MuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kOrange);
+  GMSBStau557_MuonEff_HLTPFMET_passPres_TEff->SetLineColor(kAzure);
+  GMSBStau557_MuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kAzure);
+  GMSBStau745_MuonEff_HLTPFMET_passPres_TEff->SetLineColor(kBlack);
+  GMSBStau745_MuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kBlack);
   GMSBStau200_MuonEff_HLTPFMET_passPres_TEff->Draw();
-  GMSBStau432_MuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
-  GMSBStau651_MuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
-  GMSBStau871_MuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
+  GMSBStau308_MuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
+  GMSBStau557_MuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
+  GMSBStau745_MuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
   auto GMSBStau_MuonEff_HLTPFMET_legend = new TLegend(0.37,0.13,0.75,0.36);
   GMSBStau_MuonEff_HLTPFMET_legend->AddEntry(GMSBStau200_MuonEff_HLTPFMET_passPres_TEff,"GMSBStau 200 GeV");
-  GMSBStau_MuonEff_HLTPFMET_legend->AddEntry(GMSBStau432_MuonEff_HLTPFMET_passPres_TEff,"GMSBStau 432 GeV");
-  GMSBStau_MuonEff_HLTPFMET_legend->AddEntry(GMSBStau651_MuonEff_HLTPFMET_passPres_TEff,"GMSBStau 651 GeV");
-  GMSBStau_MuonEff_HLTPFMET_legend->AddEntry(GMSBStau871_MuonEff_HLTPFMET_passPres_TEff,"GMSBStau 871 GeV");
+  GMSBStau_MuonEff_HLTPFMET_legend->AddEntry(GMSBStau308_MuonEff_HLTPFMET_passPres_TEff,"GMSBStau 308 GeV");
+  GMSBStau_MuonEff_HLTPFMET_legend->AddEntry(GMSBStau557_MuonEff_HLTPFMET_passPres_TEff,"GMSBStau 557 GeV");
+  GMSBStau_MuonEff_HLTPFMET_legend->AddEntry(GMSBStau745_MuonEff_HLTPFMET_passPres_TEff,"GMSBStau 745 GeV");
   GMSBStau_MuonEff_HLTPFMET_legend->Draw();
   c_met->SaveAs("./png/GMSBStau_MuonEff_HLTPFMET_passPres.png");
 
   // 9101112.24) MET or Muon trigger efficiency vs HLT PF MET, pass preselection
   GMSBStau200_METOrMuonEff_HLTPFMET_passPres_TEff->SetLineColor(kRed);
   GMSBStau200_METOrMuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kRed);
-  GMSBStau432_METOrMuonEff_HLTPFMET_passPres_TEff->SetLineColor(kOrange);
-  GMSBStau432_METOrMuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kOrange);
-  GMSBStau651_METOrMuonEff_HLTPFMET_passPres_TEff->SetLineColor(kAzure);
-  GMSBStau651_METOrMuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kAzure);
-  GMSBStau871_METOrMuonEff_HLTPFMET_passPres_TEff->SetLineColor(kBlack);
-  GMSBStau871_METOrMuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kBlack);
+  GMSBStau308_METOrMuonEff_HLTPFMET_passPres_TEff->SetLineColor(kOrange);
+  GMSBStau308_METOrMuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kOrange);
+  GMSBStau557_METOrMuonEff_HLTPFMET_passPres_TEff->SetLineColor(kAzure);
+  GMSBStau557_METOrMuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kAzure);
+  GMSBStau745_METOrMuonEff_HLTPFMET_passPres_TEff->SetLineColor(kBlack);
+  GMSBStau745_METOrMuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kBlack);
   GMSBStau200_METOrMuonEff_HLTPFMET_passPres_TEff->Draw();
-  GMSBStau432_METOrMuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
-  GMSBStau651_METOrMuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
-  GMSBStau871_METOrMuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
+  GMSBStau308_METOrMuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
+  GMSBStau557_METOrMuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
+  GMSBStau745_METOrMuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
   auto GMSBStau_METOrMuonEff_HLTPFMET_legend = new TLegend(0.37,0.13,0.75,0.36);
   GMSBStau_METOrMuonEff_HLTPFMET_legend->AddEntry(GMSBStau200_METOrMuonEff_HLTPFMET_passPres_TEff,"GMSBStau 200 GeV");
-  GMSBStau_METOrMuonEff_HLTPFMET_legend->AddEntry(GMSBStau432_METOrMuonEff_HLTPFMET_passPres_TEff,"GMSBStau 432 GeV");
-  GMSBStau_METOrMuonEff_HLTPFMET_legend->AddEntry(GMSBStau651_METOrMuonEff_HLTPFMET_passPres_TEff,"GMSBStau 651 GeV");
-  GMSBStau_METOrMuonEff_HLTPFMET_legend->AddEntry(GMSBStau871_METOrMuonEff_HLTPFMET_passPres_TEff,"GMSBStau 871 GeV");
+  GMSBStau_METOrMuonEff_HLTPFMET_legend->AddEntry(GMSBStau308_METOrMuonEff_HLTPFMET_passPres_TEff,"GMSBStau 308 GeV");
+  GMSBStau_METOrMuonEff_HLTPFMET_legend->AddEntry(GMSBStau557_METOrMuonEff_HLTPFMET_passPres_TEff,"GMSBStau 557 GeV");
+  GMSBStau_METOrMuonEff_HLTPFMET_legend->AddEntry(GMSBStau745_METOrMuonEff_HLTPFMET_passPres_TEff,"GMSBStau 745 GeV");
   GMSBStau_METOrMuonEff_HLTPFMET_legend->Draw();
   c_met->SaveAs("./png/GMSBStau_METOrMuonEff_HLTPFMET_passPres.png");
 
   // 131415.02) MET trigger efficiency vs RECO Calo MET, pass preselection
   PairStau200_METEff_RecoCaloMET_passPres_TEff->SetLineColor(kRed);
   PairStau200_METEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  PairStau432_METEff_RecoCaloMET_passPres_TEff->SetLineColor(kOrange);
-  PairStau432_METEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kOrange);
-  PairStau651_METEff_RecoCaloMET_passPres_TEff->SetLineColor(kAzure);
-  PairStau651_METEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kAzure);
+  PairStau308_METEff_RecoCaloMET_passPres_TEff->SetLineColor(kOrange);
+  PairStau308_METEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kOrange);
+  PairStau557_METEff_RecoCaloMET_passPres_TEff->SetLineColor(kAzure);
+  PairStau557_METEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kAzure);
   PairStau200_METEff_RecoCaloMET_passPres_TEff->Draw();
-  PairStau432_METEff_RecoCaloMET_passPres_TEff->Draw("pe same");
-  PairStau651_METEff_RecoCaloMET_passPres_TEff->Draw("pe same");
+  PairStau308_METEff_RecoCaloMET_passPres_TEff->Draw("pe same");
+  PairStau557_METEff_RecoCaloMET_passPres_TEff->Draw("pe same");
   auto PairStau_METEff_RecoCaloMET_legend = new TLegend(0.37,0.13,0.75,0.36);
   PairStau_METEff_RecoCaloMET_legend->AddEntry(PairStau200_METEff_RecoCaloMET_passPres_TEff,"PairStau 200 GeV");
-  PairStau_METEff_RecoCaloMET_legend->AddEntry(PairStau432_METEff_RecoCaloMET_passPres_TEff,"PairStau 432 GeV");
-  PairStau_METEff_RecoCaloMET_legend->AddEntry(PairStau651_METEff_RecoCaloMET_passPres_TEff,"PairStau 651 GeV");
+  PairStau_METEff_RecoCaloMET_legend->AddEntry(PairStau308_METEff_RecoCaloMET_passPres_TEff,"PairStau 308 GeV");
+  PairStau_METEff_RecoCaloMET_legend->AddEntry(PairStau557_METEff_RecoCaloMET_passPres_TEff,"PairStau 557 GeV");
   PairStau_METEff_RecoCaloMET_legend->Draw();
   c_met->SaveAs("./png/PairStau_METEff_RecoCaloMET_passPres.png");
 
   // 131415.04) Muon trigger efficiency vs RECO Calo MET, pass preselection
   PairStau200_MuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kRed);
   PairStau200_MuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  PairStau432_MuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kOrange);
-  PairStau432_MuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kOrange);
-  PairStau651_MuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kAzure);
-  PairStau651_MuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kAzure);
+  PairStau308_MuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kOrange);
+  PairStau308_MuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kOrange);
+  PairStau557_MuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kAzure);
+  PairStau557_MuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kAzure);
   PairStau200_MuonEff_RecoCaloMET_passPres_TEff->Draw();
-  PairStau432_MuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
-  PairStau651_MuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
+  PairStau308_MuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
+  PairStau557_MuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
   auto PairStau_MuonEff_RecoCaloMET_legend = new TLegend(0.37,0.13,0.75,0.36);
   PairStau_MuonEff_RecoCaloMET_legend->AddEntry(PairStau200_MuonEff_RecoCaloMET_passPres_TEff,"PairStau 200 GeV");
-  PairStau_MuonEff_RecoCaloMET_legend->AddEntry(PairStau432_MuonEff_RecoCaloMET_passPres_TEff,"PairStau 432 GeV");
-  PairStau_MuonEff_RecoCaloMET_legend->AddEntry(PairStau651_MuonEff_RecoCaloMET_passPres_TEff,"PairStau 651 GeV");
+  PairStau_MuonEff_RecoCaloMET_legend->AddEntry(PairStau308_MuonEff_RecoCaloMET_passPres_TEff,"PairStau 308 GeV");
+  PairStau_MuonEff_RecoCaloMET_legend->AddEntry(PairStau557_MuonEff_RecoCaloMET_passPres_TEff,"PairStau 557 GeV");
   PairStau_MuonEff_RecoCaloMET_legend->Draw();
   c_met->SaveAs("./png/PairStau_MuonEff_RecoCaloMET_passPres.png");
 
   // 131415.06) MET or Muon trigger efficiency vs RECO Calo MET, pass preselection
   PairStau200_METOrMuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kRed);
   PairStau200_METOrMuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  PairStau432_METOrMuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kOrange);
-  PairStau432_METOrMuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kOrange);
-  PairStau651_METOrMuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kAzure);
-  PairStau651_METOrMuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kAzure);
+  PairStau308_METOrMuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kOrange);
+  PairStau308_METOrMuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kOrange);
+  PairStau557_METOrMuonEff_RecoCaloMET_passPres_TEff->SetLineColor(kAzure);
+  PairStau557_METOrMuonEff_RecoCaloMET_passPres_TEff->SetMarkerColor(kAzure);
   PairStau200_METOrMuonEff_RecoCaloMET_passPres_TEff->Draw();
-  PairStau432_METOrMuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
-  PairStau651_METOrMuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
+  PairStau308_METOrMuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
+  PairStau557_METOrMuonEff_RecoCaloMET_passPres_TEff->Draw("pe same");
   auto PairStau_METOrMuonEff_RecoCaloMET_legend = new TLegend(0.37,0.13,0.75,0.36);
   PairStau_METOrMuonEff_RecoCaloMET_legend->AddEntry(PairStau200_METOrMuonEff_RecoCaloMET_passPres_TEff,"PairStau 200 GeV");
-  PairStau_METOrMuonEff_RecoCaloMET_legend->AddEntry(PairStau432_METOrMuonEff_RecoCaloMET_passPres_TEff,"PairStau 432 GeV");
-  PairStau_METOrMuonEff_RecoCaloMET_legend->AddEntry(PairStau651_METOrMuonEff_RecoCaloMET_passPres_TEff,"PairStau 651 GeV");
+  PairStau_METOrMuonEff_RecoCaloMET_legend->AddEntry(PairStau308_METOrMuonEff_RecoCaloMET_passPres_TEff,"PairStau 308 GeV");
+  PairStau_METOrMuonEff_RecoCaloMET_legend->AddEntry(PairStau557_METOrMuonEff_RecoCaloMET_passPres_TEff,"PairStau 557 GeV");
   PairStau_METOrMuonEff_RecoCaloMET_legend->Draw();
   c_met->SaveAs("./png/PairStau_METOrMuonEff_RecoCaloMET_passPres.png");
 
   // 131415.08) MET trigger efficiency vs RECO PF MET, pass preselection
   PairStau200_METEff_RecoPFMET_passPres_TEff->SetLineColor(kRed);
   PairStau200_METEff_RecoPFMET_passPres_TEff->SetMarkerColor(kRed);
-  PairStau432_METEff_RecoPFMET_passPres_TEff->SetLineColor(kOrange);
-  PairStau432_METEff_RecoPFMET_passPres_TEff->SetMarkerColor(kOrange);
-  PairStau651_METEff_RecoPFMET_passPres_TEff->SetLineColor(kAzure);
-  PairStau651_METEff_RecoPFMET_passPres_TEff->SetMarkerColor(kAzure);
+  PairStau308_METEff_RecoPFMET_passPres_TEff->SetLineColor(kOrange);
+  PairStau308_METEff_RecoPFMET_passPres_TEff->SetMarkerColor(kOrange);
+  PairStau557_METEff_RecoPFMET_passPres_TEff->SetLineColor(kAzure);
+  PairStau557_METEff_RecoPFMET_passPres_TEff->SetMarkerColor(kAzure);
   PairStau200_METEff_RecoPFMET_passPres_TEff->Draw();
-  PairStau432_METEff_RecoPFMET_passPres_TEff->Draw("pe same");
-  PairStau651_METEff_RecoPFMET_passPres_TEff->Draw("pe same");
+  PairStau308_METEff_RecoPFMET_passPres_TEff->Draw("pe same");
+  PairStau557_METEff_RecoPFMET_passPres_TEff->Draw("pe same");
   auto PairStau_METEff_RecoPFMET_legend = new TLegend(0.37,0.13,0.75,0.36);
   PairStau_METEff_RecoPFMET_legend->AddEntry(PairStau200_METEff_RecoPFMET_passPres_TEff,"PairStau 200 GeV");
-  PairStau_METEff_RecoPFMET_legend->AddEntry(PairStau432_METEff_RecoPFMET_passPres_TEff,"PairStau 432 GeV");
-  PairStau_METEff_RecoPFMET_legend->AddEntry(PairStau651_METEff_RecoPFMET_passPres_TEff,"PairStau 651 GeV");
+  PairStau_METEff_RecoPFMET_legend->AddEntry(PairStau308_METEff_RecoPFMET_passPres_TEff,"PairStau 308 GeV");
+  PairStau_METEff_RecoPFMET_legend->AddEntry(PairStau557_METEff_RecoPFMET_passPres_TEff,"PairStau 557 GeV");
   PairStau_METEff_RecoPFMET_legend->Draw();
   c_met->SaveAs("./png/PairStau_METEff_RecoPFMET_passPres.png");
 
   // 131415.10) Muon trigger efficiency vs RECO PF MET, pass preselection
   PairStau200_MuonEff_RecoPFMET_passPres_TEff->SetLineColor(kRed);
   PairStau200_MuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kRed);
-  PairStau432_MuonEff_RecoPFMET_passPres_TEff->SetLineColor(kOrange);
-  PairStau432_MuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kOrange);
-  PairStau651_MuonEff_RecoPFMET_passPres_TEff->SetLineColor(kAzure);
-  PairStau651_MuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kAzure);
+  PairStau308_MuonEff_RecoPFMET_passPres_TEff->SetLineColor(kOrange);
+  PairStau308_MuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kOrange);
+  PairStau557_MuonEff_RecoPFMET_passPres_TEff->SetLineColor(kAzure);
+  PairStau557_MuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kAzure);
   PairStau200_MuonEff_RecoPFMET_passPres_TEff->Draw();
-  PairStau432_MuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
-  PairStau651_MuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
+  PairStau308_MuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
+  PairStau557_MuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
   auto PairStau_MuonEff_RecoPFMET_legend = new TLegend(0.37,0.13,0.75,0.36);
   PairStau_MuonEff_RecoPFMET_legend->AddEntry(PairStau200_MuonEff_RecoPFMET_passPres_TEff,"PairStau 200 GeV");
-  PairStau_MuonEff_RecoPFMET_legend->AddEntry(PairStau432_MuonEff_RecoPFMET_passPres_TEff,"PairStau 432 GeV");
-  PairStau_MuonEff_RecoPFMET_legend->AddEntry(PairStau651_MuonEff_RecoPFMET_passPres_TEff,"PairStau 651 GeV");
+  PairStau_MuonEff_RecoPFMET_legend->AddEntry(PairStau308_MuonEff_RecoPFMET_passPres_TEff,"PairStau 308 GeV");
+  PairStau_MuonEff_RecoPFMET_legend->AddEntry(PairStau557_MuonEff_RecoPFMET_passPres_TEff,"PairStau 557 GeV");
   PairStau_MuonEff_RecoPFMET_legend->Draw();
   c_met->SaveAs("./png/PairStau_MuonEff_RecoPFMET_passPres.png");
 
   // 131415.12) MET or Muon trigger efficiency vs RECO PF MET, pass preselection
   PairStau200_METOrMuonEff_RecoPFMET_passPres_TEff->SetLineColor(kRed);
   PairStau200_METOrMuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kRed);
-  PairStau432_METOrMuonEff_RecoPFMET_passPres_TEff->SetLineColor(kOrange);
-  PairStau432_METOrMuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kOrange);
-  PairStau651_METOrMuonEff_RecoPFMET_passPres_TEff->SetLineColor(kAzure);
-  PairStau651_METOrMuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kAzure);
+  PairStau308_METOrMuonEff_RecoPFMET_passPres_TEff->SetLineColor(kOrange);
+  PairStau308_METOrMuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kOrange);
+  PairStau557_METOrMuonEff_RecoPFMET_passPres_TEff->SetLineColor(kAzure);
+  PairStau557_METOrMuonEff_RecoPFMET_passPres_TEff->SetMarkerColor(kAzure);
   PairStau200_METOrMuonEff_RecoPFMET_passPres_TEff->Draw();
-  PairStau432_METOrMuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
-  PairStau651_METOrMuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
+  PairStau308_METOrMuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
+  PairStau557_METOrMuonEff_RecoPFMET_passPres_TEff->Draw("pe same");
   auto PairStau_METOrMuonEff_RecoPFMET_legend = new TLegend(0.37,0.13,0.75,0.36);
   PairStau_METOrMuonEff_RecoPFMET_legend->AddEntry(PairStau200_METOrMuonEff_RecoPFMET_passPres_TEff,"PairStau 200 GeV");
-  PairStau_METOrMuonEff_RecoPFMET_legend->AddEntry(PairStau432_METOrMuonEff_RecoPFMET_passPres_TEff,"PairStau 432 GeV");
-  PairStau_METOrMuonEff_RecoPFMET_legend->AddEntry(PairStau651_METOrMuonEff_RecoPFMET_passPres_TEff,"PairStau 651 GeV");
+  PairStau_METOrMuonEff_RecoPFMET_legend->AddEntry(PairStau308_METOrMuonEff_RecoPFMET_passPres_TEff,"PairStau 308 GeV");
+  PairStau_METOrMuonEff_RecoPFMET_legend->AddEntry(PairStau557_METOrMuonEff_RecoPFMET_passPres_TEff,"PairStau 557 GeV");
   PairStau_METOrMuonEff_RecoPFMET_legend->Draw();
   c_met->SaveAs("./png/PairStau_METOrMuonEff_RecoPFMET_passPres.png");
 
   // 131415.14) MET trigger efficiency vs HLT Calo MET, pass preselection
   PairStau200_METEff_HLTCaloMET_passPres_TEff->SetLineColor(kRed);
   PairStau200_METEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  PairStau432_METEff_HLTCaloMET_passPres_TEff->SetLineColor(kOrange);
-  PairStau432_METEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kOrange);
-  PairStau651_METEff_HLTCaloMET_passPres_TEff->SetLineColor(kAzure);
-  PairStau651_METEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kAzure);
+  PairStau308_METEff_HLTCaloMET_passPres_TEff->SetLineColor(kOrange);
+  PairStau308_METEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kOrange);
+  PairStau557_METEff_HLTCaloMET_passPres_TEff->SetLineColor(kAzure);
+  PairStau557_METEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kAzure);
   PairStau200_METEff_HLTCaloMET_passPres_TEff->Draw();
-  PairStau432_METEff_HLTCaloMET_passPres_TEff->Draw("pe same");
-  PairStau651_METEff_HLTCaloMET_passPres_TEff->Draw("pe same");
+  PairStau308_METEff_HLTCaloMET_passPres_TEff->Draw("pe same");
+  PairStau557_METEff_HLTCaloMET_passPres_TEff->Draw("pe same");
   auto PairStau_METEff_HLTCaloMET_legend = new TLegend(0.37,0.13,0.75,0.36);
   PairStau_METEff_HLTCaloMET_legend->AddEntry(PairStau200_METEff_HLTCaloMET_passPres_TEff,"PairStau 200 GeV");
-  PairStau_METEff_HLTCaloMET_legend->AddEntry(PairStau432_METEff_HLTCaloMET_passPres_TEff,"PairStau 432 GeV");
-  PairStau_METEff_HLTCaloMET_legend->AddEntry(PairStau651_METEff_HLTCaloMET_passPres_TEff,"PairStau 651 GeV");
+  PairStau_METEff_HLTCaloMET_legend->AddEntry(PairStau308_METEff_HLTCaloMET_passPres_TEff,"PairStau 308 GeV");
+  PairStau_METEff_HLTCaloMET_legend->AddEntry(PairStau557_METEff_HLTCaloMET_passPres_TEff,"PairStau 557 GeV");
   PairStau_METEff_HLTCaloMET_legend->Draw();
   c_met->SaveAs("./png/PairStau_METEff_HLTCaloMET_passPres.png");
 
   // 131415.16) Muon trigger efficiency vs HLT Calo MET, pass preselection
   PairStau200_MuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kRed);
   PairStau200_MuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  PairStau432_MuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kOrange);
-  PairStau432_MuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kOrange);
-  PairStau651_MuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kAzure);
-  PairStau651_MuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kAzure);
+  PairStau308_MuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kOrange);
+  PairStau308_MuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kOrange);
+  PairStau557_MuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kAzure);
+  PairStau557_MuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kAzure);
   PairStau200_MuonEff_HLTCaloMET_passPres_TEff->Draw();
-  PairStau432_MuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
-  PairStau651_MuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
+  PairStau308_MuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
+  PairStau557_MuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
   auto PairStau_MuonEff_HLTCaloMET_legend = new TLegend(0.37,0.13,0.75,0.36);
   PairStau_MuonEff_HLTCaloMET_legend->AddEntry(PairStau200_MuonEff_HLTCaloMET_passPres_TEff,"PairStau 200 GeV");
-  PairStau_MuonEff_HLTCaloMET_legend->AddEntry(PairStau432_MuonEff_HLTCaloMET_passPres_TEff,"PairStau 432 GeV");
-  PairStau_MuonEff_HLTCaloMET_legend->AddEntry(PairStau651_MuonEff_HLTCaloMET_passPres_TEff,"PairStau 651 GeV");
+  PairStau_MuonEff_HLTCaloMET_legend->AddEntry(PairStau308_MuonEff_HLTCaloMET_passPres_TEff,"PairStau 308 GeV");
+  PairStau_MuonEff_HLTCaloMET_legend->AddEntry(PairStau557_MuonEff_HLTCaloMET_passPres_TEff,"PairStau 557 GeV");
   PairStau_MuonEff_HLTCaloMET_legend->Draw();
   c_met->SaveAs("./png/PairStau_MuonEff_HLTCaloMET_passPres.png");
 
   // 131415.18) MET or Muon trigger efficiency vs HLT Calo MET, pass preselection
   PairStau200_METOrMuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kRed);
   PairStau200_METOrMuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kRed);
-  PairStau432_METOrMuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kOrange);
-  PairStau432_METOrMuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kOrange);
-  PairStau651_METOrMuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kAzure);
-  PairStau651_METOrMuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kAzure);
+  PairStau308_METOrMuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kOrange);
+  PairStau308_METOrMuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kOrange);
+  PairStau557_METOrMuonEff_HLTCaloMET_passPres_TEff->SetLineColor(kAzure);
+  PairStau557_METOrMuonEff_HLTCaloMET_passPres_TEff->SetMarkerColor(kAzure);
   PairStau200_METOrMuonEff_HLTCaloMET_passPres_TEff->Draw();
-  PairStau432_METOrMuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
-  PairStau651_METOrMuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
+  PairStau308_METOrMuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
+  PairStau557_METOrMuonEff_HLTCaloMET_passPres_TEff->Draw("pe same");
   auto PairStau_METOrMuonEff_HLTCaloMET_legend = new TLegend(0.37,0.13,0.75,0.36);
   PairStau_METOrMuonEff_HLTCaloMET_legend->AddEntry(PairStau200_METOrMuonEff_HLTCaloMET_passPres_TEff,"PairStau 200 GeV");
-  PairStau_METOrMuonEff_HLTCaloMET_legend->AddEntry(PairStau432_METOrMuonEff_HLTCaloMET_passPres_TEff,"PairStau 432 GeV");
-  PairStau_METOrMuonEff_HLTCaloMET_legend->AddEntry(PairStau651_METOrMuonEff_HLTCaloMET_passPres_TEff,"PairStau 651 GeV");
+  PairStau_METOrMuonEff_HLTCaloMET_legend->AddEntry(PairStau308_METOrMuonEff_HLTCaloMET_passPres_TEff,"PairStau 308 GeV");
+  PairStau_METOrMuonEff_HLTCaloMET_legend->AddEntry(PairStau557_METOrMuonEff_HLTCaloMET_passPres_TEff,"PairStau 557 GeV");
   PairStau_METOrMuonEff_HLTCaloMET_legend->Draw();
   c_met->SaveAs("./png/PairStau_METOrMuonEff_HLTCaloMET_passPres.png");
 
   // 131415.20) MET trigger efficiency vs HLT PF MET, pass preselection
   PairStau200_METEff_HLTPFMET_passPres_TEff->SetLineColor(kRed);
   PairStau200_METEff_HLTPFMET_passPres_TEff->SetMarkerColor(kRed);
-  PairStau432_METEff_HLTPFMET_passPres_TEff->SetLineColor(kOrange);
-  PairStau432_METEff_HLTPFMET_passPres_TEff->SetMarkerColor(kOrange);
-  PairStau651_METEff_HLTPFMET_passPres_TEff->SetLineColor(kAzure);
-  PairStau651_METEff_HLTPFMET_passPres_TEff->SetMarkerColor(kAzure);
+  PairStau308_METEff_HLTPFMET_passPres_TEff->SetLineColor(kOrange);
+  PairStau308_METEff_HLTPFMET_passPres_TEff->SetMarkerColor(kOrange);
+  PairStau557_METEff_HLTPFMET_passPres_TEff->SetLineColor(kAzure);
+  PairStau557_METEff_HLTPFMET_passPres_TEff->SetMarkerColor(kAzure);
   PairStau200_METEff_HLTPFMET_passPres_TEff->Draw();
-  PairStau432_METEff_HLTPFMET_passPres_TEff->Draw("pe same");
-  PairStau651_METEff_HLTPFMET_passPres_TEff->Draw("pe same");
+  PairStau308_METEff_HLTPFMET_passPres_TEff->Draw("pe same");
+  PairStau557_METEff_HLTPFMET_passPres_TEff->Draw("pe same");
   auto PairStau_METEff_HLTPFMET_legend = new TLegend(0.37,0.13,0.75,0.36);
   PairStau_METEff_HLTPFMET_legend->AddEntry(PairStau200_METEff_HLTPFMET_passPres_TEff,"PairStau 200 GeV");
-  PairStau_METEff_HLTPFMET_legend->AddEntry(PairStau432_METEff_HLTPFMET_passPres_TEff,"PairStau 432 GeV");
-  PairStau_METEff_HLTPFMET_legend->AddEntry(PairStau651_METEff_HLTPFMET_passPres_TEff,"PairStau 651 GeV");
+  PairStau_METEff_HLTPFMET_legend->AddEntry(PairStau308_METEff_HLTPFMET_passPres_TEff,"PairStau 308 GeV");
+  PairStau_METEff_HLTPFMET_legend->AddEntry(PairStau557_METEff_HLTPFMET_passPres_TEff,"PairStau 557 GeV");
   PairStau_METEff_HLTPFMET_legend->Draw();
   c_met->SaveAs("./png/PairStau_METEff_HLTPFMET_passPres.png");
 
   // 131415.22) Muon trigger efficiency vs HLT PF MET, pass preselection
   PairStau200_MuonEff_HLTPFMET_passPres_TEff->SetLineColor(kRed);
   PairStau200_MuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kRed);
-  PairStau432_MuonEff_HLTPFMET_passPres_TEff->SetLineColor(kOrange);
-  PairStau432_MuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kOrange);
-  PairStau651_MuonEff_HLTPFMET_passPres_TEff->SetLineColor(kAzure);
-  PairStau651_MuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kAzure);
+  PairStau308_MuonEff_HLTPFMET_passPres_TEff->SetLineColor(kOrange);
+  PairStau308_MuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kOrange);
+  PairStau557_MuonEff_HLTPFMET_passPres_TEff->SetLineColor(kAzure);
+  PairStau557_MuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kAzure);
   PairStau200_MuonEff_HLTPFMET_passPres_TEff->Draw();
-  PairStau432_MuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
-  PairStau651_MuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
+  PairStau308_MuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
+  PairStau557_MuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
   auto PairStau_MuonEff_HLTPFMET_legend = new TLegend(0.37,0.13,0.75,0.36);
   PairStau_MuonEff_HLTPFMET_legend->AddEntry(PairStau200_MuonEff_HLTPFMET_passPres_TEff,"PairStau 200 GeV");
-  PairStau_MuonEff_HLTPFMET_legend->AddEntry(PairStau432_MuonEff_HLTPFMET_passPres_TEff,"PairStau 432 GeV");
-  PairStau_MuonEff_HLTPFMET_legend->AddEntry(PairStau651_MuonEff_HLTPFMET_passPres_TEff,"PairStau 651 GeV");
+  PairStau_MuonEff_HLTPFMET_legend->AddEntry(PairStau308_MuonEff_HLTPFMET_passPres_TEff,"PairStau 308 GeV");
+  PairStau_MuonEff_HLTPFMET_legend->AddEntry(PairStau557_MuonEff_HLTPFMET_passPres_TEff,"PairStau 557 GeV");
   PairStau_MuonEff_HLTPFMET_legend->Draw();
   c_met->SaveAs("./png/PairStau_MuonEff_HLTPFMET_passPres.png");
 
   // 131415.24) MET or Muon trigger efficiency vs HLT PF MET, pass preselection
   PairStau200_METOrMuonEff_HLTPFMET_passPres_TEff->SetLineColor(kRed);
   PairStau200_METOrMuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kRed);
-  PairStau432_METOrMuonEff_HLTPFMET_passPres_TEff->SetLineColor(kOrange);
-  PairStau432_METOrMuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kOrange);
-  PairStau651_METOrMuonEff_HLTPFMET_passPres_TEff->SetLineColor(kAzure);
-  PairStau651_METOrMuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kAzure);
+  PairStau308_METOrMuonEff_HLTPFMET_passPres_TEff->SetLineColor(kOrange);
+  PairStau308_METOrMuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kOrange);
+  PairStau557_METOrMuonEff_HLTPFMET_passPres_TEff->SetLineColor(kAzure);
+  PairStau557_METOrMuonEff_HLTPFMET_passPres_TEff->SetMarkerColor(kAzure);
   PairStau200_METOrMuonEff_HLTPFMET_passPres_TEff->Draw();
-  PairStau432_METOrMuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
-  PairStau651_METOrMuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
+  PairStau308_METOrMuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
+  PairStau557_METOrMuonEff_HLTPFMET_passPres_TEff->Draw("pe same");
   auto PairStau_METOrMuonEff_HLTPFMET_legend = new TLegend(0.37,0.13,0.75,0.36);
   PairStau_METOrMuonEff_HLTPFMET_legend->AddEntry(PairStau200_METOrMuonEff_HLTPFMET_passPres_TEff,"PairStau 200 GeV");
-  PairStau_METOrMuonEff_HLTPFMET_legend->AddEntry(PairStau432_METOrMuonEff_HLTPFMET_passPres_TEff,"PairStau 432 GeV");
-  PairStau_METOrMuonEff_HLTPFMET_legend->AddEntry(PairStau651_METOrMuonEff_HLTPFMET_passPres_TEff,"PairStau 651 GeV");
+  PairStau_METOrMuonEff_HLTPFMET_legend->AddEntry(PairStau308_METOrMuonEff_HLTPFMET_passPres_TEff,"PairStau 308 GeV");
+  PairStau_METOrMuonEff_HLTPFMET_legend->AddEntry(PairStau557_METOrMuonEff_HLTPFMET_passPres_TEff,"PairStau 557 GeV");
   PairStau_METOrMuonEff_HLTPFMET_legend->Draw();
   c_met->SaveAs("./png/PairStau_METOrMuonEff_HLTPFMET_passPres.png");
 
