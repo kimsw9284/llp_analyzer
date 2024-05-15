@@ -1,0 +1,15 @@
+./RazorRun lists/ntuples/V1p2/MC_UL18/HSCPgluino_M-800_TuneCP5_13TeV-pythia8.txt HSCPAnalyzer_METStudies -f=Gluino_M800_histos_V1p2.root -d=no
+./RazorRun lists/ntuples/V1p2/MC_UL18/HSCPgluino_M-1400_TuneCP5_13TeV-pythia8.txt HSCPAnalyzer_METStudies -f=Gluino_M1400_histos_V1p2.root -d=no
+./RazorRun lists/ntuples/V1p2/MC_UL18/HSCPgluino_M-1800_TuneCP5_13TeV-pythia8.txt HSCPAnalyzer_METStudies -f=Gluino_M1800_histos_V1p2.root -d=no
+./RazorRun lists/ntuples/V1p2/MC_UL18/HSCPgluino_M-2400_TuneCP5_13TeV-pythia8.txt HSCPAnalyzer_METStudies -f=Gluino_M2400_histos_V1p2.root -d=no
+./RazorRun lists/ntuples/V1p2/MC_UL18/HSCPgluinoOnlyNeutral_M-800_TuneCP5_13TeV-pythia8.txt HSCPAnalyzer_METStudies -f=GluinoN_M800_histos_V1p2.root -d=no
+./RazorRun lists/ntuples/V1p2/MC_UL18/HSCPgluinoOnlyNeutral_M-1400_TuneCP5_13TeV-pythia8.txt HSCPAnalyzer_METStudies -f=GluinoN_M1400_histos_V1p2.root -d=no
+./RazorRun lists/ntuples/V1p2/MC_UL18/HSCPgluinoOnlyNeutral_M-1800_TuneCP5_13TeV-pythia8.txt HSCPAnalyzer_METStudies -f=GluinoN_M1800_histos_V1p2.root -d=no
+./RazorRun lists/ntuples/V1p2/MC_UL18/HSCPgluinoOnlyNeutral_M-2400_TuneCP5_13TeV-pythia8.txt HSCPAnalyzer_METStudies -f=GluinoN_M2400_histos_V1p2.root -d=no
+./RazorRun lists/ntuples/V1p2/MC_UL18/HSCPgmsbStau_M-200_TuneCP5_13TeV-pythia8.txt HSCPAnalyzer_METStudies -f=GMSBStau_M200_histos_V1p2.root -d=no
+./RazorRun lists/ntuples/V1p2/MC_UL18/HSCPgmsbStau_M-432_TuneCP5_13TeV-pythia8.txt HSCPAnalyzer_METStudies -f=GMSBStau_M432_histos_V1p2.root -d=no
+./RazorRun lists/ntuples/V1p2/MC_UL18/HSCPgmsbStau_M-651_TuneCP5_13TeV-pythia8.txt HSCPAnalyzer_METStudies -f=GMSBStau_M651_histos_V1p2.root -d=no
+./RazorRun lists/ntuples/V1p2/MC_UL18/HSCPgmsbStau_M-871_TuneCP5_13TeV-pythia8.txt HSCPAnalyzer_METStudies -f=GMSBStau_M871_histos_V1p2.root -d=no
+./RazorRun lists/ntuples/V1p2/MC_UL18/HSCPpairStau_M-200_TuneCP5_13TeV-pythia8.txt HSCPAnalyzer_METStudies -f=PairStau_M200_histos_V1p2.root -d=no
+./RazorRun lists/ntuples/V1p2/MC_UL18/HSCPpairStau_M-432_TuneCP5_13TeV-pythia8.txt HSCPAnalyzer_METStudies -f=PairStau_M432_histos_V1p2.root -d=no
+./RazorRun lists/ntuples/V1p2/MC_UL18/HSCPpairStau_M-651_TuneCP5_13TeV-pythia8.txt HSCPAnalyzer_METStudies -f=PairStau_M651_histos_V1p2.root -d=no

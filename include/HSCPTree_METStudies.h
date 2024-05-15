@@ -51,10 +51,12 @@ public:
   int n_pv;
 
   bool HLT_Mu50, HLT_PFMET120_PFMHT120_IDTight, HLT_PFHT500_PFMET100_PFMHT100_IDTight, HLT_PFMETNoMu120_PFMHTNoMu120_IDTight_PFHT60, HLT_MET105_IsoTrk50;
-
   float RecoCaloMET, RecoCaloMET_phi, RecoPFMET, RecoPFMET_phi, RecoPFMHT, HLTCaloMET, HLTCaloMET_phi, HLTCaloMET_sigf, HLTCaloMETClean, HLTCaloMETClean_phi, HLTCaloMETClean_sigf, HLTCaloMHT, HLTCaloMHT_phi, HLTCaloMHT_sigf, HLTPFMET, HLTPFMET_phi, HLTPFMET_sigf, HLTPFMHT, HLTPFMHT_phi, HLTPFMHT_sigf, L1MET, L1MET_phi, L1METHF, L1METHF_phi, L1MHT, L1MHT_phi, L1ETSum, L1HTSum;
+  //bool Flag_primaryVertexFilter;
+  bool Flag_globalSuperTightHalo2016Filter, Flag_HBHENoiseFilter, Flag_HBHENoiseIsoFilter, Flag_EcalDeadCellTriggerPrimitiveFilter, Flag_BadPFMuonFilter, Flag_BadPFMuonDzFilter, Flag_hfNoisyHitsFilter, Flag_eeBadScFilter, Flag_ecalBadCalibFilter, Flag_allMETFilters;
+  bool bool_CaloMETClean_same;
   bool passPreselection;
-  int NCandPassPres, genHSCPChargeConfig;
+  int NCandPassPres_0, NCandPassPres_1, NCandPassPres_2, NCandPassPres_3, NCandPassPres_4, NCandPassPres_5, NCandPassPres_6, NCandPassPres_7, NCandPassPres_8, NCandPassPres_9, NCandPassPres_10, NCandPassPres_11, NCandPassPres_12, NCandPassPres_13, NCandPassPres_14, NCandPassPres_all, genHSCPChargeConfig;
   float HSCP1_Eta, HSCP1_Phi;
   int HSCP1_Charge;
   float HSCP1_Beta, HSCP1_Pt, HSCP2_Eta, HSCP2_Phi;

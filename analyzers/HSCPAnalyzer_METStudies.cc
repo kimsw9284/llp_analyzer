@@ -77,6 +77,11 @@ void HSCPAnalyzer_METStudies::Analyze(bool isData, int options, string outputfil
   //histogram containing total number of processed events (for normalization)
   TH1F *NEvents = new TH1F("NEvents", "NEvents", 1, 1, 2);
 
+  // first attempt at preselection cut flow diagram
+  TH1F *h_preselection_cutflow_candidates = new TH1F("h_preselection_cutflow_candidates","Preselection Cut Flow (# of candidates)",20,0,20);
+  TH1F *h_preselection_cutflow_events_1cand = new TH1F("h_preselection_cutflow_events_1cand","Preselection Cut Flow (# of events with at least 1 candidate)",20,0,20);
+  TH1F *h_preselection_cutflow_events_2cand = new TH1F("h_preselection_cutflow_events_2cand","Preselection Cut Flow (# of events with at least 2 candidates)",20,0,20);
+
   // no preselection & no triggers
   TH1F* h_RecoCaloMET_noPres = new TH1F("h_RecoCaloMET_noPres","no preselection & no triggers;RECO Calo MET [GeV]", 50,0,3000);
   TH1F* h_RecoPFMET_noPres = new TH1F("h_RecoPFMET_noPres","no preselection & no triggers;RECO PF MET [GeV]",50,0,3000);
@@ -461,24 +466,68 @@ void HSCPAnalyzer_METStudies::Analyze(bool isData, int options, string outputfil
 
   //histograms needed for trig eff plots
 
-  TH1F* h_RPFM_passPres_noMU = new TH1F("h_RPFM_passPres_noMU","RecoPFMET passing preselection, !MuTrig;Reco PF MET [GeV];RecoPFMET [GeV]",150,0,3000);
-  TH1F* h_RCAM_passPres_noMU = new TH1F("h_RCAM_passPres_noMU","RecoCaloMET passing preselection, !MuTrig;Reco Calo MET [GeV];RecoCaloMET [GeV]",150,0,3000);
-  TH1F* h_RPFM_passPres_noMU_passMET1234 = new TH1F("h_RPFM_passPres_noMU_passMET1234","RecoPFMET passing preselection, !MuTrig, MET1234 trigs;Reco PF MET [GeV]",150,0,3000);
-  TH1F* h_RCAM_passPres_noMU_passMET1234 = new TH1F("h_RCAM_passPres_noMU_passMET1234","RecoCaloMET passing preselection, !MuTrig, MET1234 trigs;Reco Calo MET [GeV]",150,0,3000);
-  TH1F* h_RPFM_passPres_noMU_passMET1 = new TH1F("h_RPFM_passPres_noMU_passMET1","RecoPFMET passing preselection, !MuTrig, MET1 trig;Reco PF MET [GeV]",150,0,3000);
-  TH1F* h_RCAM_passPres_noMU_passMET1 = new TH1F("h_RCAM_passPres_noMU_passMET1","RecoCaloMET passing preselection, !MuTrig, MET1 trig;Reco Calo MET [GeV]",150,0,3000);
-  TH1F* h_RPFM_passPres_noMU_passMET1Cut1 = new TH1F("h_RPFM_passPres_noMU_passMET1Cut1","RecoPFMET passing preselection, !MuTrig, Cut1 of MET1 trig;Reco PF MET [GeV]",150,0,3000);
-  TH1F* h_RCAM_passPres_noMU_passMET1Cut1 = new TH1F("h_RCAM_passPres_noMU_passMET1Cut1","RecoCaloMET passing preselection, !MuTrig, Cut1 of MET1 trig;Reco Calo MET [GeV]",150,0,3000);
-  TH1F* h_RPFM_passPres_noMU_passMET1Cut2 = new TH1F("h_RPFM_passPres_noMU_passMET1Cut2","RecoPFMET passing preselection, !MuTrig, Cut2 of MET1 trig;Reco PF MET [GeV]",150,0,3000);
-  TH1F* h_RCAM_passPres_noMU_passMET1Cut2 = new TH1F("h_RCAM_passPres_noMU_passMET1Cut2","RecoCaloMET passing preselection, !MuTrig, Cut2 of MET1 trig;Reco Calo MET [GeV]",150,0,3000);
-  TH1F* h_RPFM_passPres_noMU_passMET1Cut3 = new TH1F("h_RPFM_passPres_noMU_passMET1Cut3","RecoPFMET passing preselection, !MuTrig, Cut3 of MET1 trig;Reco PF MET [GeV]",150,0,3000);
-  TH1F* h_RCAM_passPres_noMU_passMET1Cut3 = new TH1F("h_RCAM_passPres_noMU_passMET1Cut3","RecoCaloMET passing preselection, !MuTrig, Cut3 of MET1 trig;Reco Calo MET [GeV]",150,0,3000);
-  TH1F* h_RPFM_passPres_noMU_passMET1Cut4 = new TH1F("h_RPFM_passPres_noMU_passMET1Cut4","RecoPFMET passing preselection, !MuTrig, Cut4 of MET1 trig;Reco PF MET [GeV]",150,0,3000);
-  TH1F* h_RCAM_passPres_noMU_passMET1Cut4 = new TH1F("h_RCAM_passPres_noMU_passMET1Cut4","RecoCaloMET passing preselection, !MuTrig, Cut4 of MET1 trig;Reco Calo MET [GeV]",150,0,3000);
-  TH1F* h_RPFM_passPres_noMU_passMET1Cut5 = new TH1F("h_RPFM_passPres_noMU_passMET1Cut5","RecoPFMET passing preselection, !MuTrig, Cut5 of MET1 trig;Reco PF MET [GeV]",150,0,3000);
-  TH1F* h_RCAM_passPres_noMU_passMET1Cut5 = new TH1F("h_RCAM_passPres_noMU_passMET1Cut5","RecoCaloMET passing preselection, !MuTrig, Cut5 of MET1 trig;Reco Calo MET [GeV]",150,0,3000);
-  TH1F* h_RPFM_passPres_noMU_passMET1Cut6 = new TH1F("h_RPFM_passPres_noMU_passMET1Cut6","RecoPFMET passing preselection, !MuTrig, Cut6 of MET1 trig;Reco PF MET [GeV]",150,0,3000);
-  TH1F* h_RCAM_passPres_noMU_passMET1Cut6 = new TH1F("h_RCAM_passPres_noMU_passMET1Cut6","RecoCaloMET passing preselection, !MuTrig, Cut6 of MET1 trig;Reco Calo MET [GeV]",150,0,3000);
+  const Int_t NBINS = 20;
+  Double_t edges[NBINS + 1] = {0.0,50.0,100.0,150.0,200.0,250.0,300.0,350.0,400.0,500.0,600.0,700.0,800.0,1000.0,1200.0,1400.0,1600.0,1800.0,2000.0,2500.0,3000.0};
+
+  TH1F* h_RPFM_passPres_noMU = new TH1F("h_RPFM_passPres_noMU","RecoPFMET passing preselection, !MuTrig;Reco PF MET [GeV];RecoPFMET [GeV]",NBINS,edges);
+  TH1F* h_RCAM_passPres_noMU = new TH1F("h_RCAM_passPres_noMU","RecoCaloMET passing preselection, !MuTrig;Reco Calo MET [GeV];RecoCaloMET [GeV]",NBINS,edges);
+  TH1F* h_RPFM_passPres_noMU_passMET1234 = new TH1F("h_RPFM_passPres_noMU_passMET1234","RecoPFMET passing preselection, !MuTrig, MET1234 trigs;Reco PF MET [GeV]",NBINS,edges);
+  TH1F* h_RCAM_passPres_noMU_passMET1234 = new TH1F("h_RCAM_passPres_noMU_passMET1234","RecoCaloMET passing preselection, !MuTrig, MET1234 trigs;Reco Calo MET [GeV]",NBINS,edges);
+  TH1F* h_RPFM_passPres_noMU_passMET1 = new TH1F("h_RPFM_passPres_noMU_passMET1","RecoPFMET passing preselection, !MuTrig, MET1 trig;Reco PF MET [GeV]",NBINS,edges);
+  TH1F* h_RCAM_passPres_noMU_passMET1 = new TH1F("h_RCAM_passPres_noMU_passMET1","RecoCaloMET passing preselection, !MuTrig, MET1 trig;Reco Calo MET [GeV]",NBINS,edges);
+  TH1F* h_RPFM_passPres_noMU_passMET1Cut1 = new TH1F("h_RPFM_passPres_noMU_passMET1Cut1","RecoPFMET passing preselection, !MuTrig, Cut1 of MET1 trig;Reco PF MET [GeV]",NBINS,edges);
+  TH1F* h_RCAM_passPres_noMU_passMET1Cut1 = new TH1F("h_RCAM_passPres_noMU_passMET1Cut1","RecoCaloMET passing preselection, !MuTrig, Cut1 of MET1 trig;Reco Calo MET [GeV]",NBINS,edges);
+  TH1F* h_RPFM_passPres_noMU_passMET1Cut2 = new TH1F("h_RPFM_passPres_noMU_passMET1Cut2","RecoPFMET passing preselection, !MuTrig, Cut2 of MET1 trig;Reco PF MET [GeV]",NBINS,edges);
+  TH1F* h_RCAM_passPres_noMU_passMET1Cut2 = new TH1F("h_RCAM_passPres_noMU_passMET1Cut2","RecoCaloMET passing preselection, !MuTrig, Cut2 of MET1 trig;Reco Calo MET [GeV]",NBINS,edges);
+  TH1F* h_RPFM_passPres_noMU_passMET1Cut3 = new TH1F("h_RPFM_passPres_noMU_passMET1Cut3","RecoPFMET passing preselection, !MuTrig, Cut3 of MET1 trig;Reco PF MET [GeV]",NBINS,edges);
+  TH1F* h_RCAM_passPres_noMU_passMET1Cut3 = new TH1F("h_RCAM_passPres_noMU_passMET1Cut3","RecoCaloMET passing preselection, !MuTrig, Cut3 of MET1 trig;Reco Calo MET [GeV]",NBINS,edges);
+  TH1F* h_RPFM_passPres_noMU_passMET1Cut4 = new TH1F("h_RPFM_passPres_noMU_passMET1Cut4","RecoPFMET passing preselection, !MuTrig, Cut4 of MET1 trig;Reco PF MET [GeV]",NBINS,edges);
+  TH1F* h_RCAM_passPres_noMU_passMET1Cut4 = new TH1F("h_RCAM_passPres_noMU_passMET1Cut4","RecoCaloMET passing preselection, !MuTrig, Cut4 of MET1 trig;Reco Calo MET [GeV]",NBINS,edges);
+  TH1F* h_RPFM_passPres_noMU_passMET1Cut5 = new TH1F("h_RPFM_passPres_noMU_passMET1Cut5","RecoPFMET passing preselection, !MuTrig, Cut5 of MET1 trig;Reco PF MET [GeV]",NBINS,edges);
+  TH1F* h_RCAM_passPres_noMU_passMET1Cut5 = new TH1F("h_RCAM_passPres_noMU_passMET1Cut5","RecoCaloMET passing preselection, !MuTrig, Cut5 of MET1 trig;Reco Calo MET [GeV]",NBINS,edges);
+  TH1F* h_RPFM_passPres_noMU_passMET1Cut6 = new TH1F("h_RPFM_passPres_noMU_passMET1Cut6","RecoPFMET passing preselection, !MuTrig, Cut6 of MET1 trig;Reco PF MET [GeV]",NBINS,edges);
+  TH1F* h_RCAM_passPres_noMU_passMET1Cut6 = new TH1F("h_RCAM_passPres_noMU_passMET1Cut6","RecoCaloMET passing preselection, !MuTrig, Cut6 of MET1 trig;Reco Calo MET [GeV]",NBINS,edges);
+
+  TH1F* h_RCAM_passPres_noMU_cat1_beforeMETFilters = new TH1F("h_RCAM_passPres_noMU_cat1_beforeMETFilters","RecoCaloMET passing preselection, !MuTrig, cat 1, before MET filters",NBINS,edges);
+  TH1F* h_RCAM_passPres_noMU_cat1_beforeMETFilters_passMET1 = new TH1F("h_RCAM_passPres_noMU_cat1_beforeMETFilters_passMET1","RecoCaloMET passing preselection, !MuTrig, cat 1, before MET filters, passing MET trigger 1",NBINS,edges);
+  TH1F* h_RCAM_passPres_noMU_cat1_beforeMETFilters_passMET1234 = new TH1F("h_RCAM_passPres_noMU_cat1_beforeMETFilters_passMET1234","RecoCaloMET passing preselection, !MuTrig, cat 1, before MET filters, passing MET trigger 1234",NBINS,edges);
+  TH1F* h_RCAM_passPres_noMU_cat2_beforeMETFilters = new TH1F("h_RCAM_passPres_noMU_cat2_beforeMETFilters","RecoCaloMET passing preselection, !MuTrig, cat 2, before MET filters",NBINS,edges);
+  TH1F* h_RCAM_passPres_noMU_cat2_beforeMETFilters_passMET1  = new TH1F("h_RCAM_passPres_noMU_cat2_beforeMETFilters_passMET1","RecoCaloMET passing preselection, !MuTrig, cat 2, before MET filters, passing MET trigger 1",NBINS,edges);
+  TH1F* h_RCAM_passPres_noMU_cat2_beforeMETFilters_passMET1234  = new TH1F("h_RCAM_passPres_noMU_cat2_beforeMETFilters_passMET1234","RecoCaloMET passing preselection, !MuTrig, cat 2, before MET filters, passing MET trigger 1234",NBINS,edges);
+  TH1F* h_RCAM_passPres_noMU_cat1_afterMETFilters  = new TH1F("h_RCAM_passPres_noMU_cat1_afterMETFilters","RecoCaloMET passing preselection, !MuTrig, cat 1, after MET filters",NBINS,edges);
+  TH1F* h_RCAM_passPres_noMU_cat1_afterMETFilters_passMET1 = new TH1F("h_RCAM_passPres_noMU_cat1_afterMETFilters_passMET1","RecoCaloMET passing preselection, !MuTrig, cat 1, after MET filters, passing MET trigger 1",NBINS,edges);
+  TH1F* h_RCAM_passPres_noMU_cat1_afterMETFilters_passMET1234 = new TH1F("h_RCAM_passPres_noMU_cat1_afterMETFilters_passMET1234","RecoCaloMET passing preselection, !MuTrig, cat 1, after MET filters, passing MET trigger 1234",NBINS,edges);
+  TH1F* h_RCAM_passPres_noMU_cat2_afterMETFilters = new TH1F("h_RCAM_passPres_noMU_cat2_afterMETFilters","RecoCaloMET passing preselection, !MuTrig, cat 2, after MET filters",NBINS,edges);
+  TH1F* h_RCAM_passPres_noMU_cat2_afterMETFilters_passMET1 = new TH1F("h_RCAM_passPres_noMU_cat2_afterMETFilters_passMET1","RecoCaloMET passing preselection, !MuTrig, cat 2, after MET filters, passing MET trigger 1",NBINS,edges);
+  TH1F* h_RCAM_passPres_noMU_cat2_afterMETFilters_passMET1234 = new TH1F("h_RCAM_passPres_noMU_cat2_afterMETFilters_passMET1234","RecoCaloMET passing preselection, !MuTrig, cat 2, after MET filters, passing MET trigger 1234",NBINS,edges);
+  TH1F* h_RCAM_passPres_noMU_beforeMETFilters = new TH1F("h_RCAM_passPres_noMU_beforeMETFilters","RecoCaloMET passing preselection, !MuTrig, before MET filters",NBINS,edges);
+  TH1F* h_RCAM_passPres_noMU_beforeMETFilters_passMET1234 = new TH1F("h_RCAM_passPres_noMU_beforeMETFilters_passMET1234","RecoCaloMET passing preselection, !MuTrig, before MET filters, passing MET trigers 1234",NBINS,edges);
+  TH1F* h_RCAM_passPres_noMU_afterMETFilters = new TH1F("h_RCAM_passPres_noMU_afterMETFilters","RecoCaloMET passing preselection, !MuTrig, after MET filters",NBINS,edges);
+  TH1F* h_RCAM_passPres_noMU_afterMETFilters_passMET1234 = new TH1F("h_RCAM_passPres_noMU_afterMETFilters_passMET1234","RecoCaloMET passing preselection, !MuTrig, after MET filters, passing MET trigers 1234",NBINS,edges);
+  TH1F* h_RCAM_passPres_noMU_afterMETFilters_quality = new TH1F("h_RCAM_passPres_noMU_afterMETFilters_quality","RecoCaloMET passing preselection, !MuTrig, after MET filters, quality cut",NBINS,edges);
+  TH1F* h_RCAM_passPres_noMU_afterMETFilters_quality_passMET1234 = new TH1F("h_RCAM_passPres_noMU_afterMETFilters_quality_passMET1234","RecoCaloMET passing preselection, !MuTrig, after MET filters, quality cut, passing MET trigers 1234",NBINS,edges);
+
+  const Int_t NBINS2 = 22;
+  Double_t edges2[NBINS2 + 1] = {0.0,50.0,100.0,150.0,200.0,250.0,300.0,350.0,400.0,500.0,600.0,700.0,800.0,1000.0,1200.0,1400.0,1600.0,1800.0,2000.0,2500.0,3000.0,15000.0,30000.0};
+
+  TH1F* h_RCAM_passPres_noMU_cat1_beforeMETFilters_full = new TH1F("h_RCAM_passPres_noMU_cat1_beforeMETFilters_full","RecoCaloMET passing preselection, !MuTrig, cat 1, before MET filters",NBINS2,edges2);
+  TH1F* h_RCAM_passPres_noMU_cat1_beforeMETFilters_passMET1_full = new TH1F("h_RCAM_passPres_noMU_cat1_beforeMETFilters_passMET1_full","RecoCaloMET passing preselection, !MuTrig, cat 1, before MET filters, passing MET trigger 1",NBINS2,edges2);
+  TH1F* h_RCAM_passPres_noMU_cat1_beforeMETFilters_passMET1234_full = new TH1F("h_RCAM_passPres_noMU_cat1_beforeMETFilters_passMET1234_full","RecoCaloMET passing preselection, !MuTrig, cat 1, before MET filters, passing MET trigger 1234",NBINS2,edges2);
+  TH1F* h_RCAM_passPres_noMU_cat1_afterMETFilters_full  = new TH1F("h_RCAM_passPres_noMU_cat1_afterMETFilters_full","RecoCaloMET passing preselection, !MuTrig, cat 1, after MET filters",NBINS2,edges2);
+  TH1F* h_RCAM_passPres_noMU_cat1_afterMETFilters_passMET1_full = new TH1F("h_RCAM_passPres_noMU_cat1_afterMETFilters_passMET1_full","RecoCaloMET passing preselection, !MuTrig, cat 1, after MET filters, passing MET trigger 1",NBINS2,edges2);
+  TH1F* h_RCAM_passPres_noMU_cat1_afterMETFilters_passMET1234_full = new TH1F("h_RCAM_passPres_noMU_cat1_afterMETFilters_passMET1234_full","RecoCaloMET passing preselection, !MuTrig, cat 1, after MET filters, passing MET trigger 1234",NBINS2,edges2);
+  TH1F* h_RCAM_passPres_noMU_beforeMETFilters_full = new TH1F("h_RCAM_passPres_noMU_beforeMETFilters_full","RecoCaloMET passing preselection, !MuTrig, before MET filters",NBINS2,edges2);
+  TH1F* h_RCAM_passPres_noMU_beforeMETFilters_passMET1234_full = new TH1F("h_RCAM_passPres_noMU_beforeMETFilters_passMET1234_full","RecoCaloMET passing preselection, !MuTrig, before MET filters, passing MET trigers 1234",NBINS2,edges2);
+  TH1F* h_RCAM_passPres_noMU_afterMETFilters_full = new TH1F("h_RCAM_passPres_noMU_afterMETFilters_full","RecoCaloMET passing preselection, !MuTrig, after MET filters",NBINS2,edges2);
+  TH1F* h_RCAM_passPres_noMU_afterMETFilters_passMET1234_full = new TH1F("h_RCAM_passPres_noMU_afterMETFilters_passMET1234_full","RecoCaloMET passing preselection, !MuTrig, after MET filters, passing MET trigers 1234",NBINS2,edges2);
+  TH1F* h_RCAM_passPres_noMU_afterMETFilters_quality_full = new TH1F("h_RCAM_passPres_noMU_afterMETFilters_quality_full","RecoCaloMET passing preselection, !MuTrig, after MET filters, quality cut",NBINS2,edges2);
+  TH1F* h_RCAM_passPres_noMU_afterMETFilters_quality_passMET1234_full = new TH1F("h_RCAM_passPres_noMU_afterMETFilters_quality_passMET1234_full","RecoCaloMET passing preselection, !MuTrig, after MET filters, quality cut, passing MET trigers 1234",NBINS2,edges2);
+
+  const Int_t NBINS3 = 15;
+  Double_t edges3[NBINS3 + 1] = {0.0,50.0,100.0,150.0,200.0,250.0,300.0,350.0,400.0,500.0,600.0,700.0,800.0,1000.0,2500.0,5000.0};
+
+  TH1F* h_RCAM_passPres_noMU_afterMETFilters_quality_noSat = new TH1F("h_RCAM_passPres_noMU_afterMETFilters_quality_noSat","RecoCaloMET passing preselection, !MuTrig, after MET filters, quality cut, no saturation",NBINS3,edges3);
+  TH1F* h_RCAM_passPres_noMU_afterMETFilters_quality_noSat_passMET1234 = new TH1F("h_RCAM_passPres_noMU_afterMETFilters_quality_noSat_passMET1234","RecoCaloMET passing preselection, !MuTrig, after MET filters, quality cut, no saturation, passing MET trigers 1234",NBINS3,edges3);
 
   //====================================================
   // histograms needed for numb of events in categories
@@ -615,6 +664,16 @@ void HSCPAnalyzer_METStudies::Analyze(bool isData, int options, string outputfil
       tree->L1MHT_phi = L1MHT_phi;
       tree->L1ETSum = L1ETSum;
       tree->L1HTSum = L1HTSum;
+      tree->Flag_globalSuperTightHalo2016Filter = Flag_globalSuperTightHalo2016Filter;
+      tree->Flag_HBHENoiseFilter = Flag_HBHENoiseFilter;
+      tree->Flag_HBHENoiseIsoFilter = Flag_HBHENoiseIsoFilter;
+      tree->Flag_EcalDeadCellTriggerPrimitiveFilter = Flag_EcalDeadCellTriggerPrimitiveFilter;
+      tree->Flag_BadPFMuonFilter = Flag_BadPFMuonFilter;
+      tree->Flag_BadPFMuonDzFilter = Flag_BadPFMuonDzFilter;
+      tree->Flag_hfNoisyHitsFilter = Flag_hfNoisyHitsFilter;
+      tree->Flag_eeBadScFilter = Flag_eeBadScFilter;
+      tree->Flag_ecalBadCalibFilter = Flag_ecalBadCalibFilter;
+      tree->Flag_allMETFilters = Flag_allMETFilters;
 
 
       tree->passPreselection = passPreselection;
@@ -629,7 +688,22 @@ void HSCPAnalyzer_METStudies::Analyze(bool isData, int options, string outputfil
 
       tree->nHSCP = 0;
       bool bool_CandPassPres = false;
-      int total_NCandPassPres = 0;
+      int total_NCandPassPres_0 = 0;
+      int total_NCandPassPres_1 = 0;
+      int total_NCandPassPres_2 = 0;
+      int total_NCandPassPres_3 = 0;
+      int total_NCandPassPres_4 = 0;
+      int total_NCandPassPres_5 = 0;
+      int total_NCandPassPres_6 = 0;
+      int total_NCandPassPres_7 = 0;
+      int total_NCandPassPres_8 = 0;
+      int total_NCandPassPres_9 = 0;
+      int total_NCandPassPres_10 = 0;
+      int total_NCandPassPres_11 = 0;
+      int total_NCandPassPres_12 = 0;
+      int total_NCandPassPres_13 = 0;
+      int total_NCandPassPres_14 = 0;
+      int total_NCandPassPres_all = 0;
       int index_PassPres[3] = {-1,-1,-1};
 
       for(unsigned int i = 0; i < Pt->size(); i++) {
@@ -679,33 +753,77 @@ void HSCPAnalyzer_METStudies::Analyze(bool isData, int options, string outputfil
  
 
 	// explicitly defining preselections
-	if (
+	h_preselection_cutflow_candidates->Fill(0.5);
+	total_NCandPassPres_0++;
+	if (Pt->at(i) > 55) {
+	  h_preselection_cutflow_candidates->Fill(1.5);
+	  total_NCandPassPres_1++;
+	  if(eta->at(i) < 2.1 && eta->at(i) > -2.1) {
+	    h_preselection_cutflow_candidates->Fill(2.5);
+	    total_NCandPassPres_2++;
+	    if(NOPH->at(i) >= 2) {
+	      h_preselection_cutflow_candidates->Fill(3.5);
+	      total_NCandPassPres_3++;
+	      if(FOVH->at(i) > 0.8) {
+		h_preselection_cutflow_candidates->Fill(4.5);
+		total_NCandPassPres_4++;
+		if(NOM->at(i) >= 10) {
+		  h_preselection_cutflow_candidates->Fill(5.5);
+		  total_NCandPassPres_5++;
+		  if(isHighPurity->at(i) == true) {
+		    h_preselection_cutflow_candidates->Fill(6.5);
+		    total_NCandPassPres_6++;
+		    if(Chi2->at(i)/Ndof->at(i) < 5) {
+		      h_preselection_cutflow_candidates->Fill(7.5);
+		      total_NCandPassPres_7++;
+		      if(dZ->at(i) < 0.1) {
+			h_preselection_cutflow_candidates->Fill(8.5);
+			total_NCandPassPres_8++;
+			if(dXY->at(i) < 0.02) {
+			  h_preselection_cutflow_candidates->Fill(9.5);
+			  total_NCandPassPres_9++;
+			  if(PFMiniIso_relative->at(i) < 0.02) {
+			    h_preselection_cutflow_candidates->Fill(10.5);
+			    total_NCandPassPres_10++;
+			    if(EoverP->at(i) < 0.3) {
+			      h_preselection_cutflow_candidates->Fill(11.5);
+			      total_NCandPassPres_11++;
+			      if(track_genTrackMiniIsoSumPt->at(i) < 15) {
+				h_preselection_cutflow_candidates->Fill(12.5);
+				total_NCandPassPres_12++;
+				if(PtErr->at(i)/(Pt->at(i)*Pt->at(i)) < 0.0008) {
+				  h_preselection_cutflow_candidates->Fill(13.5);
+				  total_NCandPassPres_13++;
+				  if((1 - ProbQ_noL1->at(i)) > 0.3) {
+				    h_preselection_cutflow_candidates->Fill(14.5);
+				    bool_CandPassPres = true;
+				    tree->HSCP_passPres[tree->nHSCP] = bool_CandPassPres;
+				    total_NCandPassPres_14++;
+				    total_NCandPassPres_all++;
+				    //this saves which index candidate passes preselection
+				    index_PassPres[total_NCandPassPres_all-1] = i;
+				    //std::cout << "i: " << i << " ";
 
-	    Pt->at(i) > 55 &&
-	    eta->at(i) < 2.1 && eta->at(i) > -2.1 &&
-	    NOPH->at(i) >= 2 &&
-	    FOVH->at(i) > 0.8 &&
-            NOM->at(i) >= 10 &&
-	    isHighPurity->at(i) == true &&
-	    Chi2->at(i)/Ndof->at(i) < 5 &&
-            dZ->at(i) < 0.1 &&
-	    dXY->at(i) < 0.02 &&
-	    PFMiniIso_relative->at(i) < 0.02 &&
-	    EoverP->at(i) < 0.3 &&
-	    track_genTrackMiniIsoSumPt->at(i) < 15 &&
-	    PtErr->at(i)/(Pt->at(i)*Pt->at(i)) < 0.0008 &&
-	    (1 - ProbQ_noL1->at(i)) > 0.3
+				  }
+				}
+			      }
+			    }
+			  }
+			}
+		      }
+		    }
+		  }
+		}
+	      }
+	    } 
+	  }
+	}
 
-	    ) {
-	  bool_CandPassPres = true;
-	  tree->HSCP_passPres[tree->nHSCP] = bool_CandPassPres;
-	  total_NCandPassPres++;
-	  //this saves which index candidate passes preselection
-	  index_PassPres[total_NCandPassPres-1] = i;
-	  //std::cout << "i: " << i << " ";
-	} else {
+	if ( !(Pt->at(i) > 55 && eta->at(i) < 2.1 && eta->at(i) > -2.1 && NOPH->at(i) >= 2 && FOVH->at(i) > 0.8 && NOM->at(i) >= 10 && isHighPurity->at(i) == true && Chi2->at(i)/Ndof->at(i) < 5 && dZ->at(i) < 0.1 && dXY->at(i) < 0.02 && PFMiniIso_relative->at(i) < 0.02 && EoverP->at(i) < 0.3 && track_genTrackMiniIsoSumPt->at(i) < 15 && PtErr->at(i)/(Pt->at(i)*Pt->at(i)) < 0.0008 && (1 - ProbQ_noL1->at(i)) > 0.3) ) {
+
 	  bool_CandPassPres = false;
-	  tree->HSCP_passPres[tree->nHSCP] = bool_CandPassPres;
+	  tree->HSCP_passPres[tree->nHSCP] = bool_CandPassPres; 
+
 	}
 
 	//std::cout << tree->nHSCP << std::endl; 
@@ -716,7 +834,54 @@ void HSCPAnalyzer_METStudies::Analyze(bool isData, int options, string outputfil
 
       //std::cout << " " << std::endl;
 
-      tree->NCandPassPres = total_NCandPassPres;
+      tree->NCandPassPres_0 = total_NCandPassPres_0;
+      tree->NCandPassPres_1 = total_NCandPassPres_1;
+      tree->NCandPassPres_2 = total_NCandPassPres_2;
+      tree->NCandPassPres_3 = total_NCandPassPres_3;
+      tree->NCandPassPres_4 = total_NCandPassPres_4;
+      tree->NCandPassPres_5 = total_NCandPassPres_5;
+      tree->NCandPassPres_6 = total_NCandPassPres_6;
+      tree->NCandPassPres_7 = total_NCandPassPres_7;
+      tree->NCandPassPres_8 = total_NCandPassPres_8;
+      tree->NCandPassPres_9 = total_NCandPassPres_9;
+      tree->NCandPassPres_10 = total_NCandPassPres_10;
+      tree->NCandPassPres_11 = total_NCandPassPres_11;
+      tree->NCandPassPres_12 = total_NCandPassPres_12;
+      tree->NCandPassPres_13 = total_NCandPassPres_13;
+      tree->NCandPassPres_14 = total_NCandPassPres_14;
+      tree->NCandPassPres_all = total_NCandPassPres_all;
+
+      if(total_NCandPassPres_0 > 0) h_preselection_cutflow_events_1cand->Fill(0.5);
+      if(total_NCandPassPres_1 > 0) h_preselection_cutflow_events_1cand->Fill(1.5);
+      if(total_NCandPassPres_2 > 0) h_preselection_cutflow_events_1cand->Fill(2.5);
+      if(total_NCandPassPres_3 > 0) h_preselection_cutflow_events_1cand->Fill(3.5);
+      if(total_NCandPassPres_4 > 0) h_preselection_cutflow_events_1cand->Fill(4.5);
+      if(total_NCandPassPres_5 > 0) h_preselection_cutflow_events_1cand->Fill(5.5);
+      if(total_NCandPassPres_6 > 0) h_preselection_cutflow_events_1cand->Fill(6.5);
+      if(total_NCandPassPres_7 > 0) h_preselection_cutflow_events_1cand->Fill(7.5);
+      if(total_NCandPassPres_8 > 0) h_preselection_cutflow_events_1cand->Fill(8.5);
+      if(total_NCandPassPres_9 > 0) h_preselection_cutflow_events_1cand->Fill(9.5);
+      if(total_NCandPassPres_10 > 0) h_preselection_cutflow_events_1cand->Fill(10.5);
+      if(total_NCandPassPres_11 > 0) h_preselection_cutflow_events_1cand->Fill(11.5);
+      if(total_NCandPassPres_12 > 0) h_preselection_cutflow_events_1cand->Fill(12.5);
+      if(total_NCandPassPres_13 > 0) h_preselection_cutflow_events_1cand->Fill(13.5);
+      if(total_NCandPassPres_14 > 0) h_preselection_cutflow_events_1cand->Fill(14.5);
+
+      if(total_NCandPassPres_0 > 1) h_preselection_cutflow_events_2cand->Fill(0.5);
+      if(total_NCandPassPres_1 > 1) h_preselection_cutflow_events_2cand->Fill(1.5);
+      if(total_NCandPassPres_2 > 1) h_preselection_cutflow_events_2cand->Fill(2.5);
+      if(total_NCandPassPres_3 > 1) h_preselection_cutflow_events_2cand->Fill(3.5);
+      if(total_NCandPassPres_4 > 1) h_preselection_cutflow_events_2cand->Fill(4.5);
+      if(total_NCandPassPres_5 > 1) h_preselection_cutflow_events_2cand->Fill(5.5);
+      if(total_NCandPassPres_6 > 1) h_preselection_cutflow_events_2cand->Fill(6.5);
+      if(total_NCandPassPres_7 > 1) h_preselection_cutflow_events_2cand->Fill(7.5);
+      if(total_NCandPassPres_8 > 1) h_preselection_cutflow_events_2cand->Fill(8.5);
+      if(total_NCandPassPres_9 > 1) h_preselection_cutflow_events_2cand->Fill(9.5);
+      if(total_NCandPassPres_10 > 1) h_preselection_cutflow_events_2cand->Fill(10.5);
+      if(total_NCandPassPres_11 > 1) h_preselection_cutflow_events_2cand->Fill(11.5);
+      if(total_NCandPassPres_12 > 1) h_preselection_cutflow_events_2cand->Fill(12.5);
+      if(total_NCandPassPres_13 > 1) h_preselection_cutflow_events_2cand->Fill(13.5);
+      if(total_NCandPassPres_14 > 1) h_preselection_cutflow_events_2cand->Fill(14.5);
 
       // jets
       tree->nJets = 0;
@@ -936,11 +1101,11 @@ void HSCPAnalyzer_METStudies::Analyze(bool isData, int options, string outputfil
 
 
       // events with at least one HSCP candidate passing preselection
-      if(total_NCandPassPres == 0) {
+      if(total_NCandPassPres_all == 0) {
 	h_numEventsCategories_passPres->Fill(1.5);
       }
 
-      if(total_NCandPassPres > 0) {
+      if(total_NCandPassPres_all > 0) {
 	h_RecoCaloMET_passPres->Fill(RecoCaloMET);
 	h_RecoPFMET_passPres->Fill(RecoPFMET);
 	h_HLTCaloMET_passPres->Fill(HLTCaloMET);
@@ -956,12 +1121,12 @@ void HSCPAnalyzer_METStudies::Analyze(bool isData, int options, string outputfil
 	h_RCAM_LHFM_passPres->Fill(RecoCaloMET,L1METHF);
 	h_RPFM_RCAM_passPres->Fill(RecoPFMET,RecoCaloMET);
 
-	if(total_NCandPassPres == 1) {
+	if(total_NCandPassPres_all == 1) {
 	  h_RecoCaloMET_oneCand->Fill(RecoCaloMET);
 	  h_RecoPFMET_oneCand->Fill(RecoPFMET);
 	  h_HLTCaloMET_oneCand->Fill(HLTCaloMET);
 	  h_HLTPFMET_oneCand->Fill(HLTPFMET);
-	} if(total_NCandPassPres == 2) {
+	} if(total_NCandPassPres_all == 2) {
 	  h_RecoCaloMET_twoCand->Fill(RecoCaloMET);
 	  h_RecoPFMET_twoCand->Fill(RecoPFMET);
 	  h_HLTCaloMET_twoCand->Fill(HLTCaloMET);
@@ -983,18 +1148,18 @@ void HSCPAnalyzer_METStudies::Analyze(bool isData, int options, string outputfil
 	h_RCAM_passMET1234->Fill(RecoCaloMET);
 	
 	// events with at least one HSCP candidate passing preselection
-	if(total_NCandPassPres > 0) {
+	if(total_NCandPassPres_all > 0) {
 	  h_RecoCaloMET_passPres_passMET->Fill(RecoCaloMET);
 	  h_RecoPFMET_passPres_passMET->Fill(RecoPFMET);
 	  h_HLTCaloMET_passPres_passMET->Fill(HLTCaloMET);
 	  h_HLTPFMET_passPres_passMET->Fill(HLTPFMET);
 
-	  if(total_NCandPassPres == 1) {
+	  if(total_NCandPassPres_all == 1) {
 	    h_RecoCaloMET_oneCand_passMET->Fill(RecoCaloMET);
 	    h_RecoPFMET_oneCand_passMET->Fill(RecoPFMET);
 	    h_HLTCaloMET_oneCand_passMET->Fill(HLTCaloMET);
 	    h_HLTPFMET_oneCand_passMET->Fill(HLTPFMET);
-	  } if(total_NCandPassPres == 2) {
+	  } if(total_NCandPassPres_all == 2) {
 	    h_RecoCaloMET_twoCand_passMET->Fill(RecoCaloMET);
 	    h_RecoPFMET_twoCand_passMET->Fill(RecoPFMET);
 	    h_HLTCaloMET_twoCand_passMET->Fill(HLTCaloMET);
@@ -1030,7 +1195,7 @@ void HSCPAnalyzer_METStudies::Analyze(bool isData, int options, string outputfil
 	
 
 	// events with at least one HSCP candidate passing preselection
-	if(total_NCandPassPres > 0) {
+	if(total_NCandPassPres_all > 0) {
 	  h_RecoCaloMET_passPres_passMuon->Fill(RecoCaloMET);
 	  h_RecoPFMET_passPres_passMuon->Fill(RecoPFMET);
 	  h_HLTCaloMET_passPres_passMuon->Fill(HLTCaloMET);
@@ -1080,7 +1245,7 @@ void HSCPAnalyzer_METStudies::Analyze(bool isData, int options, string outputfil
 	}
 
 	// events with at least one HSCP candidate passing preselection
-	if(total_NCandPassPres > 0) {
+	if(total_NCandPassPres_all > 0) {
 
 	  h_numEventsCategories_passPres->Fill(10.5);
 	  h_RPFM_passPres_noMU->Fill(RecoPFMET);
@@ -1111,7 +1276,6 @@ void HSCPAnalyzer_METStudies::Analyze(bool isData, int options, string outputfil
 	    }
 	  }
 
-
 	  if(HLT_PFMET120_PFMHT120_IDTight || HLT_PFHT500_PFMET100_PFMHT100_IDTight || HLT_PFMETNoMu120_PFMHTNoMu120_IDTight_PFHT60 || HLT_MET105_IsoTrk50) {
 
 	    h_numEventsCategories_passPres->Fill(11.5);
@@ -1130,6 +1294,7 @@ void HSCPAnalyzer_METStudies::Analyze(bool isData, int options, string outputfil
 	      if(RecoCaloMET>170 && RecoCaloMET<600) h_numEventsCategories_passPres->Fill(18.5);
 	      if(RecoCaloMET>600) h_numEventsCategories_passPres->Fill(19.5);
 	    }
+
 	  }
 
 	  if(HLT_PFMET120_PFMHT120_IDTight) {
@@ -1162,7 +1327,7 @@ void HSCPAnalyzer_METStudies::Analyze(bool isData, int options, string outputfil
 	h_RCAM_passMuORMET1234->Fill(RecoCaloMET);
 
 	// events with at least one HSCP candidate passing preselection
-	if(total_NCandPassPres > 0) {
+	if(total_NCandPassPres_all > 0) {
 	  h_RecoCaloMET_passPres_passMETOrMuon->Fill(RecoCaloMET);
 	  h_RecoPFMET_passPres_passMETOrMuon->Fill(RecoPFMET);
 	  h_HLTCaloMET_passPres_passMETOrMuon->Fill(HLTCaloMET);
@@ -1178,7 +1343,7 @@ void HSCPAnalyzer_METStudies::Analyze(bool isData, int options, string outputfil
 
 
       // start filling other histograms
-      if(total_NCandPassPres == 1) {
+      if(total_NCandPassPres_all == 1) {
 
 	int HSCP_index = index_PassPres[0];
 
@@ -1239,7 +1404,7 @@ void HSCPAnalyzer_METStudies::Analyze(bool isData, int options, string outputfil
 	
       }
 
-      if(total_NCandPassPres == 2) {
+      if(total_NCandPassPres_all == 2) {
 
 	int HSCP_index1 = index_PassPres[0];
 	int HSCP_index2 = index_PassPres[1];
@@ -1352,6 +1517,8 @@ void HSCPAnalyzer_METStudies::Analyze(bool isData, int options, string outputfil
       float neg_diHSCP_cone0p4_GenPx = -10;
       float neg_diHSCP_cone0p4_GenPy = -10;
       float neg_diHSCP_cone0p4_GenPtMag = -10;
+
+      bool CaloMETClean_same = false;
 
       //beginning of loop on final state particles
       //if(total_NFinalState1 > 0){ //technically not necessary
@@ -1975,6 +2142,134 @@ void HSCPAnalyzer_METStudies::Analyze(bool isData, int options, string outputfil
       if(diHSCP_mag>100 && HSCP1_pt>100) h_deltaPhi_diHSCP_pT100_HSCP_pT100->Fill(deltaPhi_diHSCP_HSCP1);
       if(diHSCP_mag>100 && HSCP2_pt>100) h_deltaPhi_diHSCP_pT100_HSCP_pT100->Fill(deltaPhi_diHSCP_HSCP2);
 
+
+      if(total_NCandPassPres_all > 0 && !HLT_Mu50) {
+	
+	//no MET trigger requirement
+
+	//before MET filters
+
+	h_RCAM_passPres_noMU_beforeMETFilters->Fill(RecoCaloMET);
+	h_RCAM_passPres_noMU_beforeMETFilters_full->Fill(RecoCaloMET);
+	
+	//cat 1
+	if(diHSCP_mag>100 && HLTCaloMET>100 && (deltaPhi_diHSCP_HSCP1>0.3 && deltaPhi_diHSCP_HSCP2>0.3 && deltaPhi_HSCP1_HSCP2>0.3) && (deltaPhi_RecoCaloMET_HSCP1>2.9 || deltaPhi_RecoCaloMET_HSCP2>2.9 || deltaPhi_HLTCaloMET_HSCP1>2.9 || deltaPhi_HLTCaloMET_HSCP2>2.9)) {
+	  h_RCAM_passPres_noMU_cat1_beforeMETFilters->Fill(RecoCaloMET);
+	  h_RCAM_passPres_noMU_cat1_beforeMETFilters_full->Fill(RecoCaloMET);
+	}
+	//cat 2
+	if(diHSCP_mag>100 && HLTCaloMET>100 && (deltaPhi_diHSCP_HSCP1>0.3 && deltaPhi_diHSCP_HSCP2>0.3 && deltaPhi_HSCP1_HSCP2>0.3) && (deltaPhi_RecoCaloMET_HSCP1<2.9 && deltaPhi_RecoCaloMET_HSCP2<2.9 && deltaPhi_HLTCaloMET_HSCP1<2.9 && deltaPhi_HLTCaloMET_HSCP2<2.9)) {
+	  h_RCAM_passPres_noMU_cat2_beforeMETFilters->Fill(RecoCaloMET);
+	}
+
+	//after MET filters
+	if(Flag_allMETFilters==true) {
+	    
+	  h_RCAM_passPres_noMU_afterMETFilters->Fill(RecoCaloMET);
+	  h_RCAM_passPres_noMU_afterMETFilters_full->Fill(RecoCaloMET);
+	  
+	  //and including final quality cut
+	  if(fabs(HLTCaloMET - RecoCaloMET)<300) {
+	    
+	    h_RCAM_passPres_noMU_afterMETFilters_quality->Fill(RecoCaloMET);
+	    h_RCAM_passPres_noMU_afterMETFilters_quality_full->Fill(RecoCaloMET);	      
+	    if(L1METHF<2000) {
+	      h_RCAM_passPres_noMU_afterMETFilters_quality_noSat->Fill(RecoCaloMET);
+	    }
+
+	  }
+
+	  //cat 1
+	  if(diHSCP_mag>100 && HLTCaloMET>100 && (deltaPhi_diHSCP_HSCP1>0.3 && deltaPhi_diHSCP_HSCP2>0.3 && deltaPhi_HSCP1_HSCP2>0.3) && (deltaPhi_RecoCaloMET_HSCP1>2.9 || deltaPhi_RecoCaloMET_HSCP2>2.9 || deltaPhi_HLTCaloMET_HSCP1>2.9 || deltaPhi_HLTCaloMET_HSCP2>2.9)) {
+	    h_RCAM_passPres_noMU_cat1_afterMETFilters->Fill(RecoCaloMET);
+	    h_RCAM_passPres_noMU_cat1_afterMETFilters_full->Fill(RecoCaloMET);
+	  }
+	  //cat 2
+	  if(diHSCP_mag>100 && HLTCaloMET>100 && (deltaPhi_diHSCP_HSCP1>0.3 && deltaPhi_diHSCP_HSCP2>0.3 && deltaPhi_HSCP1_HSCP2>0.3) && (deltaPhi_RecoCaloMET_HSCP1<2.9 && deltaPhi_RecoCaloMET_HSCP2<2.9 && deltaPhi_HLTCaloMET_HSCP1<2.9 && deltaPhi_HLTCaloMET_HSCP2<2.9)) {
+	    h_RCAM_passPres_noMU_cat2_afterMETFilters->Fill(RecoCaloMET);
+	  }	  
+	}
+
+	//passing MET trigger 1
+	if(HLT_PFMET120_PFMHT120_IDTight) {
+
+	  //before MET filters
+
+	  //cat 1
+	  if(diHSCP_mag>100 && HLTCaloMET>100 && (deltaPhi_diHSCP_HSCP1>0.3 && deltaPhi_diHSCP_HSCP2>0.3 && deltaPhi_HSCP1_HSCP2>0.3) && (deltaPhi_RecoCaloMET_HSCP1>2.9 || deltaPhi_RecoCaloMET_HSCP2>2.9 || deltaPhi_HLTCaloMET_HSCP1>2.9 || deltaPhi_HLTCaloMET_HSCP2>2.9)) {
+	    h_RCAM_passPres_noMU_cat1_beforeMETFilters_passMET1->Fill(RecoCaloMET);
+	    h_RCAM_passPres_noMU_cat1_beforeMETFilters_passMET1_full->Fill(RecoCaloMET);
+	  }
+
+	  //cat 2
+	  if(diHSCP_mag>100 && HLTCaloMET>100 && (deltaPhi_diHSCP_HSCP1>0.3 && deltaPhi_diHSCP_HSCP2>0.3 && deltaPhi_HSCP1_HSCP2>0.3) && (deltaPhi_RecoCaloMET_HSCP1<2.9 && deltaPhi_RecoCaloMET_HSCP2<2.9 && deltaPhi_HLTCaloMET_HSCP1<2.9 && deltaPhi_HLTCaloMET_HSCP2<2.9)) {
+	    h_RCAM_passPres_noMU_cat2_beforeMETFilters_passMET1->Fill(RecoCaloMET);
+	  }
+
+	  //after MET filters
+	  if(Flag_allMETFilters==true) {
+	
+	    //cat 1
+	    if(diHSCP_mag>100 && HLTCaloMET>100 && (deltaPhi_diHSCP_HSCP1>0.3 && deltaPhi_diHSCP_HSCP2>0.3 && deltaPhi_HSCP1_HSCP2>0.3) && (deltaPhi_RecoCaloMET_HSCP1>2.9 || deltaPhi_RecoCaloMET_HSCP2>2.9 || deltaPhi_HLTCaloMET_HSCP1>2.9 || deltaPhi_HLTCaloMET_HSCP2>2.9)) {
+	      h_RCAM_passPres_noMU_cat1_afterMETFilters_passMET1->Fill(RecoCaloMET);
+	      h_RCAM_passPres_noMU_cat1_afterMETFilters_passMET1_full->Fill(RecoCaloMET);
+	    }
+	    //cat 2
+	    if(diHSCP_mag>100 && HLTCaloMET>100 && (deltaPhi_diHSCP_HSCP1>0.3 && deltaPhi_diHSCP_HSCP2>0.3 && deltaPhi_HSCP1_HSCP2>0.3) && (deltaPhi_RecoCaloMET_HSCP1<2.9 && deltaPhi_RecoCaloMET_HSCP2<2.9 && deltaPhi_HLTCaloMET_HSCP1<2.9 && deltaPhi_HLTCaloMET_HSCP2<2.9)) {
+	      h_RCAM_passPres_noMU_cat2_afterMETFilters_passMET1->Fill(RecoCaloMET);
+	    }	  
+	  }
+	}
+
+	//passing OR of 4 MET triggers
+	if(HLT_PFMET120_PFMHT120_IDTight || HLT_PFHT500_PFMET100_PFMHT100_IDTight || HLT_PFMETNoMu120_PFMHTNoMu120_IDTight_PFHT60 || HLT_MET105_IsoTrk50) {
+
+	  //before MET filters
+	  h_RCAM_passPres_noMU_beforeMETFilters_passMET1234->Fill(RecoCaloMET);
+	  h_RCAM_passPres_noMU_beforeMETFilters_passMET1234_full->Fill(RecoCaloMET);
+
+	  //cat 1
+	  if(diHSCP_mag>100 && HLTCaloMET>100 && (deltaPhi_diHSCP_HSCP1>0.3 && deltaPhi_diHSCP_HSCP2>0.3 && deltaPhi_HSCP1_HSCP2>0.3) && (deltaPhi_RecoCaloMET_HSCP1>2.9 || deltaPhi_RecoCaloMET_HSCP2>2.9 || deltaPhi_HLTCaloMET_HSCP1>2.9 || deltaPhi_HLTCaloMET_HSCP2>2.9)) {
+	    h_RCAM_passPres_noMU_cat1_beforeMETFilters_passMET1234->Fill(RecoCaloMET);
+	    h_RCAM_passPres_noMU_cat1_beforeMETFilters_passMET1234_full->Fill(RecoCaloMET);
+	  }
+	  //cat 2
+	  if(diHSCP_mag>100 && HLTCaloMET>100 && (deltaPhi_diHSCP_HSCP1>0.3 && deltaPhi_diHSCP_HSCP2>0.3 && deltaPhi_HSCP1_HSCP2>0.3) && (deltaPhi_RecoCaloMET_HSCP1<2.9 && deltaPhi_RecoCaloMET_HSCP2<2.9 && deltaPhi_HLTCaloMET_HSCP1<2.9 && deltaPhi_HLTCaloMET_HSCP2<2.9)) {
+	    h_RCAM_passPres_noMU_cat2_beforeMETFilters_passMET1234->Fill(RecoCaloMET);
+	  }
+
+
+	  //after MET filters
+	  if(Flag_allMETFilters==true) {
+	    
+	    h_RCAM_passPres_noMU_afterMETFilters_passMET1234->Fill(RecoCaloMET);
+	    h_RCAM_passPres_noMU_afterMETFilters_passMET1234_full->Fill(RecoCaloMET);
+
+	    //and including final quality cut
+	    if(fabs(HLTCaloMET - RecoCaloMET)<300) {
+
+	    h_RCAM_passPres_noMU_afterMETFilters_quality_passMET1234->Fill(RecoCaloMET);
+	    h_RCAM_passPres_noMU_afterMETFilters_quality_passMET1234_full->Fill(RecoCaloMET);	      
+	    if(L1METHF<2000) {
+	      h_RCAM_passPres_noMU_afterMETFilters_quality_noSat_passMET1234->Fill(RecoCaloMET);
+	    }
+
+	    }
+	
+	    //cat 1
+	    if(diHSCP_mag>100 && HLTCaloMET>100 && (deltaPhi_diHSCP_HSCP1>0.3 && deltaPhi_diHSCP_HSCP2>0.3 && deltaPhi_HSCP1_HSCP2>0.3) && (deltaPhi_RecoCaloMET_HSCP1>2.9 || deltaPhi_RecoCaloMET_HSCP2>2.9 || deltaPhi_HLTCaloMET_HSCP1>2.9 || deltaPhi_HLTCaloMET_HSCP2>2.9)) {
+	      h_RCAM_passPres_noMU_cat1_afterMETFilters_passMET1234->Fill(RecoCaloMET);
+	      h_RCAM_passPres_noMU_cat1_afterMETFilters_passMET1234_full->Fill(RecoCaloMET);
+	    }
+
+	    //cat 2
+	    if(diHSCP_mag>100 && HLTCaloMET>100 && (deltaPhi_diHSCP_HSCP1>0.3 && deltaPhi_diHSCP_HSCP2>0.3 && deltaPhi_HSCP1_HSCP2>0.3) && (deltaPhi_RecoCaloMET_HSCP1<2.9 && deltaPhi_RecoCaloMET_HSCP2<2.9 && deltaPhi_HLTCaloMET_HSCP1<2.9 && deltaPhi_HLTCaloMET_HSCP2<2.9)) {
+	      h_RCAM_passPres_noMU_cat2_afterMETFilters_passMET1234->Fill(RecoCaloMET);
+	    }	  
+	  }
+	}
+      }
+      
       tree->genHSCPChargeConfig = total_GenHSCP_charge_configuration;
       tree->HSCP1_Eta = HSCP1_eta;
       tree->HSCP1_Phi = HSCP1_phi;
@@ -2006,6 +2301,12 @@ void HSCPAnalyzer_METStudies::Analyze(bool isData, int options, string outputfil
       tree->dPhi_HLTCaloMET_HSCP1 = deltaPhi_HLTCaloMET_HSCP1;
       tree->dPhi_HLTCaloMET_HSCP2 = deltaPhi_HLTCaloMET_HSCP2;
 
+      
+      if(HLTCaloMET<HLTCaloMETClean+1300) {
+	CaloMETClean_same = true;
+      }
+      tree->bool_CaloMETClean_same = CaloMETClean_same;
+
       //}//this should be for the everything not passing muon trigger && L1 MET not saturated
       
       //fill nTuples tree here
@@ -2021,6 +2322,9 @@ void HSCPAnalyzer_METStudies::Analyze(bool isData, int options, string outputfil
     tree->tree_->Write();
 
     NEvents->Write();
+    h_preselection_cutflow_candidates->Write();
+    h_preselection_cutflow_events_1cand->Write();
+    h_preselection_cutflow_events_2cand->Write();
     h_RecoCaloMET_noPres->Write();
     h_RecoPFMET_noPres->Write();
     h_HLTCaloMET_noPres->Write();
@@ -2368,6 +2672,39 @@ void HSCPAnalyzer_METStudies::Analyze(bool isData, int options, string outputfil
     h_RCAM_passPres_noMU_passMET1Cut5->Write();
     h_RPFM_passPres_noMU_passMET1Cut6->Write();
     h_RCAM_passPres_noMU_passMET1Cut6->Write();
+
+    h_RCAM_passPres_noMU_cat1_beforeMETFilters->Write();
+    h_RCAM_passPres_noMU_cat1_beforeMETFilters_passMET1->Write();
+    h_RCAM_passPres_noMU_cat1_beforeMETFilters_passMET1234->Write();
+    h_RCAM_passPres_noMU_cat1_beforeMETFilters_full->Write();
+    h_RCAM_passPres_noMU_cat1_beforeMETFilters_passMET1_full->Write();
+    h_RCAM_passPres_noMU_cat1_beforeMETFilters_passMET1234_full->Write();
+    h_RCAM_passPres_noMU_cat2_beforeMETFilters->Write();
+    h_RCAM_passPres_noMU_cat2_beforeMETFilters_passMET1->Write();
+    h_RCAM_passPres_noMU_cat2_beforeMETFilters_passMET1234->Write();
+    h_RCAM_passPres_noMU_cat1_afterMETFilters->Write();
+    h_RCAM_passPres_noMU_cat1_afterMETFilters_passMET1->Write();
+    h_RCAM_passPres_noMU_cat1_afterMETFilters_passMET1234->Write();
+    h_RCAM_passPres_noMU_cat1_afterMETFilters_full->Write();
+    h_RCAM_passPres_noMU_cat1_afterMETFilters_passMET1_full->Write();
+    h_RCAM_passPres_noMU_cat1_afterMETFilters_passMET1234_full->Write();
+    h_RCAM_passPres_noMU_cat2_afterMETFilters->Write();
+    h_RCAM_passPres_noMU_cat2_afterMETFilters_passMET1->Write();
+    h_RCAM_passPres_noMU_cat2_afterMETFilters_passMET1234->Write();
+    h_RCAM_passPres_noMU_beforeMETFilters->Write();
+    h_RCAM_passPres_noMU_beforeMETFilters_passMET1234->Write();
+    h_RCAM_passPres_noMU_beforeMETFilters_full->Write();
+    h_RCAM_passPres_noMU_beforeMETFilters_passMET1234_full->Write();
+    h_RCAM_passPres_noMU_afterMETFilters->Write();
+    h_RCAM_passPres_noMU_afterMETFilters_passMET1234->Write();
+    h_RCAM_passPres_noMU_afterMETFilters_full->Write();
+    h_RCAM_passPres_noMU_afterMETFilters_passMET1234_full->Write();
+    h_RCAM_passPres_noMU_afterMETFilters_quality->Write();
+    h_RCAM_passPres_noMU_afterMETFilters_quality_passMET1234->Write();
+    h_RCAM_passPres_noMU_afterMETFilters_quality_full->Write();
+    h_RCAM_passPres_noMU_afterMETFilters_quality_passMET1234_full->Write();
+    h_RCAM_passPres_noMU_afterMETFilters_quality_noSat->Write();
+    h_RCAM_passPres_noMU_afterMETFilters_quality_noSat_passMET1234->Write();
     
     h_numEventsCategories_noPres->Write();
     h_numEventsCategories_passPres->Write();
@@ -2382,6 +2719,9 @@ void HSCPAnalyzer_METStudies::Analyze(bool isData, int options, string outputfil
     tree->tree_->Write();
     
     NEvents->Write();
+    h_preselection_cutflow_candidates->Write();
+    h_preselection_cutflow_events_1cand->Write();
+    h_preselection_cutflow_events_2cand->Write();
     h_RecoCaloMET_noPres->Write();
     h_RecoPFMET_noPres->Write();
     h_HLTCaloMET_noPres->Write();
@@ -2729,7 +3069,40 @@ void HSCPAnalyzer_METStudies::Analyze(bool isData, int options, string outputfil
     h_RCAM_passPres_noMU_passMET1Cut5->Write();
     h_RPFM_passPres_noMU_passMET1Cut6->Write();
     h_RCAM_passPres_noMU_passMET1Cut6->Write();
-    
+
+    h_RCAM_passPres_noMU_cat1_beforeMETFilters->Write();
+    h_RCAM_passPres_noMU_cat1_beforeMETFilters_passMET1->Write();
+    h_RCAM_passPres_noMU_cat1_beforeMETFilters_passMET1234->Write();
+    h_RCAM_passPres_noMU_cat1_beforeMETFilters_full->Write();
+    h_RCAM_passPres_noMU_cat1_beforeMETFilters_passMET1_full->Write();
+    h_RCAM_passPres_noMU_cat1_beforeMETFilters_passMET1234_full->Write();
+    h_RCAM_passPres_noMU_cat2_beforeMETFilters->Write();
+    h_RCAM_passPres_noMU_cat2_beforeMETFilters_passMET1->Write();
+    h_RCAM_passPres_noMU_cat2_beforeMETFilters_passMET1234->Write();
+    h_RCAM_passPres_noMU_cat1_afterMETFilters->Write();
+    h_RCAM_passPres_noMU_cat1_afterMETFilters_passMET1->Write();
+    h_RCAM_passPres_noMU_cat1_afterMETFilters_passMET1234->Write();
+    h_RCAM_passPres_noMU_cat1_afterMETFilters_full->Write();
+    h_RCAM_passPres_noMU_cat1_afterMETFilters_passMET1_full->Write();
+    h_RCAM_passPres_noMU_cat1_afterMETFilters_passMET1234_full->Write();
+    h_RCAM_passPres_noMU_cat2_afterMETFilters->Write();
+    h_RCAM_passPres_noMU_cat2_afterMETFilters_passMET1->Write();
+    h_RCAM_passPres_noMU_cat2_afterMETFilters_passMET1234->Write();
+    h_RCAM_passPres_noMU_beforeMETFilters->Write();
+    h_RCAM_passPres_noMU_beforeMETFilters_passMET1234->Write();
+    h_RCAM_passPres_noMU_beforeMETFilters_full->Write();
+    h_RCAM_passPres_noMU_beforeMETFilters_passMET1234_full->Write();
+    h_RCAM_passPres_noMU_afterMETFilters->Write();
+    h_RCAM_passPres_noMU_afterMETFilters_passMET1234->Write();
+    h_RCAM_passPres_noMU_afterMETFilters_full->Write();
+    h_RCAM_passPres_noMU_afterMETFilters_passMET1234_full->Write();
+    h_RCAM_passPres_noMU_afterMETFilters_quality->Write();
+    h_RCAM_passPres_noMU_afterMETFilters_quality_passMET1234->Write();
+    h_RCAM_passPres_noMU_afterMETFilters_quality_full->Write();
+    h_RCAM_passPres_noMU_afterMETFilters_quality_passMET1234_full->Write();
+    h_RCAM_passPres_noMU_afterMETFilters_quality_noSat->Write();
+    h_RCAM_passPres_noMU_afterMETFilters_quality_noSat_passMET1234->Write();
+
     h_numEventsCategories_noPres->Write();
     h_numEventsCategories_passPres->Write();
     

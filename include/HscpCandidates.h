@@ -40,6 +40,7 @@ public :
    vector<float>   *nPUmean;
    UInt_t          nofVtx;
    Int_t           npv;
+   Int_t           npvGood;
    vector<float>   *pvX;
    vector<float>   *pvY;
    vector<float>   *pvZ;
@@ -94,6 +95,17 @@ public :
    Float_t         L1MHT_phi;
    Float_t         L1ETSum;
    Float_t         L1HTSum;
+   Bool_t          Flag_primaryVertexFilter;
+   Bool_t          Flag_globalSuperTightHalo2016Filter;
+   Bool_t          Flag_HBHENoiseFilter;
+   Bool_t          Flag_HBHENoiseIsoFilter;
+   Bool_t          Flag_EcalDeadCellTriggerPrimitiveFilter;
+   Bool_t          Flag_BadPFMuonFilter;
+   Bool_t          Flag_BadPFMuonDzFilter;
+   Bool_t          Flag_hfNoisyHitsFilter;
+   Bool_t          Flag_eeBadScFilter;
+   Bool_t          Flag_ecalBadCalibFilter;
+   Bool_t          Flag_allMETFilters;
    Bool_t          matchedMuonWasFound;
    vector<int>     *gParticleId;
    vector<int>     *gParticleStatus;
@@ -320,6 +332,7 @@ public :
    TBranch        *b_nPUmean;   //!
    TBranch        *b_nofVtx;   //!
    TBranch        *b_npv;   //!
+   TBranch        *b_npvGood;   //!
    TBranch        *b_pvX;   //!
    TBranch        *b_pvY;   //!
    TBranch        *b_pvZ;   //!
@@ -374,6 +387,17 @@ public :
    TBranch        *b_L1MHT_phi;
    TBranch        *b_L1ETSum;
    TBranch        *b_L1HTSum;
+   TBranch        *b_Flag_primaryVertexFilter;
+   TBranch        *b_Flag_globalSuperTightHalo2016Filter;
+   TBranch        *b_Flag_HBHENoiseFilter;
+   TBranch        *b_Flag_HBHENoiseIsoFilter;
+   TBranch        *b_Flag_EcalDeadCellTriggerPrimitiveFilter;
+   TBranch        *b_Flag_BadPFMuonFilter;
+   TBranch        *b_Flag_BadPFMuonDzFilter;
+   TBranch        *b_Flag_hfNoisyHitsFilter;
+   TBranch        *b_Flag_eeBadScFilter;
+   TBranch        *b_Flag_ecalBadCalibFilter;
+   TBranch        *b_Flag_allMETFilters;
    TBranch        *b_matchedMuonWasFound;   //!
    TBranch        *b_gParticleId;   //!
    TBranch        *b_gParticleStatus;   //!
@@ -900,6 +924,7 @@ void HscpCandidates::Init(TTree *tree)
    fChain->SetBranchAddress("nPUmean", &nPUmean, &b_nPUmean);
    fChain->SetBranchAddress("nofVtx", &nofVtx, &b_nofVtx);
    fChain->SetBranchAddress("npv", &npv, &b_npv);
+   fChain->SetBranchAddress("npvGood", &npvGood, &b_npvGood);
    fChain->SetBranchAddress("pvX", &pvX, &b_pvX);
    fChain->SetBranchAddress("pvY", &pvY, &b_pvY);
    fChain->SetBranchAddress("pvZ", &pvZ, &b_pvZ);
@@ -954,6 +979,17 @@ void HscpCandidates::Init(TTree *tree)
    fChain->SetBranchAddress("L1MHT_phi", &L1MHT_phi, &b_L1MHT_phi);
    fChain->SetBranchAddress("L1ETSum", &L1ETSum, &b_L1ETSum);
    fChain->SetBranchAddress("L1HTSum", &L1HTSum, &b_L1HTSum);
+   fChain->SetBranchAddress("Flag_primaryVertexFilter", &Flag_primaryVertexFilter, &b_Flag_primaryVertexFilter);
+   fChain->SetBranchAddress("Flag_globalSuperTightHalo2016Filter", &Flag_globalSuperTightHalo2016Filter, &b_Flag_globalSuperTightHalo2016Filter);
+   fChain->SetBranchAddress("Flag_HBHENoiseFilter", &Flag_HBHENoiseFilter, &b_Flag_HBHENoiseFilter);
+   fChain->SetBranchAddress("Flag_HBHENoiseIsoFilter", &Flag_HBHENoiseIsoFilter, &b_Flag_HBHENoiseIsoFilter);
+   fChain->SetBranchAddress("Flag_EcalDeadCellTriggerPrimitiveFilter", &Flag_EcalDeadCellTriggerPrimitiveFilter, &b_Flag_EcalDeadCellTriggerPrimitiveFilter);
+   fChain->SetBranchAddress("Flag_BadPFMuonFilter", &Flag_BadPFMuonFilter, &b_Flag_BadPFMuonFilter);
+   fChain->SetBranchAddress("Flag_BadPFMuonDzFilter", &Flag_BadPFMuonDzFilter, &b_Flag_BadPFMuonDzFilter);
+   fChain->SetBranchAddress("Flag_hfNoisyHitsFilter", &Flag_hfNoisyHitsFilter, &b_Flag_hfNoisyHitsFilter);
+   fChain->SetBranchAddress("Flag_eeBadScFilter", &Flag_eeBadScFilter, &b_Flag_eeBadScFilter);
+   fChain->SetBranchAddress("Flag_ecalBadCalibFilter", &Flag_ecalBadCalibFilter, &b_Flag_ecalBadCalibFilter);
+   fChain->SetBranchAddress("Flag_allMETFilters", &Flag_allMETFilters, &b_Flag_allMETFilters);
    fChain->SetBranchAddress("matchedMuonWasFound", &matchedMuonWasFound, &b_matchedMuonWasFound);
    fChain->SetBranchAddress("gParticleId", &gParticleId, &b_gParticleId);
    fChain->SetBranchAddress("gParticleStatus", &gParticleStatus, &b_gParticleStatus);
