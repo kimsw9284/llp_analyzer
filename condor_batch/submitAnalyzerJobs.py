@@ -11,11 +11,6 @@ if __name__=='__main__':
     parser.add_argument("-k","--killsubmission",type=bool,default=False,help="removes jdl creation and job submission, meant for printing a command to pass for interactive running")
     args = parser.parse_args()
 
-    #get a name
-    protoName = args.sampleTextFile.split("_13TeV")[0]
-    sampleName = protoName.split("/")[-1]
-    outFileName = sampleName+"_llpanalyzer.root"
-    
     #Check there is a text file to run over
     if (args.sampleTextFile is None):
         print("No list provided, please provide appropriate list")
@@ -58,6 +53,17 @@ if __name__=='__main__':
     #Get list grouped by sample
     jobcnt = 0
     print("Root files are written to {0}".format(eosOnlypath))
+
+    ##I would make args.sampleTextFile actually a textfile that is a list of the text files you want to make
+    ##then, you read in the list, and make the .jdls in a for loop (everything below in the that loop)
+    ###remember to replace then everywhere w/ args.sampleTextFile with the read in paht
+    
+    #get a name
+    protoName = args.sampleTextFile.split("_13TeV")[0]
+    sampleName = protoName.split("/")[-1]
+    outFileName = sampleName+"_llpanalyzer.root"
+    
+
             
     #Args to pass
     argu = "Arguments = {0} {1} {2}\n".format(eosForOutput,args.sampleTextFile,outFileName)
