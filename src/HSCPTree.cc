@@ -14,6 +14,8 @@ HSCPTree::~HSCPTree()
 };
 void HSCPTree::InitVariables()
 {
+
+  //edit here to add branches
   runNum=0; lumiSec=0; evtNum=0; weight = 0;
   // HLT_Mu50 = false; HLT_PFMET120_PFMHT120_IDTight = false; HLT_PFHT500_PFMET100_PFMHT100_IDTight = false;
   // HLT_PFMETNoMu120_PFMHTNoMu120_IDTight_PFHT60 = false; HLT_MET105_IsoTrk50 = false;
@@ -100,6 +102,8 @@ void HSCPTree::InitTree()
 {
   assert(tree_);
   InitVariables();
+
+  //edit here to add branches
 
   tree_->SetBranchAddress("runNum",      &runNum);
   tree_->SetBranchAddress("lumiSec",     &lumiSec);
@@ -204,6 +208,8 @@ void HSCPTree::CreateTree()
 {
   tree_ = new TTree("tree","tree");
   f_ = 0;
+
+  //edit here to add branches
 
   tree_->Branch("runNum",      &runNum,     "runNum/i");
   tree_->Branch("lumiSec",     &lumiSec,    "lumiSec/i");

@@ -1,0 +1,53 @@
+
+edit to add branches
+
+include/HscpCandidates.h    //when larger nTuple structure changes
+include/HSCPTree_METStudies.h
+src/HSCPTree_METStudies.cc
+analyzer/HSCPAnalyzer_METStudies.cc
+
+to run:
+./RazorRun testfile.txt HSCPAnalyzer_METStudies -f=testfile.root -d=no
+./RazorRun testfile1.txt HSCPAnalyzer_METStudies -f=testfile1.root -d=no
+
+./RazorRun lists/ntuples/V1p0/MC_UL18/HSCPgluino_M-1800_TuneCP5_13TeV-pythia8.txt HSCPAnalyzer_METStudies -f=Gluino_1800_testfile.root -d=no
+
+makes histograms
+
+
+either 
+
+1) use jupyter notebook plotting code from Christina (histograms->plots)
+2) add histogram code to analyzer_METstudies.cc, search NEvents histogram as a model (making plots directly from code)
+
+
+
+variables I need:
+Hscp
+HLT_Mu50
+HLT_PFMET120_PFMHT120_IDTight
+HLT_PFHT500_PFMET100_PFMHT100_IDTight
+HLT_PFMETNoMu120_PFMHTNoMu120_IDTight_PFHT60
+HLT_MET105_IsoTrk50
+RecoCaloMET
+RecoCaloMET_phi
+RecoPFMET
+RecoPFMET_phi
+RecoPFMHT
+HLTCaloMET
+HLTCaloMET_phi
+HLTCaloMET_sigf
+HLTCaloMETClean
+HLTCaloMETClean_phi
+HLTCaloMETClean_sigf
+HLTCaloMHT
+HLTCaloMHT_phi
+HLTCaloMHT_sigf
+HLTPFMET
+HLTPFMET_phi
+HLTPFMET_sigf
+HLTPFMHT
+HLTPFMHT_phi
+HLTPFMHT_sigf
+passPreselection
+preselection variables

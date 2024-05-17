@@ -80,6 +80,9 @@ public:
   float genHSCP_phi[N_MAX_HSCP];
   float genHSCP_e[N_MAX_HSCP];
 
+
+  //edit here to add branches
+
   // HSCP
   int nHSCP;
   float HSCP_pt[N_MAX_HSCP];

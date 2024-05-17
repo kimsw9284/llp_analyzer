@@ -1,0 +1,128 @@
+
+falling distribution of HSCP energy deposited in the calorimeters (maybe calo jets matched to HSCPs or just jets), plot this for passing MET trigger vs all
+Then use those histograms to plot trig efficiency vs jet pT
+   this should be possibly rising as you go along x-axis because we have more calorimeter activity from HSCPs, causing Calo MET
+
+and how does this relate to the catgories below
+
+
+
+
+MET triggers & their sequences
+
+MET1: HLT_PFMET120_PFMHT120_IDTight
+  1) L1_ETMHF100 OR L1_ETMHF110 OR L1_ETMHF120 OR L1_ETMHF150
+  2) hltMet > 90 GeV
+  3) hltMetClean > 80 GeV
+  4) hltMht > 90 GeV
+  5) hltPFMHTTightID > 120 GeV
+  6) hltPFMETProducer > 120 GeV
+
+MET2: HLT_PFHT500_PFMET100_PFMHT100_IDTight
+  1) L1_HTT120er OR L1_HTT160er OR L1_HTT200er OR L1_HTT255er OR L1_HTT280er OR L1_HTT280er_QuadJet_70_55_40_35_er2p4 OR L1_HTT320er_QuadJet_80_60_er2p1_45_40_er2p3 OR L1_HTT320er_QuadJet_80_60_er2p1_50_45_er2p3 OR L1_HTT320er OR L1_HTT360er OR L1_HTT400er OR L1_HTT450er
+  2) hltMet > 70 GeV
+  3) hltMetClean > 60 GeV
+  4) hltMht > 70 GeV
+  5) Ht > 400 GeV (Calo HT?)
+  6) hltPFMHTTightID > 100 GeV
+  7) hltPFMETProducer > 100 GeV
+  8) hltPFHT > 500 GeV
+
+MET3: HLT_PFMETNoMu120_PFMHTNoMu120_IDTight_PFHT60
+  1) L1_ETMHF90_HTT60er OR L1_ETMHF100_HTT60er OR L1_ETMHF110_HTT60er OR L1_ETMHF120_HTT60er
+  2) hltMet > 90 GeV
+  3) hltMetClean > 80 GeV
+  4) hltMht > 90 GeV
+  5) hltPFHT > 60 GeV
+  6) hltPFMHTNoMuTightID > 120 GeV
+  7) hltPFMETNoMuProducer > 120 GeV
+
+MET4: HLT_MET105_IsoTrk50
+  1) L1_ETMHF90_HTT60er OR L1_ETMHF100 OR L1_ETMHF100_HTT60er OR L1_ETMHF110 OR L1_ETMHF110_HTT60er OR L1_ETMHF120 OR L1_ETMHF120_HTT60er OR L1_ETMHF150
+  2) hltMet > 105 GeV
+  3) hltMetClean > 65 GeV
+  4) isolated track > 50 GeV
+
+
+                            filled?    written?
+h_RPFM_all                    yes        yes
+h_RCAM_all                    yes        yes
+h_RPFM_passMuORMET1234        yes        yes
+h_RCAM_passMuORMET1234        yes        yes
+h_RPFM_passMET1234            yes        yes
+h_RCAM_passMET1234            yes        yes
+h_RPFM_passMu                 yes        yes
+h_RCAM_passMu                 yes        yes
+h_RPFM_passMET1               yes        yes
+h_RCAM_passMET1               yes        yes
+h_RPFM_passMET1Cut1           yes        yes
+h_RCAM_passMET1Cut1           yes        yes
+h_RPFM_passMET1Cut2           yes        yes
+h_RCAM_passMET1Cut2           yes        yes
+h_RPFM_passMET1Cut3           yes        yes
+h_RCAM_passMET1Cut3           yes        yes
+h_RPFM_passMET1Cut4           yes        yes
+h_RCAM_passMET1Cut4           yes        yes
+h_RPFM_passMET1Cut5           yes        yes
+h_RCAM_passMET1Cut5           yes        yes
+h_RPFM_passMET1Cut6           yes        yes
+h_RCAM_passMET1Cut6           yes        yes
+
+
+
+
+
+
+
+
+
+histograms needed for RECO PF MET & RECO Calo MET
+
+all events
+pass Muon OR MET1 OR MET2 OR MET3 OR MET4
+pass MET1 OR MET2 OR MET3 OR MET4
+pass Muon 
+
+for each of MET1 (cut 1-6), MET2, MET3, MET4:
+
+pass MET trig
+   pass mu trig
+   !pass mu trig
+      HSCPs back to back
+         2 HSCPs matched to reco tight muons
+            2 HSCPs matched to jets
+               2 jets pass tight jet ID
+	       1 jet passes tight jet ID
+               0 jets pass tight jet ID
+            1 HSCP matched to jet
+               jet passes tight jet ID
+               jet !passes tight jet ID
+            0 HSCPs matched jets
+         1 HSCP matched to reco tight muons
+            HSCP matched to jet
+               jet passes tight jet ID
+               jet !passes tight jet ID
+	    HSCP not matched to jet
+	    (HSCP not matched to muon, is it matched to jet)
+         0 HSCPs matched to reco tight muons
+	    (HSCP not matched to muon, is it matched to jet)
+      significant ISR
+         2 HSCPs matched to reco tight muons
+            2 HSCPs matched to jets
+               2 jets pass tight jet ID
+	       1 jet passes tight jet ID
+               0 jets pass tight jet ID
+            1 HSCP matched to jet
+               jet passes tight jet ID
+               jet !passes tight jet ID
+            0 HSCPs matched jets
+         1 HSCP matched to reco tight muons
+            HSCP matched to jet
+               jet passes jet tight ID
+               jet !passes jet tight ID
+	    HSCP not matched to jet
+         0 HSCPs matched to reco tight muons
+     
+
+from these, write down how many events then make trig eff
+but also include distributions of RecoCalo, Reco PF MET
