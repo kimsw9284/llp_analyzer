@@ -28,13 +28,14 @@ ROOTLDFLAGS  := $(shell $(ROOTCONFIG) --ldflags) $(shell $(ROOTCONFIG) --libs --
 CXXFLAGS     += $(ROOTCFLAGS)
 LDFLAGS      += $(ROOTLDFLAGS)
 
-LIBS = -lRooFitCore -lRooFit -lMinuit -lHtml -lMathMore -lPyROOT -lFoam -lRooStats -lTreePlayer -lTMVA
+LIBS = -lRooFitCore -lRooFit -lMinuit -lHtml -lMathMore -lFoam -lRooStats -lTreePlayer -lTMVA
 
 ifneq ($(CMSSW_BASE),)
         ROOTFIT_INCLUDE := $(shell cd $(CMSSW_BASE); scram tool info roofitcore | grep INCLUDE= | sed 's|INCLUDE=||')
         ROOTFIT_LIBDIR := $(shell cd $(CMSSW_BASE); scram tool info roofitcore | grep LIBDIR= | sed 's|LIBDIR=||')
 
-        CINTINCLUDES := -I$(ROOTFIT_INCLUDE)
-        CXXFLAGS     += -I$(ROOTFIT_INCLUDE)
-        LDFLAGS      += -L$(ROOTFIT_LIBDIR)
+#comment out these lines for EL9, include them for SL7
+#        CINTINCLUDES := -I$(ROOTFIT_INCLUDE)
+#        CXXFLAGS     += -I$(ROOTFIT_INCLUDE)
+#        LDFLAGS      += -L$(ROOTFIT_LIBDIR)
 endif

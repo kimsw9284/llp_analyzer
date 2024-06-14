@@ -1,9 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import sys
 
 if len(sys.argv) != 2:
-    print "Please specify an analyzer name!"
+    print("Please specify an analyzer name!")
     sys.exit()
 
 analyzer = sys.argv[1]
