@@ -6,8 +6,8 @@ Class for analyzing the output from ntupler in SUSYBSMAnalysis-HSCP for HSCP ana
 Setup
 -------------
 
-    cmsrel CMSSW_10_6_30
-    cd CMSSW_10_6_30/src
+    cmsrel CMSSW_13_3_1
+    cd CMSSW_13_3_1/src
     cmsenv
     git clone git@github.com:CMS-HSCP/llp_analyzer.git
     cd llp_analyzer
